@@ -1,0 +1,27 @@
+{
+  "name": "FET-webpage-redesign",
+  "version": "1.0.0",
+  "description": "Redesign of the FET-webpage",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+		"build": "tailwind build -i css/tailwind.css -o build/css/styles.css" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/M00nD3v/FET-webpage-redesign.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/M00nD3v/FET-webpage-redesign/issues"
+  },
+  "homepage": "https://github.com/M00nD3v/FET-webpage-redesign#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.3.1",
+    "postcss": "^8.3.5",
+    "tailwindcss": "^2.2.4",
+    "vite": "^2.4.2"
+  }
+}
