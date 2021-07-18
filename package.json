@@ -1,7 +1,7 @@
 {
-  "name": "FET-webpage-redesign",
+  "name": "fet-webpage-redesign",
   "version": "1.0.0",
-  "description": "Redesign of the FET-webpage",
+  "description": "Redesign of the fet-webpage",
   "main": "index.js",
   "scripts": {
     "dev": "vite",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/M00nD3v/FET-webpage-redesign.git"
+    "url": "git+https://github.com/M00nD3v/fet-webpage-redesign.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/M00nD3v/FET-webpage-redesign/issues"
+    "url": "https://github.com/M00nD3v/fet-webpage-redesign/issues"
   },
-  "homepage": "https://github.com/M00nD3v/FET-webpage-redesign#readme",
+  "homepage": "https://github.com/M00nD3v/fet-webpage-redesign#readme",
   "devDependencies": {
     "autoprefixer": "^10.3.1",
     "postcss": "^8.3.5",
