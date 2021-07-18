@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
+
+.section-title {
+	@apply uppercase text-base text-gray-800 font-semibold text-center mt-4 mb-2;
+}
+@screen sm{
+	.section-title {
+		@apply text-red-700;
+	}
+}
+
 @tailwind utilities;
