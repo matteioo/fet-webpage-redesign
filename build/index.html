@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<link rel="stylesheet" href="css/styles.css">
-	<link rel="stylesheet" href="../css/tailwind.css">
+	<!--<link rel="stylesheet" href="../css/tailwind.css">-->
 
 	<script src="https://kit.fontawesome.com/fb26f70535.js" crossorigin="anonymous"></script>
 </head>
@@ -117,7 +117,7 @@
 			</aside>
 			<div class="my-8">
 				<h2 class="section-title">Zuletzt veröffentlicht</h2>
-				<article class="relative h-44 my-4 rounded shadow-lg">
+				<article class="relative h-44 my-4 rounded shadow-lg cursor-pointer" onclick="openArticle('index.html')">
 					<div class="absolute bg-center w-full h-full rounded bg-no-repeat bg-cover" style="background-image: url('img/article-cover-1.jpg');">
 						<div class="w-full h-full rounded bg-gradient-to-t from-gray-900 via-gray-500 opacity-70"></div>
 					</div>
@@ -137,7 +137,7 @@
 						</div>
 					</div>
 				</article>
-				<article class="relative h-44 my-4 rounded shadow-lg">
+				<article class="relative h-44 my-4 rounded shadow-lg cursor-pointer" onclick="openArticle('index.html')">
 					<div class="absolute bg-center w-full h-full rounded bg-no-repeat bg-cover" style="background-image: url('img/article-cover-2.jpg');">
 						<div class="w-full h-full rounded bg-gradient-to-t from-gray-900 via-gray-500 opacity-70"></div>
 					</div>
@@ -157,7 +157,7 @@
 						</div>
 					</div>
 				</article>
-				<article class="relative h-44 my-4 rounded shadow-lg">
+				<article class="relative h-44 my-4 rounded shadow-lg cursor-pointer" onclick="openArticle('index.html')">
 					<div class="absolute bg-center w-full h-full rounded bg-no-repeat bg-cover" style="background-image: url('img/article-cover-3.jpg');">
 						<div class="w-full h-full rounded bg-gradient-to-t from-gray-900 via-gray-500 opacity-70"></div>
 					</div>
@@ -204,9 +204,17 @@
 </body>
 
 <script>
+	// Open/close the mobile menu items on mobile only. Will be overwritten on bigger screen sizes
 	function toggleMenu(){
 		var element = document.getElementById("navBarContent");
 		element.classList.toggle("hidden");
+	}
+
+	// Open article on click without an anchor-tag.
+	function openArticle(link){
+		var current = window.location.pathname;
+		console.log("/build/" + link);
+		window.location.pathname = "/build/" + link;
 	}
 </script>
 
