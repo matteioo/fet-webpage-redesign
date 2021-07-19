@@ -10,40 +10,75 @@
 
 	<script src="https://kit.fontawesome.com/fb26f70535.js" crossorigin="anonymous"></script>
 </head>
-<body class="container h-full bg-white">
+<body class="h-full bg-white">
 	<!-- NAVBAR -->
-	<nav class="relative w-full px-4 flex flex-col items-center bg-white">
+	<nav class="container mx-auto relative w-full px-4 flex flex-col sm:flex-row items-center sm:justify-between bg-white">
 		<a href="index.html">
 			<img src="img/logo2014_64.png" alt="FET-Logo" class="h-16 m-1/2 flex-none">
 		</a>
-		<button class="absolute right-4 top-5" onclick="toggleMenu()">
+		<button class="sm:hidden absolute right-4 sm:right-0 top-5" onclick="toggleMenu()">
 			<i class="fas fa-bars text-proprietary text-2xl"></i>
 		</button>
-		<ul id="navBarContent" class="hidden md:block my-2 text-proprietary text-xl self-start">
-			<li class="my-1"><a href="#">Aktuelles</a></li>
-			<li class="my-1"><a href="#">Fachschaft</a></li>
-			<li class="my-1"><a href="#">Fotos</a></li>
-			<li class="my-1"><a href="#">Blackboard</a></li>
-			<li class="my-1"><a href="#">Login</a></li>
+		<ul id="navBarContent" class="hidden sm:block my-2 text-proprietary text-lg self-start sm:self-center">
+			<li class="my-1 sm:px-2 sm:inline-block"><a href="#">Aktuelles</a></li>
+			<li class="my-1 sm:px-2 sm:inline-block"><a href="#">Fachschaft</a></li>
+			<li class="my-1 sm:px-2 sm:inline-block"><a href="#">Fotos</a></li>
+			<li class="my-1 sm:px-2 sm:inline-block"><a href="#">Blackboard</a></li>
+			<li class="my-1 sm:px-2 sm:inline-block"><a href="#">Login</a></li>
 		</ul>
 	</nav>
 
-	<!-- Main Content -->
-	<main class="bg-white w-full px-4">
-		<section class="relative -mx-4">
-			<div class="absolute w-full h-56 bg-cover-image bg-cover bg-center bg-no-repeat opacity-20"></div>
-			<div class="h-56 px-4 bg-transparent flex flex-col justify-center">
-				<h1 class="uppercase flex-none justify-items-center text-center font-bold text-lg text-gray-900">
+	<div class="">
+		<section class="relative">
+			<div class="absolute w-full h-56 sm:h-80 bg-cover-image bg-cover bg-center bg-no-repeat opacity-30"></div>
+			<div class="container px-4 sm:mx-auto h-56 sm:h-80 bg-transparent flex flex-col sm:flex-row justify-center sm:items-center">
+				<h1 class="sm:w-3/5 uppercase flex-none justify-items-center text-center font-bold text-lg text-gray-900">
 					<span class="hidden text-gray-900">Willkommen bei der </span><span class="text-gray-900">Fachschaft für</span><br>
 					<span class="text-proprietary">Elektrotechnik und Informationstechnik</span>
 				</h1>
+
+				<div class="hidden sm:block w-2/5 p-3 bg-white z-0 my-0 rounded-md shadow-md">
+					<h2 class="section-title sm:text-left">Events</h2>
+					<ul>
+						<a href="#">
+							<li class="py-1">
+								<h3 class="text-gray-700">AGru Studierbarkeit</h3>
+								<p class="my-1 text-sm text-gray-600">
+									<i class="fas fa-calendar-alt text-gray-500"></i>
+									<span>20. Juli 2021</span>
+								</p>
+							</li>
+						</a>
+						<a href="#">
+							<li class="py-1">
+								<h3 class="text-gray-700">Fachschaftssitzung</h3>
+								<p class="my-1 text-sm text-gray-600">
+									<i class="fas fa-calendar-alt text-gray-500"></i>
+									<span>21. August 2021 · 18:00 Uhr</span>
+								</p>
+							</li>
+						</a>
+						<a href="#">
+							<li class="py-1">
+								<h3 class="text-gray-700">Online Mentoring für Studentinnen und Schülerinnen</h3>
+								<p class="my-1 text-sm text-gray-600">
+									<i class="fas fa-calendar-alt text-gray-500"></i>
+									<span>20. Juli 2021 · 23:30 Uhr</span>
+								</p>
+							</li>
+						</a>
+					</ul>
+				</div>
 			</div>
 		</section>
+	</div>
 
-		<section>
-			<h2 class="section-title">Events</h2>
+	<!-- Main Content -->
+	<main class="container mx-auto bg-white w-full px-4">
+		<section class="sm:hidden">
+			<h2 class="section-title section-title-margins">Events</h2>
 			<ul>
-				<a href="">
+				<a href="#">
 					<li class="my-2">
 						<h3 class="text-gray-700">AGru Studierbarkeit</h3>
 						<p class="my-1 text-sm text-gray-600">
@@ -52,7 +87,7 @@
 						</p>
 					</li>
 				</a>
-				<a href="">
+				<a href="#">
 					<li class="my-2">
 						<h3 class="text-gray-700">Fachschaftssitzung</h3>
 						<p class="my-1 text-sm text-gray-600">
@@ -61,7 +96,7 @@
 						</p>
 					</li>
 				</a>
-				<a href="">
+				<a href="#">
 					<li class="my-2">
 						<h3 class="text-gray-700">Online Mentoring für Studentinnen und Schülerinnen</h3>
 						<p class="my-1 text-sm text-gray-600">
@@ -73,9 +108,9 @@
 			</ul>
 		</section>
 
-		<section>
-			<aside>
-				<h2 class="section-title">Kalender</h2>
+		<section class="sm:flex sm:flex-row-reverse">
+			<aside class="sm:w-2/5 sm:pl-4">
+				<h2 class="section-title section-title-margins">Kalender</h2>
 				<ul>
 					<a href="#">
 						<li class="flex items-center my-2">
@@ -115,9 +150,9 @@
 					</a>
 				</ul>
 			</aside>
-			<div class="my-8">
-				<h2 class="section-title">Zuletzt veröffentlicht</h2>
-				<article class="relative h-44 my-4 rounded shadow-lg cursor-pointer" onclick="openArticle('index.html')">
+			<div class="my-8 sm:my-0 sm:w-3/5">
+				<h2 class="section-title section-title-margins">Zuletzt veröffentlicht</h2>
+				<article class="relative h-48 my-4 rounded shadow-lg cursor-pointer" onclick="openArticle('index.html')">
 					<div class="absolute bg-center w-full h-full rounded bg-no-repeat bg-cover" style="background-image: url('img/article-cover-1.jpg');">
 						<div class="w-full h-full rounded bg-gradient-to-t from-gray-900 via-gray-500 opacity-70"></div>
 					</div>
@@ -137,7 +172,7 @@
 						</div>
 					</div>
 				</article>
-				<article class="relative h-44 my-4 rounded shadow-lg cursor-pointer" onclick="openArticle('index.html')">
+				<article class="relative h-48 my-4 rounded shadow-lg cursor-pointer" onclick="openArticle('index.html')">
 					<div class="absolute bg-center w-full h-full rounded bg-no-repeat bg-cover" style="background-image: url('img/article-cover-2.jpg');">
 						<div class="w-full h-full rounded bg-gradient-to-t from-gray-900 via-gray-500 opacity-70"></div>
 					</div>
@@ -157,7 +192,7 @@
 						</div>
 					</div>
 				</article>
-				<article class="relative h-44 my-4 rounded shadow-lg cursor-pointer" onclick="openArticle('index.html')">
+				<article class="relative h-48 my-4 rounded shadow-lg cursor-pointer" onclick="openArticle('index.html')">
 					<div class="absolute bg-center w-full h-full rounded bg-no-repeat bg-cover" style="background-image: url('img/article-cover-3.jpg');">
 						<div class="w-full h-full rounded bg-gradient-to-t from-gray-900 via-gray-500 opacity-70"></div>
 					</div>

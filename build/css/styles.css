@@ -615,8 +615,6 @@ video {
 }
 
 .section-title {
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
   text-align: center;
   font-size: 1rem;
   line-height: 1.5rem;
@@ -631,6 +629,11 @@ video {
     --tw-text-opacity: 1;
     color: rgba(185, 28, 28, var(--tw-text-opacity));
   }
+}
+
+.section-title-margins {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .sr-only {
