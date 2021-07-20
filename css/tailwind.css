@@ -2,15 +2,15 @@
 @tailwind components;
 
 .section-title {
-	@apply uppercase text-base text-gray-800 font-semibold text-center;
+	@apply text-base text-gray-800 font-semibold text-center;
 }
 @screen sm{
 	.section-title {
-		@apply text-red-700;
+		@apply text-gray-800 font-medium;
 	}
 }
 .section-title-margins {
-	@apply mt-4 mb-2;
+	@apply mt-4 mb-2 uppercase;
 }
 
 @tailwind utilities;

@@ -9,12 +9,23 @@ module.exports = {
 		},
     extend: {
 			colors: {
-				'proprietary': '#006599',
+				'proprietary': {
+					lightest: '#6cf',
+					lighter: '#47c2ff',
+					light: '#008bd1',
+					DEFAULT: '#006599',
+					dark: '#005580',
+					darker: '#046',
+					darkest: '#00334d'
+				},
 				'gray-transparent': '#6B7280A7'
 			},
 			backgroundImage: theme => ({
 				'cover-image': "url('../img/cover-image.jpeg')",
 			}),
+			minHeight: {
+				'80': '20rem/* 320px */',
+			}
 		},
   },
   variants: {
