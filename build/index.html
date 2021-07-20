@@ -11,7 +11,7 @@
 	<!--Google Fonts-->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 </head>
 <body class="h-full bg-white">
 	<!-- NAVBAR -->
@@ -31,53 +31,55 @@
 		</ul>
 	</nav>
 
-	<div>
-		<section class="relative">
-			<div class="absolute w-full h-56 sm:h-80 bg-cover-image bg-cover bg-center bg-no-repeat opacity-30"></div>
-			<div class="container px-4 sm:mx-auto h-56 sm:h-80 bg-transparent flex flex-col sm:flex-row justify-center sm:items-center">
-				<h1 class="z-10 sm:w-3/5 uppercase flex-none justify-items-center text-center font-bold text-lg text-gray-900">
-					<span class="hidden text-gray-900">Willkommen bei der </span><span class="text-gray-900">Fachschaft für</span><br>
-					<span class="text-proprietary">Elektrotechnik und Informationstechnik</span>
+	<section>
+		<div class="relative z-0 w-full h-56 sm:h-80 bg-cover-image bg-cover bg-center bg-no-repeat">
+			<div class="absolute z-10 w-full h-full bg-blue-50 opacity-60"></div>
+			<div class="relative container px-4 mx-auto z-20 w-full h-full flex flex-wrap items-center gap-x-2">
+				<h1 class="w-3/5 flex-1 uppercase font-semibold text-xl sm:text-2xl text-center text-gray-900">
+					<span class="hidden">Willkommen bei der </span><span>Fachschaft</span><br>
+					<span class="text-proprietary">Elektrotechnik</span>
 				</h1>
-
-				<div class="hidden sm:block w-2/5 p-3 bg-white z-0 my-0 rounded-md shadow-md">
-					<h2 class="section-title sm:text-left">Events</h2>
-					<ul>
-						<a href="#">
-							<li class="py-1">
-								<h3 class="text-gray-700">AGru Studierbarkeit</h3>
-								<p class="my-1 text-sm text-gray-600">
-									<i class="fas fa-calendar-alt text-gray-500"></i>
+				<div class="hidden sm:block flex-none w-2/5 bg-white p-2 rounded shadow-xl">
+					<h2 class="section-title sm:text-left"><i class="fas fa-comments"></i> Events</h2>
+					<div class="-mb-2 text-gray-700 text-sm">
+						<div class="my-2">
+							<a href="#">
+								<h3 class="">AGru Studierbarkeit</h3>
+								<p class="py-1 text-sm text-gray-600">
+									<i class="fas fa-calendar-alt"></i>
 									<span>20. Juli 2021</span>
 								</p>
-							</li>
-						</a>
-						<a href="#">
-							<li class="py-1">
-								<h3 class="text-gray-700">Fachschaftssitzung</h3>
-								<p class="my-1 text-sm text-gray-600">
-									<i class="fas fa-calendar-alt text-gray-500"></i>
-									<span>21. August 2021 · 18:00 Uhr</span>
+							</a>
+						</div>
+						<div class="my-2">
+							<a href="#">
+								<h3 class="">Fachschaftssitzung</h3>
+								<p class="py-1 text-sm text-gray-600">
+									<i class="fas fa-calendar-alt"></i>
+									<span>21. August 2021 · 20:30 Uhr</span>
 								</p>
-							</li>
-						</a>
-						<a href="#">
-							<li class="py-1">
-								<h3 class="text-gray-700">Online Mentoring für Studentinnen und Schülerinnen</h3>
-								<p class="my-1 text-sm text-gray-600">
-									<i class="fas fa-calendar-alt text-gray-500"></i>
-									<span>20. Juli 2021 · 23:30 Uhr</span>
+							</a>
+						</div>
+						<div class="my-2">
+							<a href="#">
+								<h3 class="">Online Mentoring für Studentinnen und Schülerinnen</h3>
+								<p class="py-1 text-sm text-gray-600">
+									<i class="fas fa-calendar-alt"></i>
+									<span>20. Juli 2021</span>
 								</p>
-							</li>
-						</a>
-					</ul>
+							</a>
+						</div>
+					</div>
 				</div>
+				<!--<div class="w-full self-end flex justify-center mb-4">
+					<i class="fas fa-chevron-down animate-bounce text-proprietary text-2xl"></i>
+				</div>-->
 			</div>
-		</section>
-	</div>
+		</div>
+	</section>
 
 	<!-- Main Content -->
-	<main class="container mx-auto bg-white w-full px-4">
+	<main class="container mx-auto bg-white w-full px-4 my-8">
 		<section class="sm:hidden">
 			<h2 class="section-title section-title-margins">Events</h2>
 			<ul>
@@ -201,6 +203,7 @@
 						</div>
 					</div>
 				</article>
+				<a href="#" class="my-4 block w-full py-2 px-1 rounded text-center text-blue-50 bg-proprietary hover:bg-proprietary-darker focus:outline-none focus:ring-2 focus:ring-proprietary-light"><i class="fas fa-plus-square mr-2"></i>Mehr anzeigen</a>
 			</div>
 		</section>
 	</main>
