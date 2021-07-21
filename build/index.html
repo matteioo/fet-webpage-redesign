@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>FET: Startseite</title>
+
+	<meta name="author" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="description" content="Die Fachschaft Elektrotechnik besteht aus ET Studierenden, die sich um die Anliegen der Studenten und Studentinnen kümmern.">
+	<meta property="og:image" content="#"> <!--og:... = Facebook metadata-->
+	<meta property="og:description" content="Die Fachschaft Elektrotechnik besteht aus ET Studierenden, die sich um die Anliegen der Studenten und Studentinnen kümmern.">
+	<meta property="og:title" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="twitter:title" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="theme-color" content="#006599">
+	<!-- third-generation iPad with high-resolution Retina display: -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="#">
+	<!-- iPhone with high-resolution Retina display: -->
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="#">
+	<!-- first- and second-generation iPad: -->
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="#">
+	<!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+	<link rel="apple-touch-icon-precomposed" href="#">
+	<!-- basic favicon -->
+	<link rel="icon" href="#">
+	<link rel="shortcut icon" type="image/png" href="https://fet.at/assets/img/fet_logo_white.png">
+
 	<link rel="stylesheet" href="css/styles.css">
 	<!--<link rel="stylesheet" href="../css/tailwind.css">-->
 	<script src="https://kit.fontawesome.com/fb26f70535.js" crossorigin="anonymous"></script>
@@ -15,7 +35,7 @@
 </head>
 <body class="h-full bg-white">
 	<!-- NAVBAR -->
-	<nav class="container mx-auto relative w-full px-4 flex flex-col sm:flex-row items-center sm:justify-between bg-white">
+	<nav class="navbar container px-4 mx-auto">
 		<a href="index.html">
 			<img src="img/logo2014_64.png" alt="FET-Logo" class="h-16 m-1/2 flex-none">
 		</a>
@@ -87,89 +107,77 @@
 
 		<section class="sm:hidden">
 			<h2 class="section-title section-title-margins">Events</h2>
-			<ul>
+			<div class="my-2">
 				<a href="#">
-					<li class="my-2">
-						<h3 class="text-gray-700">AGru Studierbarkeit</h3>
-						<p class="my-1 text-sm text-gray-600">
-							<i class="fas fa-calendar-alt text-gray-500"></i>
-							<span>20. Juli 2021</span>
-						</p>
-					</li>
+					<h3 class="text-gray-700">AGru Studierbarkeit</h3>
+					<p class="my-1 text-sm text-gray-600">
+						<i class="fas fa-calendar-alt text-gray-500"></i>
+						<span>20. Juli 2021</span>
+					</p>
 				</a>
+			</div>
+			<div class="my-2">
 				<a href="#">
-					<li class="my-2">
-						<h3 class="text-gray-700">Fachschaftssitzung</h3>
-						<p class="my-1 text-sm text-gray-600">
-							<i class="fas fa-calendar-alt text-gray-500"></i>
-							<span>21. August 2021 · 18:00 Uhr</span>
-						</p>
-					</li>
+					<h3 class="text-gray-700">Fachschaftssitzung</h3>
+					<p class="my-1 text-sm text-gray-600">
+						<i class="fas fa-calendar-alt text-gray-500"></i>
+						<span>21. August 2021 · 18:00 Uhr</span>
+					</p>
 				</a>
+			</div>
+			<div class="my-2">
 				<a href="#">
-					<li class="my-2">
-						<h3 class="text-gray-700">Online Mentoring für Studentinnen und Schülerinnen</h3>
-						<p class="my-1 text-sm text-gray-600">
-							<i class="fas fa-calendar-alt text-gray-500"></i>
-							<span>20. Juli 2021 · 23:30 Uhr</span>
-						</p>
-					</li>
+					<h3 class="text-gray-700">Online Mentoring für Studentinnen und Schülerinnen</h3>
+					<p class="my-1 text-sm text-gray-600">
+						<i class="fas fa-calendar-alt text-gray-500"></i>
+						<span>20. Juli 2021 · 23:30 Uhr</span>
+					</p>
 				</a>
-			</ul>
+			</div>
 		</section>
 
-		<section class="sm:flex sm:flex-row-reverse">
+		<div class="sm:flex sm:flex-row-reverse">
 			<aside class="sm:w-2/5 sm:pl-4">
 				<h2 class="section-title section-title-margins">Kalender</h2>
-				<ul>
-					<a href="#">
-						<li class="flex items-center my-2">
-							<div class="flex flex-col justify-center w-11 h-11 rounded-full text-center leading-none text-blue-100 bg-proprietary">
-								<span class="flex-none">15</span>
-								<span class="flex-none pb-1 text-sm">Aug</span>
-							</div>
-							<h3 class="text-gray-700 pl-2">Fachschaftssitzung</h3>
-						</li>
-					</a>
-					<a href="#">
-						<li class="flex items-center my-2">
-							<div class="flex flex-col justify-center w-11 h-11 rounded-full text-center leading-none text-blue-100 bg-proprietary">
-								<span class="flex-none">18</span>
-								<span class="flex-none pb-1 text-sm">Sep</span>
-							</div>
-							<h3 class="text-gray-700 pl-2">ÖH Wahl - Tag 1</h3>
-						</li>
-					</a>
-					<a href="#">
-						<li class="flex items-center my-2">
-							<div class="flex flex-col justify-center w-11 h-11 rounded-full text-center leading-none text-blue-100 bg-proprietary">
-								<span class="flex-none">19</span>
-								<span class="flex-none pb-1 text-sm">Jan</span>
-							</div>
-							<h3 class="text-gray-700 pl-2">ÖH Wahl - Tag 2</h3>
-						</li>
-					</a>
-					<a href="#">
-						<li class="flex items-center my-2">
-							<div class="flex flex-col justify-center w-11 h-11 rounded-full text-center leading-none text-blue-100 bg-proprietary">
-								<span class="flex-none">20</span>
-								<span class="flex-none pb-1 text-sm">Nov</span>
-							</div>
-							<h3 class="text-gray-700 pl-2">ÖH Wahl - Tag 2</h3>
-						</li>
-					</a>
-				</ul>
-				<a href="https://fet.at/posts/fet_calendar.ics" class="block w-full py-1 rounded border border-gray-700 text-center text-gray-700"><i class="fas fa-calendar-alt"></i>&nbsp;&nbsp;Kalender abonnieren</a>
+				<a href="#" class="calender-entries">
+					<div class="flex flex-col justify-center w-12 h-12 rounded-full text-center leading-none text-blue-100 bg-proprietary">
+						<span class="flex-none">15</span>
+						<span class="flex-none text-sm">Aug</span>
+					</div>
+					<h3 class="text-gray-700 pl-2">Fachschaftssitzung</h3>
+				</a>
+				<a href="#" class="calender-entries">
+					<div class="flex flex-col justify-center w-12 h-12 rounded-full text-center leading-none text-blue-100 bg-proprietary">
+						<span class="flex-none">18</span>
+						<span class="flex-none text-sm">Sep</span>
+					</div>
+					<h3 class="text-gray-700 pl-2">ÖH Wahl - Tag 1</h3>
+				</a>
+				<a href="#" class="calender-entries">
+					<div class="flex flex-col justify-center w-12 h-12 rounded-full text-center leading-none text-blue-100 bg-proprietary">
+						<span class="flex-none">19</span>
+						<span class="flex-none text-sm">Jan</span>
+					</div>
+					<h3 class="text-gray-700 pl-2">ÖH Wahl - Tag 2</h3>
+				</a>
+				<a href="#" class="calender-entries">
+					<div class="flex flex-col justify-center w-12 h-12 rounded-full text-center leading-none text-blue-100 bg-proprietary">
+						<span class="flex-none">20</span>
+						<span class="flex-none text-sm">Nov</span>
+					</div>
+					<h3 class="text-gray-700 pl-2">ÖH Wahl - Tag 2</h3>
+				</a>
+				<a href="https://fet.at/posts/fet_calendar.ics" class="btn btn-secondary block w-full"><i class="fas fa-calendar-alt mr-2"></i>Kalender abonnieren</a>
 			</aside>
-			<div class="my-8 sm:my-0 sm:w-3/5">
+			<section class="my-8 sm:my-0 sm:w-3/5">
 				<h2 class="section-title section-title-margins">Zuletzt veröffentlicht</h2>
-				<article class="w-full h-48 my-4 rounded bg-center shadow-lg bg-no-repeat bg-cover cursor-pointer" style="background-image: url('img/article-cover-1.jpg');" onclick="openArticle('index.html')">
-					<div class="w-full h-full rounded bg-gradient-to-t from-gray-900">
-						<div class="z-10 h-full p-2 flex flex-col justify-between">
-							<ul class="z-10 flex justify-end gap-x-1 uppercase">
-								<li class="z-10 rounded-full px-2 py-1 bg-proprietary text-blue-100"><a href="#">#fet</a></li>
-								<li class="z-10 rounded-full px-2 py-1 bg-proprietary text-blue-100"><a href="#">#ug</a></li>
-								<li class="z-10 rounded-full px-2 py-1 bg-proprietary text-blue-100"><a href="#">#öh</a></li>
+				<article class="article-cover-image" style="background-image: url('img/article-cover-1.jpg');" onclick="openArticle('index.html')">
+					<div class="article-cover-desc">
+						<div class="article-cover-desc-items">
+							<ul class="article-cover-tags">
+								<li><a href="#">#fet</a></li>
+								<li><a href="#">#ug</a></li>
+								<li><a href="#">#öh</a></li>
 							</ul>
 							<div>
 								<a href="#"><h3 class="text-gray-50">Neues Universitätsgesetz wird entschärft</h3></a>
@@ -178,13 +186,13 @@
 						</div>
 					</div>
 				</article>
-				<article class="w-full h-48 my-4 rounded shadow-lg bg-center bg-no-repeat bg-cover cursor-pointer" style="background-image: url('img/article-cover-2.jpg');" onclick="openArticle('index.html')">
-					<div class="w-full h-full rounded bg-gradient-to-t from-gray-900">
-						<div class="z-10 h-full p-2 flex flex-col justify-between">
-							<ul class="z-10 flex justify-end gap-x-1 uppercase">
-								<li class="z-10 rounded-full px-2 py-1 bg-proprietary text-blue-100"><a href="#">#fet</a></li>
-								<li class="z-10 rounded-full px-2 py-1 bg-proprietary text-blue-100"><a href="#">#ug</a></li>
-								<li class="z-10 rounded-full px-2 py-1 bg-proprietary text-blue-100"><a href="#">#öh</a></li>
+				<article class="article-cover-image" style="background-image: url('img/article-cover-2.jpg');" onclick="openArticle('index.html')">
+					<div class="article-cover-desc">
+						<div class="article-cover-desc-items">
+							<ul class="article-cover-tags">
+								<li><a href="#">#fet</a></li>
+								<li><a href="#">#ug</a></li>
+								<li><a href="#">#öh</a></li>
 							</ul>
 							<div>
 								<a href="#"><h3 class="text-gray-50">ÖH Wahl - Tag 2</h3></a>
@@ -193,13 +201,13 @@
 						</div>
 					</div>
 				</article>
-				<article class="w-full h-48 my-4 rounded shadow-lg bg-center bg-no-repeat bg-cover cursor-pointer" style="background-image: url('img/article-cover-3.jpg');" onclick="openArticle('index.html')">
-					<div class="w-full h-full rounded bg-gradient-to-t from-gray-900">
-						<div class="z-10 h-full p-2 flex flex-col justify-between">
-							<ul class="z-10 flex justify-end gap-x-1 uppercase">
-								<li class="z-10 rounded-full px-2 py-1 bg-proprietary text-blue-100"><a href="#">#fet</a></li>
-								<li class="z-10 rounded-full px-2 py-1 bg-proprietary text-blue-100"><a href="#">#ug</a></li>
-								<li class="z-10 rounded-full px-2 py-1 bg-proprietary text-blue-100"><a href="#">#öh</a></li>
+				<article class="article-cover-image" style="background-image: url('img/article-cover-3.jpg');" onclick="openArticle('index.html')">
+					<div class="article-cover-desc">
+						<div class="article-cover-desc-items">
+							<ul class="article-cover-tags">
+								<li><a href="#">#fet</a></li>
+								<li><a href="#">#ug</a></li>
+								<li><a href="#">#öh</a></li>
 							</ul>
 							<div>
 								<a href="#"><h3 class="text-gray-50">ÖH Wahl - Tag 3</h3></a>
@@ -208,9 +216,9 @@
 						</div>
 					</div>
 				</article>
-				<a href="#" class="my-4 block w-full py-2 px-1 rounded text-center text-blue-50 bg-proprietary hover:bg-proprietary-darker focus:outline-none focus:ring-2 focus:ring-proprietary-light"><i class="fas fa-plus-square mr-2"></i>Mehr anzeigen</a>
-			</div>
-		</section>
+				<a href="#" class="btn btn-primary my-4 block w-full"><i class="fas fa-plus-square mr-2"></i>Mehr anzeigen</a>
+			</section>
+		</div>
 	</main>
 	<footer class="bg-proprietary px-4 text-blue-100">
 		<ul class="flex justify-center py-4 text-2xl">
@@ -233,21 +241,20 @@
 		<hr class="border-blue-300 -mx-4">
 		<p class="py-4 uppercase text-center text-sm">© 2021 FET - Alle Rechte vorbehalten.</p>
 	</footer>
+
+	<script>
+		// Open/close the mobile menu items on mobile only. Will be overwritten on bigger screen sizes
+		function toggleMenu(){
+			var element = document.getElementById("navBarContent");
+			element.classList.toggle("hidden");
+		}
+	
+		// Open article on click without an anchor-tag.
+		function openArticle(link){
+			var current = window.location.pathname;
+			console.log("/build/" + link);
+			window.location.pathname = "/build/" + link;
+		}
+	</script>
 </body>
-
-<script>
-	// Open/close the mobile menu items on mobile only. Will be overwritten on bigger screen sizes
-	function toggleMenu(){
-		var element = document.getElementById("navBarContent");
-		element.classList.toggle("hidden");
-	}
-
-	// Open article on click without an anchor-tag.
-	function openArticle(link){
-		var current = window.location.pathname;
-		console.log("/build/" + link);
-		window.location.pathname = "/build/" + link;
-	}
-</script>
-
 </html>
