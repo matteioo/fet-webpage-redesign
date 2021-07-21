@@ -32,6 +32,8 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </head>
 <body class="h-full bg-white">
 	<!-- NAVBAR -->
@@ -102,17 +104,6 @@
 		<div class="my-8 p-2 rounded border border-yellow-500 bg-yellow-100">
 			<h2 class="w-full text-center text-yellow-800"><i class="far fa-exclamation-triangle mr-1"></i>Warnung!<i class="far fa-exclamation-triangle ml-1"></i></h2>
 			<p class="text-yellow-700 text-sm">Diese Seite ist noch unvollständig! Dargestellte Informationen können nur beispielhaft implementiert worden sein bzw. noch Fehler enthalten!</p>
-		</div>
-
-		<div class="fixed bottom-2 left-2 right-2 p-4 rounded-lg shadow-2xl bg-gray-900 text-gray-200 flex gap-x-2 items-center leading-none">
-			<div class="flex-none">
-				<i class="fab fa-discord text-4xl"></i> 
-			</div>
-			<div class="flex-1">
-				FET-Discord-Server<br>
-				<span class="text-sm text-gray-300">Klicke hier zum Joinen.</span>
-			</div>
-			<button class="flex-none"><i class="far fa-times text-gray-500"></i></button>
 		</div>
 
 		<section class="sm:hidden my-8">
@@ -230,9 +221,25 @@
 				<a href="#" class="btn btn-primary my-4 block w-full"><i class="fas fa-plus-square mr-2"></i>Mehr anzeigen</a>
 			</section>
 		</div>
+
+		<div id="infoBox" class="sticky bottom-4 p-4 rounded-lg shadow-lg bg-gray-700 text-gray-200 flex gap-x-4 items-center leading-none">
+			<div class="flex-none relative">
+				<span class="absolute flex h-3 w-3 -right-1 -top-1">
+					<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-proprietary opacity-80"></span>
+					<span class="relative inline-flex rounded-full h-3 w-3 bg-proprietary"></span>
+				</span>
+				<i class="fab fa-discord text-4xl"></i> 
+			</div>
+			<a href="https://discord.fet.at/" class="flex-1">
+				FET Discord-Server<br>
+				<span class="text-sm text-gray-300">Klicke hier zum Beitreten</span>
+			</a>
+			<button id="infoBox-closeButton" class="flex-none self-stretch px-2 -mr-2" onclick="hideInfoBox()"><i class="fas fa-times text-gray-500"></i></button>
+		</div>
 	</main>
+
 	<footer class="bg-proprietary p-4 text-blue-100">
-		<ul class="flex justify-center mb-4 text-xl">
+		<ul class="flex justify-center mb-4 text-2xl">
 			<li class="mx-4">
 				<a href="https://facebook.fet.at/"><i class="fab fa-facebook"></i></a>
 			</li>
@@ -256,15 +263,47 @@
 	<script>
 		// Open/close the mobile menu items on mobile only. Will be overwritten on bigger screen sizes
 		function toggleMenu(){
-			var element = document.getElementById("navBarContent");
+			let element = document.getElementById("navBarContent");
 			element.classList.toggle("hidden");
 		}
 	
 		// Open article on click without an anchor-tag.
 		function openArticle(link){
-			var current = window.location.pathname;
+			let current = window.location.pathname;
 			console.log("/build/" + link);
 			window.location.pathname = "/build/" + link;
+		}
+
+		if(cookieSet("InfoBoxHidden")){
+			let element = document.getElementById("infoBox");
+			element.classList.toggle("hidden");
+		}
+
+		function hideInfoBox(){
+			let element = document.getElementById("infoBox");
+			element.classList.toggle("hidden");
+			
+			let exMinutes = 2; // Gültigkeit des Cookies in Tagen
+			const d = new Date();
+			d.setTime(d.getTime() + (exMinutes*60*1000));
+			let expires = "expires="+ d.toUTCString();
+			document.cookie = "InfoBoxHidden=true; expires=" + expires + ";path=/;SameSite=Strict";
+		}
+
+		function cookieSet(cname) {
+			let name = cname + "=";
+			let decodedCookie = decodeURIComponent(document.cookie);
+			let ca = decodedCookie.split(';');
+			for(let i = 0; i < ca.length; i++) {
+				let c = ca[i];
+				while (c.charAt(0) == ' ') {
+					c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0) {
+					return true;
+				}
+			}
+			return false;
 		}
 	</script>
 </body>
