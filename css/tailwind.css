@@ -1,6 +1,20 @@
 @tailwind base;
 @tailwind components;
 
+.navbar {
+	@apply w-full flex flex-col sm:flex-row items-center sm:justify-between;
+}
+
+.btn {
+	@apply px-4 py-2 rounded text-center;
+}
+.btn-primary {
+	@apply text-blue-50 bg-proprietary hover:bg-proprietary-darker focus:outline-none focus:ring-2 focus:ring-proprietary-light;
+}
+.btn-secondary {
+	@apply border border-gray-700 text-gray-700;
+}
+
 .section-title {
 	@apply text-base text-gray-800 font-semibold text-center;
 }
@@ -11,6 +25,31 @@
 }
 .section-title-margins {
 	@apply mt-4 mb-2 uppercase;
+}
+
+.calender-preview {
+	@apply flex items-center my-2;
+}
+
+.article-cover-image {
+	@apply w-full h-48 my-4 transition-all ease-in-out duration-700 rounded bg-center shadow-lg bg-no-repeat cursor-pointer;
+  background-size: 100%;
+}
+.article-cover-desc {
+	@apply w-full h-full rounded bg-gradient-to-t from-gray-900;
+}
+.article-cover-desc-items {
+	@apply h-full p-2 flex flex-col justify-between;
+}
+.article-cover-tags {
+	@apply flex justify-end gap-x-1 uppercase;
+}
+.article-cover-tags > li {
+	@apply rounded-full px-2 py-1 bg-proprietary text-blue-100;
+}
+
+.article-cover-desc:hover, .article-cover-image:hover {
+	background-size: 120%;
 }
 
 @tailwind utilities;
