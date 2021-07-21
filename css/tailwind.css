@@ -27,8 +27,8 @@
 	@apply mt-4 mb-2 uppercase;
 }
 
-.calender-preview {
-	@apply flex items-center my-2;
+.calender-entries {
+	@apply flex items-center my-4;
 }
 
 .article-cover-image {

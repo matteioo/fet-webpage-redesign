@@ -50,7 +50,7 @@
 			<li class="my-1 sm:px-2 sm:inline-block"><a href="#">Login</a></li>
 		</ul>
 	</nav>
-
+	<!--Hero section-->
 	<section>
 		<div class="relative z-0 w-full h-56 sm:h-80 bg-cover-image bg-cover bg-center bg-no-repeat">
 			<div class="absolute z-10 w-full h-full bg-blue-50 opacity-60"></div>
@@ -97,17 +97,16 @@
 			</div>
 		</div>
 	</section>
-
 	<!-- Main Content -->
 	<main class="container mx-auto bg-white w-full px-4 my-8">
-		<div class="p-2 rounded border border-yellow-500 bg-yellow-100">
+		<div class="my-8 p-2 rounded border border-yellow-500 bg-yellow-100">
 			<h2 class="w-full text-center text-yellow-800"><i class="far fa-exclamation-triangle mr-1"></i>Warnung!<i class="far fa-exclamation-triangle ml-1"></i></h2>
 			<p class="text-yellow-700 text-sm">Diese Seite ist noch unvollständig! Dargestellte Informationen können nur beispielhaft implementiert worden sein bzw. noch Fehler enthalten!</p>
 		</div>
 
-		<section class="sm:hidden">
+		<section class="sm:hidden my-8">
 			<h2 class="section-title section-title-margins">Events</h2>
-			<div class="my-2">
+			<div class="my-4">
 				<a href="#">
 					<h3 class="text-gray-700">AGru Studierbarkeit</h3>
 					<p class="my-1 text-sm text-gray-600">
@@ -116,7 +115,7 @@
 					</p>
 				</a>
 			</div>
-			<div class="my-2">
+			<div class="my-4">
 				<a href="#">
 					<h3 class="text-gray-700">Fachschaftssitzung</h3>
 					<p class="my-1 text-sm text-gray-600">
@@ -125,7 +124,7 @@
 					</p>
 				</a>
 			</div>
-			<div class="my-2">
+			<div class="my-4">
 				<a href="#">
 					<h3 class="text-gray-700">Online Mentoring für Studentinnen und Schülerinnen</h3>
 					<p class="my-1 text-sm text-gray-600">
@@ -136,39 +135,40 @@
 			</div>
 		</section>
 
-		<div class="sm:flex sm:flex-row-reverse">
-			<aside class="sm:w-2/5 sm:pl-4">
+		<div class="sm:flex sm:flex-row-reverse my-8">
+			<aside class="calendar-preview sm:w-2/5 sm:pl-4 my-8">
 				<h2 class="section-title section-title-margins">Kalender</h2>
 				<a href="#" class="calender-entries">
-					<div class="flex flex-col justify-center w-12 h-12 rounded-full text-center leading-none text-blue-100 bg-proprietary">
-						<span class="flex-none">15</span>
-						<span class="flex-none text-sm">Aug</span>
+					<div class="flex flex-col justify-center w-11 h-11 pb-1 rounded-full text-center text-blue-100 bg-proprietary">
+						<span class="flex-none leading-none">15</span>
+						<span class="flex-none text-sm leading-none">Aug</span>
 					</div>
 					<h3 class="text-gray-700 pl-2">Fachschaftssitzung</h3>
 				</a>
 				<a href="#" class="calender-entries">
-					<div class="flex flex-col justify-center w-12 h-12 rounded-full text-center leading-none text-blue-100 bg-proprietary">
-						<span class="flex-none">18</span>
-						<span class="flex-none text-sm">Sep</span>
+					<div class="flex flex-col justify-center w-11 h-11 pb-1 rounded-full text-center leading-none text-blue-100 bg-proprietary">
+						<span class="flex-none leading-none">18</span>
+						<span class="flex-none text-sm leading-none">Sep</span>
 					</div>
 					<h3 class="text-gray-700 pl-2">ÖH Wahl - Tag 1</h3>
 				</a>
 				<a href="#" class="calender-entries">
-					<div class="flex flex-col justify-center w-12 h-12 rounded-full text-center leading-none text-blue-100 bg-proprietary">
-						<span class="flex-none">19</span>
-						<span class="flex-none text-sm">Jan</span>
+					<div class="flex flex-col justify-center w-11 h-11 pb-1 rounded-full text-center leading-none text-blue-100 bg-proprietary">
+						<span class="flex-none leading-none">19</span>
+						<span class="flex-none text-sm leading-none">Jan</span>
 					</div>
 					<h3 class="text-gray-700 pl-2">ÖH Wahl - Tag 2</h3>
 				</a>
 				<a href="#" class="calender-entries">
-					<div class="flex flex-col justify-center w-12 h-12 rounded-full text-center leading-none text-blue-100 bg-proprietary">
-						<span class="flex-none">20</span>
-						<span class="flex-none text-sm">Nov</span>
+					<div class="flex flex-col justify-center w-11 h-11 pb-1 rounded-full text-center leading-none text-blue-100 bg-proprietary">
+						<span class="flex-none leading-none">20</span>
+						<span class="flex-none text-sm leading-none">Nov</span>
 					</div>
-					<h3 class="text-gray-700 pl-2">ÖH Wahl - Tag 2</h3>
+					<h3 class="text-gray-700 pl-2">ÖH Wahl - Tag 3</h3>
 				</a>
 				<a href="https://fet.at/posts/fet_calendar.ics" class="btn btn-secondary block w-full"><i class="fas fa-calendar-alt mr-2"></i>Kalender abonnieren</a>
 			</aside>
+
 			<section class="my-8 sm:my-0 sm:w-3/5">
 				<h2 class="section-title section-title-margins">Zuletzt veröffentlicht</h2>
 				<article class="article-cover-image" style="background-image: url('img/article-cover-1.jpg');" onclick="openArticle('index.html')">
@@ -220,8 +220,8 @@
 			</section>
 		</div>
 	</main>
-	<footer class="bg-proprietary px-4 text-blue-100">
-		<ul class="flex justify-center py-4 text-2xl">
+	<footer class="bg-proprietary p-4 text-blue-100">
+		<ul class="flex justify-center mb-4 text-xl">
 			<li class="mx-4">
 				<a href="https://facebook.fet.at/"><i class="fab fa-facebook"></i></a>
 			</li>
@@ -235,11 +235,11 @@
 				<a href="https://telegram.fet.at/"><i class="fab fa-telegram"></i></a>
 			</li>
 		</ul>
-		<div class="flex justify-center pb-4">
-			<a href="#" class="text-center">Impressum</a>
+		<div class="flex justify-center my-4">
+			<a href="#" class="text-center text-sm">Impressum</a>
 		</div>
 		<hr class="border-blue-300 -mx-4">
-		<p class="py-4 uppercase text-center text-sm">© 2021 FET - Alle Rechte vorbehalten.</p>
+		<p class="mt-4 uppercase text-center text-sm">© 2021 FET - Alle Rechte vorbehalten.</p>
 	</footer>
 
 	<script>
