@@ -44,59 +44,57 @@
 		<button class="sm:hidden absolute right-4 sm:right-0 top-5" onclick="toggleMenu()">
 			<i class="fas fa-bars text-proprietary text-2xl"></i>
 		</button>
-		<ul id="navBarContent" class="hidden sm:block my-2 text-proprietary text-lg self-start sm:self-center">
-			<li class="my-1 sm:px-2 sm:inline-block"><a href="#">Aktuelles</a></li>
-			<li class="my-1 sm:px-2 sm:inline-block"><a href="#">Fachschaft</a></li>
-			<li class="my-1 sm:px-2 sm:inline-block"><a href="#">Fotos</a></li>
-			<li class="my-1 sm:px-2 sm:inline-block"><a href="#">Blackboard</a></li>
-			<li class="my-1 sm:px-2 sm:inline-block"><a href="#">Login</a></li>
+		<ul id="navBarContent" class="hidden sm:block my-2 text-proprietary sm:text-lg self-start sm:self-center">
+			<li class="my-1 md:mx-1 sm:px-2 sm:inline-block"><a href="#">Aktuelles</a></li>
+			<li class="my-1 md:mx-1 sm:px-2 sm:inline-block"><a href="#">Fachschaft</a></li>
+			<li class="my-1 md:mx-1 sm:px-2 sm:inline-block"><a href="#">Fotos</a></li>
+			<li class="my-1 md:mx-1 sm:px-2 sm:inline-block"><a href="#">Blackboard</a></li>
+			<li class="my-1 md:mx-1 sm:px-2 sm:inline-block md:py-1 md:rounded md:border md:border-proprietary"><a href="#">Login<div class="hidden md:inline-block ml-2"><i class="fas fa-user-circle"></i></div></a></li>
 		</ul>
 	</nav>
 	<!--Hero section-->
-	<section>
-		<div class="relative z-0 w-full h-56 sm:h-80 bg-cover-image bg-cover bg-center bg-no-repeat">
-			<div class="absolute z-10 w-full h-full bg-blue-50 opacity-60"></div>
-			<div class="relative container px-4 mx-auto z-20 w-full h-full flex flex-wrap items-center gap-x-2">
-				<h1 class="w-3/5 flex-1 uppercase font-semibold text-xl sm:text-2xl text-center text-gray-900">
-					<span class="hidden">Willkommen bei der </span><span>Fachschaft</span><br>
-					<span class="text-proprietary">Elektrotechnik</span>
-				</h1>
-				<div class="hidden sm:block flex-none w-2/5 bg-white p-2 rounded shadow-xl">
-					<h2 class="section-title sm:text-left"><i class="fas fa-comments"></i> Events</h2>
-					<div class="-mb-2 text-gray-700 text-sm">
-						<div class="my-2">
-							<a href="#">
-								<h3 class="">AGru Studierbarkeit</h3>
-								<p class="py-1 text-sm text-gray-600">
-									<i class="fas fa-calendar-alt"></i>
-									<span>20. Juli 2021</span>
-								</p>
-							</a>
-						</div>
-						<div class="my-2">
-							<a href="#">
-								<h3 class="">Fachschaftssitzung</h3>
-								<p class="py-1 text-sm text-gray-600">
-									<i class="fas fa-calendar-alt"></i>
-									<span>21. August 2021 · 20:30 Uhr</span>
-								</p>
-							</a>
-						</div>
-						<div class="my-2">
-							<a href="#">
-								<h3 class="">Online Mentoring für Studentinnen und Schülerinnen</h3>
-								<p class="py-1 text-sm text-gray-600">
-									<i class="fas fa-calendar-alt"></i>
-									<span>20. Juli 2021</span>
-								</p>
-							</a>
-						</div>
+	<section class="hero-image relative z-0 w-full h-56 sm:h-80 lg:h-96 bg-cover-image bg-cover bg-center bg-no-repeat">
+		<div class="absolute z-10 w-full h-full bg-blue-50 opacity-60"></div>
+		<div class="relative container px-4 mx-auto z-20 w-full h-full flex flex-wrap items-center gap-x-2">
+			<h1 class="w-3/5 flex-1 uppercase font-semibold text-xl sm:text-2xl lg:text-3xl text-center text-gray-900">
+				<span class="hidden">Willkommen bei der </span><span>Fachschaft</span><br>
+				<span class="text-proprietary">Elektrotechnik</span>
+			</h1>
+			<div class="hidden sm:block flex-none w-2/5 lg:w-1/3 bg-white p-2 lg:p-4 rounded shadow-xl">
+				<h2 class="section-title sm:text-left"><i class="fas fa-comments text-gray-300"></i> Events</h2>
+				<div class="-mb-2 text-gray-700 text-sm md:text-base">
+					<div class="my-2">
+						<a href="#">
+							<h3 class="">AGru Studierbarkeit</h3>
+							<p class="py-1 text-sm lg:text-base text-gray-600">
+								<i class="fas fa-calendar-alt text-gray-500"></i>
+								<span>20. Juli 2021</span>
+							</p>
+						</a>
+					</div>
+					<div class="my-2">
+						<a href="#">
+							<h3 class="">Fachschaftssitzung</h3>
+							<p class="py-1 text-sm lg:text-base text-gray-600">
+								<i class="fas fa-calendar-alt text-gray-500"></i>
+								<span>21. August 2021 · 20:30 Uhr</span>
+							</p>
+						</a>
+					</div>
+					<div class="my-2">
+						<a href="#">
+							<h3 class="">Online Mentoring für Studentinnen und Schülerinnen</h3>
+							<p class="py-1 text-sm lg:text-base text-gray-600">
+								<i class="fas fa-calendar-alt text-gray-500"></i>
+								<span>20. Juli 2021</span>
+							</p>
+						</a>
 					</div>
 				</div>
-				<!--<div class="w-full self-end flex justify-center mb-4">
-					<i class="fas fa-chevron-down animate-bounce text-proprietary text-2xl"></i>
-				</div>-->
 			</div>
+			<!--<div class="w-full self-end flex justify-center mb-4">
+				<i class="fas fa-chevron-down animate-bounce text-proprietary text-2xl"></i>
+			</div>-->
 		</div>
 	</section>
 	<!-- Main Content -->
@@ -137,41 +135,43 @@
 			</div>
 		</section>
 
-		<div class="sm:flex sm:flex-row-reverse my-8">
-			<aside class="calendar-preview sm:w-2/5 sm:pl-4 my-8">
-				<h2 class="section-title section-title-margins">Kalender</h2>
-				<a href="#" class="calender-entries">
-					<div class="flex flex-col justify-center w-11 h-11 pb-1 rounded-full text-center text-blue-100 bg-proprietary">
-						<span class="flex-none leading-none">15</span>
-						<span class="flex-none text-sm leading-none">Aug</span>
-					</div>
-					<h3 class="text-gray-700 pl-2">Fachschaftssitzung</h3>
-				</a>
-				<a href="#" class="calender-entries">
-					<div class="flex flex-col justify-center w-11 h-11 pb-1 rounded-full text-center leading-none text-blue-100 bg-proprietary">
-						<span class="flex-none leading-none">18</span>
-						<span class="flex-none text-sm leading-none">Sep</span>
-					</div>
-					<h3 class="text-gray-700 pl-2">ÖH Wahl - Tag 1</h3>
-				</a>
-				<a href="#" class="calender-entries">
-					<div class="flex flex-col justify-center w-11 h-11 pb-1 rounded-full text-center leading-none text-blue-100 bg-proprietary">
-						<span class="flex-none leading-none">19</span>
-						<span class="flex-none text-sm leading-none">Jan</span>
-					</div>
-					<h3 class="text-gray-700 pl-2">ÖH Wahl - Tag 2</h3>
-				</a>
-				<a href="#" class="calender-entries">
-					<div class="flex flex-col justify-center w-11 h-11 pb-1 rounded-full text-center leading-none text-blue-100 bg-proprietary">
-						<span class="flex-none leading-none">20</span>
-						<span class="flex-none text-sm leading-none">Nov</span>
-					</div>
-					<h3 class="text-gray-700 pl-2">ÖH Wahl - Tag 3</h3>
-				</a>
-				<a href="https://fet.at/posts/fet_calendar.ics" class="btn btn-secondary block w-full"><i class="fas fa-calendar-alt mr-2"></i>Kalender abonnieren</a>
+		<div class="sm:flex sm:flex-row-reverse justify-center my-8">
+			<aside class="calendar-preview sm:w-2/5 xl:w-1/4 sm:pl-4 my-8 sm:my-0">
+				<div class="sticky top-4 my-4">
+					<h2 class="section-title section-title-margins">Kalender</h2>
+					<a href="#" class="calender-entries">
+						<div class="flex flex-col justify-center w-11 h-11 pb-1 rounded-full text-center leading-none text-blue-100 bg-proprietary flex-none">
+							<span class="flex-none leading-none">15</span>
+							<span class="flex-none text-sm leading-none">Aug</span>
+						</div>
+						<h3 class="text-gray-700 pl-2">Fachschaftssitzung awdawd</h3>
+					</a>
+					<a href="#" class="calender-entries">
+						<div class="flex flex-col justify-center w-11 h-11 pb-1 rounded-full text-center leading-none text-blue-100 bg-proprietary flex-none">
+							<span class="flex-none leading-none">18</span>
+							<span class="flex-none text-sm leading-none">Sep</span>
+						</div>
+						<h3 class="text-gray-700 pl-2">ÖH Wahl - Tag 1</h3>
+					</a>
+					<a href="#" class="calender-entries">
+						<div class="flex flex-col justify-center w-11 h-11 pb-1 rounded-full text-center leading-none text-blue-100 bg-proprietary flex-none">
+							<span class="flex-none leading-none">19</span>
+							<span class="flex-none text-sm leading-none">Jan</span>
+						</div>
+						<h3 class="text-gray-700 pl-2">ÖH Wahl - Tag 2</h3>
+					</a>
+					<a href="#" class="calender-entries">
+						<div class="flex flex-col justify-center w-11 h-11 pb-1 rounded-full text-center leading-none text-blue-100 bg-proprietary flex-none">
+							<span class="flex-none leading-none">20</span>
+							<span class="flex-none text-sm leading-none">Nov</span>
+						</div>
+						<h3 class="text-gray-700 pl-2">ÖH Wahl - Tag 3</h3>
+					</a>
+					<a href="https://fet.at/posts/fet_calendar.ics" class="btn btn-secondary block w-full"><i class="fas fa-calendar-alt mr-2"></i>Kalender abonnieren</a>
+				</div>
 			</aside>
 
-			<section class="my-8 sm:my-0 sm:w-3/5">
+			<section class="my-8 sm:my-0 sm:w-3/5 xl:w-2/5">
 				<h2 class="section-title section-title-margins">Zuletzt veröffentlicht</h2>
 				<article class="article-cover-image" style="background-image: url('img/article-cover-1.jpg');" onclick="openArticle('index.html')">
 					<div class="article-cover-desc">
@@ -232,7 +232,7 @@
 			</div>
 			<a href="https://discord.fet.at/" class="flex-1">
 				FET Discord-Server<br>
-				<span class="text-sm text-gray-300">Klicke hier zum Beitreten</span>
+				<span class="hidden lg:inline text-sm text-gray-300">Du hast Fragen zum Studium oder möchtest dich einfach mich anderen Studierenden austauschen? </span><span class="text-sm text-gray-300">Klicke hier zum Beitreten <span class="hidden sm:inline"><i class="far fa-angle-right"></i></span></span>
 			</a>
 			<button id="infoBox-closeButton" class="flex-none self-stretch px-2 -mr-2" onclick="hideInfoBox()"><i class="fas fa-times text-gray-500"></i></button>
 		</div>
@@ -252,12 +252,15 @@
 			<li class="mx-4">
 				<a href="https://telegram.fet.at/"><i class="fab fa-telegram"></i></a>
 			</li>
+			<li class="mx-4">
+				<a href="mailto:service@fet.at"><i class="far fa-envelope"></i></a>
+			</li>
 		</ul>
 		<div class="flex justify-center my-4">
-			<a href="#" class="text-center text-sm">Impressum</a>
+			<a href="#" class="text-center text-sm sm:text-base">Impressum</a>
 		</div>
 		<hr class="border-blue-300 -mx-4">
-		<p class="mt-4 uppercase text-center text-sm">© 2021 FET - Alle Rechte vorbehalten.</p>
+		<p class="mt-4 uppercase text-center text-sm sm:text-base">© 2021 FET - Alle Rechte vorbehalten.</p>
 	</footer>
 
 	<script>
