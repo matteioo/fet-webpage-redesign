@@ -87,20 +87,36 @@
 
 /****** MODAL *****/
 div[id^="modal-container"] {
-  @apply fixed left-0 top-0 w-full h-full bg-gray-700 bg-opacity-80 opacity-0 invisible transform scale-110 transition-all ease-in duration-200;
+  @apply fixed left-0 top-0 w-full h-full bg-gray-700 bg-opacity-75 opacity-0 invisible;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
 }
 div[id^="modal-container"] .modal {
-  @apply absolute top-1/2 left-1/2 p-4 transform -translate-x-1/2 -translate-y-1/2 rounded bg-white;
+  @apply absolute bg-white rounded p-4;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+div[id^="modal-container"] .modal .title {
+  @apply font-semibold text-gray-800;
+}
+div[id^="modal-container"] .modal .subtitle {
+  @apply text-gray-700;
+}
+div[id^="modal-container"] .modal-icon {
+  @apply float-left;
 }
 div[id^="modal-container"] .modal-closeButton {
-  @apply text-xl text-gray-600;
+  @apply float-right text-xl text-gray-600;
   cursor: pointer;
 }
 div[id^="modal-container"] .modal-closeButton:hover {
-  @apply text-gray-700 bg-gray-200;
+  @apply text-gray-700;
 }
 div[id^="modal-container"].show-modal {
-  @apply opacity-100 visible transform scale-100 transition-all ease-out duration-200;
+  @apply opacity-100 visible;
+  transform: scale(1.0);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
 
 @tailwind utilities;
