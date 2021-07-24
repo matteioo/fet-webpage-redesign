@@ -35,9 +35,9 @@
 
 	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </head>
-<body class="h-full bg-white">
+<body class="h-full bg-white min-h-screen flex flex-col">
 	<!-- NAVBAR -->
-	<nav class="navbar container px-4 mx-auto">
+	<nav class="navbar container px-4 mx-auto flex-none">
 		<a href="index.html">
 			<img src="img/logo2014_64.png" alt="FET-Logo" class="h-16 m-1/2 flex-none">
 		</a>
@@ -45,15 +45,15 @@
 			<i class="fas fa-bars text-proprietary text-2xl"></i>
 		</button>
 		<ul id="navBarContent" class="hidden sm:block my-2 text-proprietary sm:text-lg self-start sm:self-center">
-			<li class="my-1 md:mx-1 sm:px-2 sm:inline-block"><a href="#">Aktuelles</a></li>
-			<li class="my-1 md:mx-1 sm:px-2 sm:inline-block"><a href="#">Fachschaft</a></li>
-			<li class="my-1 md:mx-1 sm:px-2 sm:inline-block"><a href="#">Fotos</a></li>
-			<li class="my-1 md:mx-1 sm:px-2 sm:inline-block"><a href="#">Blackboard</a></li>
-			<li class="my-1 md:mx-1 sm:px-2 sm:inline-block md:py-1 md:rounded md:border md:border-proprietary"><a href="#">Login<div class="hidden md:inline-block ml-2"><i class="fas fa-user-circle"></i></div></a></li>
+			<li class="my-1 md:mx-1 sm:px-2 sm:inline-block"><a href="posts.html">News</a></li>
+			<li class="my-1 md:mx-1 sm:px-2 sm:inline-block"><a href="members.html">Fachschaft</a></li>
+			<li class="my-1 md:mx-1 sm:px-2 sm:inline-block"><a href="fotos.html">Fotos</a></li>
+			<li class="my-1 md:mx-1 sm:px-2 sm:inline-block"><a href="blackboard.html">Blackboard</a></li>
+			<li class="my-1 md:mx-1 sm:px-2 sm:inline-block"><a href="login.html">Login</a></li>
 		</ul>
 	</nav>
 	<!--Hero section-->
-	<section class="hero-image relative z-0 w-full h-56 sm:h-80 lg:h-96 bg-cover-image bg-cover bg-center bg-no-repeat">
+	<section class="hero-image relative z-0 w-full h-56 sm:h-80 lg:h-96 bg-cover-image bg-cover bg-center bg-no-repeat flex-none">
 		<div class="absolute z-10 w-full h-full bg-blue-50 opacity-60"></div>
 		<div class="relative container px-4 mx-auto z-20 w-full h-full flex flex-wrap items-center gap-x-2">
 			<h1 class="w-3/5 flex-1 uppercase font-semibold text-xl sm:text-2xl lg:text-3xl text-center text-gray-900">
@@ -61,7 +61,7 @@
 				<span class="text-proprietary">Elektrotechnik</span>
 			</h1>
 			<div class="hidden sm:block flex-none w-2/5 lg:w-1/3 bg-white p-2 lg:p-4 rounded shadow-xl">
-				<h2 class="section-title sm:text-left"><i class="fas fa-comments text-gray-300"></i> Events</h2>
+				<h2 class="section-title sm:text-left"><i class="fas fa-comments text-gray-300 mr-2"></i>Events</h2>
 				<div class="-mb-2 text-gray-700 text-sm md:text-base">
 					<div class="my-2">
 						<a href="#">
@@ -98,7 +98,7 @@
 		</div>
 	</section>
 	<!-- Main Content -->
-	<main class="container mx-auto bg-white w-full px-4 my-8">
+	<main class="container mx-auto bg-white w-full px-4 my-8 flex-1">
 		<div class="my-8 p-2 rounded border border-yellow-500 bg-yellow-100">
 			<h2 class="w-full text-center text-yellow-800"><i class="far fa-exclamation-triangle mr-1"></i>Warnung!<i class="far fa-exclamation-triangle ml-1"></i></h2>
 			<p class="text-yellow-700 text-sm">Diese Seite ist noch unvollständig! Dargestellte Informationen können nur beispielhaft implementiert worden sein bzw. noch Fehler enthalten!</p>
@@ -238,7 +238,7 @@
 		</div>
 	</main>
 
-	<footer class="bg-proprietary p-4 text-blue-100">
+	<footer class="bg-proprietary p-4 text-blue-100 flex-none">
 		<ul class="flex justify-center mb-4 text-2xl">
 			<li class="mx-4">
 				<a href="https://facebook.fet.at/"><i class="fab fa-facebook"></i></a>
@@ -263,51 +263,6 @@
 		<p class="mt-4 uppercase text-center text-sm sm:text-base">© 2021 FET - Alle Rechte vorbehalten.</p>
 	</footer>
 
-	<script>
-		// Open/close the mobile menu items on mobile only. Will be overwritten on bigger screen sizes
-		function toggleMenu(){
-			let element = document.getElementById("navBarContent");
-			element.classList.toggle("hidden");
-		}
-	
-		// Open article on click without an anchor-tag.
-		function openArticle(link){
-			let current = window.location.pathname;
-			console.log("/build/" + link);
-			window.location.pathname = "/build/" + link;
-		}
-
-		if(cookieSet("InfoBoxHidden")){
-			let element = document.getElementById("infoBox");
-			element.classList.toggle("hidden");
-		}
-
-		function hideInfoBox(){
-			let element = document.getElementById("infoBox");
-			element.classList.toggle("hidden");
-			
-			let exMinutes = 2; // Gültigkeit des Cookies in Tagen
-			const d = new Date();
-			d.setTime(d.getTime() + (exMinutes*60*1000));
-			let expires = "expires="+ d.toUTCString();
-			document.cookie = "InfoBoxHidden=true; expires=" + expires + ";path=/;SameSite=Strict";
-		}
-
-		function cookieSet(cname) {
-			let name = cname + "=";
-			let decodedCookie = decodeURIComponent(document.cookie);
-			let ca = decodedCookie.split(';');
-			for(let i = 0; i < ca.length; i++) {
-				let c = ca[i];
-				while (c.charAt(0) == ' ') {
-					c = c.substring(1);
-				}
-				if (c.indexOf(name) == 0) {
-					return true;
-				}
-			}
-			return false;
-		}
-	</script>
+	<script async="async" src="js/scripts.js"></script>
 </body>
 </html>
