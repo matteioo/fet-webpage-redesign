@@ -42,3 +42,31 @@ function cookieSet(cname) {
 	}
 	return false;
 }
+
+// Filter onChange
+function addMonthSelector() {
+	const element = document.getElementById("monthSelector");
+	element.classList.toggle("hidden");
+}
+
+// Modals
+const body = document.querySelector("body");
+const modal_1 = document.querySelector("#modal-container-1");
+const trigger_1 = document.querySelector("#modal-trigger-1");
+const closeButton_1 = modal_1.querySelector(".modal-closeButton");
+
+function toggleModal_1() {
+		modal_1.classList.toggle("show-modal");
+		body.classList.toggle("overflow-y-hidden");
+		trigger_1.classList.toggle("hidden");
+}
+
+function windowOnClick_1(event) {
+		if (event.target === modal_1) {
+				toggleModal_1();
+		}
+}
+
+trigger_1.addEventListener("click", toggleModal_1);
+closeButton_1.addEventListener("click", toggleModal_1);
+window.addEventListener("click", windowOnClick_1);
