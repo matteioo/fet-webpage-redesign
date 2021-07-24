@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite",
-		"build": "tailwind build -i css/tailwind.css -o build/css/styles.css" 
+    "build": "tailwind build -i css/tailwind.css -o build/css/styles.css"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,8 @@
     "postcss": "^8.3.5",
     "tailwindcss": "^2.2.4",
     "vite": "^2.4.2"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.3.3"
   }
 }
