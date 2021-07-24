@@ -2,7 +2,25 @@
 @tailwind components;
 
 .navbar {
-	@apply w-full flex flex-col sm:flex-row items-center sm:justify-between;
+	@apply w-full flex flex-col sm:flex-row items-center sm:justify-between container px-4 mx-auto flex-none;
+}
+.navbar-logo {
+	@apply h-16 flex-none;
+}
+.navbar-toggle {
+	@apply sm:hidden absolute right-4 sm:right-0 top-5 text-proprietary text-2xl;
+}
+.navbar-content {
+	@apply my-2 text-proprietary sm:text-lg self-start sm:self-center;
+}
+.navbar-content > li {
+	@apply my-1 md:mx-1 sm:px-2 sm:inline-block;
+}
+.navbar-content > li.active {
+ @apply font-semibold text-proprietary-darker;
+}
+.navbar-content > li.active a {
+	@apply cursor-default;
 }
 
 @screen xl{
