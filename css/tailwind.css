@@ -11,6 +11,10 @@
 	}
 }
 
+.page-title {
+	@apply mb-4 uppercase text-proprietary tracking-wide md:tracking-wider lg:tracking-widest text-center sm:text-lg lg:text-xl sm:font-medium md:mb-8;
+}
+
 .btn {
 	@apply px-4 py-2 rounded text-center;
 }
