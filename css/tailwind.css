@@ -86,22 +86,22 @@
 }
 
 /****** MODAL *****/
-/* div[id^="modal-container"] {
-  @apply fixed left-0 top-0 w-full h-full bg-gray-700 bg-opacity-80 opacity-0 invisible transform scale-110 transition-all ease-in duration-200;
+div[id^="modal-container"] {
+  @apply fixed sm:sticky left-0 sm:left-auto top-0 sm:top-4 w-full sm:w-auto h-full sm:h-auto bg-gray-700 sm:bg-transparent bg-opacity-80 sm:bg-opacity-100 opacity-0 sm:opacity-100 invisible sm:visible transform sm:transform-none scale-110 sm:scale-100 transition-all sm:transition-none ease-in duration-200;
 }
 div[id^="modal-container"] .modal {
-  @apply absolute top-1/2 left-1/2 p-4 transform -translate-x-1/2 -translate-y-1/2 rounded bg-white;
+  @apply absolute sm:static top-1/2 left-1/2 p-4 sm:p-0 transform sm:transform-none -translate-x-1/2 -translate-y-1/2 rounded sm:rounded-none sm:w-full bg-white;
 }
 div[id^="modal-container"] .modal-closeButton {
-  @apply text-xl text-gray-600;
+  @apply text-xl text-gray-500 sm:hidden;
   cursor: pointer;
 }
 div[id^="modal-container"] .modal-closeButton:hover {
-  @apply text-gray-700 bg-gray-200;
+  @apply text-gray-600 bg-gray-200;
 }
 div[id^="modal-container"].show-modal {
   @apply opacity-100 visible transform scale-100 transition-all ease-out duration-200;
-} */
+}
 
 /****** MODAL *****/
 /* div[id^="modal-container"] {
@@ -139,7 +139,7 @@ div[id^="modal-container"].show-modal {
 div[id^="modal-container"] .content {
   max-height: 80vh;
 } */
-.modal {
+/* .modal {
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -178,6 +178,6 @@ div[id^="modal-container"] .content {
 	visibility: visible;
 	transform: scale(1.0);
 	transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
-}
+} */
 
 @tailwind utilities;

@@ -59,60 +59,58 @@
 		<div class="sm:flex sm:flex-row-reverse justify-center my-8">
 			<aside class="sm:w-2/5 xl:w-1/4 sm:pl-4 my-8 sm:my-0">
 				<div id="modal-container-1">
-					<div class="modal w-11/12 max-w-sm">
-						<div class="content md:left-0 flex-flex-col">
-							<div class="flex justify-between items-center mb-2">
-								<h2 class="text-gray-800 font-medium sm:section-title sm:section-title-margins"><i class="fas fa-filter mr-1 text-gray-400"></i>Auswahl einschränken</h2>
-								<div class="modal-closeButton px-2 rounded">
-									<i class="fas fa-times"></i>
-								</div>
+					<div class="modal w-11/12 max-w-xs">
+						<div class="flex justify-between items-center mb-2">
+							<h2 class="text-gray-800 font-medium sm:section-title sm:section-title-margins sm:w-full"><span class="mr-1 text-gray-400 sm:hidden"><i class="fas fa-filter"></i></span>Auswahl einschränken</h2>
+							<div class="modal-closeButton px-2 rounded">
+								<i class="fas fa-times"></i>
 							</div>
-							<form action="" method="POST" class="grid grid-cols-1 gap-3 sm:gap-6">
-								<label class="block">
-									<span class="text-gray-700">Jahr</span>
-									<select onchange="addMonthSelector()" class="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
-										<option value="" selected></option>
-										<option value="2015">2015</option>
-										<option value="2016">2016</option>
-										<option value="2017">2017</option>
-										<option value="2018">2018</option>
-										<option value="2019">2019</option>
-										<option value="2020">2020</option>
-										<option value="2021">2021</option>
-									</select>
-								</label>
-								<label id="monthSelector" class="hidden block">
-									<span class="text-gray-700">Monat</span>
-									<select class="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
-										<option value="" selected></option>
-										<option value="1">Jänner</option>
-										<option value="2">Februar</option>
-										<option value="3">März</option>
-										<option value="4">April</option>
-										<option value="5">Mai</option>
-										<option value="6">Juni</option>
-										<option value="7">Juli</option>
-										<option value="8">August</option>
-										<option value="9">September</option>
-										<option value="10">Oktober</option>
-										<option value="11">November</option>
-										<option value="12">Dezember</option>
-									</select>
-								</label>
-								<label class="inline-flex items-center">
-									<input type="checkbox" class="rounded border-gray-300 text-proprietary shadow-sm focus:border-blue-300 focus:ring focus:ring-offset-0 focus:ring-blue-200 focus:ring-opacity-50">
-									<span class="ml-2">Kompakte Ansicht</span>
-								</label>
-								<label class="inline-flex items-center">
-									<input type="checkbox" class="rounded border-gray-300 text-proprietary shadow-sm focus:border-blue-300 focus:ring focus:ring-offset-0 focus:ring-blue-200 focus:ring-opacity-50">
-									<span class="ml-2">nur FET-Sitzungen</span>
-								</label>
-								<input type="submit" class="block btn btn-primary" value="Anzeigen">
-							</form>
 						</div>
+						<form action="" method="POST" class="grid grid-cols-1 gap-2 sm:gap-4">
+							<label id="yearSelector" class="block">
+								<span class="text-gray-700">Jahr</span>
+								<select onchange="addMonthSelector()" class="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+									<option value="" selected></option>
+									<option value="2015">2015</option>
+									<option value="2016">2016</option>
+									<option value="2017">2017</option>
+									<option value="2018">2018</option>
+									<option value="2019">2019</option>
+									<option value="2020">2020</option>
+									<option value="2021">2021</option>
+								</select>
+							</label>
+							<label id="monthSelector" class="hidden block">
+								<span class="text-gray-700">Monat</span>
+								<select class="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+									<option value="" selected></option>
+									<option value="1">Jänner</option>
+									<option value="2">Februar</option>
+									<option value="3">März</option>
+									<option value="4">April</option>
+									<option value="5">Mai</option>
+									<option value="6">Juni</option>
+									<option value="7">Juli</option>
+									<option value="8">August</option>
+									<option value="9">September</option>
+									<option value="10">Oktober</option>
+									<option value="11">November</option>
+									<option value="12">Dezember</option>
+								</select>
+							</label>
+							<label class="inline-flex items-center">
+								<input type="checkbox" class="rounded border-gray-300 text-proprietary shadow-sm focus:border-blue-300 focus:ring focus:ring-offset-0 focus:ring-blue-200 focus:ring-opacity-50">
+								<span class="ml-2 text-gray-700">Kompakte Ansicht</span>
+							</label>
+							<label class="inline-flex items-center">
+								<input type="checkbox" class="rounded border-gray-300 text-proprietary shadow-sm focus:border-blue-300 focus:ring focus:ring-offset-0 focus:ring-blue-200 focus:ring-opacity-50">
+								<span class="ml-2 text-gray-700">nur FET-Sitzungen</span>
+							</label>
+							<input type="submit" class="block btn btn-primary" value="Anzeigen">
+						</form>
 					</div>
 				</div>
-				<button id="modal-trigger-1" class="trigger fixed bottom-4 right-4 bg-proprietary-darker text-blue-50 shadow-lg text-2xl rounded z-0">
+				<button id="modal-trigger-1" class="trigger fixed bottom-4 right-4 bg-proprietary-darker text-blue-50 shadow-lg text-2xl rounded z-0 sm:hidden">
 					<i class="fas fa-filter p-2"></i>
 				</button>
 			</aside>
@@ -193,6 +191,6 @@
 		<p class="mt-4 uppercase text-center text-sm sm:text-base">© 2021 FET - Alle Rechte vorbehalten.</p>
 	</footer>
 
-	<script async="async" src="js/scripts.js"></script>
+	<script defer src="js/scripts.js"></script>
 </body>
 </html>

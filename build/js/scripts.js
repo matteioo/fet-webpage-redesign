@@ -45,8 +45,15 @@ function cookieSet(cname) {
 
 // Filter onChange
 function addMonthSelector() {
-	const element = document.getElementById("monthSelector");
-	element.classList.toggle("hidden");
+	const yearSelector = document.getElementById("yearSelector");
+	const monthSelector = document.getElementById("monthSelector");
+
+	if(monthSelector.classList.contains("hidden")){
+		console.log(yearSelector.value);
+		monthSelector.classList.toggle("hidden");
+	}
+
+
 }
 
 // Modals
