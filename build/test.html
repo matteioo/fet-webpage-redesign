@@ -6,25 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>FET: News</title>
 
-	<meta name="author" content="Fachschaft Elektrotechnik (FET)">
-	<meta name="description" content="Die Fachschaft Elektrotechnik besteht aus ET Studierenden, die sich um die Anliegen der Studenten und Studentinnen kümmern.">
-	<meta property="og:image" content="#"> <!--og:... = Facebook metadata-->
-	<meta property="og:description" content="Die Fachschaft Elektrotechnik besteht aus ET Studierenden, die sich um die Anliegen der Studenten und Studentinnen kümmern.">
-	<meta property="og:title" content="Fachschaft Elektrotechnik (FET)">
-	<meta name="twitter:title" content="Fachschaft Elektrotechnik (FET)">
-	<meta name="theme-color" content="#006599">
-	<!-- third-generation iPad with high-resolution Retina display: -->
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="#">
-	<!-- iPhone with high-resolution Retina display: -->
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="#">
-	<!-- first- and second-generation iPad: -->
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="#">
-	<!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-	<link rel="apple-touch-icon-precomposed" href="#">
-	<!-- basic favicon -->
-	<link rel="icon" href="#">
-	<link rel="shortcut icon" type="image/png" href="https://fet.at/assets/img/fet_logo_white.png">
-
 	<style>
 		.modal {
 			position: fixed;
@@ -68,7 +49,7 @@
     }
 	</style>
 </head>
-<body class="h-full bg-white min-h-screen flex flex-col">
+<body>
 	<button class="trigger">Click here to trigger the modal!</button>
 	<div class="modal">
 			<div class="modal-content">
@@ -78,9 +59,10 @@
 	</div>
 
 	<script>
-		const modal = document.querySelector(".modal");
-    const trigger = document.querySelector(".trigger");
-    const closeButton = document.querySelector(".close-button");
+		var modal = document.querySelector(".modal");
+    var trigger = document.querySelector(".trigger");
+    var closeButton = document.querySelector(".close-button");
+		var body = document.querySelector("body");
 
     function toggleModal() {
 			modal.classList.toggle("show-modal");
