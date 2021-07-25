@@ -45,20 +45,20 @@ function cookieSet(cname) {
 
 // Filter onChange
 function addMonthSelector() {
-	const element = document.getElementById("monthSelector");
+	let element = document.getElementById("monthSelector");
 	element.classList.toggle("hidden");
 }
 
 // Modals
-const body = document.querySelector("body");
-const modal_1 = document.querySelector("#modal-container-1");
-const trigger_1 = document.querySelector("#modal-trigger-1");
-const closeButton_1 = modal_1.querySelector(".modal-closeButton");
+let body = document.querySelector("body");
+let modal_1 = document.querySelector("#modal-container-1");
+let trigger_1 = document.querySelector("#modal-trigger-1");
+let closeButton_1 = modal_1.querySelector(".modal-closeButton");
 
 function toggleModal_1() {
 		modal_1.classList.toggle("show-modal");
+		trigger_1.classList.toggle("invisible");
 		body.classList.toggle("overflow-y-hidden");
-		trigger_1.classList.toggle("hidden");
 }
 
 function windowOnClick_1(event) {

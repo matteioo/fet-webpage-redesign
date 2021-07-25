@@ -56,7 +56,7 @@
 	<!-- Main Content -->
 	<main class="container mx-auto bg-white w-full px-4 my-8 flex-1">
 		<h1 class="page-title dark:text-green-500">News</h1>
-		<div id="modal-container-1">
+		<!-- <div id="modal-container-1">
 			<div class="modal">
 				<div class="content">
 					<h2>Hallo</h2>
@@ -64,10 +64,115 @@
 					<p>Hallo.</p>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<button id="modal-trigger-1" class="trigger bg-proprietary-darker text-blue-50 shadow-lg text-2xl rounded z-0">
 			<i class="fas fa-filter p-2"></i>
 		</button>
+
+		<div id="modal-container-md-1">
+			<div class="modal lg:h-full w-10/12 max-w-lg">
+				<i class="fas fa-times modal-close"></i>
+				<span class="fa-stack modal-icon">
+					<i class="fas fa-circle fa-stack-2x text-gray-300"></i>
+					<i class="fas fa-filter fa-stack-1x text-gray-600"></i>
+				</span>
+				<div class="content md:left-0 flex flex-col" style="top: 1rem;">
+					<h2 class="title">Auswahl filtern</h2>
+					<h3 class="subtitle">Bewertung:</h3>
+					<div id="stars" class="stars">
+						<input type="radio" id="star1" name="rating" value="1" class="hidden"/>
+						<input type="radio" id="star2" name="rating" value="2" class="hidden"/>
+						<input type="radio" id="star3" name="rating" value="3" class="hidden"/>
+						<input type="radio" id="star4" name="rating" value="4" class="hidden"/>
+						<input type="radio" id="star5" name="rating" value="5" class="hidden"/>
+						<label for="star1" class="star"><i class="fas fa-star"></i></label>
+						<label for="star2" class="star"><i class="fas fa-star"></i></label>
+						<label for="star3" class="star"><i class="fas fa-star"></i></label>
+						<label for="star4" class="star"><i class="fas fa-star"></i></label>
+						<label for="star5" class="star"><i class="fas fa-star"></i></label>
+					</div>
+					<h3 class="subtitle">Öffnungszeiten:</h3>
+					<label>
+						<input type="checkbox" name="geoeffnet" class="form-checkbox" checked>Geöffnet
+					</label>
+					<label>
+						<input type="checkbox" name="schliesst-bald" class="form-checkbox" checked>Schließt bald
+					</label>
+					<label>
+						<input type="checkbox" name="geschlossen" class="form-checkbox">Geschlossen
+					</label>
+					<h3 class="subtitle">Kategorie:</h3>
+					<div class="categories-overflow overflow-y-auto flex-shrink">
+						<label>
+							<input type="checkbox" name="geoeffnet" class="form-checkbox">Italienisch
+						</label>
+						<label>
+							<input type="checkbox" name="schliesst-bald" class="form-checkbox">Wienerisch
+						</label>
+						<label>
+							<input type="checkbox" name="geschlossen" class="form-checkbox">Griechisch
+						</label>
+						<label>
+							<input type="checkbox" name="geoeffnet" class="form-checkbox">Italienisch
+						</label>
+						<label>
+							<input type="checkbox" name="schliesst-bald" class="form-checkbox">Wienerisch
+						</label>
+						<label>
+							<input type="checkbox" name="geschlossen" class="form-checkbox">Griechisch
+						</label>
+						<label>
+							<input type="checkbox" name="geoeffnet" class="form-checkbox">Italienisch
+						</label>
+						<label>
+							<input type="checkbox" name="schliesst-bald" class="form-checkbox">Wienerisch
+						</label>
+						<label>
+							<input type="checkbox" name="geschlossen" class="form-checkbox">Griechisch
+						</label>
+						<label>
+							<input type="checkbox" name="geoeffnet" class="form-checkbox">Italienisch
+						</label>
+						<label>
+							<input type="checkbox" name="schliesst-bald" class="form-checkbox">Wienerisch
+						</label>
+						<label>
+							<input type="checkbox" name="geschlossen" class="form-checkbox">Griechisch
+						</label>
+						<label>
+							<input type="checkbox" name="geoeffnet" class="form-checkbox">Italienisch
+						</label>
+						<label>
+							<input type="checkbox" name="schliesst-bald" class="form-checkbox">Wienerisch
+						</label>
+						<label>
+							<input type="checkbox" name="geschlossen" class="form-checkbox">Griechisch
+						</label>
+						<label>
+							<input type="checkbox" name="geschlossen" class="form-checkbox">Griechisch
+						</label>
+						<label>
+							<input type="checkbox" name="geoeffnet" class="form-checkbox">Italienisch
+						</label>
+						<label>
+							<input type="checkbox" name="schliesst-bald" class="form-checkbox">Wienerisch
+						</label>
+						<label>
+							<input type="checkbox" name="geschlossen" class="form-checkbox">Griechisch
+						</label>
+						<label>
+							<input type="checkbox" name="geoeffnet" class="form-checkbox">Italienisch
+						</label>
+						<label>
+							<input type="checkbox" name="schliesst-bald" class="form-checkbox">Wienerisch
+						</label>
+						<label>
+							<input type="checkbox" name="geschlossen" class="form-checkbox">Griechisch
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
 
 
 		<div class="sm:flex sm:flex-row-reverse justify-center my-8">
