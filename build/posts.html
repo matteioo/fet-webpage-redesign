@@ -55,10 +55,24 @@
 
 	<!-- Main Content -->
 	<main class="container mx-auto bg-white w-full px-4 my-8 flex-1">
-		<h1 class="page-title">News</h1>
+		<h1 class="page-title dark:text-green-500">News</h1>
+		<div id="modal-container-1">
+			<div class="modal">
+				<div class="content">
+					<h2>Hallo</h2>
+					<i class="fas fa-times modal-closeButton"></i>
+					<p>Hallo.</p>
+				</div>
+			</div>
+		</div>
+		<button id="modal-trigger-1" class="trigger bg-proprietary-darker text-blue-50 shadow-lg text-2xl rounded z-0">
+			<i class="fas fa-filter p-2"></i>
+		</button>
+
+
 		<div class="sm:flex sm:flex-row-reverse justify-center my-8">
 			<aside class="sm:w-2/5 xl:w-1/4 sm:pl-4 my-8 sm:my-0">
-				<div id="modal-container-1">
+				<div id="modal-container-2">
 					<div class="modal w-11/12 max-w-sm">
 						<div class="content md:left-0 flex-flex-col">
 							<div class="flex justify-between items-center mb-2">
@@ -112,7 +126,7 @@
 						</div>
 					</div>
 				</div>
-				<button id="modal-trigger-1" class="trigger fixed bottom-4 right-4 bg-proprietary-darker text-blue-50 shadow-lg text-2xl rounded z-0">
+				<button id="modal-trigger-2" class="trigger fixed bottom-4 right-4 bg-proprietary-darker text-blue-50 shadow-lg text-2xl rounded z-0">
 					<i class="fas fa-filter p-2"></i>
 				</button>
 			</aside>
