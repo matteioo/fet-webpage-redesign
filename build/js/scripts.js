@@ -45,46 +45,28 @@ function cookieSet(cname) {
 
 // Filter onChange
 function addMonthSelector() {
-	let element = document.getElementById("monthSelector");
+	const element = document.getElementById("monthSelector");
 	element.classList.toggle("hidden");
 }
 
 // Modals
-const modal = document.querySelector(".modal");
-const trigger = document.querySelector(".trigger");
-const closeButton = document.querySelector(".close-button");
+const body = document.querySelector("body");
+const modal_1 = document.querySelector("#modal-container-1");
+const trigger_1 = document.querySelector("#modal-trigger-1");
+const closeButton_1 = modal_1.querySelector(".modal-closeButton");
 
-function toggleModal() {
-		modal.classList.toggle("show-modal");
+function toggleModal_1() {
+		modal_1.classList.toggle("show-modal");
+		body.classList.toggle("overflow-y-hidden");
+		trigger_1.classList.toggle("hidden");
 }
 
-function windowOnClick(event) {
-		if (event.target === modal) {
-				toggleModal();
+function windowOnClick_1(event) {
+		if (event.target === modal_1) {
+				toggleModal_1();
 		}
 }
 
-trigger.addEventListener("click", toggleModal);
-closeButton.addEventListener("click", toggleModal);
-window.addEventListener("click", windowOnClick);
-
-// let body = document.querySelector("body");
-// let modal_1 = document.querySelector("#modal-container-1");
-// let trigger_1 = document.querySelector("#modal-trigger-1");
-// let closeButton_1 = modal_1.querySelector(".modal-closeButton");
-
-// function toggleModal_1() {
-// 		modal_1.classList.toggle("show-modal");
-// 		trigger_1.classList.toggle("invisible");
-// 		body.classList.toggle("overflow-y-hidden");
-// }
-
-// function windowOnClick_1(event) {
-// 		if (event.target === modal_1) {
-// 				toggleModal_1();
-// 		}
-// }
-
-// trigger_1.addEventListener("click", toggleModal_1);
-// closeButton_1.addEventListener("click", toggleModal_1);
-// window.addEventListener("click", windowOnClick_1);
+trigger_1.addEventListener("click", toggleModal_1);
+closeButton_1.addEventListener("click", toggleModal_1);
+window.addEventListener("click", windowOnClick_1);
