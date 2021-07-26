@@ -50,7 +50,7 @@
 /***** SECTION *****/
 @responsive {
 	.section-title {
-		@apply text-base md:text-lg text-gray-800 font-semibold text-center;
+		@apply text-base md:text-lg text-gray-800 font-medium text-center;
 	}
 }
 @responsive {
@@ -83,6 +83,58 @@
 }
 .article-cover-desc:hover, .article-cover-image:hover {
 	background-size: 120%;
+}
+
+/***** ALERT *****/
+.alert {
+	@apply relative p-2 rounded border border-gray-400 bg-gray-50 text-gray-600;
+}
+.alert > .alert-icon {
+	@apply absolute right-2 top-2 text-2xl text-gray-300;
+}
+.alert > .alert-title {
+	@apply font-semibold text-gray-700;
+}
+.alert-body {
+	@apply text-sm sm:text-base;
+}.alert a {
+	@apply font-medium underline;
+}
+.alert.alert-info {
+	@apply border-blue-400 bg-blue-50 text-blue-700;
+}
+.alert.alert-info > .alert-icon {
+	@apply text-blue-300;
+}
+.alert.alert-info > .alert-title {
+	@apply text-blue-800;
+}
+.alert.alert-success {
+	@apply border-green-400 bg-green-50 text-green-700;
+}
+.alert.alert-success > .alert-icon {
+	@apply text-green-300;
+}
+.alert.alert-success > .alert-title {
+	@apply text-green-800;
+}
+.alert.alert-warning {
+	@apply border-yellow-400 bg-yellow-50 text-yellow-700;
+}
+.alert.alert-warning > .alert-icon {
+	@apply text-yellow-300;
+}
+.alert.alert-warning > .alert-title {
+	@apply text-yellow-800;
+}
+.alert.alert-danger {
+	@apply border-red-400 bg-red-50 text-red-700;
+}
+.alert.alert-danger > .alert-icon {
+	@apply text-red-300;
+}
+.alert.alert-danger > .alert-title {
+	@apply text-red-800;
 }
 
 /****** MODAL *****/
