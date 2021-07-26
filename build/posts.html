@@ -54,19 +54,24 @@
 	</nav>
 
 	<!-- Main Content -->
-	<main class="container mx-auto bg-white w-full px-4 my-8 flex-1">
+	<main class="container mx-auto bg-white w-full px-4 mt-8 flex-1">
 		<h1 class="page-title">News</h1>
 		<div class="sm:flex sm:flex-row-reverse justify-center my-8">
-			<aside class="sm:w-2/5 xl:w-1/4 sm:pl-4 my-8 sm:my-0">
+			<aside class="sm:w-2/5 sm:max-w-xs sm:pl-4 my-8 sm:my-0">
 				<div id="modal-container-1">
-					<div class="modal w-11/12 max-w-xs">
+					<div class="modal w-11/12 max-w-xs sm:w-full sm:max-w-full">
 						<div class="flex justify-between items-center mb-2">
-							<h2 class="text-gray-800 font-medium sm:section-title sm:section-title-margins sm:w-full"><span class="mr-1 text-gray-400 sm:hidden"><i class="fas fa-filter"></i></span>Auswahl einschränken</h2>
+							<h2 class="text-gray-800 sm:section-title sm:section-title-margins sm:w-full"><span class="mr-1 text-gray-400 sm:hidden"><i class="fas fa-filter"></i></span>Auswahl einschränken</h2>
 							<div class="modal-closeButton px-2 rounded">
 								<i class="fas fa-times"></i>
 							</div>
 						</div>
 						<form action="" method="POST" class="grid grid-cols-1 gap-2 sm:gap-4">
+							<div class="alert alert-danger">
+								<i class="alert-icon fas fa-exclamation-circle"></i>
+								<h2 class="alert-title">Fehler:</h2>
+								<div class="alert-body">Es kann nicht <i>nur</i> nach einem Monat gesucht werden.</div>
+							</div>
 							<label id="yearSelector" class="block">
 								<span class="text-gray-700">Jahr</span>
 								<select onchange="addMonthSelector()" class="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
@@ -161,7 +166,6 @@
 						</div>
 					</div>
 				</article>
-				<a href="#" class="btn btn-primary my-4 block w-full"><i class="fas fa-plus-square mr-2"></i>Mehr anzeigen</a>
 			</section>
 		</div>
 	</main>
