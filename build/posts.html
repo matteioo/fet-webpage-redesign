@@ -72,9 +72,9 @@
 								<h2 class="alert-title">Fehler:</h2>
 								<div class="alert-body">Es kann nicht <i>nur</i> nach einem Monat gesucht werden.</div>
 							</div>
-							<label id="yearSelector" class="block">
+							<label id="yearSelectorDIV" class="block">
 								<span class="text-gray-700">Jahr</span>
-								<select onchange="addMonthSelector()" class="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+								<select id="yearSelector" onchange="addMonthSelector()" class="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
 									<option value="" selected></option>
 									<option value="2015">2015</option>
 									<option value="2016">2016</option>
@@ -85,9 +85,9 @@
 									<option value="2021">2021</option>
 								</select>
 							</label>
-							<label id="monthSelector" class="hidden block">
+							<label id="monthSelectorDIV" class="hidden">
 								<span class="text-gray-700">Monat</span>
-								<select class="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+								<select id="monthSelector" class="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
 									<option value="" selected></option>
 									<option value="1">Jänner</option>
 									<option value="2">Februar</option>
@@ -115,7 +115,7 @@
 						</form>
 					</div>
 				</div>
-				<button id="modal-trigger-1" class="trigger fixed bottom-4 right-4 bg-proprietary-darker text-blue-50 shadow-lg text-2xl rounded z-0 sm:hidden">
+				<button id="modal-trigger-1" class="trigger fixed bottom-4 right-4 bg-proprietary-darker text-blue-50 shadow-lg text-2xl rounded sm:hidden">
 					<i class="fas fa-filter p-2"></i>
 				</button>
 			</aside>
@@ -170,7 +170,7 @@
 		</div>
 	</main>
 
-	<footer class="bg-proprietary p-4 text-blue-100 flex-none z-10">
+	<footer class="bg-proprietary p-4 text-blue-100 flex-none">
 		<ul class="flex justify-center mb-4 text-2xl">
 			<li class="mx-4">
 				<a href="https://facebook.fet.at/"><i class="fab fa-facebook"></i></a>
