@@ -45,14 +45,23 @@ function cookieSet(cname) {
 
 // Filter onChange
 function addMonthSelector() {
+	const yearSelectorDIV = document.getElementById("yearSelectorDIV");
 	const yearSelector = document.getElementById("yearSelector");
+	const monthSelectorDIV = document.getElementById("monthSelectorDIV");
 	const monthSelector = document.getElementById("monthSelector");
 
-	if(monthSelector.classList.contains("hidden")){
-		console.log(yearSelector.value);
-		monthSelector.classList.toggle("hidden");
+	console.log(yearSelector.value);
+
+	if(addMonthSelector.previousYearValue === undefined){
+		monthSelectorDIV.classList.toggle("block");
+		addMonthSelector.previousYearValue = "";
 	}
 
+	if((addMonthSelector.previousYearValue == "" && yearSelector.value != "") || (addMonthSelector.previousYearValue != "" && yearSelector.value == "")){
+		monthSelectorDIV.classList.toggle("hidden");
+	}
+
+	addMonthSelector.previousYearValue = yearSelector.value;
 
 }
 
