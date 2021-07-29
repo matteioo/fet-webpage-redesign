@@ -11,7 +11,7 @@ p a {
 
 /***** NAVBAR *****/
 .navbar {
-	@apply w-full bg-white;
+	@apply w-full bg-white shadow-sm;
 }
 .navbar > div {
 	@apply w-full flex flex-col sm:flex-row items-center sm:justify-between container px-4 mx-auto flex-none;
