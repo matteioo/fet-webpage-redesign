@@ -180,13 +180,13 @@ div[id^="modal-container"].show-modal {
 	@apply leading-none text-gray-600 text-sm md:text-base;
 }
 .jobsList-price {
-	@apply flex-shrink-0 flex align-top justify-end;
+	@apply flex-shrink-0 flex align-top justify-end mt-1;
 }
 .jobsList-value {
 	@apply inline-block text-gray-700 md:text-gray-800;
 }
 .jobsList-amount {
-	@apply inline-block text-sm md:text-base ml-1 mt-1 md:mt-0 text-gray-600;
+	@apply inline-block text-sm md:text-base ml-1 mt-1.5 md:mt-0 text-gray-600;
 }
 .jobsList-expand {
 	@apply flex-none text-gray-400 text-xl;
