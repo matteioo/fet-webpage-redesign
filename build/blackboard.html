@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>FET: Blackboard</title>
+
+	<meta name="author" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="description" content="Die Fachschaft Elektrotechnik besteht aus ET Studierenden, die sich um die Anliegen der Studenten und Studentinnen kümmern.">
+	<meta property="og:image" content="#"> <!--og:... = Facebook metadata-->
+	<meta property="og:description" content="Die Fachschaft Elektrotechnik besteht aus ET Studierenden, die sich um die Anliegen der Studenten und Studentinnen kümmern.">
+	<meta property="og:title" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="twitter:title" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="theme-color" content="#006599">
+	<!-- third-generation iPad with high-resolution Retina display: -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="#">
+	<!-- iPhone with high-resolution Retina display: -->
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="#">
+	<!-- first- and second-generation iPad: -->
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="#">
+	<!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+	<link rel="apple-touch-icon-precomposed" href="#">
+	<!-- basic favicon -->
+	<link rel="icon" href="#">
+	<link rel="shortcut icon" type="image/png" href="https://fet.at/assets/img/fet_logo_white.png">
+
+	<link rel="stylesheet" href="css/styles.css">
+	<!--<link rel="stylesheet" href="../css/tailwind.css">-->
+	<script src="https://kit.fontawesome.com/fb26f70535.js" crossorigin="anonymous"></script>
+	<!--Google Fonts-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+</head>
+<body>
+	<!-- NAVBAR -->
+	<nav class="navbar">
+		<div>
+			<a href="index.html">
+				<img src="img/logo2014_64.png" alt="FET-Logo" class="navbar-logo">
+			</a>
+			<button class="navbar-toggle" onclick="toggleMenu()">
+				<i class="fas fa-bars"></i>
+			</button>
+			<ul id="navBarContent" class="navbar-content hidden sm:block">
+				<li><a href="posts.html">News</a></li>
+				<li><a href="members.html">Fachschaft</a></li>
+				<li><a href="fotos.html">Fotos</a></li>
+				<li class="active"><a href="blackboard.html">Blackboard</a></li>
+				<li><a href="login.html">Login</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- Main Content -->
+	<main class="container mx-auto w-full px-4 mt-8 flex-1">
+		<h1 class="page-title">Blackboard</h1>
+		<div class="lg:w-2/3 xl:w-7/12 mx-auto">
+			<section class="my-8 text-gray-800">
+				<p class="text-justify my-2">
+					Stellenangebote werden von uns ausgesucht und hier parallel zum physischen schwarzen Brett für 30 Tage aufgehängt.
+					Wir nehmen gerne Bachelor- & Diplomarbeiten, Praktika und Teil- sowie Vollzeitstellen entgegen.
+				</p>
+				<p class="text-justify my-2">
+					Bitte bachtet, dass wir nur Ausschreibungen aushängen, welche die folgenden Kriterien erfüllen:
+					<ul class="list-inside">
+						<li class="flex items-center"><div><i class="far fa-check-circle faw text-green-600 mr-2"></i></div>Mindestgehalt angegeben</li>
+						<li class="flex items-center"><div><i class="far fa-check-circle faw text-green-600 mr-2"></i></div>geschlechtsneutrale Formulierung</li>
+						<li class="flex items-center"><div><i class="far fa-check-circle faw text-green-600 mr-2"></i></div>kein Lohndumping</li>
+					</ul>
+				</p>
+				<p class="text-justify my-2">
+					Sehr gerne kannst du uns per E-Mail an <a href="mailto:service@fet.at">service@fet.at</a> als PDF dein Angebot zukommen lassen. Werbung und irrelevante Dinge hängen wir hier nicht aus, Werbeflächen an der TU gibts <a href="https://www.tuwien.at/tu-wien/organisation/zentrale-bereiche/pr-und-fundraising/fundraising-and-community-relations/tuw-campus-werbung">hier</a> zu mieten.
+				</p>
+			</section>
+			<section class="jobsList my-8 text-gray-800">
+				<a href="https://fet.at/files/uploads/blackboard/pdf/Techniker_in.pdf" class="jobsList-item">
+					<div class="jobsList-desc">
+						<h2>TU Wien</h2>
+						<h3>Techniker_in</h3>
+					</div>
+					<div class="jobsList-price">
+						<p class="jobsList-value">1074€</p>
+						<p class="jobsList-amount ">/ 20,0 <span class="sm:hidden">h</span><span class="hidden sm:inline">Stunden</span></p>
+					</div>
+					<div class="jobsList-expand">
+						<i class="fas fa-angle-right"></i>
+					</div>
+				</a>
+				<hr class="border-gray-300">
+				<a href="https://fet.at/files/uploads/blackboard/pdf/IT-Techniker_in.pdf" class="jobsList-item">
+					<div class="jobsList-desc">
+						<h2>Universität Wien</h2>
+						<h3 class="leading-none text-gray-600 text-sm">IT-Techniker*in</h3>
+					</div>
+					<div class="jobsList-price">
+						<p class="jobsList-value">1228€</p>
+						<p class="jobsList-amount">/ 20,0 <span class="sm:hidden">h</span><span class="hidden sm:inline">Stunden</span></p>
+					</div>
+					<div class="jobsList-expand">
+						<i class="fas fa-angle-right text-lg"></i>
+					</div>
+				</a>
+				<hr class="border-gray-300">
+				<a href="https://fet.at/files/uploads/blackboard/pdf/Universit%C3%A4tsassistent_in_Post-Doc.pdf" class="jobsList-item">
+					<div class="jobsList-desc">
+						<h2>TU Wien</h2>
+						<h3 class="leading-none text-gray-600 text-sm">Universitätsassistent_in (Post-Doc)</h3>
+					</div>
+					<div class="jobsList-price">
+						<p class="jobsList-value">3945€</p>
+						<p class="jobsList-amount">/ 40,0 <span class="sm:hidden">h</span><span class="hidden sm:inline">Stunden</span></p>
+					</div>
+					<div class="jobsList-expand">
+						<i class="fas fa-angle-right text-lg"></i>
+					</div>
+				</a>
+				<hr class="border-gray-300">
+				<a href="https://fet.at/files/uploads/blackboard/pdf/Ausschreibung_IT-Techniker_inSystemadministrator_in-1.pdf" class="jobsList-item">
+					<div class="jobsList-desc">
+						<h2>TU Wien</h2>
+						<h3 class="leading-none text-gray-600 text-sm">IT-Techniker_In</h3>
+					</div>
+					<div class="jobsList-price">
+						<p class="jobsList-value">1073€</p>
+						<p class="jobsList-amount">/ 20,0 <span class="sm:hidden">h</span><span class="hidden sm:inline">Stunden</span></p>
+					</div>
+					<div class="jobsList-expand">
+						<i class="fas fa-angle-right text-lg"></i>
+					</div>
+				</a>
+				<hr class="border-gray-300">
+				<a href="https://fet.at/files/uploads/blackboard/pdf/Systemadministrator_in_2147.pdf" class="jobsList-item">
+					<div class="jobsList-desc">
+						<h2>TU Wien</h2>
+						<h3 class="leading-none text-gray-600 text-sm">Systemadministrator_in</h3>
+					</div>
+					<div class="jobsList-price">
+						<p class="jobsList-value">2147€</p>
+						<p class="jobsList-amount">/ 40,0 <span class="sm:hidden">h</span><span class="hidden sm:inline">Stunden</span></p>
+					</div>
+					<div class="jobsList-expand">
+						<i class="fas fa-angle-right text-lg"></i>
+					</div>
+				</a>
+				<hr class="border-gray-300">
+				<a href="https://fet.at/files/uploads/blackboard/pdf/Studentische_r_Mitarbeiter_in_375.pdf" class="jobsList-item">
+					<div class="jobsList-desc">
+						<h2>TU Wien</h2>
+						<h3 class="leading-none text-gray-600 text-sm">Studentische_r Mitarbeiter_in</h3>
+					</div>
+					<div class="jobsList-price">
+						<p class="jobsList-value">375€</p>
+						<p class="jobsList-amount">/ 7,0 <span class="sm:hidden">h</span><span class="hidden sm:inline">Stunden</span></p>
+					</div>
+					<div class="jobsList-expand">
+						<i class="fas fa-angle-right text-lg"></i>
+					</div>
+				</a>
+			</section>
+		</div>
+	</main>
+
+	<footer class="bg-proprietary p-4 text-blue-100 flex-none">
+		<ul class="flex justify-center mb-4 text-2xl">
+			<li class="mx-4">
+				<a href="https://facebook.fet.at/"><i class="fab fa-facebook"></i></a>
+			</li>
+			<li class="mx-4">
+				<a href="https://instagram.fet.at/"><i class="fab fa-instagram"></i></a>
+			</li>
+			<li class="mx-4">
+				<a href="https://discord.fet.at/"><i class="fab fa-discord"></i></a>
+			</li>
+			<li class="mx-4">
+				<a href="https://telegram.fet.at/"><i class="fab fa-telegram"></i></a>
+			</li>
+			<li class="mx-4">
+				<a href="mailto:service@fet.at"><i class="fas fa-envelope"></i></a>
+			</li>
+		</ul>
+		<div class="flex justify-center my-4">
+			<a href="#" class="text-center text-sm sm:text-base">Impressum</a>
+		</div>
+		<hr class="border-blue-300 -mx-4">
+		<p class="mt-4 uppercase text-center text-sm sm:text-base">© 2021 FET - Alle Rechte vorbehalten.</p>
+	</footer>
+
+	<script defer src="js/scripts.js"></script>
+</body>
+</html>
