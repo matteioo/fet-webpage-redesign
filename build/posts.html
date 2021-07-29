@@ -35,30 +35,202 @@
 
 	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </head>
-<body class="h-full bg-white min-h-screen flex flex-col">
+<body>
 	<!-- NAVBAR -->
 	<nav class="navbar">
-		<a href="index.html">
-			<img src="img/logo2014_64.png" alt="FET-Logo" class="navbar-logo">
-		</a>
-		<button class="navbar-toggle" onclick="toggleMenu()">
-			<i class="fas fa-bars"></i>
-		</button>
-		<ul id="navBarContent" class="navbar-content hidden sm:block">
-			<li class="active"><a href="posts.html">News</a></li>
-			<li><a href="members.html">Fachschaft</a></li>
-			<li><a href="fotos.html">Fotos</a></li>
-			<li><a href="blackboard.html">Blackboard</a></li>
-			<li><a href="login.html">Login</a></li>
-		</ul>
+		<div>
+			<a href="index.html">
+				<img src="img/logo2014_64.png" alt="FET-Logo" class="navbar-logo">
+			</a>
+			<button class="navbar-toggle" onclick="toggleMenu()">
+				<i class="fas fa-bars"></i>
+			</button>
+			<ul id="navBarContent" class="navbar-content hidden sm:block">
+				<li class="active"><a href="posts.html">News</a></li>
+				<li><a href="members.html">Fachschaft</a></li>
+				<li><a href="fotos.html">Fotos</a></li>
+				<li><a href="blackboard.html">Blackboard</a></li>
+				<li><a href="login.html">Login</a></li>
+			</ul>
+		</div>
 	</nav>
 
 	<!-- Main Content -->
-	<main class="container mx-auto bg-white w-full px-4 mt-8 flex-1">
+	<main class="container mx-auto w-full px-4 mt-8 flex-1" x-data="{ showModal: false }" :class="{ 'overflow-y-hidden': showModal }">
 		<h1 class="page-title">News</h1>
 		<div class="sm:flex sm:flex-row-reverse justify-center my-8">
 			<aside class="sm:w-2/5 sm:max-w-xs sm:pl-4 my-8 sm:my-0">
-				<div id="modal-container-1">
+				<div class="fixed sm:sticky top-0 left-0 w-full h-full sm:h-auto bg-black sm:bg-transparent bg-opacity-70 flex sm:block items-center justify-center"
+					@click="showModal = false"
+					x-show="showModal"
+					x-transition:enter="transition duration-300 ease-out"
+					x-transition:enter-start="opacity-0"
+					x-transition:enter-end="opacity-100"
+					x-transition:leave="transition duration-300 ease-in"
+					x-transition:leave-start="opacity-100"
+					x-transition:leave-end="opacity-0"
+				>
+					<div class="max-w-sm sm:w-full mx-4 sm:mx-0 p-4 rounded sm:rounded-none bg-white sm:bg-transparent"
+						@click="showModal = false"
+						x-show="showModal"
+						x-transition:enter="transition transform ease-out duration-300"
+						x-transition:enter-start="scale-110 opacity-0"
+						x-transition:enter-end="scale-100 opacity-100"
+						x-transition:leave="transition transform ease-in duration-300"
+						x-transition:leave-start="scale-100 opacity-100"
+						x-transition:leave-end="scale-110 opacity-0"
+					>
+						<div class="flex justify-between items-center mb-2">
+							<h2 class="text-gray-800 sm:section-title sm_section-title-margins sm:w-full">
+								<span class="mr-1 text-gray-400 sm:hidden">
+									<i class="fas fa-filter"></i>
+								</span>
+								Auswahl einschränken
+							</h2>
+							<div class="ml-4 -mr-2 px-2 rounded text-xl text-gray-500 sm:hidden" @click="showModal = false">
+								<i class="far fa-times"></i>
+							</div>
+						</div>
+						<form action="" method="POST" class="grid grid-cols-1 gap-2 sm:gap-4">
+							<div class="alert alert-danger">
+								<i class="alert-icon fas fa-exclamation-circle"></i>
+								<h2 class="alert-title">Fehler:</h2>
+								<div class="alert-body">Es kann nicht <i>nur</i> nach einem Monat gesucht werden.</div>
+							</div>
+							<label id="yearSelectorDIV" class="block">
+								<span class="text-gray-700">Jahr</span>
+								<select id="yearSelector" onchange="addMonthSelector()" class="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+									<option value="" selected></option>
+									<option value="2015">2015</option>
+									<option value="2016">2016</option>
+									<option value="2017">2017</option>
+									<option value="2018">2018</option>
+									<option value="2019">2019</option>
+									<option value="2020">2020</option>
+									<option value="2021">2021</option>
+								</select>
+							</label>
+							<label id="monthSelectorDIV" class="hidden">
+								<span class="text-gray-700">Monat</span>
+								<select id="monthSelector" class="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+									<option value="" selected></option>
+									<option value="1">Jänner</option>
+									<option value="2">Februar</option>
+									<option value="3">März</option>
+									<option value="4">April</option>
+									<option value="5">Mai</option>
+									<option value="6">Juni</option>
+									<option value="7">Juli</option>
+									<option value="8">August</option>
+									<option value="9">September</option>
+									<option value="10">Oktober</option>
+									<option value="11">November</option>
+									<option value="12">Dezember</option>
+								</select>
+							</label>
+							<label class="inline-flex items-center">
+								<input type="checkbox" class="rounded border-gray-300 text-proprietary shadow-sm focus:border-blue-300 focus:ring focus:ring-offset-0 focus:ring-blue-200 focus:ring-opacity-50">
+								<span class="ml-2 text-gray-700">Kompakte Ansicht</span>
+							</label>
+							<label class="inline-flex items-center">
+								<input type="checkbox" class="rounded border-gray-300 text-proprietary shadow-sm focus:border-blue-300 focus:ring focus:ring-offset-0 focus:ring-blue-200 focus:ring-opacity-50">
+								<span class="ml-2 text-gray-700">nur FET-Sitzungen</span>
+							</label>
+							<input type="submit" class="block btn btn-primary" value="Anzeigen">
+						</form>
+					</div>
+				</div>
+				
+				
+				<!--<div class="sm:hidden fixed left-0 top-0 w-full h-full bg-black bg-opacity-70"
+					@click="showModal = false"
+					x-show="showModal"
+					x-transition:enter="transition duration-300 ease-out"
+					x-transition:enter-start="opacity-0"
+					x-transition:enter-end="opacity-100"
+					x-transition:leave="transition duration-300 ease-in"
+					x-transition:leave-start="opacity-100"
+					x-transition:leave-end="opacity-0"
+				>
+				</div>
+				<div class="fixed top-0 left-0 w-full h-full">
+					<div class="relative top-1/4 max-w-sm mx-auto sm:max-w-full sm:static p-4 sm:p-0 rounded sm:rounded-none bg-white"
+						@click.outside="showModal = false"
+						x-show="showModal"
+						x-transition:enter="transition transform ease-out duration-300"
+						x-transition:enter-start="scale-90 opacity-0"
+						x-transition:enter-end="scale-100 opacity-100"
+						x-transition:leave="transition transform ease-in duration-300"
+						x-transition:leave-start="scale-100 opacity-100"
+						x-transition:leave-end="scale-90 opacity-0"
+					>
+						<div class="flex justify-between items-center mb-2">
+							<h2 class="text-gray-800 sm:section-title sm:section-title-margins sm:w-full">
+								<span class="mr-1 text-gray-400 sm:hidden">
+									<i class="fas fa-filter"></i>
+								</span>
+								Auswahl einschränken
+							</h2>
+							<div class="modal-closeButton px-2 rounded text-xl text-gray-500 sm:hidden" @click="showModal = false">
+								<i class="fas fa-times"></i>
+							</div>
+						</div>
+						<form action="" method="POST" class="grid grid-cols-1 gap-2 sm:gap-4">
+							<div class="alert alert-danger">
+								<i class="alert-icon fas fa-exclamation-circle"></i>
+								<h2 class="alert-title">Fehler:</h2>
+								<div class="alert-body">Es kann nicht <i>nur</i> nach einem Monat gesucht werden.</div>
+							</div>
+							<label id="yearSelectorDIV" class="block">
+								<span class="text-gray-700">Jahr</span>
+								<select id="yearSelector" onchange="addMonthSelector()" class="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+									<option value="" selected></option>
+									<option value="2015">2015</option>
+									<option value="2016">2016</option>
+									<option value="2017">2017</option>
+									<option value="2018">2018</option>
+									<option value="2019">2019</option>
+									<option value="2020">2020</option>
+									<option value="2021">2021</option>
+								</select>
+							</label>
+							<label id="monthSelectorDIV" class="hidden">
+								<span class="text-gray-700">Monat</span>
+								<select id="monthSelector" class="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+									<option value="" selected></option>
+									<option value="1">Jänner</option>
+									<option value="2">Februar</option>
+									<option value="3">März</option>
+									<option value="4">April</option>
+									<option value="5">Mai</option>
+									<option value="6">Juni</option>
+									<option value="7">Juli</option>
+									<option value="8">August</option>
+									<option value="9">September</option>
+									<option value="10">Oktober</option>
+									<option value="11">November</option>
+									<option value="12">Dezember</option>
+								</select>
+							</label>
+							<label class="inline-flex items-center">
+								<input type="checkbox" class="rounded border-gray-300 text-proprietary shadow-sm focus:border-blue-300 focus:ring focus:ring-offset-0 focus:ring-blue-200 focus:ring-opacity-50">
+								<span class="ml-2 text-gray-700">Kompakte Ansicht</span>
+							</label>
+							<label class="inline-flex items-center">
+								<input type="checkbox" class="rounded border-gray-300 text-proprietary shadow-sm focus:border-blue-300 focus:ring focus:ring-offset-0 focus:ring-blue-200 focus:ring-opacity-50">
+								<span class="ml-2 text-gray-700">nur FET-Sitzungen</span>
+							</label>
+							<input type="submit" class="block btn btn-primary" value="Anzeigen">
+						</form>
+					</div>
+				</div>-->
+				<button id="modal-trigger-1" class="trigger fixed bottom-4 right-4 bg-proprietary-darker text-blue-50 shadow-lg text-2xl rounded sm:hidden"  @click="showModal = true">
+					<i class="fas fa-filter p-2"></i>
+				</button>
+
+
+
+				<!--<div id="modal-container-1">
 					<div class="modal w-11/12 max-w-xs sm:w-full sm:max-w-full">
 						<div class="flex justify-between items-center mb-2">
 							<h2 class="text-gray-800 sm:section-title sm:section-title-margins sm:w-full"><span class="mr-1 text-gray-400 sm:hidden"><i class="fas fa-filter"></i></span>Auswahl einschränken</h2>
@@ -117,7 +289,7 @@
 				</div>
 				<button id="modal-trigger-1" class="trigger fixed bottom-4 right-4 bg-proprietary-darker text-blue-50 shadow-lg text-2xl rounded sm:hidden">
 					<i class="fas fa-filter p-2"></i>
-				</button>
+				</button>-->
 			</aside>
 
 			<section class="my-8 sm:my-0 sm:w-3/5 xl:w-2/5">
@@ -185,7 +357,7 @@
 				<a href="https://telegram.fet.at/"><i class="fab fa-telegram"></i></a>
 			</li>
 			<li class="mx-4">
-				<a href="mailto:service@fet.at"><i class="far fa-envelope"></i></a>
+				<a href="mailto:service@fet.at"><i class="fas fa-envelope"></i></a>
 			</li>
 		</ul>
 		<div class="flex justify-center my-4">
@@ -195,6 +367,25 @@
 		<p class="mt-4 uppercase text-center text-sm sm:text-base">© 2021 FET - Alle Rechte vorbehalten.</p>
 	</footer>
 
+	<script defer src="https://unpkg.com/alpinejs@3.2.2/dist/cdn.min.js"></script>
 	<script defer src="js/scripts.js"></script>
+	<script>
+		function myFunction(x) {
+			let element = document.getElementsByTagName("main")[0];
+			console.log(element);
+
+			if (x.matches) { // If media query matches
+				console.log("hi");
+				element.setAttribute("x-data", "{ showModal: true }");
+			} else {
+				console.log("HI");
+				element.setAttribute("x-data", "{ showModal: false }");
+			}
+		}
+
+		var x = window.matchMedia("(min-width: 640px)")
+		myFunction(x) // Call listener function at run time
+		x.addListener(myFunction) // Attach listener function on state changes 
+	</script>
 </body>
 </html>
