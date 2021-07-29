@@ -35,22 +35,24 @@
 
 	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </head>
-<body class="h-full bg-white min-h-screen flex flex-col">
+<body>
 	<!-- NAVBAR -->
 	<nav class="navbar">
-		<a href="index.html">
-			<img src="img/logo2014_64.png" alt="FET-Logo" class="navbar-logo">
-		</a>
-		<button class="navbar-toggle" onclick="toggleMenu()">
-			<i class="fas fa-bars"></i>
-		</button>
-		<ul id="navBarContent" class="navbar-content hidden sm:block">
-			<li><a href="posts.html">News</a></li>
-			<li><a href="members.html">Fachschaft</a></li>
-			<li><a href="fotos.html">Fotos</a></li>
-			<li><a href="blackboard.html">Blackboard</a></li>
-			<li><a href="login.html">Login</a></li>
-		</ul>
+		<div>
+			<a href="index.html">
+				<img src="img/logo2014_64.png" alt="FET-Logo" class="navbar-logo">
+			</a>
+			<button class="navbar-toggle" onclick="toggleMenu()">
+				<i class="fas fa-bars"></i>
+			</button>
+			<ul id="navBarContent" class="navbar-content hidden sm:block">
+				<li><a href="posts.html">News</a></li>
+				<li><a href="members.html">Fachschaft</a></li>
+				<li><a href="fotos.html">Fotos</a></li>
+				<li><a href="blackboard.html">Blackboard</a></li>
+				<li><a href="login.html">Login</a></li>
+			</ul>
+		</div>
 	</nav>
 	<!--Hero section-->
 	<section class="hero-image relative z-0 w-full h-56 sm:h-80 lg:h-96 bg-cover-image bg-cover bg-center bg-no-repeat flex-none">
@@ -98,7 +100,7 @@
 		</div>
 	</section>
 	<!-- Main Content -->
-	<main class="container mx-auto bg-white w-full px-4 my-8 flex-1">
+	<main class="container mx-auto w-full px-4 my-8 flex-1">
 		<div class="my-8 p-2 rounded border border-yellow-500 bg-yellow-100">
 			<h2 class="w-full text-center text-yellow-800"><i class="far fa-exclamation-triangle mr-1"></i>Warnung!<i class="far fa-exclamation-triangle ml-1"></i></h2>
 			<p class="text-yellow-700 text-sm">Diese Seite ist noch unvollständig! Dargestellte Informationen können nur beispielhaft implementiert worden sein bzw. noch Fehler enthalten!</p>
@@ -253,7 +255,7 @@
 				<a href="https://telegram.fet.at/"><i class="fab fa-telegram"></i></a>
 			</li>
 			<li class="mx-4">
-				<a href="mailto:service@fet.at"><i class="far fa-envelope"></i></a>
+				<a href="mailto:service@fet.at"><i class="fas fa-envelope"></i></a>
 			</li>
 		</ul>
 		<div class="flex justify-center my-4">
