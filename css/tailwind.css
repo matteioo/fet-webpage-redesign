@@ -1,8 +1,19 @@
 @tailwind base;
 @tailwind components;
 
+body {
+	@apply h-full min-h-screen flex flex-col bg-gray-100;
+}
+
+p a {
+	@apply text-proprietary font-medium;
+}
+
 /***** NAVBAR *****/
 .navbar {
+	@apply w-full bg-white;
+}
+.navbar > div {
 	@apply w-full flex flex-col sm:flex-row items-center sm:justify-between container px-4 mx-auto flex-none;
 }
 .navbar-logo {
@@ -153,6 +164,32 @@ div[id^="modal-container"] .modal-closeButton:hover {
 }
 div[id^="modal-container"].show-modal {
   @apply opacity-100 visible transform scale-100 transition-all ease-out duration-200;
+}
+
+/***** JOBSLIST *****/
+.jobsList > a.jobsList-item {
+	@apply flex items-center justify-between gap-2 sm:gap-8 sm:hover:bg-gray-100 py-2 sm:p-2 md:p-4;
+}
+.jobsList-desc {
+	@apply flex-grow flex-shrink md:flex items-center gap-2;
+}
+.jobsList-desc h2 {
+	@apply md:font-medium;
+}
+.jobsList-desc h3 {
+	@apply leading-none text-gray-600 text-sm md:text-base;
+}
+.jobsList-price {
+	@apply flex-shrink-0 flex align-top justify-end;
+}
+.jobsList-value {
+	@apply inline-block text-gray-700 md:text-gray-800;
+}
+.jobsList-amount {
+	@apply inline-block text-sm md:text-base ml-1 mt-1 md:mt-0 text-gray-600;
+}
+.jobsList-expand {
+	@apply flex-none text-gray-400 text-xl;
 }
 
 /****** MODAL *****/
