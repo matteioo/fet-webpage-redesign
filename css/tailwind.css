@@ -90,7 +90,7 @@ p a {
 	@apply flex justify-end gap-x-1 uppercase;
 }
 .article-cover-tags > li {
-	@apply rounded-full px-2 py-1 bg-proprietary text-blue-100;
+	@apply rounded-full px-2 py-1 text-blue-100 bg-proprietary hover:bg-proprietary-dark;
 }
 .article-cover-desc:hover, .article-cover-image:hover {
 	background-size: 120%;
@@ -168,7 +168,7 @@ div[id^="modal-container"].show-modal {
 
 /***** JOBSLIST *****/
 .jobsList > a.jobsList-item {
-	@apply flex items-center justify-between gap-2 sm:gap-8 sm:hover:bg-gray-100 py-2 sm:p-2 md:p-4;
+	@apply flex items-center justify-between gap-2 sm:gap-8 sm:hover:bg-gray-50 py-2 sm:p-2 md:p-4;
 }
 .jobsList-desc {
 	@apply flex-grow flex-shrink md:flex items-center gap-2;
