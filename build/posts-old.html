@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>FET: News</title>
+
+	<meta name="author" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="description" content="Die Fachschaft Elektrotechnik besteht aus ET Studierenden, die sich um die Anliegen der Studenten und Studentinnen kümmern.">
+	<meta property="og:image" content="#"> <!--og:... = Facebook metadata-->
+	<meta property="og:description" content="Die Fachschaft Elektrotechnik besteht aus ET Studierenden, die sich um die Anliegen der Studenten und Studentinnen kümmern.">
+	<meta property="og:title" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="twitter:title" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="theme-color" content="#006599">
+	<!-- third-generation iPad with high-resolution Retina display: -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="#">
+	<!-- iPhone with high-resolution Retina display: -->
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="#">
+	<!-- first- and second-generation iPad: -->
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="#">
+	<!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+	<link rel="apple-touch-icon-precomposed" href="#">
+	<!-- basic favicon -->
+	<link rel="icon" href="#">
+	<link rel="shortcut icon" type="image/png" href="https://fet.at/assets/img/fet_logo_white.png">
+
+	<link rel="stylesheet" href="css/styles.css">
+	<!--<link rel="stylesheet" href="../css/tailwind.css">-->
+	<script src="https://kit.fontawesome.com/fb26f70535.js" crossorigin="anonymous"></script>
+	<!--Google Fonts-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+</head>
+<body x-data="{ showModal: false, closeModal() { if(window.screen.width <= 640){this.showModal = false} } }" :class="{'overflow-y-hidden': showModal }">
+	<!-- NAVBAR -->
+	<nav class="navbar">
+		<div>
+			<a href="index.html">
+				<img src="img/logo2014_64.png" alt="FET-Logo" class="navbar-logo">
+			</a>
+			<button class="navbar-toggle" onclick="toggleMenu()">
+				<i class="fas fa-bars"></i>
+			</button>
+			<ul id="navBarContent" class="navbar-content hidden sm:block">
+				<li class="active"><a href="posts.html">News</a></li>
+				<li><a href="members.html">Fachschaft</a></li>
+				<li><a href="fotos.html">Fotos</a></li>
+				<li><a href="blackboard.html">Blackboard</a></li>
+				<li><a href="login.html">Login</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- Main Content -->
+	<main class="container mx-auto w-full px-4 mt-8 flex-1">
+		<h1 class="page-title">News</h1>
+		<div class="sm:flex sm:flex-row-reverse justify-center my-8">
+			<aside>
+				<div id="modal-container-1">
+					<div class="modal w-11/12 max-w-xs sm:w-full sm:max-w-full">
+						<div class="flex justify-between items-center mb-2">
+							<h2 class="text-gray-800 sm:section-title sm:section-title-margins sm:w-full"><span class="mr-1 text-gray-400 sm:hidden"><i class="fas fa-filter"></i></span>Auswahl einschränken</h2>
+							<div class="modal-closeButton px-2 rounded">
+								<i class="fas fa-times"></i>
+							</div>
+						</div>
+						<form action="" method="POST" class="grid grid-cols-1 gap-2 sm:gap-4">
+							<div class="alert alert-danger">
+								<i class="alert-icon fas fa-exclamation-circle"></i>
+								<h2 class="alert-title">Fehler:</h2>
+								<div class="alert-body">Es kann nicht <i>nur</i> nach einem Monat gesucht werden.</div>
+							</div>
+							<label id="yearSelectorDIV" class="block">
+								<span class="text-gray-700">Jahr</span>
+								<select id="yearSelector" onchange="addMonthSelector()" class="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+									<option value="" selected></option>
+									<option value="2015">2015</option>
+									<option value="2016">2016</option>
+									<option value="2017">2017</option>
+									<option value="2018">2018</option>
+									<option value="2019">2019</option>
+									<option value="2020">2020</option>
+									<option value="2021">2021</option>
+								</select>
+							</label>
+							<label id="monthSelectorDIV" class="hidden">
+								<span class="text-gray-700">Monat</span>
+								<select id="monthSelector" class="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+									<option value="" selected></option>
+									<option value="1">Jänner</option>
+									<option value="2">Februar</option>
+									<option value="3">März</option>
+									<option value="4">April</option>
+									<option value="5">Mai</option>
+									<option value="6">Juni</option>
+									<option value="7">Juli</option>
+									<option value="8">August</option>
+									<option value="9">September</option>
+									<option value="10">Oktober</option>
+									<option value="11">November</option>
+									<option value="12">Dezember</option>
+								</select>
+							</label>
+							<label class="inline-flex items-center">
+								<input type="checkbox" class="rounded border-gray-300 text-proprietary shadow-sm focus:border-blue-300 focus:ring focus:ring-offset-0 focus:ring-blue-200 focus:ring-opacity-50">
+								<span class="ml-2 text-gray-700">Kompakte Ansicht</span>
+							</label>
+							<label class="inline-flex items-center">
+								<input type="checkbox" class="rounded border-gray-300 text-proprietary shadow-sm focus:border-blue-300 focus:ring focus:ring-offset-0 focus:ring-blue-200 focus:ring-opacity-50">
+								<span class="ml-2 text-gray-700">nur FET-Sitzungen</span>
+							</label>
+							<input type="submit" class="block btn btn-primary" value="Anzeigen">
+						</form>
+					</div>
+				</div>
+				<button id="modal-trigger-1" class="trigger fixed bottom-4 right-4 bg-proprietary-darker text-blue-50 shadow-lg text-2xl rounded sm:hidden">
+					<i class="fas fa-filter p-2"></i>
+				</button>
+			</aside>
+
+			<section class="my-8 sm:my-0 sm:w-3/5 xl:w-2/5 flex flex-col gap-4">
+				<article class="article-cover-image" style="background-image: url('img/article-cover-1.jpg');" onclick="openArticle('index.html')">
+					<div class="article-cover-desc">
+						<div class="article-cover-desc-items">
+							<ul class="article-cover-tags">
+								<li><a href="#">#fet</a></li>
+								<li><a href="#">#ug</a></li>
+								<li><a href="#">#öh</a></li>
+							</ul>
+							<div>
+								<a href="#"><h3 class="text-gray-50">Neues Universitätsgesetz wird entschärft</h3></a>
+								<div class="text-gray-200"><i class="fas fa-clock"></i> 12.04.2021</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<article class="article-cover-image" style="background-image: url('img/article-cover-2.jpg');" onclick="openArticle('index.html')">
+					<div class="article-cover-desc">
+						<div class="article-cover-desc-items">
+							<ul class="article-cover-tags">
+								<li><a href="#">#fet</a></li>
+								<li><a href="#">#ug</a></li>
+								<li><a href="#">#öh</a></li>
+							</ul>
+							<div>
+								<a href="#"><h3 class="text-gray-50">ÖH Wahl - Tag 2</h3></a>
+								<div class="text-gray-200"><i class="fas fa-clock"></i> 12.09.2021</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<article class="article-cover-image" style="background-image: url('img/article-cover-3.jpg');" onclick="openArticle('index.html')">
+					<div class="article-cover-desc">
+						<div class="article-cover-desc-items">
+							<ul class="article-cover-tags">
+								<li><a href="#">#fet</a></li>
+								<li><a href="#">#ug</a></li>
+								<li><a href="#">#öh</a></li>
+							</ul>
+							<div>
+								<a href="#"><h3 class="text-gray-50">ÖH Wahl - Tag 3</h3></a>
+								<div class="text-gray-200"><i class="fas fa-clock"></i> 23.09.2021</div>
+							</div>
+						</div>
+					</div>
+				</article>
+			</section>
+		</div>
+	</main>
+
+	<footer class="bg-proprietary p-4 text-blue-100 flex-none">
+		<ul class="flex justify-center mb-4 text-2xl">
+			<li class="mx-4">
+				<a href="https://facebook.fet.at/"><i class="fab fa-facebook"></i></a>
+			</li>
+			<li class="mx-4">
+				<a href="https://instagram.fet.at/"><i class="fab fa-instagram"></i></a>
+			</li>
+			<li class="mx-4">
+				<a href="https://discord.fet.at/"><i class="fab fa-discord"></i></a>
+			</li>
+			<li class="mx-4">
+				<a href="https://telegram.fet.at/"><i class="fab fa-telegram"></i></a>
+			</li>
+			<li class="mx-4">
+				<a href="mailto:service@fet.at"><i class="fas fa-envelope"></i></a>
+			</li>
+		</ul>
+		<div class="flex justify-center my-4">
+			<a href="#" class="text-center text-sm sm:text-base">Impressum</a>
+		</div>
+		<hr class="border-blue-300 -mx-4">
+		<p class="mt-4 uppercase text-center text-sm sm:text-base">© 2021 FET - Alle Rechte vorbehalten.</p>
+	</footer>
+
+	<script defer src="https://unpkg.com/alpinejs@3.2.2/dist/cdn.min.js"></script>
+	<script defer src="js/scripts.js"></script>
+	<script>
+		function myFunction(x) {
+			let element = document.getElementsByTagName("main")[0];
+			console.log(element);
+
+			if (x.matches) { // If media query matches
+				console.log("hi");
+				element.setAttribute("x-data", "{ showModal: true }");
+			} else {
+				console.log("HI");
+				element.setAttribute("x-data", "{ showModal: false }");
+			}
+		}
+
+		var x = window.matchMedia("(min-width: 640px)")
+		myFunction(x) // Call listener function at run time
+		x.addListener(myFunction) // Attach listener function on state changes 
+	</script>
+</body>
+</html>
