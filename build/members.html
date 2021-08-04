@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>FET: Fachschaft</title>
+
+	<meta name="author" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="description" content="Die Fachschaft Elektrotechnik besteht aus ET Studierenden, die sich um die Anliegen der Studenten und Studentinnen kümmern.">
+	<meta property="og:image" content="#"> <!--og:... = Facebook metadata-->
+	<meta property="og:description" content="Die Fachschaft Elektrotechnik besteht aus ET Studierenden, die sich um die Anliegen der Studenten und Studentinnen kümmern.">
+	<meta property="og:title" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="twitter:title" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="theme-color" content="#006599">
+	<!-- third-generation iPad with high-resolution Retina display: -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="#">
+	<!-- iPhone with high-resolution Retina display: -->
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="#">
+	<!-- first- and second-generation iPad: -->
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="#">
+	<!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+	<link rel="apple-touch-icon-precomposed" href="#">
+	<!-- basic favicon -->
+	<link rel="icon" href="#">
+	<link rel="shortcut icon" type="image/png" href="https://fet.at/assets/img/fet_logo_white.png">
+
+	<link rel="stylesheet" href="css/styles.css">
+	<!--<link rel="stylesheet" href="../css/tailwind.css">-->
+	<script src="https://kit.fontawesome.com/fb26f70535.js" crossorigin="anonymous"></script>
+	<!--Google Fonts-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+</head>
+<body x-data="{ showModal: false, closeModal() { if(window.screen.width <= 640){this.showModal = false} } }" :class="{ 'overflow-y-hidden': showModal }">
+	<!-- NAVBAR -->
+	<nav class="navbar">
+		<div>
+			<a href="index.html">
+				<img src="img/logo2014_64.png" alt="FET-Logo" class="navbar-logo">
+			</a>
+			<button class="navbar-toggle" onclick="toggleMenu()">
+				<i class="fas fa-bars"></i>
+			</button>
+			<ul id="navBarContent" class="navbar-content hidden sm:block">
+				<li><a href="posts.html">News</a></li>
+				<li class="active"><a href="members.html">Fachschaft</a></li>
+				<li><a href="fotos.html">Fotos</a></li>
+				<li><a href="blackboard.html">Blackboard</a></li>
+				<li><a href="login.html">Login</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- Main Content -->
+	<main class="container mx-auto w-full px-4 mt-8 flex-1">
+		<h1 class="page-title">Über uns</h1>
+		<div class="sm:flex sm:flex-row justify-center my-8">
+			<aside class="flex-none max-w-min sm:pr-4">
+				<div class="fixed sm:sticky top-0 sm:top-4 left-0 w-full h-full sm:h-auto bg-black sm:bg-transparent bg-opacity-70 flex sm:block items-center justify-center"
+					x-show="showModal"
+					x-transition:enter="transition duration-300 ease-out"
+					x-transition:enter-start="opacity-0"
+					x-transition:enter-end="opacity-100"
+					x-transition:leave="transition duration-300 ease-in"
+					x-transition:leave-start="opacity-100"
+					x-transition:leave-end="opacity-0"
+				>
+					<div class="max-w-sm sm:w-full mx-4 sm:mx-0 p-4 sm:p-0 bg-white sm:bg-transparent rounded sm:rounded-none"
+						@click.outside="closeModal"
+						x-show="showModal"
+						x-transition:enter="transition transform ease-out duration-300"
+						x-transition:enter-start="scale-110 opacity-0"
+						x-transition:enter-end="scale-100 opacity-100"
+						x-transition:leave="transition transform ease-in duration-300"
+						x-transition:leave-start="scale-100 opacity-100"
+						x-transition:leave-end="scale-110 opacity-0"
+					>
+						<div class="flex justify-between items-center mb-2 sm:hidden">
+							<h2 class="text-gray-800 sm:section-title sm_section-title-margins sm:w-full">
+								<span class="mr-1 text-gray-400 sm:hidden">
+									<i class="fa-solid fa-bars"></i>
+								</span>
+								Kategorien
+							</h2>
+							<div class="ml-4 -mr-2 px-2 rounded text-xl text-gray-600 sm:hidden cursor-pointer" @click="showModal = false">
+								<i class="far fa-times"></i>
+							</div>
+						</div>
+						<div>
+							<ul class="flex flex-col text-gray-700">
+								<a href="#"><li class="p-2 hover:bg-gray-300 rounded bg-gray-300 text-gray-800 font-medium">Studienkommission</li></a>
+								<ul id="scrollspy-subNav" class="hidden sm:block">
+									<li class="ml-2 hover:bg-gray-200 rounded text-sm"><a href="#studienkommission-computational-science" class="block p-2">Studienkommission Computational Science</a></li>
+									<li class="ml-2 hover:bg-gray-200 rounded text-sm"><a href="#studienkommission-et" class="block p-2">Studienkommission ET</a></li>
+									<li class="ml-2 hover:bg-gray-200 rounded text-sm"><a href="#stuko-ulg" class="block p-2">Studienkommission Universitätslehrgänge</a></li>
+								</ul>
+								<a href="#"><li class="p-2 hover:bg-gray-300 rounded">Berufungskommission</li></a>
+								<a href="#"><li class="p-2 hover:bg-gray-300 rounded">Studienvertretung</li></a>
+								<a href="#"><li class="p-2 hover:bg-gray-300 rounded">Habilitationskommission</li></a>
+								<a href="#"><li class="p-2 hover:bg-gray-300 rounded">Freizeit</li></a>
+								<a href="#"><li class="p-2 hover:bg-gray-300 rounded">Laufbahnstellenbeirat</li></a>
+								<hr class="border-gray-300">
+								<a href="#"><li class="p-2 hover:bg-gray-300 rounded">Pension</li></a>
+								<a href="#"><li class="p-2 hover:bg-gray-300 rounded">Alle Mitglieder</li></a>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<button id="modal-trigger-1" class="trigger fixed bottom-4 right-4 bg-proprietary-darker text-blue-50 shadow-lg text-2xl rounded sm:hidden" 
+					@click="showModal = true"
+					x-show="! showModal"
+					x-transition:enter="transition duration-100 ease-in"
+					x-transition:enter-start="opacity-0"
+					x-transition:enter-end="opacity-100"
+					x-transition:leave="transition duration-100 ease-out"
+					x-transition:leave-start="opacity-100"
+					x-transition:leave-end="opacity-0"
+				>
+				<i class="fa-solid fa-bars px-2 py-1"></i>
+				</button>
+			</aside>
+
+			<section class="flex-grow max-w-prose my-8 sm:my-0">
+				<div class="flex flex-col gap-2 text-justify text-gray-800">
+					<p>
+						Die Studienkommission kurz StuKo hat als wichtigste Aufgabe die Erstellung, Änderung und Überwachung von Curricula. Oft werden auch weitere Themenbereiche der Lehre besprochen. Die StuKo besteht aus 12 Hauptmitgliedern wovon jeweils 4 aus den Professor*innen, wissenschaftlichen Personal und Studierenden sich bilden. Außerdem können nicht stimmberechtigte Ersatzmitglieder an Sitzungen teilnehmen
+					</p>
+					<p>
+						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates necessitatibus quae autem, fugit officia praesentium est accusamus consectetur tempore dolore id ut sunt deleniti adipisci ipsum similique eligendi repudiandae vel.
+					</p>
+				</div>
+				<div>
+					<article id="studienkommission-computational-science">
+						<div class="flex flex-row items-center mt-8 mb-4">
+							<a href="#studienkommission-computational-science" class="flex-none mr-2">
+								<i class="far fa-link text-sm text-blue-400 hover:text-blue-500"></i>
+							</a>
+							<h2 class="flex-1 text-lg text-gray-900 tracking-wider">Studienkommission Computational Science</h2>
+						</div>
+						<div class="flex flex-wrap justify-evenly gap-4 text-proprietary text-center">
+							<figure class="w-36">
+								<a href="#">
+									<img loading="lazy" src="https://fet.at/files/uploads/members/image/photo6043877786113913220.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Alexander Stiedl" class="w-36 h-36 bg-white">
+									<figcaption>
+										<h2>Alexander Stiedl</h2>
+									</figcaption>
+								</a>
+							</figure>
+							<figure class="w-36">
+								<a href="#">
+									<img loading="lazy" src="https://fet.at/files/uploads/members/image/IMG_4526a.JPG.150x150_q85_crop.jpg" alt="Portraitfoto von Astrid Raschig" class="w-36 h-36 bg-white">
+									<figcaption>
+										<h2>Astrid Raschig</h2>
+									</figcaption>
+								</a>
+							</figure>
+							<figure class="w-36">
+								<a href="#">
+									<img loading="lazy" src="https://fet.at/files/uploads/members/image/Christian.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Christian Eder" class="w-36 h-36 bg-white">
+									<figcaption>
+										<h2>Christian Eder</h2>
+									</figcaption>
+								</a>
+							</figure>
+							<figure class="w-36">
+								<a href="#">
+									<img loading="lazy" src="https://fet.at/files/uploads/members/image/2013.04.10_fet_stvn_portraits-3.png.150x150_q85_crop.png" alt="Portraitfoto von Christoph Peinsipp" class="w-36 h-36 bg-white">
+									<figcaption>
+										<h2>Christoph Peinsipp</h2>
+									</figcaption>
+								</a>
+							</figure>
+						</div>
+					</article>
+					<article id="studienkommission-et">
+						<div class="flex flex-row items-center mt-8 mb-4">
+							<a href="#studienkommission-et" class="flex-none mr-2">
+								<i class="far fa-link text-sm text-blue-400 hover:text-blue-500"></i>
+							</a>
+							<h2 class="flex-1 text-lg text-gray-900 tracking-wider">Studienkommission ET</h2>
+						</div>
+						<div class="flex flex-wrap justify-evenly gap-4 text-proprietary text-center">
+							<figure class="w-36">
+								<a href="#">
+									<img loading="lazy" src="https://fet.at/files/uploads/members/image/photo_2021-03-12_22-57-25.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Christoph Clementschitsch" class="w-36 h-36 bg-white">
+									<figcaption>
+										<h2>Christoph Clementschitsch</h2>
+									</figcaption>
+								</a>
+							</figure>
+							<figure class="w-36">
+								<a href="#">
+									<img loading="lazy" src="https://fet.at/files/uploads/members/image/Clara.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Clara Sophia Karin Hönlinger" class="w-36 h-36 bg-white">
+									<figcaption>
+										<h2>Clara Sophia Karin Hönlinger</h2>
+									</figcaption>
+								</a>
+							</figure>
+							<figure class="w-36">
+								<a href="#">
+									<img loading="lazy" src="https://fet.at/files/uploads/members/image/872ebb8e-1956-4ec0-828b-7a2f0225b93f__2_.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Clemens Koss" class="w-36 h-36 bg-white">
+									<figcaption>
+										<h2>Clemens Koss</h2>
+									</figcaption>
+								</a>
+							</figure>
+							<figure class="w-36">
+								<a href="#">
+									<img loading="lazy" src="https://fet.at/files/uploads/members/image/portrait_Daniel.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Daniel A. Maierhofer" class="w-36 h-36 bg-white">
+									<figcaption>
+										<h2>Daniel A. Maierhofer</h2>
+									</figcaption>
+								</a>
+							</figure>
+							<figure class="w-36">
+								<a href="#">
+									<img loading="lazy" src="https://fet.at/files/uploads/members/image/dani.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Daniela Havlicek" class="w-36 h-36 bg-white">
+									<figcaption>
+										<h2>Daniela Havlicek</h2>
+									</figcaption>
+								</a>
+							</figure>
+							<figure class="w-36">
+								<a href="#">
+									<img loading="lazy" src="https://fet.at/files/uploads/members/image/43787796_1871191209655680_664271551943671808_n.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Elena Bica" class="w-36 h-36 bg-white">
+									<figcaption>
+										<h2>Elena Bica</h2>
+									</figcaption>
+								</a>
+							</figure>
+						</div>
+					</article>
+					<article id="stuko-ulg">
+						<div class="flex flex-row items-center mt-8 mb-4">
+							<a href="#stuko-ulg" class="flex-none mr-2">
+								<i class="far fa-link text-sm text-blue-400 hover:text-blue-500"></i>
+							</a>
+							<h2 class="flex-1 text-lg text-gray-900 tracking-wider">Studienkommission Universitätslehrgänge</h2>
+						</div>
+						<div class="flex flex-wrap justify-evenly gap-4 text-proprietary text-center">
+							<figure class="w-36">
+								<a href="#">
+									<img loading="lazy" src="https://fet.at/files/uploads/members/image/photo6043877786113913220.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Alexander Stiedl" class="w-36 h-36 bg-white">
+									<figcaption>
+										<h2>Alexander Stiedl</h2>
+									</figcaption>
+								</a>
+							</figure>
+							<figure class="w-36">
+								<a href="#">
+									<img loading="lazy" src="https://fet.at/files/uploads/members/image/IMG_4526a.JPG.150x150_q85_crop.jpg" alt="Portraitfoto von Astrid Raschig" class="w-36 h-36 bg-white">
+									<figcaption>
+										<h2>Astrid Raschig</h2>
+									</figcaption>
+								</a>
+							</figure>
+							<figure class="w-36">
+								<a href="#">
+									<img loading="lazy" src="https://fet.at/files/uploads/members/image/Christian.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Christian Eder" class="w-36 h-36 bg-white">
+									<figcaption>
+										<h2>Christian Eder</h2>
+									</figcaption>
+								</a>
+							</figure>
+							<figure class="w-36">
+								<a href="#">
+									<img loading="lazy" src="https://fet.at/files/uploads/members/image/2013.04.10_fet_stvn_portraits-3.png.150x150_q85_crop.png" alt="Portraitfoto von Christoph Peinsipp" class="w-36 h-36 bg-white">
+									<figcaption>
+										<h2>Christoph Peinsipp</h2>
+									</figcaption>
+								</a>
+							</figure>
+						</div>
+					</article
+					<figure class="w-36">
+						<a href="#">
+							<img loading="lazy" src="https://fet.at/files/uploads/members/image/DSC_4096_Kopie.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Felix Stelzl" class="w-36 h-36 bg-white">
+							<figcaption>
+								<h2>Felix Stelzl</h2>
+							</figcaption>
+						</a>
+					</figure>
+					<figure class="w-36">
+						<a href="#">
+							<img loading="lazy" src="https://fet.at/files/uploads/members/image/mp-86.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Franziska Mayer" class="w-36 h-36 bg-white">
+							<figcaption>
+								<h2>Franziska Mayer</h2>
+							</figcaption>
+						</a>
+					</figure>
+				</div>
+			</section>
+		</div>
+	</main>
+
+	<footer class="bg-proprietary p-4 text-blue-100 flex-none">
+		<ul class="flex justify-center mb-4 text-2xl">
+			<li class="mx-4">
+				<a href="https://facebook.fet.at/"><i class="fab fa-facebook"></i></a>
+			</li>
+			<li class="mx-4">
+				<a href="https://instagram.fet.at/"><i class="fab fa-instagram"></i></a>
+			</li>
+			<li class="mx-4">
+				<a href="https://discord.fet.at/"><i class="fab fa-discord"></i></a>
+			</li>
+			<li class="mx-4">
+				<a href="https://telegram.fet.at/"><i class="fab fa-telegram"></i></a>
+			</li>
+			<li class="mx-4">
+				<a href="mailto:service@fet.at"><i class="fas fa-envelope"></i></a>
+			</li>
+		</ul>
+		<div class="flex justify-center my-4">
+			<a href="#" class="text-center text-sm sm:text-base">Impressum</a>
+		</div>
+		<hr class="border-blue-300 -mx-4">
+		<p class="mt-4 uppercase text-center text-sm sm:text-base">© 2021 FET - Alle Rechte vorbehalten.</p>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@5.1/dist/gumshoe.polyfills.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@16.1/dist/smooth-scroll.polyfills.min.js"></script>
+	<script defer src="https://unpkg.com/alpinejs@3.2.2/dist/cdn.min.js"></script>
+	<script defer src="js/scripts.js"></script>
+	<script>
+		var spy = new Gumshoe('#scrollspy-subNav a', {
+			/***** Scrollspy *****/ // Active classes
+			navClass: 'font-semibold', // applied to the nav list item
+		});
+
+		/***** SmoothScroll *****/ // All animations will take exactly 500ms
+		var scroll = new SmoothScroll('a[href*="#"]', {
+			speed: 750,
+			speedAsDuration: true,
+			easing: 'easeInOutQuad'
+		});
+
+		function myFunction(x) {
+			let element = document.getElementsByTagName("main")[0];
+			console.log(element);
+
+			if (x.matches) { // If media query matches
+				console.log("hi");
+				element.setAttribute("x-data", "{ showModal: true }");
+			} else {
+				console.log("HI");
+				element.setAttribute("x-data", "{ showModal: false }");
+			}
+		}
+
+		var x = window.matchMedia("(min-width: 640px)")
+		myFunction(x) // Call listener function at run time
+		x.addListener(myFunction) // Attach listener function on state changes 
+	</script>
+</body>
+</html>
