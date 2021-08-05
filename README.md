@@ -5,7 +5,8 @@ Redesign of the [FET-webpage](https://fet.at).
 - [X] Startseite
 - [ ] News
 - [ ] ↳ Article
-- [ ] Fachschaft
+- [X] Fachschaft
+- [X] ↳ Member detailed page
 - [ ] Fotos
 - [X] Blackboard
 - [X] Login
