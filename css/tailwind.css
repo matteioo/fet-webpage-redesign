@@ -70,6 +70,28 @@ p a {
 	}
 }
 
+/***** SIDEBAR-NAVIGATION *****/
+ul.sideBarNav {
+	@apply flex flex-col text-gray-700;
+}
+ul.sideBarNav > li > a {
+	@apply block p-2 hover:bg-gray-300 rounded;
+}
+ul.sideBarNav > li.active > a {
+	@apply bg-gray-300 text-gray-800 font-medium;
+}
+ul.sideBarNav > hr {
+	@apply border-gray-300;
+}
+ul.sideBarNav > ul {
+	@apply hidden sm:block;
+}
+ul.sideBarNav > ul > li > a {
+	@apply block p-2 ml-2 hover:bg-gray-200 rounded text-sm;
+}
+ul.sideBarNav > ul > li.active > a {
+	@apply font-semibold;
+}
 /***** CALENDAR *****/
 .calender-entries {
 	@apply flex items-center;
@@ -191,6 +213,29 @@ div[id^="modal-container"].show-modal {
 }
 .jobsList-expand {
 	@apply flex-none text-gray-400 text-xl;
+}
+
+/***** MEMBERS SECTIONS *****/
+.members-article a.title {
+	@apply flex flex-row items-start mt-8 mb-4;
+}
+.members-article a.title [class*="fa-"] {
+	@apply flex-none mr-1 mt-2 -ml-5 text-sm text-blue-400 invisible;
+}
+.members-article a.title:hover [class*="fa-"] {
+	@apply text-blue-500 visible;
+}
+.members-article a.title h2 {
+	@apply flex-1 text-lg text-gray-900 tracking-wider;
+}
+.members-article .members-listing {
+	@apply flex flex-wrap justify-start gap-2 sm:gap-4 text-proprietary text-center;
+}
+.members-article .members-listing figure {
+	@apply w-36;
+}
+.members-article .members-listing figure figcaption h3 {
+	@apply leading-tight pt-1;
 }
 
 @tailwind utilities;
