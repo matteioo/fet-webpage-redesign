@@ -220,7 +220,7 @@ div[id^="modal-container"].show-modal {
 	@apply flex flex-row items-start mt-8 mb-4;
 }
 .members-article a.title [class*="fa-"] {
-	@apply flex-none mr-1 mt-2 -ml-5 text-sm text-blue-400 invisible;
+	@apply flex-none mr-1 mt-2 sm:-ml-5 text-sm text-blue-500 sm:text-blue-400 sm:invisible;
 }
 .members-article a.title:hover [class*="fa-"] {
 	@apply text-blue-500 visible;
