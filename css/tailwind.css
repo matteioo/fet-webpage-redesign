@@ -93,8 +93,26 @@ ul.sideBarNav > ul > li.active > a {
 	@apply font-semibold;
 }
 /***** CALENDAR *****/
-.calender-entries {
+.calendar-preview > div {
+	@apply sticky top-4;
+}
+.calendar-entries {
+	@apply flex flex-col gap-4 sm:mt-6;
+}
+.calendar-entry {
 	@apply flex items-center;
+}
+.calendar-dateBubble {
+	@apply flex flex-col justify-center w-11 h-11 pb-1 rounded-full text-center leading-none text-blue-50 bg-proprietary flex-none;
+}
+.calendar-dateBubble .dateBubble-day {
+	@apply flex-none leading-none;
+}
+.calendar-dateBubble .dateBubble-month {
+	@apply flex-none text-sm leading-none text-blue-100;
+}
+.calendar-entry > h3 {
+	@apply text-gray-700 pl-2;
 }
 
 /***** ARTICLE PREVIEW *****/
