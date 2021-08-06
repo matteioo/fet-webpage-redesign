@@ -35,7 +35,7 @@
 
 	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </head>
-<body x-data="{ showModal: false, closeModal() { if(window.screen.width <= 640){this.showModal = false} } }" :class="{'overflow-y-hidden': showModal }">
+<body x-data="{ showModal: false, closeModal() { if(window.screen.width <= 640){this.showModal = false} } }" :class="{ 'overflow-y-hidden': showModal }">
 	<!-- NAVBAR -->
 	<nav class="navbar">
 		<div>
@@ -59,8 +59,8 @@
 	<main class="container mx-auto w-full px-4 mt-8 flex-1">
 		<h1 class="page-title">News</h1>
 		<div class="sm:flex sm:flex-row-reverse justify-center my-8">
-			<aside class="sm:w-2/5 sm:max-w-xs sm:pl-4 my-8 sm:my-0">
-				<div class="fixed sm:sticky top-0 sm:top-4 left-0 w-full h-full sm:h-auto bg-black sm:bg-transparent bg-opacity-70 flex sm:block items-center justify-center"
+			<aside class="sm:w-2/5 sm:max-w-xs sm:pl-4 lg:pl-8 my-8 sm:my-0">
+				<div class="z-10 fixed sm:sticky top-0 sm:top-4 lg:top-8 left-0 w-full h-full sm:h-auto bg-black sm:bg-transparent bg-opacity-70 flex sm:block items-center justify-center"
 					x-show="showModal"
 					x-transition:enter="transition duration-300 ease-out"
 					x-transition:enter-start="opacity-0"
@@ -151,12 +151,22 @@
 				>
 					<i class="fas fa-filter p-2"></i>
 				</button>
-				
-				
-				
 			</aside>
 
 			<section class="my-8 sm:my-0 sm:w-3/5 xl:w-2/5 flex flex-col gap-4">
+				<article class="bg-white rounded shadow transition-all duration-300 hover:shadow-md transform hover:scale-105">
+					<a href="#" class="block p-4">
+						<div class="float-right px-2 py-0.5 rounded-full text-sm font-medium text-proprietary bg-blue-100"><i class="fa-solid fa-calendar-days mr-1"></i>12.04.2021</div>
+						<h3 class="text-gray-800 leading-relaxed">Neues Universitätsgesetz wird entschärft</h3>			
+					</a>
+				</article>
+				<article class="bg-white rounded shadow transition-all duration-300 hover:shadow-md transform hover:scale-105">
+					<a href="#" class="block p-4">
+						<div class="float-right px-2 py-0.5 rounded-full text-sm font-medium text-proprietary bg-blue-100"><i class="fa-solid fa-calendar-days mr-1"></i>12.04.2021</div>
+						<h3 class="text-gray-800 leading-relaxed">ÖH Wahl - Tag 2</h3>			
+					</a>
+				</article>
+
 				<article class="article-cover-image" style="background-image: url('img/article-cover-1.jpg');" onclick="openArticle('index.html')">
 					<div class="article-cover-desc">
 						<div class="article-cover-desc-items">
