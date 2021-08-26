@@ -4,7 +4,7 @@ Redesign of the [FET-webpage](https://fet.at).
 ## Finished pages
 - [X] Startseite
 - [X] News
-- [ ] ↳ Article
+- [X] ↳ Article
 - [X] Fachschaft
 - [X] ↳ Member detailed page
 - [ ] Fotos 
