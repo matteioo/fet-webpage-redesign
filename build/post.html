@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>FET: Demoartikel</title>
+
+	<meta name="author" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="description" content="Die Fachschaft Elektrotechnik besteht aus ET Studierenden, die sich um die Anliegen der Studenten und Studentinnen kümmern.">
+	<meta property="og:image" content="#"> <!--og:... = Facebook metadata-->
+	<meta property="og:description" content="Die Fachschaft Elektrotechnik besteht aus ET Studierenden, die sich um die Anliegen der Studenten und Studentinnen kümmern.">
+	<meta property="og:title" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="twitter:title" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="theme-color" content="#006599">
+	<!-- third-generation iPad with high-resolution Retina display: -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="#">
+	<!-- iPhone with high-resolution Retina display: -->
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="#">
+	<!-- first- and second-generation iPad: -->
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="#">
+	<!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+	<link rel="apple-touch-icon-precomposed" href="#">
+	<!-- basic favicon -->
+	<link rel="icon" href="#">
+	<link rel="shortcut icon" type="image/png" href="https://fet.at/assets/img/fet_logo_white.png">
+
+	<link rel="stylesheet" href="css/styles.css">
+	<!--<link rel="stylesheet" href="../css/tailwind.css">-->
+	<script src="https://kit.fontawesome.com/fb26f70535.js" crossorigin="anonymous"></script>
+	<!--Google Fonts-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+</head>
+<body>
+	<!-- NAVBAR -->
+	<nav class="navbar">
+		<div>
+			<a href="index.html">
+				<img src="img/logo2014_64.png" alt="FET-Logo" class="navbar-logo">
+			</a>
+			<button class="navbar-toggle" onclick="toggleMenu()">
+				<i class="fas fa-bars"></i>
+			</button>
+			<ul id="navBarContent" class="navbar-content hidden sm:block">
+				<li><a href="posts.html">News</a></li>
+				<li><a href="members.html">Fachschaft</a></li>
+				<li><a href="fotos.html">Fotos</a></li>
+				<li><a href="blackboard.html">Blackboard</a></li>
+				<li><a href="login.html">Login</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- Main Content -->
+	<main class="full-article container mx-auto w-full flex-1 my-8 sm:flex flex-col gap-4 sm:px-4">
+		<a href="#" class="hidden z-20 fixed left-0 top-1/2 -mt-8 p-2 xl:flex items-center text-gray-400 rounded-md"
+			x-data="{ showPrevArticleButton : false }"
+			@mouseleave="showPrevArticleButton = false"
+			@mouseover="showPrevArticleButton = true"
+		>
+			<i class="fa-light fa-chevron-left text-5xl -m-2 p-2 bg-gray-100 rounded-md"></i>
+			<span class="text-gray-600 font-medium bg-gray-100 -m-2 p-2 rounded-r-md"
+				x-show="showPrevArticleButton"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 bg-opacity-0 transform scale-90"
+        x-transition:enter-end="opacity-100 transform scale-100"
+        x-transition:leave="transition ease-in duration-150"
+        x-transition:leave-start="opacity-100 transform scale-100"
+        x-transition:leave-end="opacity-0 bg-opacity-0 transform scale-100"
+			>Vorheriger<br>Artikel</span>
+		</a>
+		<a href="#" class="hidden z-20 fixed right-0 top-1/2 -mt-8 p-2 xl:flex items-center text-gray-400 rounded-md"
+			x-data="{ showNextArticleButton : false }"
+			@mouseleave="showNextArticleButton = false"
+			@mouseover="showNextArticleButton = true"
+		>
+			<span class="z-30 text-gray-600 font-medium bg-gray-100 -m-2 p-2 rounded-l-md text-right"
+				x-show="showNextArticleButton"
+				x-transition:enter="transition ease-out duration-300"
+				x-transition:enter-start="opacity-0 bg-opacity-0 transform scale-90"
+				x-transition:enter-end="opacity-100 transform scale-100"
+				x-transition:leave="transition ease-in duration-150"
+				x-transition:leave-start="opacity-100 transform scale-100"
+				x-transition:leave-end="opacity-0 bg-opacity-0 transform scale-100"
+			>Nächster<br>Artikel</span>
+			<i class="fa-light fa-chevron-right text-5xl -m-2 p-2 bg-gray-100 rounded-md"></i>
+		</a>
+		<section>
+			<div class="mb-4 flex flex-col sm:flex-col gap-2 mx-auto">
+				<ul class="mb-2 flex flex-row justify-center gap-2 sm:gap-4 flex-wrap text-blue-700 text-sm uppercase tracking-wide sm:font-medium">
+					<li class="inline-block py-1 px-2 bg-blue-100 rounded-full"><a href="#">#fachschaft</a></li>
+					<li class="inline-block py-1 px-2 bg-blue-100 rounded-full"><a href="#">#WelcomeDay</a></li>
+					<li class="inline-block py-1 px-2 bg-blue-100 rounded-full"><a href="#">#Inskriptionsberatung</a></li>
+				</ul>
+				<h1 class="text-lg sm:text-xl lg:text-3xl text-center md:text-left font-medium text-gray-900 font-serif tracking-wider" style="line-height: 1.5;">Studie zu TISS im Rahmen der Lehrveranstaltung "Interface & Interaction Design"</h1>
+				<div class="flex flex-row justify-center sm:justify-start gap-2 self-center md:self-start">
+					<img class="hidden sm:block w-12 rounded-full" src="https://fet.at/files/uploads/members/image/photo6043877786113913220.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Autor">
+					<div class="sm:flex flex-col justify-evenly text-gray-600 text-sm sm:text-base">
+						<a href="#" class="underline">Volta</a>
+						<span class="sm:hidden"> am </span>
+						<span>24. September 2021</span>
+					</div>
+				</div>
+			</div>
+			<!-- <img src="img/article-cover-3.jpg" alt="" class="h-44 sm:h-56 lg:h-64 xl:h-80 w-full object-cover sm:rounded-md max-w-5xl mx-auto"> -->
+			<div class="relative w-full h-44 sm:h-56 lg:h-64 xl:h-80 bg-center bg-no-repeat bg-cover sm:rounded-md mx-auto" style="background-image: url(img/article-cover-3.jpg);">
+				<div class="hidden absolute top-0 right-0 bg-white rounded-bl p-2 bg-opacity-80 lg:flex items-center gap-2">
+					<i class="flex-0 fa-solid fa-calendar-clock text-gray-800"></i>
+					<span class="flex-1 text-sm text-gray-800">
+						Event-Start: 23. August 2021 um 18:00 Uhr<br>
+						Event-Ende: 23. August 2021 um 20:00 Uhr
+					</span>
+				</div>
+			</div>
+		</section>
+		<section class="mx-4 z-10">
+			<article class="p-4 sm:-mt-16 lg:-mt-24 w-full max-w-prose mx-auto bg-white rounded">
+				<!-- <div class="w-full flex justify-end">
+					<div class="hidden lg:block max-w-max text-sm text-gray-600">
+						Event-Start: 23. August 2021 um 18:00 Uhr<br>
+						Event-Ende: 23. August 2021 um 20:00 Uhr
+					</div>
+				</div> -->
+				<div class="article-content flex flex-col gap-2 text-gray-700">
+					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet corporis natus nulla harum in consectetur. Minima, labore exercitationem, eum ullam quas harum ipsam neque tempora cupiditate, nihil cumque dicta eos.</p>
+	
+					<h2>Das ist eine Überschrift</h2>
+		
+					<p class="text-justify">Die Hochschüler_innenschaft an der TU Wien veranstaltet für das Wintersemester 2021 eine digitale Inskriptionsberatung. Diese steht den Studieninteressierten beziehungsweise Studienbewerber_innen an der TU Wien in digitaler Form via Zoom [1] zur Verfügung. Die Vertreter_innen der Fachschaften [2] beraten bezüglich der Inskription und dem Ablauf des Studiums. Bei Fragen zu Studiengebühren, Stipendien an der TU, Familienbeihilfe, Studienbeihilfe und vieles mehr ist das Sozialreferat [3] die richtige Anlaufstelle, während das Referat für ausländische Studierende [4] für die Belange der Studierenden aus dem Ausland zuständig ist.</p>
+					
+					<h3>Das ist eine Unterüberschrift</h3>
+					
+					<p>Die allgemeine Zulassungsfrist beginnt am Montag,&nbsp;12. Juli 2021&nbsp;und geht bis Sonntag,&nbsp;05. September&nbsp;2021. Die Nachfrist, in welcher man sich noch inskribieren kann, geht bis Dienstag, 30. November 2020. Das Wintersemester 2021 beginnt am Freitag, 01. Oktober 2021. Für die Studien Architektur, Informatik, Wirtschaftsinformatik und Raumplanung ist ein Aufnahme- bzw. Auswahlverfahren durchzulaufen. Für die übrigen Studien an der TU Wien ist die Studien-Vorbereitungs- und Reflexionsphase (Studien-VoR-Phase) zu absolvieren. Detailliertere Informationen dazu können unter [5] nachgelesen.</p>
+					
+					<h4>Das ist eine Unterunterüberschrift</h4>
+		
+					<p>Die <mark class="px-1 py-0.5 bg-yellow-300 rounded text-current text-opacity-95">Inskriptionsberatung</mark> findet an <mark class="px-1 py-0.5 bg-yellow-200 rounded text-current text-opacity-95">folgenden</mark> Tagen statt via Zoom [1] statt. <mark class="px-1 py-0.5 bg-yellow-100 rounded text-current text-opacity-95">Vertreter_innen</mark> der Fachschaften und Referaten stehen in den jeweiligen Breakout Sessions zur Verfügung.</p>
+		
+					<ul>
+						<li><del>Montag 14. Juni 2021 - 09:30 - 12:00</del></li>
+						<li>Dienstag 15. Juni 2021 - 09:30 - 12:00</li>
+						<li>Mittwoch 16. Juni 2021 - 13:30 -16:00</li>
+						<li>Donnerstag 17. Juni 2021 - 09:30 - 12:00<br>
+						&nbsp;</li>
+						<li>Montag 12. Juli 2021 - 09:30 - 12:00</li>
+						<li>Dienstag 13. Juli 2021 - 09:30 - 12:00</li>
+						<li>Mittwoch 14. Juli 2021 - 13:30 -16:00</li>
+						<li>Donnerstag 15.Juli 2021 - 09:30 - 12:00<br>
+						&nbsp;</li>
+						<li>Montag 30. August 2021 - 09:30 - 12:00</li>
+						<li>Dienstag 31. August 2021 - 09:30 - 12:00</li>
+						<li>Mittwoch 01. September 2021 - 13:30 -16:00</li>
+						<li>Donnerstag 02.September 2021 - 09:30 - 12:00</li>
+					</ul>
+
+					<p>[1]&nbsp;<a href="https://tuwien.zoom.us/j/92065739748?pwd=Mk9ISkY3Q3Q5cDhRV28vS3ZIOU5tUT09">https://tuwien.zoom.us/j/92065739748?pwd=Mk9ISkY3Q3Q5cDhRV28vS3ZIOU5tUT09</a><br>
+					[2]&nbsp;<a href="https://htu.at/fachschaften">https://htu.at/fachschaften</a><br>
+					[3]&nbsp;<a href="https://htu.at/Sozial">https://htu.at/Sozial</a><br>
+					[4]&nbsp;<a href="https://htu.at/AuRef">https://htu.at/AuRef</a><br>
+					[5]&nbsp;<a href="https://www.tuwien.at/studium">https://www.tuwien.at/studium</a></p>
+				</div>
+				<hr class="lg:hidden -mx-4 border-gray-200 border-1 my-4">
+				<div class="lg:hidden">
+					<h2 class="text-gray-800 font-medium"><i class="fa-solid fa-calendar-days mr-2 text-gray-400"></i>Termindetails:</h2>
+					<ul class="text-base text-gray-700 my-1">
+						<li>Start:&Tab;23. August 2021 um 18:00 Uhr</li>
+						<li>Ende:&Tab;23. August 2021 um 20:00 Uhr</li>
+					</ul>
+				</div>
+				<hr class="-mx-4 border-gray-200 border-1 my-4">
+				<div class="-m-4 flex divide-x divide-gray-200 text-sm sm:text-base">
+					<a href="#" class="w-1/2 p-4 flex items-center gap-2">
+						<i class="fa-solid fa-chevron-left text-gray-600"></i>
+						<span class="text-gray-700 font-medium">Vorheriger Artikel</span>
+					</a>
+					<a href="#" class="w-1/2 p-4 flex flex-row-reverse items-center gap-2">
+						<i class="fa-solid fa-chevron-right text-gray-600"></i>
+						<span class="text-gray-700 font-medium">Nächster Artikel</span>
+					</a>
+				</div>
+			</article>
+		</section>
+		<section class="mx-auto w-full px-4">
+			<h2 class="my-4 sm:my-8 text-proprietary text-xl text-center uppercase tracking-wider">Weiterlesen</h2>
+			<div class="flex justify-evenly flex-wrap gap-4">
+				<a href="#" class="sm:flex-1 block rounded shadow-md bg-no-repeat bg-center h-56 transition-all ease-in-out duration-500 bg-scale-100 hover:bg-scale-120" style="background-image: url(img/article-cover-1.jpg);">
+					<div class="w-full h-full bg-gradient-to-t from-black rounded-md flex flex-col justify-end p-2">
+						<h2 class="text-gray-50 line-clamp-2"><span aria-label="Link zum Artikel: "></span>Studie zu TISS im Rahmen der Lehrveranstaltung "Interface & Interaction Design"</h2>
+						<span class="text-gray-300 text-sm"><i class="fas fa-clock mr-1"></i><span aria-label=" vom "></span>23.09.2021</span>
+					</div>
+				</a>
+				<a href="#" class="sm:flex-1 block rounded shadow-md bg-no-repeat bg-center h-56 transition-all ease-in-out duration-500 bg-scale-100 hover:bg-scale-120" style="background-image: url(img/article-cover-2.jpg);">
+					<div class="w-full h-full bg-gradient-to-t from-black rounded-md flex flex-col justify-end p-2">
+						<h2 class="text-gray-50 line-clamp-2"><span aria-label="Link zum Artikel: "></span>Studie zu TISS im Rahmen der Lehrveranstaltung "Interface & Interaction Design"</h2>
+						<span class="text-gray-300 text-sm"><i class="fas fa-clock mr-1"></i><span aria-label=" vom "></span>23.09.2021</span>
+					</div>
+				</a>
+				<a href="#" class="flex-1 hidden lg:block rounded shadow-md bg-no-repeat bg-center h-56 transition-all ease-in-out duration-500 bg-scale-100 hover:bg-scale-120" style="background-image: url(img/article-cover-3.jpg);">
+					<div class="w-full h-full bg-gradient-to-t from-black rounded-md flex flex-col justify-end p-2">
+						<h2 class="text-gray-50 line-clamp-2"><span aria-label="Link zum Artikel: "></span>Studie zu TISS im Rahmen der Lehrveranstaltung "Interface & Interaction Design"</h2>
+						<span class="text-gray-300 text-sm"><i class="fas fa-clock mr-1"></i><span aria-label=" vom "></span>23.09.2021</span>
+					</div>
+				</a>
+				<a href="#" class="flex-1 hidden 2xl:block rounded shadow-md bg-no-repeat bg-center h-56 transition-all ease-in-out duration-500 bg-scale-100 hover:bg-scale-120" style="background-image: url(img/article-cover-1.jpg);">
+					<div class="w-full h-full bg-gradient-to-t from-black rounded-md flex flex-col justify-end p-2">
+						<h2 class="text-gray-50 line-clamp-2"><span aria-label="Link zum Artikel: "></span>Studie zu TISS im Rahmen der Lehrveranstaltung "Interface & Interaction Design"</h2>
+						<span class="text-gray-300 text-sm"><i class="fas fa-clock mr-1"></i><span aria-label=" vom "></span>23.09.2021</span>
+					</div>
+				</a>
+			</div>
+		</section>
+	</main>
+
+	<footer class="bg-proprietary p-4 text-blue-100 flex-none">
+		<ul class="flex justify-center mb-4 text-2xl">
+			<li class="mx-4">
+				<a href="https://facebook.fet.at/"><i class="fab fa-facebook"></i></a>
+			</li>
+			<li class="mx-4">
+				<a href="https://instagram.fet.at/"><i class="fab fa-instagram"></i></a>
+			</li>
+			<li class="mx-4">
+				<a href="https://discord.fet.at/"><i class="fab fa-discord"></i></a>
+			</li>
+			<li class="mx-4">
+				<a href="https://telegram.fet.at/"><i class="fab fa-telegram"></i></a>
+			</li>
+			<li class="mx-4">
+				<a href="mailto:service@fet.at"><i class="fas fa-envelope"></i></a>
+			</li>
+		</ul>
+		<div class="flex justify-center my-4">
+			<a href="#" class="text-center text-sm sm:text-base">Impressum</a>
+		</div>
+		<hr class="border-blue-300 -mx-4">
+		<p class="mt-4 uppercase text-center text-sm sm:text-base">© 2021 FET - Alle Rechte vorbehalten.</p>
+	</footer>
+
+	<script defer src="https://unpkg.com/alpinejs@3.2.2/dist/cdn.min.js"></script>
+	<script defer src="js/scripts.js"></script>
+</body>
+</html>
