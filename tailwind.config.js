@@ -5,7 +5,8 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
 		fontFamily: {
-			'sans': ['Inter', ...defaultTheme.fontFamily.sans]
+			'sans': ['Inter', ...defaultTheme.fontFamily.sans],
+			'serif': ['Besley', ...defaultTheme.fontFamily.serif]
 		},
     extend: {
 			colors: {
@@ -32,6 +33,7 @@ module.exports = {
     extend: {},
   },
   plugins: [
-		require('@tailwindcss/forms')
+		require('@tailwindcss/forms'),
+		require('@tailwindcss/line-clamp')
 	],
 }
