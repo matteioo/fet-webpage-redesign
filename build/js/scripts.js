@@ -6,9 +6,7 @@ function toggleMenu(){
 
 // Open article on click without an anchor-tag.
 function openArticle(link){
-	let current = window.location.pathname;
-	console.log("/build/" + link);
-	window.location.pathname = "/build/" + link;
+	window.location.href=link;
 }
 
 if(cookieSet("InfoBoxHidden")){
