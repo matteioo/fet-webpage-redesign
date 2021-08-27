@@ -147,25 +147,25 @@ ul.sideBarNav > ul > li.active > a {
 }
 
 /***** ARTICLE CONTENT *****/
-.article-content p {
+.db-page-content p {
 	@apply text-justify text-gray-700;
 }
-.article-content ol {
-	@apply list-inside list-decimal;
+.db-page-content ol {
+	@apply list-inside list-decimal text-gray-700;
 }
-.article-content ul {
-	@apply list-inside list-disc;
+.db-page-content ul {
+	@apply list-inside list-disc text-gray-700;
 }
-.article-content h2, .article-content h3, .article-content h4, .article-content h5, .article-content h6 {
+.db-page-content h2, .db-page-content h3, .db-page-content h4, .db-page-content h5, .db-page-content h6 {
 	@apply text-gray-800 -mb-2;
 }
-.article-content h2 {
+.db-page-content h2 {
 	@apply font-medium mt-2 text-xl;
 }
-.article-content h3 {
+.db-page-content h3 {
 	@apply font-medium mt-1 text-lg;
 }
-.article-content h4, .article-content h5, .article-content h6 {
+.db-page-content h4, .db-page-content h5, .db-page-content h6 {
 	@apply mt-1 text-lg;
 }
 
