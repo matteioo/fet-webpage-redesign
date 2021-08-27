@@ -156,7 +156,7 @@ ul.sideBarNav > ul > li.active > a {
 .article-content ul {
 	@apply list-inside list-disc;
 }
-.article-content h2, h3, h4, h5, h6 {
+.article-content h2, .article-content h3, .article-content h4, .article-content h5, .article-content h6 {
 	@apply text-gray-800 -mb-2;
 }
 .article-content h2 {
@@ -165,7 +165,7 @@ ul.sideBarNav > ul > li.active > a {
 .article-content h3 {
 	@apply font-medium mt-1 text-lg;
 }
-.article-content h4, h5, h6 {
+.article-content h4, .article-content h5, .article-content h6 {
 	@apply mt-1 text-lg;
 }
 
