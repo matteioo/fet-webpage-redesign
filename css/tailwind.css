@@ -33,15 +33,21 @@ p a {
 	@apply sm:hidden absolute right-4 sm:right-0 top-5 text-proprietary text-2xl;
 }
 .navbar-content {
-	@apply text-proprietary sm:text-lg self-start sm:self-center;
+	@apply w-full sm:w-auto text-proprietary md:text-lg self-start sm:self-center;
 }
 .navbar-content > li {
-	@apply py-2 md:mx-1 sm:px-2 sm:inline-block;
+	@apply sm:inline-block;
 }
-.navbar-content > li.active {
+.navbar-content hr {
+	@apply sm:hidden my-2;
+}
+.navbar-content li > a {
+	@apply block w-full h-full py-2 md:mx-1 sm:px-1 md:px-2;
+}
+.navbar-content li.active {
  @apply font-semibold text-proprietary-darker;
 }
-.navbar-content > li.active a {
+.navbar-content li.active a {
 	@apply cursor-default;
 }
 
@@ -62,7 +68,7 @@ p a {
 	@apply px-4 py-2 rounded text-center;
 }
 .btn-primary {
-	@apply text-blue-50 bg-proprietary hover:bg-proprietary-darker focus:outline-none focus:ring-2 focus:ring-proprietary-light;
+	@apply text-blue-50 bg-proprietary hover:bg-proprietary-dark focus:outline-none focus:ring-2 focus:ring-proprietary-light;
 }
 .btn-secondary {
 	@apply border border-gray-700 text-gray-700;

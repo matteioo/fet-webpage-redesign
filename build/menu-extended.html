@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>FET: Startseite</title>
+
+	<meta name="author" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="description" content="Die Fachschaft Elektrotechnik besteht aus ET Studierenden, die sich um die Anliegen der Studenten und Studentinnen kümmern.">
+	<meta property="og:image" content="#"> <!--og:... = Facebook metadata-->
+	<meta property="og:description" content="Die Fachschaft Elektrotechnik besteht aus ET Studierenden, die sich um die Anliegen der Studenten und Studentinnen kümmern.">
+	<meta property="og:title" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="twitter:title" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="theme-color" content="#006599">
+	<!-- third-generation iPad with high-resolution Retina display: -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="#">
+	<!-- iPhone with high-resolution Retina display: -->
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="#">
+	<!-- first- and second-generation iPad: -->
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="#">
+	<!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+	<link rel="apple-touch-icon-precomposed" href="#">
+	<!-- basic favicon -->
+	<link rel="icon" href="#">
+	<link rel="shortcut icon" type="image/png" href="https://fet.at/assets/img/fet_logo_white.png">
+
+	<link rel="stylesheet" href="css/styles.css">
+	<!--<link rel="stylesheet" href="../css/tailwind.css">-->
+	<script src="https://kit.fontawesome.com/fb26f70535.js" crossorigin="anonymous"></script>
+	<!--Google Fonts-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+</head>
+<body>
+	<!-- NAVBAR -->
+	<nav class="navbar">
+		<div>
+			<a href="index.html">
+				<img src="img/logo2014_64.png" alt="FET-Logo" class="navbar-logo">
+			</a>
+			<button class="navbar-toggle" onclick="toggleMenu()">
+				<i class="fas fa-bars"></i>
+			</button>
+			<ul id="navBarContent" class="navbar-content hidden sm:block">
+				<li><a href="posts.html">News</a></li>
+				<li><a href="members.html">Fachschaft</a></li>
+				<li><a href="fotos.html">Fotos</a></li>
+				<li><a href="blackboard.html">Blackboard</a></li>
+				<hr class="border-proprietary">
+				<div href="#" class="inline-block w-full sm:w-auto rounded relative" x-data="{ showPopupNav: false }">
+					<div class="sm:inline-flex items-center divide-x divide-blue-200 bg-proprietary text-blue-50 rounded">
+						<a class="hidden sm:block flex-1 px-2 py-1 hover:bg-proprietary-dark active:bg-proprietary-darker rounded-l" href="#"
+							@click="$refs.showPopupNavVar.classList.toggle('sm:hidden');$refs.showPopupNavVar.classList.toggle('sm:block');$refs.showPopupNavVarLogout.classList.toggle('sm:hidden');"
+						>Hallo moses</a>
+						<a class="hidden sm:block flex-0 px-2 py-1 hover:bg-proprietary-dark focus:bg-proprietary-darker rounded-r" href="#"><i class="fa-regular fa-power-off"></i></a>
+					</div>
+					<div class="sm:hidden sm:absolute z-20 top-9 right-0 bg-white sm:shadow-md sm:rounded w-full"
+						x-ref="showPopupNavVar"
+					>
+						<li class="navInternal"><a href="#"><i class="fa-fw fa-solid fa-user-secret mr-2"></i>Admin</a></li>
+						<li class="navInternal"><a href="#"><i class="fa-fw fa-solid fa-list-check mr-2"></i>Tasks</a></li>
+						<li class="navInternal"><a href="#"><i class="fa-fw fa-solid fa-database mr-2"></i>Intern</a></li>
+						<li class="navInternal"
+							x-ref="showPopupNavVarLogout"
+						><a href="#"><i class="fa-fw fa-solid fa-power-off mr-2"></i>Logout</a></li>
+					</div>
+				</div>
+			</ul>
+		</div>
+	</nav>
+	<!--Hero section-->
+	<section class="hero-image relative z-0 w-full h-56 sm:h-80 lg:h-96 bg-cover-image bg-cover bg-center bg-no-repeat flex-none">
+		<div class="absolute z-10 w-full h-full bg-blue-50 opacity-60"></div>
+		<div class="relative container px-4 mx-auto z-20 w-full h-full flex flex-wrap items-center gap-x-2">
+			<h1 class="w-3/5 flex-1 uppercase font-semibold text-xl sm:text-2xl lg:text-3xl text-center text-gray-900">
+				<span class="hidden">Willkommen bei der </span><span>Fachschaft</span><br>
+				<span class="text-proprietary-darker">Elektrotechnik</span>
+			</h1>
+			<div class="hidden sm:block flex-none w-2/5 lg:w-1/3 bg-white p-2 lg:p-4 rounded shadow-xl">
+				<h2 class="section-title sm:text-left"><i class="fas fa-comments text-gray-300 mr-2"></i>Events</h2>
+				<div class="-mb-2 text-gray-700 text-sm md:text-base">
+					<div class="my-2">
+						<a href="#">
+							<h3 class="">AGru Studierbarkeit</h3>
+							<p class="py-1 text-sm lg:text-base text-gray-600">
+								<i class="fas fa-calendar-alt text-gray-500"></i>
+								<span>20. Juli 2021</span>
+							</p>
+						</a>
+					</div>
+					<div class="my-2">
+						<a href="#">
+							<h3 class="">Fachschaftssitzung</h3>
+							<p class="py-1 text-sm lg:text-base text-gray-600">
+								<i class="fas fa-calendar-alt text-gray-500"></i>
+								<span>21. August 2021 · 20:30 Uhr</span>
+							</p>
+						</a>
+					</div>
+					<div class="my-2">
+						<a href="#">
+							<h3 class="">Online Mentoring für Studentinnen und Schülerinnen</h3>
+							<p class="py-1 text-sm lg:text-base text-gray-600">
+								<i class="fas fa-calendar-alt text-gray-500"></i>
+								<span>20. Juli 2021</span>
+							</p>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!--<div class="w-full self-end flex justify-center mb-4">
+				<i class="fas fa-chevron-down animate-bounce text-proprietary text-2xl"></i>
+			</div>-->
+		</div>
+	</section>
+	<!-- Main Content -->
+	<main class="container mx-auto w-full px-4 my-8 flex-1">
+		<div class="alert alert-warning">
+			<i class="alert-icon fas fa-exclamation-circle"></i>
+			<h2 class="alert-title">Achtung:</h2>
+			<div class="alert-body">Diese Seite ist noch unvollständig! Dargestellte Informationen können nur beispielhaft implementiert worden sein bzw. noch Fehler enthalten!</div>
+		</div>
+
+		<section class="sm:hidden my-8">
+			<h2 class="section-title section-title-margins">Events</h2>
+			<div class="flex flex-col gap-4">
+				<a href="#" class="block">
+					<h3 class="text-gray-700">AGru Studierbarkeit</h3>
+					<p class="my-1 text-sm text-gray-600">
+						<i class="fas fa-calendar-alt text-gray-500"></i>
+						<span>20. Juli 2021</span>
+					</p>
+				</a>
+				<a href="#" class="block">
+					<h3 class="text-gray-700">Fachschaftssitzung</h3>
+					<p class="my-1 text-sm text-gray-600">
+						<i class="fas fa-calendar-alt text-gray-500"></i>
+						<span>21. August 2021 · 18:00 Uhr</span>
+					</p>
+				</a>
+				<a href="#" class="block">
+					<h3 class="text-gray-700">Online Mentoring für Studentinnen und Schülerinnen</h3>
+					<p class="my-1 text-sm text-gray-600">
+						<i class="fas fa-calendar-alt text-gray-500"></i>
+						<span>20. Juli 2021 · 23:30 Uhr</span>
+					</p>
+				</a>
+			</div>
+		</section>
+
+		<div class="sm:flex sm:flex-row-reverse justify-center my-8">
+			<aside class="calendar-preview sm:w-2/5 xl:w-1/4 sm:pl-4 my-8 sm:my-0">
+				<div>
+					<h2 class="section-title section-title-margins">Kalender</h2>
+					<div class="calendar-entries">
+						<a href="#" class="calendar-entry">
+							<div class="calendar-dateBubble">
+								<span class="dateBubble-day">15</span>
+								<span class="dateBubble-month">Aug</span>
+							</div>
+							<h3>Fachschaftssitzung awdawd</h3>
+						</a>
+						<a href="#" class="calendar-entry">
+							<div class="calendar-dateBubble">
+								<span class="dateBubble-day">18</span>
+								<span class="dateBubble-month">Sep</span>
+							</div>
+							<h3>ÖH Wahl - Tag 1</h3>
+						</a>
+						<a href="#" class="calendar-entry">
+							<div class="calendar-dateBubble">
+								<span class="dateBubble-day">19</span>
+								<span class="dateBubble-month">Jan</span>
+							</div>
+							<h3>ÖH Wahl - Tag 2</h3>
+						</a>
+						<a href="#" class="calendar-entry">
+							<div class="calendar-dateBubble">
+								<span class="dateBubble-day">20</span>
+								<span class="dateBubble-month">Nov</span>
+							</div>
+							<h3>ÖH Wahl - Tag 3</h3>
+						</a>
+						<a href="https://fet.at/posts/fet_calendar.ics" class="btn btn-secondary block w-full"><i class="fas fa-calendar-alt mr-2"></i>Kalender abonnieren</a>
+					</div>
+				</div>
+			</aside>
+
+			<section class="my-8 sm:my-0 sm:w-3/5 xl:w-2/5 flex flex-col gap-4">
+				<h2 class="section-title section-title-margins">Zuletzt veröffentlicht</h2>
+				<article class="article-cover-image" style="background-image: url('img/article-cover-1.jpg');" onclick="openArticle('post.html')">
+					<div class="article-cover-desc">
+						<div class="article-cover-desc-items">
+							<ul class="article-cover-tags">
+								<li><a href="#">#fet</a></li>
+								<li><a href="#">#ug</a></li>
+								<li><a href="#">#öh</a></li>
+							</ul>
+							<div>
+								<a href="#"><h3 class="text-gray-50">Neues Universitätsgesetz wird entschärft</h3></a>
+								<div class="text-gray-200"><i class="fas fa-clock"></i> 12.04.2021</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<article class="article-cover-image" style="background-image: url('img/article-cover-2.jpg');" onclick="openArticle('post.html')">
+					<div class="article-cover-desc">
+						<div class="article-cover-desc-items">
+							<ul class="article-cover-tags">
+								<li><a href="#">#fet</a></li>
+								<li><a href="#">#ug</a></li>
+								<li><a href="#">#öh</a></li>
+							</ul>
+							<div>
+								<a href="#"><h3 class="text-gray-50">ÖH Wahl - Tag 2</h3></a>
+								<div class="text-gray-200"><i class="fas fa-clock"></i> 12.09.2021</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<article class="article-cover-image" style="background-image: url('img/article-cover-3.jpg');" onclick="openArticle('post.html')">
+					<div class="article-cover-desc">
+						<div class="article-cover-desc-items">
+							<ul class="article-cover-tags">
+								<li><a href="#">#fet</a></li>
+								<li><a href="#">#ug</a></li>
+								<li><a href="#">#öh</a></li>
+							</ul>
+							<div>
+								<a href="#"><h3 class="text-gray-50">ÖH Wahl - Tag 3</h3></a>
+								<div class="text-gray-200"><i class="fas fa-clock"></i> 23.09.2021</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<a href="#" class="btn btn-primary block w-full"><i class="fas fa-plus-square mr-2"></i>Mehr anzeigen</a>
+			</section>
+		</div>
+
+		<div id="infoBox" class="sticky bottom-4 p-4 rounded-lg shadow-lg bg-gray-600 text-gray-200 flex gap-x-4 items-center leading-none">
+			<div class="flex-none relative">
+				<span class="absolute flex h-3 w-3 -right-1 -top-1">
+					<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-proprietary opacity-80"></span>
+					<span class="relative inline-flex rounded-full h-3 w-3 bg-proprietary"></span>
+				</span>
+				<i class="fab fa-discord text-4xl"></i> 
+			</div>
+			<a href="https://discord.fet.at/" class="flex-1">
+				FET Discord-Server<br>
+				<span class="hidden lg:inline text-sm text-gray-300">Du hast Fragen zum Studium oder möchtest dich einfach mich anderen Studierenden austauschen? </span><span class="text-sm text-gray-300">Klicke hier zum Beitreten <span class="hidden sm:inline"><i class="far fa-angle-right"></i></span></span>
+			</a>
+			<button id="infoBox-closeButton" class="flex-none self-stretch px-2 -mr-2" onclick="hideInfoBox()"><i class="fas fa-times text-gray-500"></i></button>
+		</div>
+	</main>
+
+	<footer class="bg-proprietary p-4 text-blue-100 flex-none">
+		<ul class="flex justify-center mb-4 text-2xl">
+			<li class="mx-4">
+				<a href="https://facebook.fet.at/"><i class="fab fa-facebook"></i></a>
+			</li>
+			<li class="mx-4">
+				<a href="https://instagram.fet.at/"><i class="fab fa-instagram"></i></a>
+			</li>
+			<li class="mx-4">
+				<a href="https://discord.fet.at/"><i class="fab fa-discord"></i></a>
+			</li>
+			<li class="mx-4">
+				<a href="https://telegram.fet.at/"><i class="fab fa-telegram"></i></a>
+			</li>
+			<li class="mx-4">
+				<a href="mailto:service@fet.at"><i class="fas fa-envelope"></i></a>
+			</li>
+		</ul>
+		<div class="flex justify-center my-4">
+			<a href="#" class="text-center text-sm sm:text-base">Impressum</a>
+		</div>
+		<hr class="border-blue-300 -mx-4">
+		<p class="mt-4 uppercase text-center text-sm sm:text-base">© 2021 FET - Alle Rechte vorbehalten.</p>
+	</footer>
+	<div class="text-center p-2 bg-proprietary-darkest text-proprietary-lightest font-light">
+		Handcrafted with <i class="fa-solid fa-heart text-red-700"></i> by Matteo Duchscher
+	</div>
+
+	<script defer src="https://unpkg.com/alpinejs@3.2.2/dist/cdn.min.js"></script>
+	<script async="async" src="js/scripts.js"></script>
+</body>
+</html>
