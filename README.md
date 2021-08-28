@@ -3,6 +3,7 @@ Redesign of the [FET-webpage](https://fet.at).
 
 ## Finished pages
 - [X] Startseite
+- [X] Startseite mit Admin-Navbar
 - [X] News
 - [X] ↳ Article
 - [X] Fachschaft
