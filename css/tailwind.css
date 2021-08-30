@@ -156,6 +156,9 @@ ul.sideBarNav > ul > li.active > a {
 .db-page-content p {
 	@apply text-justify text-gray-700;
 }
+.db-page-content.db-page-content-left p {
+	@apply text-left;
+}
 .db-page-content ol {
 	@apply list-inside list-decimal text-gray-700;
 }
