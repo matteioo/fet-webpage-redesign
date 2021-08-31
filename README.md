@@ -13,4 +13,4 @@ Redesign of the [FET-webpage](https://fet.at).
   ↳ Requirements: [blueimp Gallery](https://github.com/blueimp/Gallery) as "gallery software"
 - [X] Blackboard
 - [X] Login
-- [ ] Impressum
+- [X] Impressum
