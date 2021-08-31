@@ -312,23 +312,6 @@
 			speedAsDuration: true,
 			easing: 'easeInOutQuad'
 		});
-
-		function myFunction(x) {
-			let element = document.getElementsByTagName("main")[0];
-			console.log(element);
-
-			if (x.matches) { // If media query matches
-				console.log("hi");
-				element.setAttribute("x-data", "{ showModal: true }");
-			} else {
-				console.log("HI");
-				element.setAttribute("x-data", "{ showModal: false }");
-			}
-		}
-
-		var x = window.matchMedia("(min-width: 640px)")
-		myFunction(x) // Call listener function at run time
-		x.addListener(myFunction) // Attach listener function on state changes 
 	</script>
 </body>
 </html>
