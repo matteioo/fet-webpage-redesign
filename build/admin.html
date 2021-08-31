@@ -61,21 +61,30 @@
 				<li><a href="fotos.html">Fotos</a></li>
 				<li><a href="blackboard.html">Blackboard</a></li>
 				<hr class="border-proprietary">
-				<div href="#" class="inline-block w-full sm:w-auto rounded relative" x-data="{ showPopupNav: false }">
+				<div href="#" class="inline-block w-full sm:w-auto rounded relative"
+					x-data="{ showPopupNav: false }"
+					@click.outside="showPopupNav = false"
+				>
 					<div class="sm:inline-flex items-center divide-x divide-blue-200 bg-proprietary text-blue-50 rounded">
 						<a class="hidden sm:block flex-1 px-2 py-1 hover:bg-proprietary-dark active:bg-proprietary-darker rounded-l" href="#"
-							@click="$refs.showPopupNavVar.classList.toggle('sm:hidden');$refs.showPopupNavVar.classList.toggle('sm:block');$refs.showPopupNavVarLogout.classList.toggle('sm:hidden');"
+							@click="showPopupNav = !showPopupNav"
 						>Hallo moses</a>
 						<a class="hidden sm:block flex-0 px-2 py-1 hover:bg-proprietary-dark focus:bg-proprietary-darker rounded-r" href="#"><i class="fa-regular fa-power-off"></i></a>
 					</div>
-					<div class="sm:hidden sm:absolute z-20 top-9 right-0 bg-white sm:shadow-md sm:rounded w-full"
-						x-ref="showPopupNavVar"
+					<div class="sm:block sm:absolute z-20 top-9 right-0 bg-white sm:shadow-md sm:rounded w-full"
+						x-show="showPopupNav || !$screen('sm')"
+						x-transition:enter="transition ease-out duration-300"
+						x-transition:enter-start="transform origin-top opacity-0 scale-95"
+						x-transition:enter-end="transform origin-top opacity-100 scale-100"
+						x-transition:leave="transition ease-in duration-150"
+						x-transition:leave-start="transform origin-top opacity-100 scale-100"
+						x-transition:leave-end="transform origin-top opacity-0 scale-95"
 					>
 						<li class="navInternal"><a href="#"><i class="fa-fw fa-solid fa-user-secret mr-2"></i>Admin</a></li>
 						<li class="navInternal"><a href="#"><i class="fa-fw fa-solid fa-list-check mr-2"></i>Tasks</a></li>
 						<li class="navInternal"><a href="#"><i class="fa-fw fa-solid fa-database mr-2"></i>Intern</a></li>
 						<li class="navInternal"
-							x-ref="showPopupNavVarLogout"
+							x-show="!$screen('sm')"
 						><a href="#"><i class="fa-fw fa-solid fa-power-off mr-2"></i>Logout</a></li>
 					</div>
 				</div>
