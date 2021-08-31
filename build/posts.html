@@ -37,15 +37,25 @@
 </head>
 <body x-data="{ showModal: false }" :class="{ 'overflow-y-hidden sm:overflow-y-auto': showModal }">
 	<!-- NAVBAR -->
-	<nav class="navbar">
+	<nav class="navbar" x-data="{ showNavBar: false }">
 		<div>
 			<a href="index.html">
 				<img src="img/logo2014_64.png" alt="FET-Logo" class="navbar-logo">
 			</a>
-			<button class="navbar-toggle" onclick="toggleMenu()">
+			<button class="navbar-toggle"
+				@click="showNavBar = ! showNavBar"
+			>
 				<i class="fas fa-bars"></i>
 			</button>
-			<ul id="navBarContent" class="navbar-content hidden sm:block">
+			<ul id="navBarContent" class="navbar-content sm:block"
+				x-show="showNavBar || $screen('sm')"
+				x-transition:enter="transition ease-out duration-300"
+				x-transition:enter-start="transform opacity-0"
+				x-transition:enter-end="transform opacity-100"
+				x-transition:leave="transition ease-in duration-150"
+				x-transition:leave-start="transform opacity-100"
+				x-transition:leave-end="transform opacity-0"
+			>
 				<li class="active"><a href="posts.html">News</a></li>
 				<li><a href="members.html">Fachschaft</a></li>
 				<li><a href="fotos.html">Fotos</a></li>
@@ -56,9 +66,9 @@
 	</nav>
 
 	<!-- Main Content -->
-	<main class="container mx-auto w-full px-4 mt-8 flex-1">
+	<main class="container mx-auto w-full px-4 my-8 flex-1">
 		<h1 class="page-title">News</h1>
-		<div class="sm:flex sm:flex-row-reverse justify-center my-8">
+		<div class="sm:flex sm:flex-row-reverse justify-center">
 			<aside class="sm:w-2/5 sm:max-w-xs sm:pl-4 lg:pl-8 my-8 sm:my-0">
 				<div class="z-10 fixed sm:sticky top-0 sm:top-4 lg:top-8 left-0 w-full h-full sm:h-auto bg-black sm:bg-transparent bg-opacity-70 flex sm:block items-center justify-center"
 					x-show="showModal || $screen('sm')"

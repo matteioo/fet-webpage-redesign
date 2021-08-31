@@ -38,15 +38,25 @@
 </head>
 <body>
 	<!-- NAVBAR -->
-	<nav class="navbar">
+	<nav class="navbar" x-data="{ showNavBar: false }">
 		<div>
 			<a href="index.html">
 				<img src="img/logo2014_64.png" alt="FET-Logo" class="navbar-logo">
 			</a>
-			<button class="navbar-toggle" onclick="toggleMenu()">
+			<button class="navbar-toggle"
+				@click="showNavBar = ! showNavBar"
+			>
 				<i class="fas fa-bars"></i>
 			</button>
-			<ul id="navBarContent" class="navbar-content hidden sm:block">
+			<ul id="navBarContent" class="navbar-content sm:block"
+				x-show="showNavBar || $screen('sm')"
+				x-transition:enter="transition ease-out duration-300"
+				x-transition:enter-start="transform opacity-0"
+				x-transition:enter-end="transform opacity-100"
+				x-transition:leave="transition ease-in duration-150"
+				x-transition:leave-start="transform opacity-100"
+				x-transition:leave-end="transform opacity-0"
+			>
 				<li><a href="posts.html">News</a></li>
 				<li><a href="members.html">Fachschaft</a></li>
 				<li><a href="fotos.html">Fotos</a></li>
@@ -126,7 +136,7 @@
 						Event-Ende: 23. August 2021 um 20:00 Uhr
 					</div>
 				</div> -->
-				<div class="db-page-content flex flex-col gap-2 text-gray-700 overflow-x-hidden">
+				<div class="db-page-content flex flex-col gap-2 overflow-x-hidden">
 					<!-- Content from DB here: -->
 					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet corporis natus nulla harum in consectetur. Minima, labore exercitationem, eum ullam quas harum ipsam neque tempora cupiditate, nihil cumque dicta eos.</p>
 	
@@ -138,9 +148,9 @@
 					
 					<p>Die allgemeine Zulassungsfrist beginnt am Montag,&nbsp;12. Juli 2021&nbsp;und geht bis Sonntag,&nbsp;05. September&nbsp;2021. Die Nachfrist, in welcher man sich noch inskribieren kann, geht bis Dienstag, 30. November 2020. Das Wintersemester 2021 beginnt am Freitag, 01. Oktober 2021. Für die Studien Architektur, Informatik, Wirtschaftsinformatik und Raumplanung ist ein Aufnahme- bzw. Auswahlverfahren durchzulaufen. Für die übrigen Studien an der TU Wien ist die Studien-Vorbereitungs- und Reflexionsphase (Studien-VoR-Phase) zu absolvieren. Detailliertere Informationen dazu können unter [5] nachgelesen.</p>
 					
-					<h4>Das ist eine <mark class="px-1 py-0.5 bg-yellow-300 rounded text-yellow-900">Unterunterüberschrift</mark></h4>
+					<h4>Das ist eine <mark class="px-1 py-0.5 bg-yellow-300 rounded text-yellow-800">Unterunterüberschrift</mark></h4>
 		
-					<p>Die <mark class="px-1 py-0.5 bg-yellow-300 rounded text-yellow-900">Inskriptionsberatung</mark> <mark class="px-1 py-0.5 bg-yellow-300 rounded text-current bg-opacity-90">Inskriptionsberatung</mark> findet an <mark class="px-1 py-0.5 bg-yellow-200 rounded text-current text-opacity-95">folgenden</mark> Tagen statt via Zoom [1] statt. <mark class="px-1 py-0.5 bg-yellow-100 rounded text-current text-opacity-95">Vertreter_innen</mark> der Fachschaften und Referaten stehen in den jeweiligen Breakout Sessions zur Verfügung.</p>
+					<p>Die <mark class="px-1 py-0.5 bg-yellow-300 rounded text-yellow-900">Inskriptionsberatung</mark> <mark class="px-1 py-0.5 bg-yellow-300 rounded text-yellow-800 bg-opacity-90">Inskriptionsberatung</mark> findet an <mark class="px-1 py-0.5 bg-yellow-200 rounded text-current text-opacity-95">folgenden</mark> Tagen statt via Zoom [1] statt. <mark class="px-1 py-0.5 bg-yellow-100 rounded text-current text-opacity-95">Vertreter_innen</mark> der Fachschaften und Referaten stehen in den jeweiligen Breakout Sessions zur Verfügung.</p>
 		
 					<ul>
 						<li><del>Montag 14. Juni 2021 - 09:30 - 12:00</del></li>
@@ -245,6 +255,7 @@
 		Handcrafted with <i class="fa-solid fa-heart text-red-600 hover:text-red-700" aria-label="love"></i> by <span class="font-normal">Matteo Duchscher</span>
 	</div>
 
+	<script src="https://unpkg.com/@alpine-collective/toolkit-screen@1.0.0/dist/cdn.min.js" defer></script>
 	<script defer src="https://unpkg.com/alpinejs@3.2.2/dist/cdn.min.js"></script>
 	<script defer src="js/scripts.js"></script>
 </body>

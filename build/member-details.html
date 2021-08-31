@@ -37,17 +37,27 @@
 </head>
 <body x-data="{ showModal: false, closeModal() { if(window.screen.width <= 640){this.showModal = false} } }" :class="{ 'overflow-y-hidden': showModal }">
 	<!-- NAVBAR -->
-	<nav class="navbar">
+	<nav class="navbar" x-data="{ showNavBar: false }">
 		<div>
 			<a href="index.html">
 				<img src="img/logo2014_64.png" alt="FET-Logo" class="navbar-logo">
 			</a>
-			<button class="navbar-toggle" onclick="toggleMenu()">
+			<button class="navbar-toggle"
+				@click="showNavBar = ! showNavBar"
+			>
 				<i class="fas fa-bars"></i>
 			</button>
-			<ul id="navBarContent" class="navbar-content hidden sm:block">
+			<ul id="navBarContent" class="navbar-content sm:block"
+				x-show="showNavBar || $screen('sm')"
+				x-transition:enter="transition ease-out duration-300"
+				x-transition:enter-start="transform opacity-0"
+				x-transition:enter-end="transform opacity-100"
+				x-transition:leave="transition ease-in duration-150"
+				x-transition:leave-start="transform opacity-100"
+				x-transition:leave-end="transform opacity-0"
+			>
 				<li><a href="posts.html">News</a></li>
-				<li class="active"><a href="members.html">Fachschaft</a></li>
+				<li><a href="members.html">Fachschaft</a></li>
 				<li><a href="fotos.html">Fotos</a></li>
 				<li><a href="blackboard.html">Blackboard</a></li>
 				<li><a href="login.html">Login</a></li>
@@ -234,6 +244,7 @@
 
 	<script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@5.1/dist/gumshoe.polyfills.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@16.1/dist/smooth-scroll.polyfills.min.js"></script>
+	<script src="https://unpkg.com/@alpine-collective/toolkit-screen@1.0.0/dist/cdn.min.js" defer></script>
 	<script defer src="https://unpkg.com/alpinejs@3.2.2/dist/cdn.min.js"></script>
 	<script defer src="js/scripts.js"></script>
 	<script>

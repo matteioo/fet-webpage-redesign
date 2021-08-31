@@ -1,9 +1,3 @@
-// Open/close the mobile menu items on mobile only. Will be overwritten on bigger screen sizes
-function toggleMenu(){
-	let element = document.getElementById("navBarContent");
-	element.classList.toggle("hidden");
-}
-
 // Open article on click without an anchor-tag.
 function openArticle(link){
 	window.location.href=link;
