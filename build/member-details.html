@@ -35,7 +35,7 @@
 
 	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </head>
-<body x-data="{ showModal: false, closeModal() { if(window.screen.width <= 640){this.showModal = false} } }" :class="{ 'overflow-y-hidden': showModal }">
+<body x-data="{ showModal: false }" :class="{ 'overflow-y-hidden': showModal }">
 	<!-- NAVBAR -->
 	<nav class="navbar" x-data="{ showNavBar: false }">
 		<div>
@@ -71,7 +71,7 @@
 		<div class="sm:flex sm:flex-row justify-center my-8">
 			<aside class="flex-none max-w-min sm:mr-8">
 				<div class="fixed sm:sticky top-0 sm:top-4 left-0 w-full h-full sm:h-auto bg-black sm:bg-transparent bg-opacity-70 flex sm:block items-center justify-center"
-					x-show="showModal"
+					x-show="showModal || $screen('sm')"
 					x-transition:enter="transition duration-300 ease-out"
 					x-transition:enter-start="opacity-0"
 					x-transition:enter-end="opacity-100"
@@ -80,8 +80,8 @@
 					x-transition:leave-end="opacity-0"
 				>
 					<div class="max-w-sm sm:w-full mx-4 sm:mx-0 p-4 sm:p-0 bg-white sm:bg-transparent rounded sm:rounded-none"
-						@click.outside="closeModal"
-						x-show="showModal"
+						@click.outside="showModal = false"
+						x-show="showModal || $screen('sm')"
 						x-transition:enter="transition transform ease-out duration-300"
 						x-transition:enter-start="scale-110 opacity-0"
 						x-transition:enter-end="scale-100 opacity-100"
@@ -115,7 +115,7 @@
 				</div>
 				<button id="modal-trigger-1" class="trigger fixed bottom-4 right-4 bg-proprietary-darker text-blue-50 shadow-lg text-2xl rounded sm:hidden" 
 					@click="showModal = true"
-					x-show="! showModal"
+					x-show="!showModal && !$screen('sm')"
 					x-transition:enter="transition duration-100 ease-in"
 					x-transition:enter-start="opacity-0"
 					x-transition:enter-end="opacity-100"
