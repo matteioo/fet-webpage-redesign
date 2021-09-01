@@ -99,6 +99,9 @@ ul.sideBarNav > li > a {
 ul.sideBarNav > li.active > a {
 	@apply bg-gray-300 text-gray-800 font-medium;
 }
+ul.sideBarNav > li.internalLI > a {
+	@apply block p-2 bg-proprietary hover:bg-proprietary-dark text-blue-50 rounded;
+}
 ul.sideBarNav > hr {
 	@apply border-gray-300;
 }
