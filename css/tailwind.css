@@ -67,6 +67,9 @@ p a {
 .btn {
 	@apply px-4 py-2 rounded text-center;
 }
+.btn-small {
+	@apply px-2 py-1 rounded text-center;
+}
 .btn-primary {
 	@apply text-blue-50 bg-proprietary hover:bg-proprietary-dark focus:outline-none focus:ring-2 focus:ring-proprietary-light;
 }
@@ -153,29 +156,38 @@ ul.sideBarNav > ul > li.active > a {
 }
 
 /***** ARTICLE CONTENT *****/
-.db-page-content p {
+[class^=db-page-content] {
+	@apply flex flex-col gap-2 overflow-x-hidden;
+}
+[class^=db-page-content] p {
 	@apply text-justify text-gray-700;
 }
-.db-page-content.db-page-content-left p {
+.db-page-content-left p {
 	@apply text-left;
 }
-.db-page-content ol {
+.db-page-content-right p {
+	@apply text-right;
+}
+[class^=db-page-content] ol {
 	@apply list-inside list-decimal text-gray-700;
 }
-.db-page-content ul {
+[class^=db-page-content] ul {
 	@apply list-inside list-disc text-gray-700;
 }
-.db-page-content h2, .db-page-content h3, .db-page-content h4, .db-page-content h5, .db-page-content h6 {
+[class^=db-page-content] h2, [class^=db-page-content] h3, [class^=db-page-content] h4, [class^=db-page-content] h5, [class^=db-page-content] h6 {
 	@apply text-gray-800 -mb-2;
 }
-.db-page-content h2 {
+[class^=db-page-content] h2 {
 	@apply font-medium mt-2 text-xl;
 }
-.db-page-content h3 {
+[class^=db-page-content] h3 {
 	@apply font-medium mt-1 text-lg;
 }
-.db-page-content h4, .db-page-content h5, .db-page-content h6 {
+[class^=db-page-content] h4, [class^=db-page-content] h5, [class^=db-page-content] h6 {
 	@apply mt-1 text-lg;
+}
+[class^=db-page-content] mark {
+	@apply px-0.5 py-px bg-yellow-300 rounded text-yellow-800;
 }
 
 /***** ALERT *****/
