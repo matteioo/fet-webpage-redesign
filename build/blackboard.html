@@ -69,114 +69,136 @@
 	<main class="container mx-auto w-full px-4 mt-8 flex-1">
 		<h1 class="page-title">Blackboard</h1>
 		<div class="lg:w-2/3 xl:w-7/12 mx-auto">
-			<section class="db-page-content my-8">
-				<!-- Content from DB here: -->
-				<p>
-					Stellenangebote werden von uns ausgesucht und hier parallel zum physischen schwarzen Brett für 30 Tage aufgehängt.
-					Wir nehmen gerne Bachelor- & Diplomarbeiten, Praktika und Teil- sowie Vollzeitstellen entgegen.
-				</p>
-				<p>
-					Bitte bachtet, dass wir nur Ausschreibungen aushängen, welche die folgenden Kriterien erfüllen:
-				</p>
-				<ul>
-					<li>Mindestgehalt angegeben</li>
-					<li>geschlechtsneutrale Formulierung</li>
-					<li>kein Lohndumping</li>
-				</ul>
-					<!-- Modernized uList styling using FontAwesome Icons with Flexbox in order to separate list icons from content. Newline results spaced from the icon. Regular behavior: Text below list-icon without left spacing! -->
-					<!-- <ul class="list-inside">
-						<li class="flex items-center"><div><i class="fa-regular fa-circle-check text-green-600 mr-2"></i></div>Mindestgehalt angegeben</li>
-						<li class="flex items-center"><div><i class="fa-regular fa-circle-check text-green-600 mr-2"></i></div>geschlechtsneutrale Formulierung</li>
-						<li class="flex items-center"><div><i class="fa-regular fa-circle-check text-green-600 mr-2"></i></div>kein Lohndumping</li>
-					</ul> -->
-				<p>
-					Sehr gerne kannst du uns per E-Mail an <a href="mailto:service@fet.at">service@fet.at</a> als PDF dein Angebot zukommen lassen. Werbung und irrelevante Dinge hängen wir hier nicht aus, Werbeflächen an der TU gibts <a href="https://www.tuwien.at/tu-wien/organisation/zentrale-bereiche/pr-und-fundraising/fundraising-and-community-relations/tuw-campus-werbung">hier</a> zu mieten.
-				</p>
+			<section class="my-8 flex flex-col gap-2">
+				<div class="db-page-content">
+					<!-- Content from DB here: -->
+					<p>
+						Stellenangebote werden von uns ausgesucht und hier parallel zum physischen schwarzen Brett für 30 Tage aufgehängt.
+						Wir nehmen gerne Bachelor- & Diplomarbeiten, Praktika und Teil- sowie Vollzeitstellen entgegen.
+					</p>
+					<p>
+						Bitte bachtet, dass wir nur Ausschreibungen aushängen, welche die folgenden Kriterien erfüllen:
+					</p>
+					<ul>
+						<li>Mindestgehalt angegeben</li>
+						<li>geschlechtsneutrale Formulierung</li>
+						<li>kein Lohndumping</li>
+					</ul>
+						<!-- Modernized uList styling using FontAwesome Icons with Flexbox in order to separate list icons from content. Newline results spaced from the icon. Regular behavior: Text below list-icon without left spacing! -->
+						<!-- <ul class="list-inside">
+							<li class="flex items-center"><div><i class="fa-regular fa-circle-check text-green-600 mr-2"></i></div>Mindestgehalt angegeben</li>
+							<li class="flex items-center"><div><i class="fa-regular fa-circle-check text-green-600 mr-2"></i></div>geschlechtsneutrale Formulierung</li>
+							<li class="flex items-center"><div><i class="fa-regular fa-circle-check text-green-600 mr-2"></i></div>kein Lohndumping</li>
+						</ul> -->
+					<p>
+						Sehr gerne kannst du uns per E-Mail an <a href="mailto:service@fet.at">service@fet.at</a> als PDF dein Angebot zukommen lassen. Werbung und irrelevante Dinge hängen wir hier nicht aus, Werbeflächen an der TU gibts <a href="https://www.tuwien.at/tu-wien/organisation/zentrale-bereiche/pr-und-fundraising/fundraising-and-community-relations/tuw-campus-werbung">hier</a> zu mieten.
+					</p>
+				</div>
+				<a href="#" class="self-center sm:self-end btn-small btn-primary w-full sm:w-auto max-w-sm">
+					<i class="fa-regular fa-pen-to-square mr-1"></i>Info-Text bearbeiten
+				</a>
 			</section>
-			<section class="jobsList my-8 text-gray-800">
-				<a href="https://fet.at/files/uploads/blackboard/pdf/Techniker_in.pdf" class="jobsList-item">
-					<div class="jobsList-desc">
-						<h2>TU Wien</h2>
-						<h3>Techniker_in</h3>
-					</div>
-					<div class="jobsList-price">
-						<p class="jobsList-value">1074€</p>
-						<p class="jobsList-amount ">/ 20,0 <span class="sm:hidden">h</span><span class="hidden sm:inline">Stunden</span></p>
-					</div>
-					<div class="jobsList-expand">
-						<i class="fas fa-angle-right"></i>
-					</div>
-				</a>
-				<hr class="border-gray-300">
-				<a href="https://fet.at/files/uploads/blackboard/pdf/IT-Techniker_in.pdf" class="jobsList-item">
-					<div class="jobsList-desc">
-						<h2>Universität Wien</h2>
-						<h3 class="leading-none text-gray-600 text-sm">IT-Techniker*in</h3>
-					</div>
-					<div class="jobsList-price">
-						<p class="jobsList-value">1228€</p>
-						<p class="jobsList-amount">/ 20,0 <span class="sm:hidden">h</span><span class="hidden sm:inline">Stunden</span></p>
-					</div>
-					<div class="jobsList-expand">
-						<i class="fas fa-angle-right"></i>
-					</div>
-				</a>
-				<hr class="border-gray-300">
-				<a href="https://fet.at/files/uploads/blackboard/pdf/Universit%C3%A4tsassistent_in_Post-Doc.pdf" class="jobsList-item">
-					<div class="jobsList-desc">
-						<h2>TU Wien</h2>
-						<h3 class="leading-none text-gray-600 text-sm">Universitätsassistent_in (Post-Doc)</h3>
-					</div>
-					<div class="jobsList-price">
-						<p class="jobsList-value">3945€</p>
-						<p class="jobsList-amount">/ 40,0 <span class="sm:hidden">h</span><span class="hidden sm:inline">Stunden</span></p>
-					</div>
-					<div class="jobsList-expand">
-						<i class="fas fa-angle-right"></i>
-					</div>
-				</a>
-				<hr class="border-gray-300">
-				<a href="https://fet.at/files/uploads/blackboard/pdf/Ausschreibung_IT-Techniker_inSystemadministrator_in-1.pdf" class="jobsList-item">
-					<div class="jobsList-desc">
-						<h2>TU Wien</h2>
-						<h3 class="leading-none text-gray-600 text-sm">IT-Techniker_In</h3>
-					</div>
-					<div class="jobsList-price">
-						<p class="jobsList-value">1073€</p>
-						<p class="jobsList-amount">/ 20,0 <span class="sm:hidden">h</span><span class="hidden sm:inline">Stunden</span></p>
-					</div>
-					<div class="jobsList-expand">
-						<i class="fas fa-angle-right"></i>
-					</div>
-				</a>
-				<hr class="border-gray-300">
-				<a href="https://fet.at/files/uploads/blackboard/pdf/Systemadministrator_in_2147.pdf" class="jobsList-item">
-					<div class="jobsList-desc">
-						<h2>TU Wien</h2>
-						<h3 class="leading-none text-gray-600 text-sm">Systemadministrator_in</h3>
-					</div>
-					<div class="jobsList-price">
-						<p class="jobsList-value">2147€</p>
-						<p class="jobsList-amount">/ 40,0 <span class="sm:hidden">h</span><span class="hidden sm:inline">Stunden</span></p>
-					</div>
-					<div class="jobsList-expand">
-						<i class="fas fa-angle-right"></i>
-					</div>
-				</a>
-				<hr class="border-gray-300">
-				<a href="https://fet.at/files/uploads/blackboard/pdf/Studentische_r_Mitarbeiter_in_375.pdf" class="jobsList-item">
-					<div class="jobsList-desc">
-						<h2>TU Wien</h2>
-						<h3 class="leading-none text-gray-600 text-sm">Studentische_r Mitarbeiter_in</h3>
-					</div>
-					<div class="jobsList-price">
-						<p class="jobsList-value">375€</p>
-						<p class="jobsList-amount">/ 7,0 <span class="sm:hidden">h</span><span class="hidden sm:inline">Stunden</span></p>
-					</div>
-					<div class="jobsList-expand">
-						<i class="fas fa-angle-right"></i>
-					</div>
-				</a>
+			<section class="my-8 flex flex-col gap-2">
+				<div class="jobsList">
+					<a href="https://fet.at/files/uploads/blackboard/pdf/Techniker_in.pdf" class="jobsList-item">
+						<div class="jobsList-desc">
+							<h2>TU Wien</h2>
+							<h3>Techniker_in</h3>
+						</div>
+						<div class="jobsList-price">
+							<p class="jobsList-value">1074€</p>
+							<p class="jobsList-amount ">/ 20,0 <span class="sm:hidden">h</span><span class="hidden sm:inline">Stunden</span></p>
+						</div>
+						<div class="jobsList-expand">
+							<i class="fas fa-angle-right"></i>
+						</div>
+					</a>
+					<hr class="border-gray-300">
+					<a href="https://fet.at/files/uploads/blackboard/pdf/IT-Techniker_in.pdf" class="jobsList-item">
+						<div class="jobsList-desc">
+							<h2>Universität Wien</h2>
+							<h3 class="leading-none text-gray-600 text-sm">IT-Techniker*in</h3>
+						</div>
+						<div class="jobsList-price">
+							<p class="jobsList-value">1228€</p>
+							<p class="jobsList-amount">/ 20,0 <span class="sm:hidden">h</span><span class="hidden sm:inline">Stunden</span></p>
+						</div>
+						<div class="jobsList-expand">
+							<i class="fas fa-angle-right"></i>
+						</div>
+					</a>
+					<hr class="border-gray-300">
+					<a href="https://fet.at/files/uploads/blackboard/pdf/Universit%C3%A4tsassistent_in_Post-Doc.pdf" class="jobsList-item">
+						<div class="jobsList-desc">
+							<h2>TU Wien</h2>
+							<h3 class="leading-none text-gray-600 text-sm">Universitätsassistent_in (Post-Doc)</h3>
+						</div>
+						<div class="jobsList-price">
+							<p class="jobsList-value">3945€</p>
+							<p class="jobsList-amount">/ 40,0 <span class="sm:hidden">h</span><span class="hidden sm:inline">Stunden</span></p>
+						</div>
+						<div class="jobsList-expand">
+							<i class="fas fa-angle-right"></i>
+						</div>
+					</a>
+					<hr class="border-gray-300">
+					<a href="https://fet.at/files/uploads/blackboard/pdf/Ausschreibung_IT-Techniker_inSystemadministrator_in-1.pdf" class="jobsList-item">
+						<div class="jobsList-desc">
+							<h2>TU Wien</h2>
+							<h3 class="leading-none text-gray-600 text-sm">IT-Techniker_In</h3>
+						</div>
+						<div class="jobsList-price">
+							<p class="jobsList-value">1073€</p>
+							<p class="jobsList-amount">/ 20,0 <span class="sm:hidden">h</span><span class="hidden sm:inline">Stunden</span></p>
+						</div>
+						<div class="jobsList-expand">
+							<i class="fas fa-angle-right"></i>
+						</div>
+					</a>
+					<hr class="border-gray-300">
+					<a href="https://fet.at/files/uploads/blackboard/pdf/Systemadministrator_in_2147.pdf" class="jobsList-item">
+						<div class="jobsList-desc">
+							<h2>TU Wien</h2>
+							<h3 class="leading-none text-gray-600 text-sm">Systemadministrator_in</h3>
+						</div>
+						<div class="jobsList-price">
+							<p class="jobsList-value">2147€</p>
+							<p class="jobsList-amount">/ 40,0 <span class="sm:hidden">h</span><span class="hidden sm:inline">Stunden</span></p>
+						</div>
+						<div class="jobsList-expand">
+							<i class="fas fa-angle-right"></i>
+						</div>
+					</a>
+					<hr class="border-gray-300">
+					<a href="https://fet.at/files/uploads/blackboard/pdf/Studentische_r_Mitarbeiter_in_375.pdf" class="jobsList-item">
+						<div class="jobsList-desc">
+							<h2>TU Wien</h2>
+							<h3 class="leading-none text-gray-600 text-sm">Studentische_r Mitarbeiter_in</h3>
+						</div>
+						<div class="jobsList-price">
+							<p class="jobsList-value">375€</p>
+							<p class="jobsList-amount">/ 7,0 <span class="sm:hidden">h</span><span class="hidden sm:inline">Stunden</span></p>
+						</div>
+						<div class="jobsList-expand">
+							<i class="fas fa-angle-right"></i>
+						</div>
+					</a>
+				</div>
+				<div class="inline-flex flex-col sm:flex-row sm:justify-end gap-2 w-full sm:w-auto">
+					<a href="#" class="self-center block btn-small btn-primary w-full sm:w-auto max-w-sm"><i class="fa-regular fa-square-plus mr-1"></i>Neuer Eintrag</a>
+					<a href="#" class="self-center block btn-small btn-primary w-full sm:w-auto max-w-sm"><i class="fa-solid fa-asterisk mr-1"></i>Fülltext bearbeiten</a>
+				</div>
+			</section>
+			<!-- Die folgende Section soll dargestellt werden, wenn keine Einträge vorhanden sind. -->
+			<section class="my-8 p-8 flex flex-col gap-2 items-center border-2 border-dashed rounded border-gray-300">
+				<div class="text-center text-gray-600">
+					<i class="fa-solid fa-sparkles text-gray-400 text-2xl mb-4"></i>
+					<p>Es sind aktuell keine Stellenausschreibungen vorhanden. Bitte schaue später nochmal vorbei.</p>
+				</div>
+				<div class="inline-flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
+					<a href="#" class="self-center block btn-small btn-primary w-full sm:w-auto max-w-sm"><i class="fa-regular fa-square-plus mr-1"></i>Neuer Eintrag</a>
+					<a href="#" class="self-center block btn-small btn-primary w-full sm:w-auto max-w-sm"><i class="fa-solid fa-asterisk mr-1"></i>Fülltext bearbeiten</a>
+				</div>
 			</section>
 		</div>
 	</main>
@@ -205,8 +227,8 @@
 		<hr class="border-blue-300 -mx-4">
 		<p class="mt-4 uppercase text-center text-sm sm:text-base">© 2021 FET - Alle Rechte vorbehalten.</p>
 	</footer>
-	<div class="text-center p-2 bg-gray-800 text-gray-400 font-light">
-		Handcrafted with <i class="fa-solid fa-heart text-red-600 hover:text-red-700" aria-label="love"></i> by <span class="font-normal">Matteo Duchscher</span>
+	<div class="text-center p-2 bg-gray-800 text-gray-400 font-light" x-data="{ counter: 0 }">
+		<span :class="counter>=4 && 'text-purple-300'">Handcrafted </span><span :class="counter>=5 && 'text-green-400'">with </span><i class="fa-solid fa-heart" aria-label="love" @click="counter++" :class="counter>=2 ? 'text-proprietary hover:text-proprietary-dark' : 'text-red-600 hover:text-red-700'"></i><span :class="counter>=6 && 'text-pink-400'"> by</span><span class="font-normal" :class="counter>=3 && 'text-yellow-500'"> Matteo Duchscher</span>
 	</div>
 
 	<script src="https://unpkg.com/@alpine-collective/toolkit-screen@1.0.0/dist/cdn.min.js" defer></script>
