@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite",
-    "build": "tailwind build -i css/tailwind.css -o build/css/styles.css"
+    "build": "tailwind build -i dev/tailwind.css -o build/css/styles.css"
   },
   "repository": {
     "type": "git",
