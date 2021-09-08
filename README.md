@@ -8,7 +8,7 @@ Redesign of the [FET-webpage](https://fet.at).
 - [X] ↳ Article
 - [X] Fachschaft
 - [X] ↳ Member detailed page
-- [ ] Fotos 
+- [X] Fotos 
 
   ↳ Requirements: [blueimp Gallery](https://github.com/blueimp/Gallery) as "gallery software"
 - [X] Blackboard
