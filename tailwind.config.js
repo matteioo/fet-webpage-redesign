@@ -6,7 +6,8 @@ module.exports = {
   theme: {
 		fontFamily: {
 			'sans': ['Inter', ...defaultTheme.fontFamily.sans],
-			'serif': ['Besley', ...defaultTheme.fontFamily.serif]
+			'serif': ['Besley', ...defaultTheme.fontFamily.serif],
+			'mono': ['Fira Code', ...defaultTheme.fontFamily.mono]
 		},
     extend: {
 			colors: {
