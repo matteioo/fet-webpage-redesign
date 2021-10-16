@@ -470,13 +470,10 @@ function hideInfoBox(){
 		<span :class="counter>=4 && 'text-purple-300'">Handcrafted </span><span :class="counter>=5 && 'text-green-400'">with </span><i class="fa-solid fa-heart" aria-label="love" @click="counter++" :class="counter>=2 ? 'text-proprietary hover:text-proprietary-dark' : 'text-red-600 hover:text-red-700'"></i><span :class="counter>=6 && 'text-pink-400'"> by</span><span class="font-normal" :class="counter>=3 && 'text-yellow-500'"> Matteo Duchscher</span>
 	</div>
 
+	<script defer src="js/vendor.js"></script>
 	<script defer src="js/scripts.js"></script>
 	<!-- Prism.js Code syntax highlighting -->
 	<script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js"></script>
-	<!-- Alpine.js plugin -->
-	<script src="https://unpkg.com/@alpine-collective/toolkit-screen@1.0.0/dist/cdn.min.js" defer></script>
-	<!-- Alpine.js -->
-	<script defer src="https://unpkg.com/alpinejs@3.2.2/dist/cdn.min.js"></script>
 </body>
 </html>
