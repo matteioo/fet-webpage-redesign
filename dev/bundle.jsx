@@ -7,3 +7,6 @@ import Toolkit from '@alpine-collective/toolkit-screen'
 Alpine.plugin(Toolkit)
 
 Alpine.start()
+
+/* *****Prism.js***** */
+import Prism from 'prismjs'

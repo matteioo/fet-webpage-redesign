@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tailwind build -i dev/tailwind.css -o build/css/styles.css",
-		"bundle": "esbuild dev/bundle.jsx --bundle --platform=browser --outfile=build/js/vendor.js"
+    "bundle": "esbuild dev/bundle.jsx --bundle --platform=browser --outfile=build/js/vendor.js"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,7 @@
     "@tailwindcss/forms": "^0.3.3",
     "@tailwindcss/line-clamp": "^0.2.1",
     "alpinejs": "^3.4.2",
-    "esbuild": "^0.13.7"
+    "esbuild": "^0.13.7",
+    "prismjs": "^1.25.0"
   }
 }
