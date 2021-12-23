@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite",
-    "build": "tailwind build -i dev/tailwind.css -o build/css/styles.css"
+    "build-old": "tailwind build -i dev/tailwind.css -o build/css/styles.css",
+    "build": "npx tailwindcss -i dev/tailwind.css -o build/css/styles.css --watch",
+    "bundle": "esbuild dev/bundle.jsx --bundle --platform=browser --outfile=build/js/vendor.js"
   },
   "repository": {
     "type": "git",
@@ -19,13 +21,17 @@
   },
   "homepage": "https://github.com/M00nD3v/fet-webpage-redesign#readme",
   "devDependencies": {
-    "autoprefixer": "^10.3.1",
-    "postcss": "^8.3.5",
-    "tailwindcss": "^2.2.4",
+    "@tailwindcss/forms": "^0.4.0",
+    "@tailwindcss/line-clamp": "^0.3.0",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.7",
     "vite": "^2.4.2"
   },
   "dependencies": {
-    "@tailwindcss/forms": "^0.3.3",
-    "@tailwindcss/line-clamp": "^0.2.1"
+    "@alpine-collective/toolkit-screen": "^1.0.0",
+    "alpinejs": "^3.4.2",
+    "esbuild": "^0.13.7",
+    "prismjs": "^1.25.0"
   }
 }
