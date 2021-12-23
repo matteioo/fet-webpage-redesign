@@ -71,13 +71,13 @@
 
 	<!-- Main Content -->
 	<main class="container mx-auto w-full flex-1 my-8 sm:flex flex-col sm:px-4">
-		<a href="#" class="hidden z-20 fixed left-0 top-1/2 -mt-8 p-2 xl:flex items-center text-gray-400 rounded-md"
+		<a href="#" class="hidden z-20 fixed left-0 top-1/2 -mt-8 p-2 xl:flex items-center text-gray-400 dark:text-gray-300 rounded-md"
 			x-data="{ showPrevArticleButton : false }"
 			@mouseleave="showPrevArticleButton = false"
 			@mouseover="showPrevArticleButton = true"
 		>
-			<i class="fa-light fa-chevron-left text-5xl -m-2 p-2 bg-gray-100 rounded-md"></i>
-			<span class="text-gray-600 font-medium bg-gray-100 -m-2 p-2 rounded-r-md origin-left"
+			<i class="fa-light fa-chevron-left text-5xl -m-2 p-2 bg-gray-100 dark:bg-gray-700 rounded-md"></i>
+			<span class="text-gray-600 dark:text-gray-300 font-medium bg-gray-100 dark:bg-gray-700 -m-2 p-2 rounded-r-md origin-left"
 				x-show="showPrevArticleButton"
         x-transition:enter="transition ease-out duration-300"
         x-transition:enter-start="opacity-0 bg-opacity-0 transform scale-90"
@@ -87,12 +87,12 @@
         x-transition:leave-end="opacity-0 bg-opacity-0 transform scale-100"
 			>Vorheriger<br>Artikel</span>
 		</a>
-		<a href="#" class="hidden z-20 fixed right-0 top-1/2 -mt-8 p-2 xl:flex items-center text-gray-400 rounded-md"
+		<a href="#" class="hidden z-20 fixed right-0 top-1/2 -mt-8 p-2 xl:flex items-center text-gray-400 dark:text-gray-300 rounded-md"
 			x-data="{ showNextArticleButton : false }"
 			@mouseleave="showNextArticleButton = false"
 			@mouseover="showNextArticleButton = true"
 		>
-			<span class="z-30 text-gray-600 font-medium bg-gray-100 -m-2 p-2 rounded-l-md text-right origin-right"
+			<span class="z-30 text-gray-600 dark:text-gray-300 font-medium bg-gray-100 dark:bg-gray-700 -m-2 p-2 rounded-l-md text-right origin-right"
 				x-show="showNextArticleButton"
 				x-transition:enter="transition ease-out duration-300"
 				x-transition:enter-start="opacity-0 bg-opacity-0 transform scale-90"
@@ -101,20 +101,20 @@
 				x-transition:leave-start="opacity-100 transform scale-100"
 				x-transition:leave-end="opacity-0 bg-opacity-0 transform scale-100"
 			>Nächster<br>Artikel</span>
-			<i class="fa-light fa-chevron-right text-5xl -m-2 p-2 bg-gray-100 rounded-md"></i>
+			<i class="fa-light fa-chevron-right text-5xl -m-2 p-2 bg-gray-100 dark:bg-gray-700 rounded-md"></i>
 		</a>
 		<section>
 			<div class="mb-4 flex flex-col sm:flex-col gap-2 mx-auto">
-				<ul class="px-4 sm:px-0 mb-2 flex flex-row justify-center gap-2 sm:gap-4 flex-wrap text-blue-700 text-sm uppercase tracking-wide sm:font-medium">
-					<li class="inline-block py-1 px-2 bg-blue-100 rounded-full"><a href="#">#fachschaft</a></li>
-					<li class="inline-block py-1 px-2 bg-blue-100 rounded-full"><a href="#">#WelcomeDay</a></li>
-					<li class="inline-block py-1 px-2 bg-blue-100 rounded-full"><a href="#">#Inskriptionsberatung</a></li>
+				<ul class="px-4 sm:px-0 mb-2 flex flex-row justify-center gap-2 sm:gap-4 flex-wrap text-blue-700 dark:text-blue-200 text-sm uppercase tracking-wide sm:font-medium">
+					<li class="inline-block py-1 px-2 bg-blue-100 dark:bg-blue-900 rounded-full"><a href="#">#fachschaft</a></li>
+					<li class="inline-block py-1 px-2 bg-blue-100 dark:bg-blue-900 rounded-full"><a href="#">#WelcomeDay</a></li>
+					<li class="inline-block py-1 px-2 bg-blue-100 dark:bg-blue-900 rounded-full"><a href="#">#Inskriptionsberatung</a></li>
 				</ul>
-				<h1 class="px-4 sm:px-0 text-lg sm:text-xl lg:text-3xl text-center sm:text-left font-medium text-gray-900 font-serif tracking-wider leading-normal" style="line-height: 1.5;">Studie zu TISS im Rahmen der Lehrveranstaltung "Interface & Interaction Design"</h1>
+				<h1 class="px-4 sm:px-0 text-lg sm:text-xl lg:text-3xl text-center sm:text-left font-medium text-gray-900 dark:text-gray-100 font-serif tracking-wider leading-normal" style="line-height: 1.5;">Studie zu TISS im Rahmen der Lehrveranstaltung "Interface & Interaction Design"</h1>
 				<div class="mx-auto max-w-max sm:mx-0 sm:max-w-none sm:flex justify-between items-center">
 					<div class="max-w-max flex flex-row justify-center sm:justify-start gap-2 self-center md:self-start">
 						<img class="hidden sm:block w-12 rounded-full" src="https://fet.at/files/uploads/members/image/photo6043877786113913220.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Autor">
-						<div class="sm:flex flex-col justify-evenly text-gray-600 text-sm sm:text-base">
+						<div class="sm:flex flex-col justify-evenly text-gray-600 dark:text-gray-300 text-sm sm:text-base">
 							<a href="#" class="underline">Volta</a>
 							<span class="sm:hidden"> am </span>
 							<span>24. September 2021</span>
@@ -127,9 +127,9 @@
 			</div>
 			<!-- <img src="img/article-cover-3.jpg" alt="" class="h-44 sm:h-56 lg:h-64 xl:h-80 w-full object-cover sm:rounded-md max-w-5xl mx-auto"> -->
 			<div class="relative w-full h-44 sm:h-56 lg:h-64 xl:h-80 bg-center bg-no-repeat bg-cover sm:rounded-md mx-auto" style="background-image: url(img/article-cover-3.jpg);">
-				<div class="hidden absolute top-0 right-0 bg-white rounded-bl p-2 bg-opacity-80 lg:flex items-center gap-2">
-					<i class="flex-0 fa-solid fa-calendar-clock text-gray-800"></i>
-					<span class="flex-1 text-sm text-gray-800">
+				<div class="hidden absolute top-0 right-0 bg-white dark:bg-gray-900 rounded-bl p-2 bg-opacity-80 dark:bg-opacity-70 lg:flex items-center gap-2">
+					<i class="flex-0 fa-solid fa-calendar-clock text-gray-800 dark:text-gray-200"></i>
+					<span class="flex-1 text-sm text-gray-800 dark:text-gray-200">
 						Event-Start: 23. August 2021 um 18:00 Uhr<br>
 						Event-Ende: 23. August 2021 um 20:00 Uhr
 					</span>
@@ -137,7 +137,7 @@
 			</div>
 		</section>
 		<section class="mx-4 z-10">
-			<article class="p-4 mt-4 sm:-mt-16 w-full max-w-prose mx-auto bg-white rounded">
+			<article class="p-4 mt-4 sm:-mt-16 w-full max-w-prose mx-auto bg-white dark:bg-gray-900 rounded sm:dark:border dark:border-gray-800">
 				<!-- <div class="w-full flex justify-end">
 					<div class="hidden lg:block max-w-max text-sm text-gray-600">
 						Event-Start: 23. August 2021 um 18:00 Uhr<br>
@@ -315,68 +315,6 @@ function hideInfoBox(){
 	 color: #99CC99;
  }
  
- .token.symbol,
- .token.deleted {
-	 color: #f92672;
- }
- 
- .token.number {
-	 color: #FF73FD;
- }
- 
- .token.selector,
- .token.attr-name,
- .token.string,
- .token.char,
- .token.builtin,
- .token.inserted {
-	 color: #A8FF60;
- }
- 
- .token.variable {
-	 color: #C6C5FE;
- }
- 
- .token.operator {
-	 color: #EDEDED;
- }
- 
- .token.entity {
-	 color: #FFFFB6;
-	 cursor: help;
- }
- 
- .token.url {
-	 color: #96CBFE;
- }
- 
- .language-css .token.string,
- .style .token.string {
-	 color: #87C38A;
- }
- 
- .token.atrule,
- .token.attr-value {
-	 color: #F9EE98;
- }
- 
- .token.function {
-	 color: #DAD085;
- }
- 
- .token.regex {
-	 color: #E9C062;
- }
- 
- .token.important {
-	 color: #fd971f;
- }
- 
- .token.important,
- .token.bold {
-	 font-weight: bold;
- }
- 
  .token.italic {
 	 font-style: italic;
  }</code></pre>
@@ -387,23 +325,23 @@ function hideInfoBox(){
 					[4]&nbsp;<a href="https://htu.at/AuRef">https://htu.at/AuRef</a><br>
 					[5]&nbsp;<a href="https://www.tuwien.at/studium">https://www.tuwien.at/studium</a></p>
 				</div>
-				<hr class="lg:hidden -mx-4 border-gray-200 border-1 my-4">
+				<hr class="lg:hidden -mx-4 border-gray-200 dark:border-gray-800 border-1 my-4">
 				<div class="lg:hidden">
-					<h2 class="text-gray-800 font-medium"><i class="fa-solid fa-calendar-days mr-2 text-gray-400"></i>Termindetails:</h2>
-					<ul class="text-base text-gray-700 my-1">
+					<h2 class="text-gray-800 dark:text-gray-200 font-medium"><i class="fa-solid fa-calendar-days mr-2 text-gray-400 dark:text-gray-500"></i>Termindetails:</h2>
+					<ul class="text-base text-gray-700 dark:text-gray-300 my-1">
 						<li>Start:&Tab;23. August 2021 um 18:00 Uhr</li>
 						<li>Ende:&Tab;23. August 2021 um 20:00 Uhr</li>
 					</ul>
 				</div>
-				<hr class="-mx-4 border-gray-200 border-1 my-4">
-				<div class="-m-4 flex divide-x divide-gray-200 text-sm sm:text-base">
+				<hr class="-mx-4 border-gray-200 dark:border-gray-800 border-1 my-4">
+				<div class="-m-4 flex divide-x divide-gray-200 dark:divide-gray-800 text-sm sm:text-base">
 					<a href="#" class="w-1/2 p-4 flex items-center gap-2">
-						<i class="fa-solid fa-chevron-left text-gray-600"></i>
-						<span class="text-gray-700 font-medium">Vorheriger Artikel</span>
+						<i class="fa-solid fa-chevron-left text-gray-600 dark:text-gray-400"></i>
+						<span class="text-gray-700 dark:text-gray-300 font-medium">Vorheriger Artikel</span>
 					</a>
 					<a href="#" class="w-1/2 p-4 flex flex-row-reverse items-center gap-2">
-						<i class="fa-solid fa-chevron-right text-gray-600"></i>
-						<span class="text-gray-700 font-medium">Nächster Artikel</span>
+						<i class="fa-solid fa-chevron-right text-gray-600 dark:text-gray-400"></i>
+						<span class="text-gray-700 dark:text-gray-300 font-medium">Nächster Artikel</span>
 					</a>
 				</div>
 			</article>
@@ -472,5 +410,8 @@ function hideInfoBox(){
 
 	<script defer src="js/vendor.js"></script>
 	<script defer src="js/scripts.js"></script>
+	<!-- Prism.js Code syntax highlighting -->
+	<script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js"></script>
 </body>
 </html>

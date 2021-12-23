@@ -9,4 +9,4 @@ Alpine.plugin(Toolkit)
 Alpine.start()
 
 /* *****Prism.js***** */
-import Prism from 'prismjs'
+//import Prism from 'prismjs'

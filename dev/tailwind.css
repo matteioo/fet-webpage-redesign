@@ -1,28 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind variants;
 
-body {
-	@apply h-full min-h-screen flex flex-col bg-gray-100;
+@layer base {
+	body {
+		@apply h-full min-h-screen flex flex-col bg-gray-100 dark:bg-gray-900;
+	}
+	
+	p a {
+		@apply text-proprietary dark:text-proprietary-lighter font-medium;
+	}
 }
 
-p a {
-	@apply text-proprietary font-medium;
-}
+@layer utilities {
 
 .bg-scale-100 {
 	background-size: 100%;
 }
-.hover\:bg-scale-110:hover {
+.bg-scale-110 {
 	background-size: 110%;
 }
-.hover\:bg-scale-120:hover {
+.bg-scale-120 {
 	background-size: 120%;
 }
 
 /***** NAVBAR *****/
 .navbar {
-	@apply w-full bg-white shadow-sm;
+	@apply w-full bg-white dark:bg-gray-800 shadow-sm;
 }
 .navbar > div {
 	@apply w-full flex flex-col sm:flex-row items-center sm:justify-between container px-4 mx-auto flex-none;
@@ -31,10 +36,10 @@ p a {
 	@apply h-16 flex-none;
 }
 .navbar-toggle {
-	@apply sm:hidden absolute right-4 sm:right-0 top-5 text-proprietary text-2xl;
+	@apply sm:hidden absolute right-4 sm:right-0 top-5 text-proprietary dark:text-proprietary-lighter text-2xl;
 }
 .navbar-content {
-	@apply w-full sm:w-auto text-proprietary md:text-lg self-start sm:self-center;
+	@apply w-full sm:w-auto text-proprietary dark:text-proprietary-lighter md:text-lg self-start sm:self-center;
 }
 .navbar-content > li {
 	@apply sm:inline-block;
@@ -46,17 +51,10 @@ p a {
 	@apply block w-full h-full py-2 md:mx-1 sm:px-1 md:px-2;
 }
 .navbar-content li.active {
- @apply font-semibold text-proprietary-darker;
+ @apply font-semibold text-proprietary-darker dark:text-proprietary-lightest;
 }
 .navbar-content li.active a {
 	@apply cursor-default;
-}
-
-/***** HERO-IMAGE *****/
-@screen xl{
-	.hero-image {
-		height: 30rem !important;
-	}
 }
 
 /***** PAGE-TITLE *****/
@@ -72,22 +70,18 @@ p a {
 	@apply px-2 py-1 rounded text-center;
 }
 .btn-primary {
-	@apply text-blue-50 bg-proprietary hover:bg-proprietary-dark focus:outline-none focus:ring-2 focus:ring-proprietary-light;
+	@apply text-blue-50 bg-proprietary hover:bg-proprietary focus:outline-none focus:ring-2 focus:ring-proprietary-light;
 }
 .btn-secondary {
 	@apply border border-gray-700 text-gray-700;
 }
 
 /***** SECTION *****/
-@responsive {
-	.section-title {
-		@apply text-base md:text-lg text-gray-800 font-medium text-center;
-	}
+.section-title {
+	@apply text-base md:text-lg text-gray-800 font-medium text-center;
 }
-@responsive {
-	.section-title-margins {
-		@apply mt-4 mb-2 uppercase;
-	}
+.section-title-margins {
+	@apply mt-4 mb-2 uppercase;
 }
 
 /***** SIDEBAR-NAVIGATION *****/
@@ -164,7 +158,7 @@ ul.sideBarNav > ul > li.active > a {
 	@apply flex flex-col gap-2 overflow-x-hidden;
 }
 [class^=db-page-content] > p {
-	@apply text-gray-700;
+	@apply text-gray-700 dark:text-gray-300;
 }
 .db-page-content p {
 	@apply text-justify;
@@ -176,13 +170,13 @@ ul.sideBarNav > ul > li.active > a {
 	@apply text-right;
 }
 [class^=db-page-content] ol {
-	@apply list-inside list-decimal text-gray-700;
+	@apply list-inside list-decimal text-gray-700 dark:text-gray-300;
 }
 [class^=db-page-content] ul {
-	@apply list-inside list-disc text-gray-700;
+	@apply list-inside list-disc text-gray-700 dark:text-gray-300;
 }
 [class^=db-page-content] h2, [class^=db-page-content] h3, [class^=db-page-content] h4, [class^=db-page-content] h5, [class^=db-page-content] h6 {
-	@apply text-gray-800 -mb-2;
+	@apply text-gray-800 dark:text-gray-200 -mb-2;
 }
 [class^=db-page-content] h2 {
 	@apply font-medium mt-2 text-xl;
@@ -198,10 +192,10 @@ ul.sideBarNav > ul > li.active > a {
 	@apply font-semibold;
 }
 [class^=db-page-content] mark {
-	@apply px-0.5 py-px bg-yellow-300 rounded text-yellow-800;
+	@apply px-0.5 py-px bg-yellow-300 dark:bg-yellow-400 rounded text-yellow-800 dark:text-yellow-900;
 }
 [class^=db-page-content] blockquote {
-	@apply border-l-4 border-gray-300 px-4 italic text-gray-600 my-2;
+	@apply border-l-4 border-gray-300 dark:border-gray-700 px-4 italic text-gray-600 dark:text-gray-400 my-2;
 }
 [class^=db-page-content] blockquote > p::before {
 	content: "„";
@@ -309,4 +303,10 @@ ul.sideBarNav > ul > li.active > a {
 }
 .members-article .members-listing figure figcaption h3 {
 	@apply leading-tight pt-1;
+}
+
+.foo {
+	@apply bg-red-800 !important;
+}
+
 }

@@ -1,8 +1,9 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
+	content: [
+		'./build/**/*.html'
+	],
   theme: {
 		fontFamily: {
 			'sans': ['Inter', ...defaultTheme.fontFamily.sans],
@@ -29,11 +30,6 @@ module.exports = {
 				'80': '20rem/* 320px */',
 			}
 		},
-  },
-  variants: {
-    extend: {
-      backgroundColor: ['active']
-    }
   },
   plugins: [
 		require('@tailwindcss/forms'),

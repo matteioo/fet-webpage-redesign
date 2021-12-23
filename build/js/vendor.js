@@ -2408,16 +2408,30 @@
     addedAttributes.forEach((attrs, el) => {
       onAttributeAddeds.forEach((i) => i(el, attrs));
     });
-    for (let node of addedNodes) {
-      if (removedNodes.includes(node))
-        continue;
-      onElAddeds.forEach((i) => i(node));
-    }
     for (let node of removedNodes) {
       if (addedNodes.includes(node))
         continue;
       onElRemoveds.forEach((i) => i(node));
     }
+    addedNodes.forEach((node) => {
+      node._x_ignoreSelf = true;
+      node._x_ignore = true;
+    });
+    for (let node of addedNodes) {
+      if (removedNodes.includes(node))
+        continue;
+      if (!node.isConnected)
+        continue;
+      delete node._x_ignoreSelf;
+      delete node._x_ignore;
+      onElAddeds.forEach((i) => i(node));
+      node._x_ignore = true;
+      node._x_ignoreSelf = true;
+    }
+    addedNodes.forEach((node) => {
+      delete node._x_ignoreSelf;
+      delete node._x_ignore;
+    });
     addedNodes = null;
     removedNodes = null;
     addedAttributes = null;
@@ -2497,7 +2511,9 @@
   function initInterceptors(data2) {
     let isObject = (val) => typeof val === "object" && !Array.isArray(val) && val !== null;
     let recurse = (obj, basePath = "") => {
-      Object.entries(obj).forEach(([key, value]) => {
+      Object.entries(Object.getOwnPropertyDescriptors(obj)).forEach(([key, { value, enumerable }]) => {
+        if (enumerable === false || value === void 0)
+          return;
         let path = basePath === "" ? key : `${basePath}.${key}`;
         if (typeof value === "object" && value !== null && value._x_interceptor) {
           obj[key] = value.initialize(data2, path, key);
@@ -2568,6 +2584,22 @@
     });
     return obj;
   }
+  function tryCatch(el, expression, callback, ...args) {
+    try {
+      return callback(...args);
+    } catch (e) {
+      handleError(e, el, expression);
+    }
+  }
+  function handleError(error2, el, expression = void 0) {
+    Object.assign(error2, { el, expression });
+    console.warn(`Alpine Expression Error: ${error2.message}
+
+${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
+    setTimeout(() => {
+      throw error2;
+    }, 0);
+  }
   function evaluate(el, expression, extras = {}) {
     let result;
     evaluateLater(el, expression)((value) => result = value, extras);
@@ -2587,7 +2619,7 @@
     if (typeof expression === "function") {
       return generateEvaluatorFromFunction(dataStack, expression);
     }
-    let evaluator = generateEvaluatorFromString(dataStack, expression);
+    let evaluator = generateEvaluatorFromString(dataStack, expression, el);
     return tryCatch.bind(null, el, expression, evaluator);
   }
   function generateEvaluatorFromFunction(dataStack, func) {
@@ -2598,56 +2630,55 @@
     };
   }
   var evaluatorMemo = {};
-  function generateFunctionFromString(expression) {
+  function generateFunctionFromString(expression, el) {
     if (evaluatorMemo[expression]) {
       return evaluatorMemo[expression];
     }
     let AsyncFunction = Object.getPrototypeOf(async function() {
     }).constructor;
-    let rightSideSafeExpression = /^[\n\s]*if.*\(.*\)/.test(expression) || /^(let|const)/.test(expression) ? `(() => { ${expression} })()` : expression;
-    let func = new AsyncFunction(["__self", "scope"], `with (scope) { __self.result = ${rightSideSafeExpression} }; __self.finished = true; return __self.result;`);
+    let rightSideSafeExpression = /^[\n\s]*if.*\(.*\)/.test(expression) || /^(let|const)\s/.test(expression) ? `(() => { ${expression} })()` : expression;
+    const safeAsyncFunction = () => {
+      try {
+        return new AsyncFunction(["__self", "scope"], `with (scope) { __self.result = ${rightSideSafeExpression} }; __self.finished = true; return __self.result;`);
+      } catch (error2) {
+        handleError(error2, el, expression);
+        return Promise.resolve();
+      }
+    };
+    let func = safeAsyncFunction();
     evaluatorMemo[expression] = func;
     return func;
   }
-  function generateEvaluatorFromString(dataStack, expression) {
-    let func = generateFunctionFromString(expression);
+  function generateEvaluatorFromString(dataStack, expression, el) {
+    let func = generateFunctionFromString(expression, el);
     return (receiver = () => {
     }, { scope = {}, params = [] } = {}) => {
       func.result = void 0;
       func.finished = false;
       let completeScope = mergeProxies([scope, ...dataStack]);
-      let promise = func(func, completeScope);
-      if (func.finished) {
-        runIfTypeOfFunction(receiver, func.result, completeScope, params);
-      } else {
-        promise.then((result) => {
-          runIfTypeOfFunction(receiver, result, completeScope, params);
-        });
+      if (typeof func === "function") {
+        let promise = func(func, completeScope).catch((error2) => handleError(error2, el, expression));
+        if (func.finished) {
+          runIfTypeOfFunction(receiver, func.result, completeScope, params, el);
+          func.result = void 0;
+        } else {
+          promise.then((result) => {
+            runIfTypeOfFunction(receiver, result, completeScope, params, el);
+          }).catch((error2) => handleError(error2, el, expression)).finally(() => func.result = void 0);
+        }
       }
     };
   }
-  function runIfTypeOfFunction(receiver, value, scope, params) {
+  function runIfTypeOfFunction(receiver, value, scope, params, el) {
     if (typeof value === "function") {
       let result = value.apply(scope, params);
       if (result instanceof Promise) {
-        result.then((i) => runIfTypeOfFunction(receiver, i, scope, params));
+        result.then((i) => runIfTypeOfFunction(receiver, i, scope, params)).catch((error2) => handleError(error2, el, value));
       } else {
         receiver(result);
       }
     } else {
       receiver(value);
-    }
-  }
-  function tryCatch(el, expression, callback, ...args) {
-    try {
-      return callback(...args);
-    } catch (e) {
-      console.warn(`Alpine Expression Error: ${e.message}
-
-Expression: "${expression}"
-
-`, el);
-      throw e;
     }
   }
   var prefixAsString = "x-";
@@ -2763,6 +2794,7 @@ Expression: "${expression}"
     "ignore",
     "ref",
     "data",
+    "id",
     "bind",
     "init",
     "for",
@@ -2771,6 +2803,7 @@ Expression: "${expression}"
     "show",
     "if",
     DEFAULT,
+    "teleport",
     "element"
   ];
   function byPriority(a, b) {
@@ -2829,7 +2862,7 @@ Expression: "${expression}"
     dispatch(document, "alpine:initializing");
     startObservingMutations();
     onElAdded((el) => initTree(el, walk));
-    onElRemoved((el) => nextTick(() => destroyTree(el)));
+    onElRemoved((el) => destroyTree(el));
     onAttributesAdded((el, attrs) => {
       directives(el, attrs).forEach((handle) => handle());
     });
@@ -2854,14 +2887,22 @@ Expression: "${expression}"
     initSelectorCallbacks.push(selectorCallback);
   }
   function closestRoot(el, includeInitSelectors = false) {
+    return findClosest(el, (element) => {
+      const selectors = includeInitSelectors ? allSelectors() : rootSelectors();
+      if (selectors.some((selector) => element.matches(selector)))
+        return true;
+    });
+  }
+  function findClosest(el, callback) {
     if (!el)
       return;
-    const selectors = includeInitSelectors ? allSelectors() : rootSelectors();
-    if (selectors.some((selector) => el.matches(selector)))
+    if (callback(el))
       return el;
+    if (el._x_teleportBack)
+      el = el._x_teleportBack;
     if (!el.parentElement)
       return;
-    return closestRoot(el.parentElement, includeInitSelectors);
+    return findClosest(el.parentElement, callback);
   }
   function isRoot(el) {
     return rootSelectors().some((selector) => el.matches(selector));
@@ -2947,7 +2988,7 @@ Expression: "${expression}"
     let cache = el.getAttribute("style", value);
     el.setAttribute("style", value);
     return () => {
-      el.setAttribute("style", cache);
+      el.setAttribute("style", cache || "");
     };
   }
   function kebabCase(subject) {
@@ -3085,7 +3126,11 @@ Expression: "${expression}"
       document.visibilityState === "visible" ? requestAnimationFrame(show) : setTimeout(show);
     };
     if (value) {
-      el._x_transition ? el._x_transition.in(show) : clickAwayCompatibleShow();
+      if (el._x_transition && (el._x_transition.enter || el._x_transition.leave)) {
+        el._x_transition.enter && (Object.entries(el._x_transition.enter.during).length || Object.entries(el._x_transition.enter.start).length || Object.entries(el._x_transition.enter.end).length) ? el._x_transition.in(show) : clickAwayCompatibleShow();
+      } else {
+        el._x_transition ? el._x_transition.in(show) : clickAwayCompatibleShow();
+      }
       return;
     }
     el._x_hidePromise = el._x_transition ? new Promise((resolve, reject) => {
@@ -3235,6 +3280,43 @@ Expression: "${expression}"
     }
     return rawValue;
   }
+  var isCloning = false;
+  function skipDuringClone(callback, fallback = () => {
+  }) {
+    return (...args) => isCloning ? fallback(...args) : callback(...args);
+  }
+  function clone(oldEl, newEl) {
+    if (!newEl._x_dataStack)
+      newEl._x_dataStack = oldEl._x_dataStack;
+    isCloning = true;
+    dontRegisterReactiveSideEffects(() => {
+      cloneTree(newEl);
+    });
+    isCloning = false;
+  }
+  function cloneTree(el) {
+    let hasRunThroughFirstEl = false;
+    let shallowWalker = (el2, callback) => {
+      walk(el2, (el3, skip) => {
+        if (hasRunThroughFirstEl && isRoot(el3))
+          return skip();
+        hasRunThroughFirstEl = true;
+        callback(el3, skip);
+      });
+    };
+    initTree(el, shallowWalker);
+  }
+  function dontRegisterReactiveSideEffects(callback) {
+    let cache = effect;
+    overrideEffect((callback2, el) => {
+      let storedEffect = cache(callback2);
+      release(storedEffect);
+      return () => {
+      };
+    });
+    callback();
+    overrideEffect(cache);
+  }
   function debounce(func, wait) {
     var timeout;
     return function() {
@@ -3275,44 +3357,10 @@ Expression: "${expression}"
     if (typeof value === "object" && value !== null && value.hasOwnProperty("init") && typeof value.init === "function") {
       stores[name].init();
     }
+    initInterceptors(stores[name]);
   }
   function getStores() {
     return stores;
-  }
-  var isCloning = false;
-  function skipDuringClone(callback) {
-    return (...args) => isCloning || callback(...args);
-  }
-  function clone(oldEl, newEl) {
-    newEl._x_dataStack = oldEl._x_dataStack;
-    isCloning = true;
-    dontRegisterReactiveSideEffects(() => {
-      cloneTree(newEl);
-    });
-    isCloning = false;
-  }
-  function cloneTree(el) {
-    let hasRunThroughFirstEl = false;
-    let shallowWalker = (el2, callback) => {
-      walk(el2, (el3, skip) => {
-        if (hasRunThroughFirstEl && isRoot(el3))
-          return skip();
-        hasRunThroughFirstEl = true;
-        callback(el3, skip);
-      });
-    };
-    initTree(el, shallowWalker);
-  }
-  function dontRegisterReactiveSideEffects(callback) {
-    let cache = effect;
-    overrideEffect((callback2, el) => {
-      let storedEffect = cache(callback2);
-      release(storedEffect);
-      return () => {
-      };
-    });
-    callback();
-    overrideEffect(cache);
   }
   var datas = {};
   function data(name, callback) {
@@ -3344,15 +3392,20 @@ Expression: "${expression}"
     get raw() {
       return raw;
     },
-    version: "3.4.2",
+    version: "3.7.1",
     flushAndStopDeferringMutations,
     disableEffectScheduling,
     setReactivityEngine,
+    closestDataStack,
+    skipDuringClone,
     addRootSelector,
+    addInitSelector,
+    addScopeToNode,
     deferMutations,
     mapAttributes,
     evaluateLater,
     setEvaluator,
+    mergeProxies,
     closestRoot,
     interceptor,
     transition,
@@ -3364,6 +3417,7 @@ Expression: "${expression}"
     evaluate,
     initTree,
     nextTick,
+    prefixed: prefix,
     prefix: setPrefix,
     plugin,
     magic,
@@ -3381,8 +3435,7 @@ Expression: "${expression}"
     let firstTime = true;
     let oldValue;
     effect(() => evaluate2((value) => {
-      let div = document.createElement("div");
-      div.dataset.throwAway = value;
+      JSON.stringify(value);
       if (!firstTime) {
         queueMicrotask(() => {
           callback(value, oldValue);
@@ -3395,6 +3448,9 @@ Expression: "${expression}"
     }));
   });
   magic("store", getStores);
+  magic("data", (el) => {
+    return mergeProxies(closestDataStack(el));
+  });
   magic("root", (el) => closestRoot(el));
   magic("refs", (el) => {
     if (el._x_refs_proxy)
@@ -3412,7 +3468,63 @@ Expression: "${expression}"
     }
     return refObjects;
   }
+  var globalIdMemo = {};
+  function findAndIncrementId(name) {
+    if (!globalIdMemo[name])
+      globalIdMemo[name] = 0;
+    return ++globalIdMemo[name];
+  }
+  function closestIdRoot(el, name) {
+    return findClosest(el, (element) => {
+      if (element._x_ids && element._x_ids[name])
+        return true;
+    });
+  }
+  function setIdRoot(el, name) {
+    if (!el._x_ids)
+      el._x_ids = {};
+    if (!el._x_ids[name])
+      el._x_ids[name] = findAndIncrementId(name);
+  }
+  magic("id", (el) => (name, key = null) => {
+    let root = closestIdRoot(el, name);
+    let id = root ? root._x_ids[name] : findAndIncrementId(name);
+    return key ? new AlpineId(`${name}-${id}-${key}`) : new AlpineId(`${name}-${id}`);
+  });
+  var AlpineId = class {
+    constructor(id) {
+      this.id = id;
+    }
+    toString() {
+      return this.id;
+    }
+  };
   magic("el", (el) => el);
+  directive("teleport", (el, { expression }, { cleanup }) => {
+    if (el.tagName.toLowerCase() !== "template")
+      warn("x-teleport can only be used on a <template> tag", el);
+    let target = document.querySelector(expression);
+    if (!target)
+      warn(`Cannot find x-teleport element for selector: "${expression}"`);
+    let clone2 = el.content.cloneNode(true).firstElementChild;
+    el._x_teleport = clone2;
+    clone2._x_teleportBack = el;
+    if (el._x_forwardEvents) {
+      el._x_forwardEvents.forEach((eventName) => {
+        clone2.addEventListener(eventName, (e) => {
+          e.stopPropagation();
+          el.dispatchEvent(new e.constructor(e.type, e));
+        });
+      });
+    }
+    addScopeToNode(clone2, {}, el);
+    mutateDom(() => {
+      target.appendChild(clone2);
+      initTree(clone2);
+      clone2._x_ignore = true;
+    });
+    cleanup(() => clone2.remove());
+  });
   var handler = () => {
   };
   handler.inline = (el, { modifiers }, { cleanup }) => {
@@ -3580,6 +3692,8 @@ Expression: "${expression}"
           return;
         if (el.offsetWidth < 1 && el.offsetHeight < 1)
           return;
+        if (el._x_isShown === false)
+          return;
         next(e);
       });
     }
@@ -3693,6 +3807,18 @@ Expression: "${expression}"
       } });
     });
     cleanup(() => removeListener());
+    let evaluateSetModel = evaluateLater(el, `${expression} = __placeholder`);
+    el._x_model = {
+      get() {
+        let result;
+        evaluate2((value) => result = value);
+        return result;
+      },
+      set(value) {
+        evaluateSetModel(() => {
+        }, { scope: { __placeholder: value } });
+      }
+    };
     el._x_forceModelUpdate = () => {
       evaluate2((value) => {
         if (value === void 0 && expression.match(/\./))
@@ -3797,11 +3923,15 @@ Expression: "${expression}"
         cleanupRunners.pop()();
       getBindings((bindings) => {
         let attributes = Object.entries(bindings).map(([name, value]) => ({ name, value }));
-        attributesOnly(attributes).forEach(({ name, value }, index) => {
-          attributes[index] = {
-            name: `x-bind:${name}`,
-            value: `"${value}"`
-          };
+        let staticAttributes = attributesOnly(attributes);
+        attributes = attributes.map((attribute) => {
+          if (staticAttributes.find((attr) => attr.name === attribute.name)) {
+            return {
+              name: `x-bind:${attribute.name}`,
+              value: `"${attribute.value}"`
+            };
+          }
+          return attribute;
         });
         directives(el, attributes, original).map((handle) => {
           cleanupRunners.push(handle.runCleanups);
@@ -3821,6 +3951,8 @@ Expression: "${expression}"
     let dataProviderContext = {};
     injectDataProviders(dataProviderContext, magicContext);
     let data2 = evaluate(el, expression, { scope: dataProviderContext });
+    if (data2 === void 0)
+      data2 = {};
     injectMagics(data2, el);
     let reactiveData = reactive(data2);
     initInterceptors(reactiveData);
@@ -3946,7 +4078,9 @@ Expression: "${expression}"
         mutateDom(() => {
           elForSpot.after(marker);
           elInSpot.after(elForSpot);
+          elForSpot._x_currentIfEl && elForSpot.after(elForSpot._x_currentIfEl);
           marker.before(elInSpot);
+          elInSpot._x_currentIfEl && elInSpot.after(elInSpot._x_currentIfEl);
           marker.remove();
         });
         refreshScope(elForSpot, scopes[keys.indexOf(keyForSpot)]);
@@ -3954,6 +4088,8 @@ Expression: "${expression}"
       for (let i = 0; i < adds.length; i++) {
         let [lastKey2, index] = adds[i];
         let lastEl = lastKey2 === "template" ? templateEl : lookup[lastKey2];
+        if (lastEl._x_currentIfEl)
+          lastEl = lastEl._x_currentIfEl;
         let scope = scopes[index];
         let key = keys[index];
         let clone2 = document.importNode(templateEl.content, true).firstElementChild;
@@ -4058,10 +4194,20 @@ Expression: "${expression}"
     }));
     cleanup(() => el._x_undoIf && el._x_undoIf());
   });
+  directive("id", (el, { expression }, { evaluate: evaluate2 }) => {
+    let names = evaluate2(expression);
+    names.forEach((name) => setIdRoot(el, name));
+  });
   mapAttributes(startingWith("@", into(prefix("on:"))));
   directive("on", skipDuringClone((el, { value, modifiers, expression }, { cleanup }) => {
     let evaluate2 = expression ? evaluateLater(el, expression) : () => {
     };
+    if (el.tagName.toLowerCase() === "template") {
+      if (!el._x_forwardEvents)
+        el._x_forwardEvents = [];
+      if (!el._x_forwardEvents.includes(value))
+        el._x_forwardEvents.push(value);
+    }
     let removeListener = on(el, value, modifiers, (e) => {
       evaluate2(() => {
       }, { scope: { $event: e }, params: [e] });
