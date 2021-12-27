@@ -14,16 +14,18 @@
 }
 
 @layer utilities {
+	.bg-scale-100 {
+		background-size: 100%;
+	}
+	.bg-scale-110 {
+		background-size: 110%;
+	}
+	.bg-scale-120 {
+		background-size: 120%;
+	}
+}
 
-.bg-scale-100 {
-	background-size: 100%;
-}
-.bg-scale-110 {
-	background-size: 110%;
-}
-.bg-scale-120 {
-	background-size: 120%;
-}
+@layer components {
 
 /***** NAVBAR *****/
 .navbar {
@@ -42,16 +44,16 @@
 	@apply w-full sm:w-auto text-proprietary dark:text-proprietary-lighter md:text-lg self-start sm:self-center;
 }
 .navbar-content > li {
-	@apply sm:inline-block;
+	@apply sm:inline-block rounded;
 }
 .navbar-content hr {
 	@apply sm:hidden my-2;
 }
 .navbar-content li > a {
-	@apply block w-full h-full py-2 md:mx-1 sm:px-1 md:px-2;
+	@apply block w-full h-full py-2 mx-1 px-2;
 }
 .navbar-content li.active {
- @apply font-semibold text-proprietary-darker dark:text-proprietary-lightest;
+ @apply font-medium text-proprietary-dark dark:text-proprietary-lightest bg-gray-200 dark:bg-gray-700;
 }
 .navbar-content li.active a {
 	@apply cursor-default;
@@ -59,7 +61,7 @@
 
 /***** PAGE-TITLE *****/
 .page-title {
-	@apply mb-4 uppercase text-proprietary tracking-wide md:tracking-wider lg:tracking-widest text-center sm:text-lg lg:text-xl sm:font-medium md:mb-8;
+	@apply mb-4 uppercase text-proprietary dark:text-proprietary-lighter tracking-wider lg:tracking-widest text-center sm:text-lg lg:text-xl sm:font-medium md:mb-8;
 }
 
 /***** BUTTONS *****/
@@ -78,7 +80,7 @@
 
 /***** SECTION *****/
 .section-title {
-	@apply text-base md:text-lg text-gray-800 font-medium text-center;
+	@apply text-base md:text-lg text-gray-800 dark:text-gray-100 font-medium text-center;
 }
 .section-title-margins {
 	@apply mt-4 mb-2 uppercase;
@@ -206,13 +208,14 @@ ul.sideBarNav > ul > li.active > a {
 
 /***** ALERT *****/
 .alert {
-	@apply relative p-2 rounded border border-gray-400 bg-gray-50 text-gray-600;
+	@apply relative p-2 rounded border dark:border-2 border-gray-400 bg-gray-50 text-gray-600;
+	@apply dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300;
 }
 .alert > .alert-icon {
-	@apply absolute right-2 top-1.5 text-lg sm:text-xl text-gray-300;
+	@apply absolute right-2 top-1.5 text-lg sm:text-xl text-gray-300 dark:text-gray-600;
 }
 .alert > .alert-title {
-	@apply sm:font-semibold text-gray-700;
+	@apply sm:font-semibold text-gray-700 dark:text-zinc-200;
 }
 .alert-body {
 	@apply text-sm sm:text-base;
@@ -221,39 +224,43 @@ ul.sideBarNav > ul > li.active > a {
 }
 .alert.alert-info {
 	@apply border-blue-400 bg-blue-50 text-blue-700;
+	@apply dark:border-blue-700 dark:bg-blue-900 dark:text-blue-300;
 }
 .alert.alert-info > .alert-icon {
-	@apply text-blue-300;
+	@apply text-blue-300 dark:text-blue-600;
 }
 .alert.alert-info > .alert-title {
-	@apply text-blue-800;
+	@apply text-blue-800 dark:text-blue-200;
 }
 .alert.alert-success {
 	@apply border-green-400 bg-green-50 text-green-700;
+	@apply dark:border-green-700 dark:bg-green-900 dark:text-green-300;
 }
 .alert.alert-success > .alert-icon {
-	@apply text-green-300;
+	@apply text-green-300 dark:text-green-600;
 }
 .alert.alert-success > .alert-title {
-	@apply text-green-800;
+	@apply text-green-800 dark:text-green-200;
 }
 .alert.alert-warning {
-	@apply border-yellow-400 bg-yellow-50 text-yellow-700;
+	@apply border-amber-400 bg-amber-50 text-amber-700;
+	@apply dark:border-amber-700 dark:bg-amber-900 dark:text-amber-400;
 }
 .alert.alert-warning > .alert-icon {
-	@apply text-yellow-300;
+	@apply text-amber-300 dark:text-amber-600;
 }
 .alert.alert-warning > .alert-title {
-	@apply text-yellow-800;
+	@apply text-yellow-800 dark:text-amber-300;
 }
 .alert.alert-danger {
 	@apply border-red-400 bg-red-50 text-red-700;
+	@apply dark:border-red-700 dark:bg-red-900 dark:text-red-300;
 }
 .alert.alert-danger > .alert-icon {
-	@apply text-red-300;
+	@apply text-red-300 dark:text-red-600;
 }
 .alert.alert-danger > .alert-title {
-	@apply text-red-800;
+	@apply text-red-800 dark:text-red-200;
 }
 
 /***** JOBSLIST *****/
@@ -305,8 +312,33 @@ ul.sideBarNav > ul > li.active > a {
 	@apply leading-tight pt-1;
 }
 
-.foo {
-	@apply bg-red-800 !important;
+/***** FOOTER *****/
+footer {
+	@apply bg-proprietary dark:bg-proprietary-darker p-4 text-blue-100 dark:text-blue-200 flex-none;
+}
+
+footer .icon-list {
+	@apply flex justify-center mb-4 text-2xl;
+}
+
+footer .icon-list > li {
+	@apply mx-4;
+}
+
+footer .legal {
+	@apply flex justify-center my-4;
+}
+
+footer .legal-divider {
+	@apply border-blue-300 -mx-4;
+}
+
+footer .copyright {
+	@apply mt-4 uppercase text-center text-sm sm:text-base;
+}
+
+.super-duper-awesome-signature {
+	@apply text-center p-2 bg-gray-800 text-gray-400 font-light;
 }
 
 }
