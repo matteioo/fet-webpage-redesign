@@ -40,7 +40,8 @@
 	<nav class="navbar" x-data="{ showNavBar: false }">
 		<div>
 			<a href="index.html">
-				<img src="img/logo2014_64.png" alt="FET-Logo" class="navbar-logo">
+				<img src="img/FET-Logo-2014_64_light.svg" alt="FET-Logo" class="navbar-logo p-2 dark:hidden">
+				<img src="img/FET-Logo-2014_64_dark.svg" alt="FET-Logo" class="navbar-logo p-2 hidden dark:block">
 			</a>
 			<button class="navbar-toggle"
 				@click="showNavBar = ! showNavBar"
