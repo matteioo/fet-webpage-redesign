@@ -72,10 +72,11 @@
 	@apply px-2 py-1 rounded text-center;
 }
 .btn-primary {
-	@apply text-blue-50 bg-proprietary hover:bg-proprietary focus:outline-none focus:ring-2 focus:ring-proprietary-light;
+	@apply text-blue-50 hover:text-blue-100 bg-proprietary hover:bg-proprietary-dark focus:outline-none focus:ring-2 focus:ring-proprietary-light;
+	@apply dark:text-blue-200 dark:hover:text-blue-300 dark:bg-proprietary-darker dark:hover:bg-proprietary-darkest dark:focus:ring-proprietary;
 }
 .btn-secondary {
-	@apply border border-gray-700 text-gray-700;
+	@apply border border-gray-700 dark:border-gray-400 text-gray-700 dark:text-gray-400;
 }
 
 /***** SECTION *****/
@@ -122,16 +123,16 @@ ul.sideBarNav > ul > li.active > a {
 	@apply flex items-center;
 }
 .calendar-dateBubble {
-	@apply flex flex-col justify-center w-11 h-11 pb-1 rounded-full text-center leading-none text-blue-50 bg-proprietary flex-none;
+	@apply flex flex-col justify-center w-11 h-11 pb-1 rounded-full text-center leading-none text-sky-50 dark:text-sky-100 bg-proprietary dark:bg-sky-900 flex-none;
 }
 .calendar-dateBubble .dateBubble-day {
 	@apply flex-none leading-none;
 }
 .calendar-dateBubble .dateBubble-month {
-	@apply flex-none text-sm leading-none text-blue-100;
+	@apply flex-none text-sm leading-none text-sky-100 dark:text-sky-200;
 }
 .calendar-entry > h3 {
-	@apply text-gray-700 pl-2;
+	@apply text-gray-700 dark:text-gray-200 pl-2;
 }
 
 /***** ARTICLE PREVIEW *****/
@@ -149,7 +150,7 @@ ul.sideBarNav > ul > li.active > a {
 	@apply flex justify-end gap-x-1 uppercase;
 }
 .article-cover-tags > li {
-	@apply rounded-full px-2 py-1 text-blue-100 bg-proprietary hover:bg-proprietary-dark;
+	@apply rounded-full px-2 py-1 text-blue-100 dark:text-blue-200 bg-proprietary dark:bg-blue-900 hover:bg-proprietary-dark dark:hover:bg-blue-800;
 }
 .article-cover-desc:hover, .article-cover-image:hover {
 	background-size: 120%;
