@@ -9,7 +9,7 @@
 	}
 	
 	p a {
-		@apply text-proprietary dark:text-proprietary-lighter font-medium;
+		@apply text-proprietary dark:text-proprietary-lighter font-medium underline decoration-proprietary-dark dark:decoration-sky-700 hover:decoration-2;
 	}
 }
 
@@ -265,29 +265,32 @@ ul.sideBarNav > ul > li.active > a {
 }
 
 /***** JOBSLIST *****/
+.jobsList hr {
+	@apply border-gray-300 dark:border-gray-600;
+}
 .jobsList > a.jobsList-item {
-	@apply flex items-center justify-between gap-2 sm:gap-8 sm:hover:bg-gray-50 py-2 sm:p-2 md:p-4;
+	@apply flex items-center justify-between gap-2 sm:gap-8 sm:hover:bg-gray-50 dark:sm:hover:bg-gray-800 py-2 sm:p-2 md:p-4;
 }
 .jobsList-desc {
 	@apply flex-grow flex-shrink md:flex items-center gap-2;
 }
 .jobsList-desc h2 {
-	@apply md:font-medium text-gray-800;
+	@apply md:font-medium text-gray-800 dark:text-gray-200;
 }
 .jobsList-desc h3 {
-	@apply leading-none text-gray-600 text-sm md:text-base;
+	@apply leading-none text-gray-600 dark:text-gray-300 text-sm md:text-base;
 }
 .jobsList-price {
 	@apply flex-shrink-0 flex align-top justify-end mt-1;
 }
 .jobsList-value {
-	@apply inline-block text-gray-700 md:text-gray-800;
+	@apply inline-block text-gray-700 md:text-gray-800 dark:text-gray-400 dark:md:text-gray-300;
 }
 .jobsList-amount {
-	@apply inline-block text-sm md:text-base ml-1 mt-1.5 md:mt-0 text-gray-600;
+	@apply inline-block text-sm md:text-base ml-1 mt-1.5 md:mt-0 text-gray-600 dark:text-gray-300;
 }
 .jobsList-expand {
-	@apply flex-none text-gray-400 text-xl;
+	@apply flex-none text-gray-400 dark:text-gray-500 text-xl;
 }
 
 /***** MEMBERS SECTIONS *****/

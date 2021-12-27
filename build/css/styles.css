@@ -609,12 +609,25 @@ p a {
   font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(0 101 153 / var(--tw-text-opacity));
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  -webkit-text-decoration-color: #005580;
+          text-decoration-color: #005580;
+}
+
+p a:hover {
+  text-decoration-thickness: 2px;
 }
 
 @media (prefers-color-scheme: dark) {
   p a {
     --tw-text-opacity: 1;
     color: rgb(71 194 255 / var(--tw-text-opacity));
+  }
+
+  p a {
+    -webkit-text-decoration-color: #0369a1;
+            text-decoration-color: #0369a1;
   }
 }
 
@@ -1785,6 +1798,18 @@ ul.sideBarNav > ul > li.active > a {
 
 /***** JOBSLIST *****/
 
+.jobsList hr {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  .jobsList hr {
+    --tw-border-opacity: 1;
+    border-color: rgb(75 85 99 / var(--tw-border-opacity));
+  }
+}
+
 .jobsList > a.jobsList-item {
   display: flex;
   align-items: center;
@@ -1806,6 +1831,15 @@ ul.sideBarNav > ul > li.active > a {
   .jobsList > a.jobsList-item:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  @media (min-width: 640px) {
+    .jobsList > a.jobsList-item:hover {
+      --tw-bg-opacity: 1;
+      background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+    }
   }
 }
 
@@ -1833,6 +1867,13 @@ ul.sideBarNav > ul > li.active > a {
   color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
+@media (prefers-color-scheme: dark) {
+  .jobsList-desc h2 {
+    --tw-text-opacity: 1;
+    color: rgb(229 231 235 / var(--tw-text-opacity));
+  }
+}
+
 @media (min-width: 768px) {
   .jobsList-desc h2 {
     font-weight: 500;
@@ -1844,6 +1885,13 @@ ul.sideBarNav > ul > li.active > a {
   line-height: 1;
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  .jobsList-desc h3 {
+    --tw-text-opacity: 1;
+    color: rgb(209 213 219 / var(--tw-text-opacity));
+  }
 }
 
 @media (min-width: 768px) {
@@ -1867,10 +1915,26 @@ ul.sideBarNav > ul > li.active > a {
   color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
+@media (prefers-color-scheme: dark) {
+  .jobsList-value {
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+  }
+}
+
 @media (min-width: 768px) {
   .jobsList-value {
     --tw-text-opacity: 1;
     color: rgb(31 41 55 / var(--tw-text-opacity));
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  @media (min-width: 768px) {
+    .jobsList-value {
+      --tw-text-opacity: 1;
+      color: rgb(209 213 219 / var(--tw-text-opacity));
+    }
   }
 }
 
@@ -1882,6 +1946,13 @@ ul.sideBarNav > ul > li.active > a {
   line-height: 1.25rem;
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  .jobsList-amount {
+    --tw-text-opacity: 1;
+    color: rgb(209 213 219 / var(--tw-text-opacity));
+  }
 }
 
 @media (min-width: 768px) {
@@ -1901,6 +1972,13 @@ ul.sideBarNav > ul > li.active > a {
   line-height: 1.75rem;
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  .jobsList-expand {
+    --tw-text-opacity: 1;
+    color: rgb(107 114 128 / var(--tw-text-opacity));
+  }
 }
 
 /***** MEMBERS SECTIONS *****/
@@ -2664,9 +2742,9 @@ footer .copyright {
   background-color: rgb(75 85 99 / var(--tw-bg-opacity));
 }
 
-.bg-blue-500 {
+.bg-sky-600 {
   --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+  background-color: rgb(2 132 199 / var(--tw-bg-opacity));
 }
 
 .bg-black {
@@ -2692,16 +2770,6 @@ footer .copyright {
 .bg-blue-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(191 219 254 / var(--tw-bg-opacity));
-}
-
-.bg-sky-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(14 165 233 / var(--tw-bg-opacity));
-}
-
-.bg-sky-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(2 132 199 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-70 {
@@ -3207,6 +3275,11 @@ footer .copyright {
     border-color: rgb(31 41 55 / var(--tw-border-opacity));
   }
 
+  .dark\:border-gray-600 {
+    --tw-border-opacity: 1;
+    border-color: rgb(75 85 99 / var(--tw-border-opacity));
+  }
+
   .dark\:bg-black {
     --tw-bg-opacity: 1;
     background-color: rgb(0 0 0 / var(--tw-bg-opacity));
@@ -3217,9 +3290,9 @@ footer .copyright {
     background-color: rgb(31 41 55 / var(--tw-bg-opacity));
   }
 
-  .dark\:bg-proprietary-light {
+  .dark\:bg-proprietary {
     --tw-bg-opacity: 1;
-    background-color: rgb(0 139 209 / var(--tw-bg-opacity));
+    background-color: rgb(0 101 153 / var(--tw-bg-opacity));
   }
 
   .dark\:bg-gray-700 {
@@ -3250,11 +3323,6 @@ footer .copyright {
   .dark\:bg-proprietary-dark {
     --tw-bg-opacity: 1;
     background-color: rgb(0 85 128 / var(--tw-bg-opacity));
-  }
-
-  .dark\:bg-proprietary {
-    --tw-bg-opacity: 1;
-    background-color: rgb(0 101 153 / var(--tw-bg-opacity));
   }
 
   .dark\:bg-opacity-70 {
@@ -3319,6 +3387,11 @@ footer .copyright {
   .dark\:text-blue-100 {
     --tw-text-opacity: 1;
     color: rgb(219 234 254 / var(--tw-text-opacity));
+  }
+
+  .dark\:text-gray-600 {
+    --tw-text-opacity: 1;
+    color: rgb(75 85 99 / var(--tw-text-opacity));
   }
 
   .dark\:focus\:ring-sky-700:focus {
