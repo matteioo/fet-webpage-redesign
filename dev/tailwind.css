@@ -100,7 +100,7 @@ ul.sideBarNav > li.internalLI > a {
 	@apply block p-2 bg-proprietary hover:bg-proprietary-dark text-blue-50 rounded;
 }
 ul.sideBarNav > hr {
-	@apply border-gray-300 dark:border-gray-500;
+	@apply border-gray-300 dark:border-gray-600;
 }
 ul.sideBarNav > ul {
 	@apply hidden sm:block;

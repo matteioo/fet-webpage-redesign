@@ -80,7 +80,7 @@
 					x-transition:leave-start="opacity-100"
 					x-transition:leave-end="opacity-0"
 				>
-					<div class="max-w-sm sm:w-full mx-4 sm:mx-0 p-4 sm:p-0 bg-white sm:bg-transparent rounded sm:rounded-none"
+					<div class="max-w-sm sm:w-full mx-4 sm:mx-0 p-4 sm:p-0 bg-white dark:bg-gray-700 sm:bg-transparent rounded sm:rounded-none"
 						@click.outside="showModal = false"
 						x-show="showModal || $screen('sm')"
 						x-transition:enter="transition transform ease-out duration-300"
@@ -91,13 +91,13 @@
 						x-transition:leave-end="scale-110 opacity-0"
 					>
 						<div class="flex justify-between items-center mb-2 sm:hidden">
-							<h2 class="text-gray-800 sm:section-title sm_section-title-margins sm:w-full">
+							<h2 class="text-gray-800 dark:text-gray-100 sm:section-title sm_section-title-margins sm:w-full">
 								<span class="mr-1 text-gray-400 sm:hidden">
 									<i class="fa-solid fa-bars"></i>
 								</span>
 								Kategorien
 							</h2>
-							<div class="ml-4 -mr-2 px-2 rounded text-xl text-gray-600 sm:hidden cursor-pointer" @click="showModal = false">
+							<div class="ml-4 -mr-2 px-2 rounded text-xl text-gray-600 dark:text-gray-400 sm:hidden cursor-pointer" @click="showModal = false">
 								<i class="far fa-times"></i>
 							</div>
 						</div>
@@ -115,7 +115,7 @@
 						</ul>
 					</div>
 				</div>
-				<button id="modal-trigger-1" class="trigger fixed bottom-4 right-4 bg-proprietary-darker text-blue-50 shadow-lg text-2xl rounded sm:hidden" 
+				<button id="modal-trigger-1" class="trigger fixed bottom-4 right-4 bg-proprietary-darker dark:bg-sky-500 text-blue-50 dark:text-sky-900 shadow-lg text-2xl rounded sm:hidden" 
 					@click="showModal = true"
 					x-show="!showModal && !$screen('sm')"
 					x-transition:enter="transition duration-100 ease-in"
@@ -129,20 +129,19 @@
 				</button>
 			</aside>
 
-			<section class="flex-grow max-w-prose my-8 sm:my-0 text-justify text-gray-800">
+			<section class="flex-grow max-w-prose my-8 sm:my-0 text-justify text-gray-800 dark:text-gray-300">
 				<!-- Alternativtext auf jede Person anpassen: Name im alt="" dynamisch erzeugen -->
 				<img loading="lazy" src="https://fet.at/files/uploads/members/image/photo6043877786113913220.jpg.200x300_q85.jpg" alt="Portraitfoto von Alexander Stiedl" class="md:float-left w-36 mr-2 mb-2">
 				<div x-data="{ expandList: false }">
-					<h2 class="mb-2 text-lg text-gray-900 text-left">Alexander Stiedl Alexander Stiedl Alexander</h2>
+					<h2 class="mb-2 text-lg text-gray-900 dark:text-gray-100 text-left">Alexander Stiedl Alexander Stiedl Alexander</h2>
 					<div class="mb-2">
 						Spitzname: alex <br>
 						Mailaccount: alex@fet.at <br>
 					</div>
 					<div class="mb-2">
-						Fin­det man in frei­er Lauf­bahn meist als "Mi­chi" im Mi­lex-Ge­spann. Flo­rids­dorf ist sein Ghet­to, Mu­sik­ge­schmack de­fi­niert er als "Kraft­klub, Kraft­klub und noch mehr Kraft­klub". Prü­fungs­si­tua­tio­nen ab­sol­viert er frei nach der Her­an­ge­hens­wei­se "Ich hab mir das 2 Stun­den an­ge­schaut" - Er­geb­nis: po­si­tiv - "Ich sags euch, die müs­sen einen Feh­ler ge­macht ha­ben!". Man mun­kelt er fi­nan­ziert öf­ters sei­nen Bier­kon­sum über Leih­ga­ben - "Stimmt nicht!" - "Doch!" - "Ich geb euch al­len 5 Eu­ro, dann sind wir quitt!". Fa­zit: Glückspilz, pro­vo­kant bis gran­tig, lie­bens­wert und bei je­dem Scheiß da­bei.
-					</div>
-					<h3 class="group mt-4 mb-2 text-lg text-gray-900">Ehrenamtliche Tätigkeiten:
-						<button class="inline float-right text-sm px-2 py-1 text-gray-600 md:text-gray-500 group-hover:text-gray-600 border rounded border-gray-500 md:border-gray-400 group-hover:border-gray-500"
+						Findet man in freier Laufbahn meist als "Michi" im Milex-Gespann. Floridsdorf ist sein Ghetto, Musikgeschmack definiert er als "Kraftklub, Kraftklub und noch mehr Kraftklub". Prüfungssituationen absolviert er frei nach der Herangehensweise "Ich hab mir das 2 Stunden angeschaut" - Ergebnis: positiv - "Ich sags euch, die müssen einen Fehler gemacht haben!". Man munkelt er finanziert öfters seinen Bierkonsum über Leihgaben - "Stimmt nicht!" - "Doch!" - "Ich geb euch allen 5 Euro, dann sind wir quitt!". Fazit: Glückspilz, provokant bis grantig, liebenswert und bei jedem Scheiß dabei.					</div>
+					<h3 class="group mt-4 mb-2 text-lg text-gray-900 dark:text-gray-100">Ehrenamtliche Tätigkeiten:
+						<button class="inline float-right text-sm px-2 py-1 text-gray-600 dark:text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-400 border rounded border-gray-500 dark:border-gray-500 md:border-gray-400 dark:md:border-gray-600 group-hover:border-gray-500 dark:group-hover:border-gray-500"
 							@click="expandList = ! expandList"
 						>
 							<span x-show="!expandList">Mehr</span><span x-show="expandList">Weniger</span><span class="hidden md:inline"> anzeigen</span>
@@ -155,43 +154,43 @@
 					<ul class="flex flex-col gap-1">
 						<li class="flex flex-row flex-wrap">
 							<span>Fakultätsrat:</span>
-							<span class="ml-2 text-gray-600">1. April 2018</span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. April 2018</span>
 						</li>
 						<li class="flex flex-row flex-wrap">
 							<span>Studienkommission ET:</span>
-							<span class="ml-2 text-gray-600">1. Juli 2019 - </span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. Juli 2019 - </span>
 						</li>
 						<li class="flex flex-row flex-wrap">
 							<span>Erstsemestrigentutorium:</span>
-							<span class="ml-2 text-gray-600">1. Oktober 2018 - 31. Jänner 2019</span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. Oktober 2018 - 31. Jänner 2019</span>
 						</li>
 						<li class="flex flex-row flex-wrap">
 							<span>Social-Media Team:</span>
-							<span class="ml-2 text-gray-600">1. April 2019 - </span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. April 2019 - </span>
 						</li>
 						<li class="flex flex-row flex-wrap">
 							<span>Studienvertretung:</span>
-							<span class="ml-2 text-gray-600">1. Juli 2019 - 30. Juni 2021</span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. Juli 2019 - 30. Juni 2021</span>
 						</li>
 						<li class="flex flex-row flex-wrap">
 							<span>Universitätsvertretung:</span>
-							<span class="ml-2 text-gray-600">1. Juli 2019 - </span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. Juli 2019 - </span>
 						</li>
 						<li class="flex flex-row flex-wrap">
 							<span>Studienkommission ET:</span>
-							<span class="ml-2 text-gray-600">1. Mai 2018 - 30. Juni 2019</span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. Mai 2018 - 30. Juni 2019</span>
 						</li>
 						<li class="flex flex-row flex-wrap">
 							<span>Erstsemestrigentutorium:</span>
-							<span class="ml-2 text-gray-600">1. September 2020 - 30. Jänner 2021 </span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. September 2020 - 30. Jänner 2021 </span>
 						</li>
 						<li class="flex flex-row flex-wrap">
 							<span>Fakultätsrat:</span>
-							<span class="ml-2 text-gray-600">1. April 2018</span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. April 2018</span>
 						</li>
 						<li class="flex flex-row flex-wrap">
 							<span>Studienkommission ET:</span>
-							<span class="ml-2 text-gray-600">1. Juli 2019 - </span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. Juli 2019 - </span>
 						</li>
 					</ul>
 					<ul class="flex flex-col gap-1 mt-1"
@@ -205,27 +204,27 @@
 					>
 						<li class="flex flex-row flex-wrap">
 							<span>Superlatur:</span>
-							<span class="ml-2 text-gray-600">1. Oktober 2018 - 31. Jänner 2019</span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. Oktober 2018 - 31. Jänner 2019</span>
 						</li>
 						<li class="flex flex-row flex-wrap">
 							<span>Social-Media Team:</span>
-							<span class="ml-2 text-gray-600">1. April 2019 - </span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. April 2019 - </span>
 						</li>
 						<li class="flex flex-row flex-wrap">
 							<span>Studienvertretung:</span>
-							<span class="ml-2 text-gray-600">1. Juli 2019 - 30. Juni 2021</span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. Juli 2019 - 30. Juni 2021</span>
 						</li>
 						<li class="flex flex-row flex-wrap">
 							<span>Universitätsvertretung:</span>
-							<span class="ml-2 text-gray-600">1. Juli 2019 - </span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. Juli 2019 - </span>
 						</li>
 						<li class="flex flex-row flex-wrap">
 							<span>Studienkommission ET:</span>
-							<span class="ml-2 text-gray-600">1. Mai 2018 - 30. Juni 2019</span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. Mai 2018 - 30. Juni 2019</span>
 						</li>
 						<li class="flex flex-row flex-wrap">
 							<span>Erstsemestrigentutorium:</span>
-							<span class="ml-2 text-gray-600">1. September 2020 - 30. Jänner 2021 </span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. September 2020 - 30. Jänner 2021 </span>
 						</li>
 					</ul>
 					<!-- <br>
