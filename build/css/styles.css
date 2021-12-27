@@ -780,6 +780,7 @@ p a {
 }
 
 .navbar-content {
+  margin-bottom: 0.5rem;
   width: 100%;
   align-self: flex-start;
   --tw-text-opacity: 1;
