@@ -88,25 +88,25 @@
 
 /***** SIDEBAR-NAVIGATION *****/
 ul.sideBarNav {
-	@apply flex flex-col text-gray-700;
+	@apply flex flex-col text-gray-700 dark:text-gray-200;
 }
 ul.sideBarNav > li > a {
-	@apply block p-2 hover:bg-gray-300 rounded;
+	@apply block p-2 hover:bg-gray-300 dark:hover:bg-gray-600 rounded;
 }
 ul.sideBarNav > li.active > a {
-	@apply bg-gray-300 text-gray-800 font-medium;
+	@apply bg-gray-300 dark:bg-gray-600 text-gray-800 dark:text-gray-100 font-medium;
 }
 ul.sideBarNav > li.internalLI > a {
 	@apply block p-2 bg-proprietary hover:bg-proprietary-dark text-blue-50 rounded;
 }
 ul.sideBarNav > hr {
-	@apply border-gray-300;
+	@apply border-gray-300 dark:border-gray-500;
 }
 ul.sideBarNav > ul {
 	@apply hidden sm:block;
 }
 ul.sideBarNav > ul > li > a {
-	@apply block p-2 ml-2 hover:bg-gray-200 rounded text-sm;
+	@apply block p-2 ml-2 hover:bg-gray-200 dark:hover:bg-gray-800 rounded text-sm;
 }
 ul.sideBarNav > ul > li.active > a {
 	@apply font-semibold;
@@ -294,16 +294,16 @@ ul.sideBarNav > ul > li.active > a {
 	@apply flex flex-row items-start mt-8 mb-4;
 }
 .members-article a.title [class*="fa-"] {
-	@apply flex-none mr-1 mt-2 sm:-ml-5 text-sm text-blue-500 sm:text-blue-400 sm:invisible;
+	@apply flex-none mr-1 mt-[0.375rem] sm:-ml-5 text-sm text-sky-600 dark:text-sky-500 sm:invisible;
 }
 .members-article a.title:hover [class*="fa-"] {
-	@apply text-blue-500 visible;
+	@apply text-sky-500 visible;
 }
 .members-article a.title h2 {
-	@apply flex-1 text-lg text-gray-900 tracking-wider;
+	@apply flex-1 text-lg text-gray-900 dark:text-gray-100 tracking-wider;
 }
 .members-article .members-listing {
-	@apply flex flex-wrap justify-start gap-2 sm:gap-4 text-proprietary text-center;
+	@apply flex flex-wrap justify-start gap-2 sm:gap-4 text-proprietary dark:text-proprietary-lighter text-center;
 }
 .members-article .members-listing figure {
 	@apply w-36;

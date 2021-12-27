@@ -79,7 +79,7 @@
 					x-transition:leave-start="opacity-100"
 					x-transition:leave-end="opacity-0"
 				>
-					<div class="max-w-sm sm:w-full mx-4 sm:mx-0 p-4 sm:p-0 bg-gray-800 sm:bg-transparent rounded sm:rounded-none"
+					<div class="max-w-sm sm:w-full mx-4 sm:mx-0 p-4 sm:p-0 bg-white dark:bg-gray-700 sm:bg-transparent rounded sm:rounded-none"
 						@click.outside="showModal = false"
 						x-show="showModal || $screen('sm')"
 						x-transition:enter="transition transform ease-out duration-300"
@@ -90,13 +90,13 @@
 						x-transition:leave-end="scale-110 opacity-0"
 					>
 						<div class="flex justify-between items-center mb-2 sm:hidden">
-							<h2 class="text-gray-800 sm:section-title sm_section-title-margins sm:w-full">
+							<h2 class="text-gray-800 dark:text-gray-100 sm:section-title sm_section-title-margins sm:w-full">
 								<span class="mr-1 text-gray-400 sm:hidden">
 									<i class="fa-solid fa-bars"></i>
 								</span>
 								Kategorien
 							</h2>
-							<div class="ml-4 -mr-2 px-2 rounded text-xl text-gray-600 sm:hidden cursor-pointer" @click="showModal = false">
+							<div class="ml-4 -mr-2 px-2 rounded text-xl text-gray-600 dark:text-gray-400 sm:hidden cursor-pointer" @click="showModal = false">
 								<i class="far fa-times"></i>
 							</div>
 						</div>
@@ -119,7 +119,7 @@
 						</ul>
 					</div>
 				</div>
-				<button id="modal-trigger-1" class="trigger fixed bottom-4 right-4 bg-proprietary-darker text-blue-50 shadow-lg text-2xl rounded sm:hidden" 
+				<button id="modal-trigger-1" class="trigger fixed bottom-4 right-4 bg-proprietary-darker dark:bg-sky-500 text-blue-50 dark:text-sky-900 shadow-lg text-2xl rounded sm:hidden" 
 					@click="showModal = true"
 					x-show="!showModal && !$screen('sm')"
 					x-transition:enter="transition duration-100 ease-in"
