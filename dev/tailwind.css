@@ -158,7 +158,7 @@ ul.sideBarNav > ul > li.active > a {
 
 /***** ARTICLE CONTENT *****/
 [class^=db-page-content] {
-	@apply flex flex-col gap-2 overflow-x-hidden;
+	@apply flex flex-col gap-2 overflow-x-hidden mb-4;
 }
 [class^=db-page-content] > p {
 	@apply text-gray-700 dark:text-gray-300;

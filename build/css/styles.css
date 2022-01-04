@@ -1356,6 +1356,7 @@ ul.sideBarNav > ul > li.active > a {
 /***** ARTICLE CONTENT *****/
 
 [class^=db-page-content] {
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -2246,6 +2247,10 @@ footer .copyright {
   margin: -1rem;
 }
 
+.m-0 {
+  margin: 0px;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -2622,6 +2627,14 @@ footer .copyright {
   gap: 0.25rem;
 }
 
+.gap-0\.5 {
+  gap: 0.125rem;
+}
+
+.gap-0 {
+  gap: 0px;
+}
+
 .gap-x-2 {
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
@@ -2636,6 +2649,12 @@ footer .copyright {
   --tw-divide-x-reverse: 0;
   border-right-width: calc(1px * var(--tw-divide-x-reverse));
   border-left-width: calc(1px * calc(1 - var(--tw-divide-x-reverse)));
+}
+
+.divide-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-x-reverse: 0;
+  border-right-width: calc(2px * var(--tw-divide-x-reverse));
+  border-left-width: calc(2px * calc(1 - var(--tw-divide-x-reverse)));
 }
 
 .divide-blue-200 > :not([hidden]) ~ :not([hidden]) {
@@ -2776,9 +2795,9 @@ footer .copyright {
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
-.bg-blue-100 {
+.bg-sky-100 {
   --tw-bg-opacity: 1;
-  background-color: rgb(219 234 254 / var(--tw-bg-opacity));
+  background-color: rgb(224 242 254 / var(--tw-bg-opacity));
 }
 
 .bg-blue-200 {
@@ -3055,9 +3074,9 @@ footer .copyright {
   color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
-.text-blue-700 {
+.text-sky-700 {
   --tw-text-opacity: 1;
-  color: rgb(29 78 216 / var(--tw-text-opacity));
+  color: rgb(3 105 161 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -3249,12 +3268,26 @@ footer .copyright {
 }
 
 @media (prefers-color-scheme: dark) {
+  .dark\:-m-2 {
+    margin: -0.5rem;
+  }
+
+  .dark\:-m-4 {
+    margin: -1rem;
+  }
+
   .dark\:block {
     display: block;
   }
 
   .dark\:hidden {
     display: none;
+  }
+
+  .dark\:divide-x-2 > :not([hidden]) ~ :not([hidden]) {
+    --tw-divide-x-reverse: 0;
+    border-right-width: calc(2px * var(--tw-divide-x-reverse));
+    border-left-width: calc(2px * calc(1 - var(--tw-divide-x-reverse)));
   }
 
   .dark\:divide-gray-800 > :not([hidden]) ~ :not([hidden]) {
@@ -3268,6 +3301,10 @@ footer .copyright {
 
   .dark\:border {
     border-width: 1px;
+  }
+
+  .dark\:border-\[1\.5px\] {
+    border-width: 1.5px;
   }
 
   .dark\:border-none {
@@ -3319,9 +3356,9 @@ footer .copyright {
     background-color: rgb(14 165 233 / var(--tw-bg-opacity));
   }
 
-  .dark\:bg-blue-900 {
+  .dark\:bg-sky-900 {
     --tw-bg-opacity: 1;
-    background-color: rgb(30 58 138 / var(--tw-bg-opacity));
+    background-color: rgb(12 74 110 / var(--tw-bg-opacity));
   }
 
   .dark\:bg-gray-900 {
@@ -3672,7 +3709,17 @@ footer .copyright {
     --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
+}
 
+@media (prefers-color-scheme: dark) {
+  @media (min-width: 640px) {
+    .dark\:sm\:border-2 {
+      border-width: 2px;
+    }
+  }
+}
+
+@media (min-width: 640px) {
   @media (prefers-color-scheme: dark) {
     .sm\:dark\:border-2 {
       border-width: 2px;
