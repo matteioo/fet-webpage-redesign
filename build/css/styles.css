@@ -809,6 +809,10 @@ p a:hover {
 
 @media (min-width: 640px) {
   .navbar-content {
+    margin-bottom: 0px;
+  }
+
+  .navbar-content {
     width: auto;
   }
 
@@ -1817,6 +1821,16 @@ ul.sideBarNav > ul > li.active > a {
   gap: 0.5rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.jobsList > a.jobsList-item:first-child {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.jobsList > a.jobsList-item:last-child {
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
 }
 
 @media (min-width: 640px) {
@@ -3260,6 +3274,11 @@ footer .copyright {
     border-style: none;
   }
 
+  .dark\:border-gray-600 {
+    --tw-border-opacity: 1;
+    border-color: rgb(75 85 99 / var(--tw-border-opacity));
+  }
+
   .dark\:border-gray-700 {
     --tw-border-opacity: 1;
     border-color: rgb(55 65 81 / var(--tw-border-opacity));
@@ -3273,11 +3292,6 @@ footer .copyright {
   .dark\:border-gray-800 {
     --tw-border-opacity: 1;
     border-color: rgb(31 41 55 / var(--tw-border-opacity));
-  }
-
-  .dark\:border-gray-600 {
-    --tw-border-opacity: 1;
-    border-color: rgb(75 85 99 / var(--tw-border-opacity));
   }
 
   .dark\:bg-black {
@@ -3329,6 +3343,16 @@ footer .copyright {
     --tw-bg-opacity: 0.7;
   }
 
+  .dark\:text-gray-300 {
+    --tw-text-opacity: 1;
+    color: rgb(209 213 219 / var(--tw-text-opacity));
+  }
+
+  .dark\:text-gray-400 {
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+  }
+
   .dark\:text-sky-300 {
     --tw-text-opacity: 1;
     color: rgb(125 211 252 / var(--tw-text-opacity));
@@ -3349,19 +3373,9 @@ footer .copyright {
     color: rgb(102 204 255 / var(--tw-text-opacity));
   }
 
-  .dark\:text-gray-400 {
-    --tw-text-opacity: 1;
-    color: rgb(156 163 175 / var(--tw-text-opacity));
-  }
-
   .dark\:text-gray-200 {
     --tw-text-opacity: 1;
     color: rgb(229 231 235 / var(--tw-text-opacity));
-  }
-
-  .dark\:text-gray-300 {
-    --tw-text-opacity: 1;
-    color: rgb(209 213 219 / var(--tw-text-opacity));
   }
 
   .dark\:text-gray-500 {
@@ -3387,11 +3401,6 @@ footer .copyright {
   .dark\:text-blue-100 {
     --tw-text-opacity: 1;
     color: rgb(219 234 254 / var(--tw-text-opacity));
-  }
-
-  .dark\:text-gray-600 {
-    --tw-text-opacity: 1;
-    color: rgb(75 85 99 / var(--tw-text-opacity));
   }
 
   .dark\:focus\:ring-sky-700:focus {

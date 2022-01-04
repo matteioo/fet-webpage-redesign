@@ -41,7 +41,7 @@
 	@apply sm:hidden absolute right-4 sm:right-0 top-5 text-proprietary dark:text-proprietary-lighter text-2xl;
 }
 .navbar-content {
-	@apply w-full mb-2 sm:w-auto text-proprietary dark:text-proprietary-lighter md:text-lg self-start sm:self-center;
+	@apply w-full mb-2 sm:mb-0 sm:w-auto text-proprietary dark:text-proprietary-lighter md:text-lg self-start sm:self-center;
 }
 .navbar-content > li {
 	@apply sm:inline-block rounded;
@@ -269,7 +269,7 @@ ul.sideBarNav > ul > li.active > a {
 	@apply border-gray-300 dark:border-gray-600;
 }
 .jobsList > a.jobsList-item {
-	@apply flex items-center justify-between gap-2 sm:gap-8 sm:hover:bg-gray-50 dark:sm:hover:bg-gray-800 py-2 sm:p-2 md:p-4;
+	@apply flex items-center justify-between gap-2 sm:gap-8 sm:hover:bg-gray-50 dark:sm:hover:bg-gray-800 py-2 sm:p-2 md:p-4 first:rounded-t last:rounded-b;
 }
 .jobsList-desc {
 	@apply flex-grow flex-shrink md:flex items-center gap-2;
