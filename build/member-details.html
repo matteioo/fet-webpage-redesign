@@ -13,17 +13,16 @@
 	<meta property="og:title" content="Fachschaft Elektrotechnik (FET)">
 	<meta name="twitter:title" content="Fachschaft Elektrotechnik (FET)">
 	<meta name="theme-color" content="#006599">
-	<!-- third-generation iPad with high-resolution Retina display: -->
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="#">
-	<!-- iPhone with high-resolution Retina display: -->
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="#">
-	<!-- first- and second-generation iPad: -->
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="#">
-	<!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-	<link rel="apple-touch-icon-precomposed" href="#">
-	<!-- basic favicon -->
-	<link rel="icon" href="#">
-	<link rel="shortcut icon" type="image/png" href="https://fet.at/assets/img/fet_logo_white.png">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=1.1">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=1.1">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=1.1">
+	<link rel="manifest" href="site.webmanifest?v=1.1">
+	<link rel="mask-icon" href="safari-pinned-tab.svg?v=1.1" color="#006599">
+	<link rel="shortcut icon" href="favicon.ico?v=1.1">
+	<meta name="apple-mobile-web-app-title" content="FET - Fachschaft Elektrotechnik">
+	<meta name="application-name" content="FET - Fachschaft Elektrotechnik">
+	<meta name="msapplication-TileColor" content="#2b5797">
 
 	<link rel="stylesheet" href="css/styles.css">
 	<!--<link rel="stylesheet" href="../css/tailwind.css">-->
@@ -40,7 +39,8 @@
 	<nav class="navbar" x-data="{ showNavBar: false }">
 		<div>
 			<a href="index.html">
-				<img src="img/logo2014_64.png" alt="FET-Logo" class="navbar-logo">
+				<img src="img/FET-Logo-2014_64_light.svg" alt="FET-Logo" class="navbar-logo p-2 dark:hidden">
+				<img src="img/FET-Logo-2014_64_dark.svg" alt="FET-Logo" class="navbar-logo p-2 hidden dark:block">
 			</a>
 			<button class="navbar-toggle"
 				@click="showNavBar = ! showNavBar"
@@ -79,8 +79,8 @@
 					x-transition:leave-start="opacity-100"
 					x-transition:leave-end="opacity-0"
 				>
-					<div class="max-w-sm sm:w-full mx-4 sm:mx-0 p-4 sm:p-0 bg-white sm:bg-transparent rounded sm:rounded-none"
-						@click.outside="showModal = false"
+					<div class="max-w-sm sm:w-full mx-4 sm:mx-0 p-4 sm:p-0 bg-white dark:bg-gray-700 sm:bg-transparent rounded sm:rounded-none"
+						@click.outside="showModal = ! showModal"
 						x-show="showModal || $screen('sm')"
 						x-transition:enter="transition transform ease-out duration-300"
 						x-transition:enter-start="scale-110 opacity-0"
@@ -90,13 +90,13 @@
 						x-transition:leave-end="scale-110 opacity-0"
 					>
 						<div class="flex justify-between items-center mb-2 sm:hidden">
-							<h2 class="text-gray-800 sm:section-title sm_section-title-margins sm:w-full">
+							<h2 class="text-gray-800 dark:text-gray-100 sm:section-title sm_section-title-margins sm:w-full">
 								<span class="mr-1 text-gray-400 sm:hidden">
 									<i class="fa-solid fa-bars"></i>
 								</span>
 								Kategorien
 							</h2>
-							<div class="ml-4 -mr-2 px-2 rounded text-xl text-gray-600 sm:hidden cursor-pointer" @click="showModal = false">
+							<div class="ml-4 -mr-2 px-2 rounded text-xl text-gray-600 dark:text-gray-400 sm:hidden cursor-pointer" @click="showModal = false">
 								<i class="far fa-times"></i>
 							</div>
 						</div>
@@ -114,9 +114,9 @@
 						</ul>
 					</div>
 				</div>
-				<button id="modal-trigger-1" class="trigger fixed bottom-4 right-4 bg-proprietary-darker text-blue-50 shadow-lg text-2xl rounded sm:hidden" 
+				<button id="modal-trigger-1" class="z-10 trigger fixed bottom-4 right-4 bg-proprietary-darker dark:bg-sky-500 text-blue-50 dark:text-sky-900 shadow-lg text-2xl rounded sm:hidden" 
 					@click="showModal = true"
-					x-show="!showModal && !$screen('sm')"
+					x-show="!showModal"
 					x-transition:enter="transition duration-100 ease-in"
 					x-transition:enter-start="opacity-0"
 					x-transition:enter-end="opacity-100"
@@ -128,20 +128,19 @@
 				</button>
 			</aside>
 
-			<section class="flex-grow max-w-prose my-8 sm:my-0 text-justify text-gray-800">
+			<section class="flex-grow max-w-prose my-8 sm:my-0 text-justify text-gray-800 dark:text-gray-300">
 				<!-- Alternativtext auf jede Person anpassen: Name im alt="" dynamisch erzeugen -->
 				<img loading="lazy" src="https://fet.at/files/uploads/members/image/photo6043877786113913220.jpg.200x300_q85.jpg" alt="Portraitfoto von Alexander Stiedl" class="md:float-left w-36 mr-2 mb-2">
 				<div x-data="{ expandList: false }">
-					<h2 class="mb-2 text-lg text-gray-900 text-left">Alexander Stiedl Alexander Stiedl Alexander</h2>
+					<h2 class="mb-2 text-lg text-gray-900 dark:text-gray-100 text-left">Alexander Stiedl Alexander Stiedl Alexander</h2>
 					<div class="mb-2">
 						Spitzname: alex <br>
 						Mailaccount: alex@fet.at <br>
 					</div>
 					<div class="mb-2">
-						Fin­det man in frei­er Lauf­bahn meist als "Mi­chi" im Mi­lex-Ge­spann. Flo­rids­dorf ist sein Ghet­to, Mu­sik­ge­schmack de­fi­niert er als "Kraft­klub, Kraft­klub und noch mehr Kraft­klub". Prü­fungs­si­tua­tio­nen ab­sol­viert er frei nach der Her­an­ge­hens­wei­se "Ich hab mir das 2 Stun­den an­ge­schaut" - Er­geb­nis: po­si­tiv - "Ich sags euch, die müs­sen einen Feh­ler ge­macht ha­ben!". Man mun­kelt er fi­nan­ziert öf­ters sei­nen Bier­kon­sum über Leih­ga­ben - "Stimmt nicht!" - "Doch!" - "Ich geb euch al­len 5 Eu­ro, dann sind wir quitt!". Fa­zit: Glückspilz, pro­vo­kant bis gran­tig, lie­bens­wert und bei je­dem Scheiß da­bei.
-					</div>
-					<h3 class="group mt-4 mb-2 text-lg text-gray-900">Ehrenamtliche Tätigkeiten:
-						<button class="inline float-right text-sm px-2 py-1 text-gray-600 md:text-gray-500 group-hover:text-gray-600 border rounded border-gray-500 md:border-gray-400 group-hover:border-gray-500"
+						Findet man in freier Laufbahn meist als "Michi" im Milex-Gespann. Floridsdorf ist sein Ghetto, Musikgeschmack definiert er als "Kraftklub, Kraftklub und noch mehr Kraftklub". Prüfungssituationen absolviert er frei nach der Herangehensweise "Ich hab mir das 2 Stunden angeschaut" - Ergebnis: positiv - "Ich sags euch, die müssen einen Fehler gemacht haben!". Man munkelt er finanziert öfters seinen Bierkonsum über Leihgaben - "Stimmt nicht!" - "Doch!" - "Ich geb euch allen 5 Euro, dann sind wir quitt!". Fazit: Glückspilz, provokant bis grantig, liebenswert und bei jedem Scheiß dabei.					</div>
+					<h3 class="group mt-4 mb-2 text-lg text-gray-900 dark:text-gray-100">Ehrenamtliche Tätigkeiten:
+						<button class="inline float-right text-sm px-2 py-1 text-gray-600 dark:text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-400 border rounded border-gray-500 dark:border-gray-500 md:border-gray-400 dark:md:border-gray-600 group-hover:border-gray-500 dark:group-hover:border-gray-500"
 							@click="expandList = ! expandList"
 						>
 							<span x-show="!expandList">Mehr</span><span x-show="expandList">Weniger</span><span class="hidden md:inline"> anzeigen</span>
@@ -154,43 +153,43 @@
 					<ul class="flex flex-col gap-1">
 						<li class="flex flex-row flex-wrap">
 							<span>Fakultätsrat:</span>
-							<span class="ml-2 text-gray-600">1. April 2018</span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. April 2018</span>
 						</li>
 						<li class="flex flex-row flex-wrap">
 							<span>Studienkommission ET:</span>
-							<span class="ml-2 text-gray-600">1. Juli 2019 - </span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. Juli 2019 - </span>
 						</li>
 						<li class="flex flex-row flex-wrap">
 							<span>Erstsemestrigentutorium:</span>
-							<span class="ml-2 text-gray-600">1. Oktober 2018 - 31. Jänner 2019</span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. Oktober 2018 - 31. Jänner 2019</span>
 						</li>
 						<li class="flex flex-row flex-wrap">
 							<span>Social-Media Team:</span>
-							<span class="ml-2 text-gray-600">1. April 2019 - </span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. April 2019 - </span>
 						</li>
 						<li class="flex flex-row flex-wrap">
 							<span>Studienvertretung:</span>
-							<span class="ml-2 text-gray-600">1. Juli 2019 - 30. Juni 2021</span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. Juli 2019 - 30. Juni 2021</span>
 						</li>
 						<li class="flex flex-row flex-wrap">
 							<span>Universitätsvertretung:</span>
-							<span class="ml-2 text-gray-600">1. Juli 2019 - </span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. Juli 2019 - </span>
 						</li>
 						<li class="flex flex-row flex-wrap">
 							<span>Studienkommission ET:</span>
-							<span class="ml-2 text-gray-600">1. Mai 2018 - 30. Juni 2019</span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. Mai 2018 - 30. Juni 2019</span>
 						</li>
 						<li class="flex flex-row flex-wrap">
 							<span>Erstsemestrigentutorium:</span>
-							<span class="ml-2 text-gray-600">1. September 2020 - 30. Jänner 2021 </span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. September 2020 - 30. Jänner 2021 </span>
 						</li>
 						<li class="flex flex-row flex-wrap">
 							<span>Fakultätsrat:</span>
-							<span class="ml-2 text-gray-600">1. April 2018</span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. April 2018</span>
 						</li>
 						<li class="flex flex-row flex-wrap">
 							<span>Studienkommission ET:</span>
-							<span class="ml-2 text-gray-600">1. Juli 2019 - </span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. Juli 2019 - </span>
 						</li>
 					</ul>
 					<ul class="flex flex-col gap-1 mt-1"
@@ -204,27 +203,27 @@
 					>
 						<li class="flex flex-row flex-wrap">
 							<span>Superlatur:</span>
-							<span class="ml-2 text-gray-600">1. Oktober 2018 - 31. Jänner 2019</span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. Oktober 2018 - 31. Jänner 2019</span>
 						</li>
 						<li class="flex flex-row flex-wrap">
 							<span>Social-Media Team:</span>
-							<span class="ml-2 text-gray-600">1. April 2019 - </span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. April 2019 - </span>
 						</li>
 						<li class="flex flex-row flex-wrap">
 							<span>Studienvertretung:</span>
-							<span class="ml-2 text-gray-600">1. Juli 2019 - 30. Juni 2021</span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. Juli 2019 - 30. Juni 2021</span>
 						</li>
 						<li class="flex flex-row flex-wrap">
 							<span>Universitätsvertretung:</span>
-							<span class="ml-2 text-gray-600">1. Juli 2019 - </span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. Juli 2019 - </span>
 						</li>
 						<li class="flex flex-row flex-wrap">
 							<span>Studienkommission ET:</span>
-							<span class="ml-2 text-gray-600">1. Mai 2018 - 30. Juni 2019</span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. Mai 2018 - 30. Juni 2019</span>
 						</li>
 						<li class="flex flex-row flex-wrap">
 							<span>Erstsemestrigentutorium:</span>
-							<span class="ml-2 text-gray-600">1. September 2020 - 30. Jänner 2021 </span>
+							<span class="ml-2 text-gray-600 dark:text-gray-400">1. September 2020 - 30. Jänner 2021 </span>
 						</li>
 					</ul>
 					<!-- <br>
@@ -265,31 +264,31 @@
 		</div>
 	</main>
 
-	<footer class="bg-proprietary p-4 text-blue-100 flex-none">
-		<ul class="flex justify-center mb-4 text-2xl">
-			<li class="mx-4">
+	<footer>
+		<ul class="icon-list">
+			<li>
 				<a href="https://facebook.fet.at/"><i class="fab fa-facebook"></i></a>
 			</li>
-			<li class="mx-4">
+			<li>
 				<a href="https://instagram.fet.at/"><i class="fab fa-instagram"></i></a>
 			</li>
-			<li class="mx-4">
+			<li>
 				<a href="https://discord.fet.at/"><i class="fab fa-discord"></i></a>
 			</li>
-			<li class="mx-4">
+			<li>
 				<a href="https://telegram.fet.at/"><i class="fab fa-telegram"></i></a>
 			</li>
-			<li class="mx-4">
+			<li>
 				<a href="mailto:service@fet.at"><i class="fas fa-envelope"></i></a>
 			</li>
 		</ul>
-		<div class="flex justify-center my-4">
+		<div class="legal">
 			<a href="impressum.html" class="text-center text-sm sm:text-base">Impressum</a>
 		</div>
-		<hr class="border-blue-300 -mx-4">
-		<p class="mt-4 uppercase text-center text-sm sm:text-base">© 2021 FET - Alle Rechte vorbehalten.</p>
+		<hr class="legal-divider">
+		<p class="copyright">© 2021 FET - Alle Rechte vorbehalten.</p>
 	</footer>
-	<div class="text-center p-2 bg-gray-800 text-gray-400 font-light" x-data="{ counter: 0 }">
+	<div class="super-duper-awesome-signature" x-data="{ counter: 0 }">
 		<span :class="counter>=4 && 'text-purple-300'">Handcrafted </span><span :class="counter>=5 && 'text-green-400'">with </span><i class="fa-solid fa-heart" aria-label="love" @click="counter++" :class="counter>=2 ? 'text-proprietary hover:text-proprietary-dark' : 'text-red-600 hover:text-red-700'"></i><span :class="counter>=6 && 'text-pink-400'"> by</span><span class="font-normal" :class="counter>=3 && 'text-yellow-500'"> Matteo Duchscher</span>
 	</div>
 
@@ -300,7 +299,7 @@
 	<script>
 		var spy = new Gumshoe('#scrollspy-subNav a', {
 			/***** Scrollspy *****/ // Active classes
-			navClass: 'font-semibold', // applied to the nav list item
+			navClass: 'active', // applied to the nav list item
 		});
 
 		/***** SmoothScroll *****/ // All animations will take exactly 500ms

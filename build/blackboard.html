@@ -6,24 +6,23 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>FET: Blackboard</title>
 
-	<meta name="author" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="author" content="FET - Fachschaft Elektrotechnik">
 	<meta name="description" content="Die Fachschaft Elektrotechnik besteht aus ET Studierenden, die sich um die Anliegen der Studenten und Studentinnen kümmern.">
 	<meta property="og:image" content="#"> <!--og:... = Facebook metadata-->
 	<meta property="og:description" content="Die Fachschaft Elektrotechnik besteht aus ET Studierenden, die sich um die Anliegen der Studenten und Studentinnen kümmern.">
-	<meta property="og:title" content="Fachschaft Elektrotechnik (FET)">
-	<meta name="twitter:title" content="Fachschaft Elektrotechnik (FET)">
+	<meta property="og:title" content="FET - Fachschaft Elektrotechnik">
+	<meta name="twitter:title" content="FET - Fachschaft Elektrotechnik">
 	<meta name="theme-color" content="#006599">
-	<!-- third-generation iPad with high-resolution Retina display: -->
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="#">
-	<!-- iPhone with high-resolution Retina display: -->
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="#">
-	<!-- first- and second-generation iPad: -->
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="#">
-	<!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-	<link rel="apple-touch-icon-precomposed" href="#">
-	<!-- basic favicon -->
-	<link rel="icon" href="#">
-	<link rel="shortcut icon" type="image/png" href="https://fet.at/assets/img/fet_logo_white.png">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=1.1">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=1.1">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=1.1">
+	<link rel="manifest" href="site.webmanifest?v=1.1">
+	<link rel="mask-icon" href="safari-pinned-tab.svg?v=1.1" color="#006599">
+	<link rel="shortcut icon" href="favicon.ico?v=1.1">
+	<meta name="apple-mobile-web-app-title" content="FET - Fachschaft Elektrotechnik">
+	<meta name="application-name" content="FET - Fachschaft Elektrotechnik">
+	<meta name="msapplication-TileColor" content="#2b5797">
 
 	<link rel="stylesheet" href="css/styles.css">
 	<!--<link rel="stylesheet" href="../css/tailwind.css">-->
@@ -40,7 +39,8 @@
 	<nav class="navbar" x-data="{ showNavBar: false }">
 		<div>
 			<a href="index.html">
-				<img src="img/logo2014_64.png" alt="FET-Logo" class="navbar-logo">
+				<img src="img/FET-Logo-2014_64_light.svg" alt="FET-Logo" class="navbar-logo p-2 dark:hidden">
+				<img src="img/FET-Logo-2014_64_dark.svg" alt="FET-Logo" class="navbar-logo p-2 hidden dark:block">
 			</a>
 			<button class="navbar-toggle"
 				@click="showNavBar = ! showNavBar"
@@ -113,7 +113,7 @@
 							<i class="fas fa-angle-right"></i>
 						</div>
 					</a>
-					<hr class="border-gray-300">
+					<hr>
 					<a href="https://fet.at/files/uploads/blackboard/pdf/IT-Techniker_in.pdf" class="jobsList-item">
 						<div class="jobsList-desc">
 							<h2>Universität Wien</h2>
@@ -127,7 +127,7 @@
 							<i class="fas fa-angle-right"></i>
 						</div>
 					</a>
-					<hr class="border-gray-300">
+					<hr>
 					<a href="https://fet.at/files/uploads/blackboard/pdf/Universit%C3%A4tsassistent_in_Post-Doc.pdf" class="jobsList-item">
 						<div class="jobsList-desc">
 							<h2>TU Wien</h2>
@@ -141,7 +141,7 @@
 							<i class="fas fa-angle-right"></i>
 						</div>
 					</a>
-					<hr class="border-gray-300">
+					<hr>
 					<a href="https://fet.at/files/uploads/blackboard/pdf/Ausschreibung_IT-Techniker_inSystemadministrator_in-1.pdf" class="jobsList-item">
 						<div class="jobsList-desc">
 							<h2>TU Wien</h2>
@@ -155,7 +155,7 @@
 							<i class="fas fa-angle-right"></i>
 						</div>
 					</a>
-					<hr class="border-gray-300">
+					<hr>
 					<a href="https://fet.at/files/uploads/blackboard/pdf/Systemadministrator_in_2147.pdf" class="jobsList-item">
 						<div class="jobsList-desc">
 							<h2>TU Wien</h2>
@@ -169,7 +169,7 @@
 							<i class="fas fa-angle-right"></i>
 						</div>
 					</a>
-					<hr class="border-gray-300">
+					<hr>
 					<a href="https://fet.at/files/uploads/blackboard/pdf/Studentische_r_Mitarbeiter_in_375.pdf" class="jobsList-item">
 						<div class="jobsList-desc">
 							<h2>TU Wien</h2>
@@ -190,9 +190,9 @@
 				</div>
 			</section>
 			<!-- Die folgende Section soll dargestellt werden, wenn keine Einträge vorhanden sind. -->
-			<section class="my-8 p-8 flex flex-col gap-2 items-center border-2 border-dashed rounded border-gray-300">
-				<div class="text-center text-gray-600">
-					<i class="fa-solid fa-sparkles text-gray-400 text-2xl mb-4"></i>
+			<section class="my-8 p-8 flex flex-col gap-2 items-center border-2 border-dashed rounded border-gray-300 dark:border-gray-600">
+				<div class="text-center text-gray-600 dark:text-gray-300">
+					<i class="fa-solid fa-sparkles text-gray-400 dark:text-gray-400 text-2xl mb-4"></i>
 					<p>Es sind aktuell keine Stellenausschreibungen vorhanden. Bitte schaue später nochmal vorbei.</p>
 				</div>
 				<div class="inline-flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
@@ -203,31 +203,31 @@
 		</div>
 	</main>
 
-	<footer class="bg-proprietary p-4 text-blue-100 flex-none">
-		<ul class="flex justify-center mb-4 text-2xl">
-			<li class="mx-4">
+	<footer>
+		<ul class="icon-list">
+			<li>
 				<a href="https://facebook.fet.at/"><i class="fab fa-facebook"></i></a>
 			</li>
-			<li class="mx-4">
+			<li>
 				<a href="https://instagram.fet.at/"><i class="fab fa-instagram"></i></a>
 			</li>
-			<li class="mx-4">
+			<li>
 				<a href="https://discord.fet.at/"><i class="fab fa-discord"></i></a>
 			</li>
-			<li class="mx-4">
+			<li>
 				<a href="https://telegram.fet.at/"><i class="fab fa-telegram"></i></a>
 			</li>
-			<li class="mx-4">
+			<li>
 				<a href="mailto:service@fet.at"><i class="fas fa-envelope"></i></a>
 			</li>
 		</ul>
-		<div class="flex justify-center my-4">
+		<div class="legal">
 			<a href="impressum.html" class="text-center text-sm sm:text-base">Impressum</a>
 		</div>
-		<hr class="border-blue-300 -mx-4">
-		<p class="mt-4 uppercase text-center text-sm sm:text-base">© 2021 FET - Alle Rechte vorbehalten.</p>
+		<hr class="legal-divider">
+		<p class="copyright">© 2021 FET - Alle Rechte vorbehalten.</p>
 	</footer>
-	<div class="text-center p-2 bg-gray-800 text-gray-400 font-light" x-data="{ counter: 0 }">
+	<div class="super-duper-awesome-signature" x-data="{ counter: 0 }">
 		<span :class="counter>=4 && 'text-purple-300'">Handcrafted </span><span :class="counter>=5 && 'text-green-400'">with </span><i class="fa-solid fa-heart" aria-label="love" @click="counter++" :class="counter>=2 ? 'text-proprietary hover:text-proprietary-dark' : 'text-red-600 hover:text-red-700'"></i><span :class="counter>=6 && 'text-pink-400'"> by</span><span class="font-normal" :class="counter>=3 && 'text-yellow-500'"> Matteo Duchscher</span>
 	</div>
 

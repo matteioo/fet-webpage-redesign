@@ -13,17 +13,16 @@
 	<meta property="og:title" content="Fachschaft Elektrotechnik (FET)">
 	<meta name="twitter:title" content="Fachschaft Elektrotechnik (FET)">
 	<meta name="theme-color" content="#006599">
-	<!-- third-generation iPad with high-resolution Retina display: -->
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="#">
-	<!-- iPhone with high-resolution Retina display: -->
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="#">
-	<!-- first- and second-generation iPad: -->
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="#">
-	<!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-	<link rel="apple-touch-icon-precomposed" href="#">
-	<!-- basic favicon -->
-	<link rel="icon" href="#">
-	<link rel="shortcut icon" type="image/png" href="https://fet.at/assets/img/fet_logo_white.png">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=1.1">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=1.1">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=1.1">
+	<link rel="manifest" href="site.webmanifest?v=1.1">
+	<link rel="mask-icon" href="safari-pinned-tab.svg?v=1.1" color="#006599">
+	<link rel="shortcut icon" href="favicon.ico?v=1.1">
+	<meta name="apple-mobile-web-app-title" content="FET - Fachschaft Elektrotechnik">
+	<meta name="application-name" content="FET - Fachschaft Elektrotechnik">
+	<meta name="msapplication-TileColor" content="#2b5797">
 
 	<link rel="stylesheet" href="css/styles.css">
 	<!-- FontAwesome Kit -->
@@ -44,7 +43,8 @@
 	<nav class="navbar" x-data="{ showNavBar: false }">
 		<div>
 			<a href="index.html">
-				<img src="img/logo2014_64.png" alt="FET-Logo" class="navbar-logo">
+				<img src="img/FET-Logo-2014_64_light.svg" alt="FET-Logo" class="navbar-logo p-2 dark:hidden">
+				<img src="img/FET-Logo-2014_64_dark.svg" alt="FET-Logo" class="navbar-logo p-2 hidden dark:block">
 			</a>
 			<button class="navbar-toggle"
 				@click="showNavBar = ! showNavBar"
@@ -105,10 +105,10 @@
 		</a>
 		<section>
 			<div class="mb-4 flex flex-col sm:flex-col gap-2 mx-auto">
-				<ul class="px-4 sm:px-0 mb-2 flex flex-row justify-center gap-2 sm:gap-4 flex-wrap text-blue-700 dark:text-blue-200 text-sm uppercase tracking-wide sm:font-medium">
-					<li class="inline-block py-1 px-2 bg-blue-100 dark:bg-blue-900 rounded-full"><a href="#">#fachschaft</a></li>
-					<li class="inline-block py-1 px-2 bg-blue-100 dark:bg-blue-900 rounded-full"><a href="#">#WelcomeDay</a></li>
-					<li class="inline-block py-1 px-2 bg-blue-100 dark:bg-blue-900 rounded-full"><a href="#">#Inskriptionsberatung</a></li>
+				<ul class="px-4 sm:px-0 mb-2 flex flex-row justify-center gap-2 sm:gap-4 flex-wrap text-sky-700 dark:text-blue-200 text-sm uppercase tracking-wide sm:font-medium">
+					<li class="inline-block py-1 px-2 bg-sky-100 dark:bg-sky-900 rounded-full"><a href="#">#fachschaft</a></li>
+					<li class="inline-block py-1 px-2 bg-sky-100 dark:bg-sky-900 rounded-full"><a href="#">#WelcomeDay</a></li>
+					<li class="inline-block py-1 px-2 bg-sky-100 dark:bg-sky-900 rounded-full"><a href="#">#Inskriptionsberatung</a></li>
 				</ul>
 				<h1 class="px-4 sm:px-0 text-lg sm:text-xl lg:text-3xl text-center sm:text-left font-medium text-gray-900 dark:text-gray-100 font-serif tracking-wider leading-normal" style="line-height: 1.5;">Studie zu TISS im Rahmen der Lehrveranstaltung "Interface & Interaction Design"</h1>
 				<div class="mx-auto max-w-max sm:mx-0 sm:max-w-none sm:flex justify-between items-center">
@@ -127,17 +127,33 @@
 			</div>
 			<!-- <img src="img/article-cover-3.jpg" alt="" class="h-44 sm:h-56 lg:h-64 xl:h-80 w-full object-cover sm:rounded-md max-w-5xl mx-auto"> -->
 			<div class="relative w-full h-44 sm:h-56 lg:h-64 xl:h-80 bg-center bg-no-repeat bg-cover sm:rounded-md mx-auto" style="background-image: url(img/article-cover-3.jpg);">
-				<div class="hidden absolute top-0 right-0 bg-white dark:bg-gray-900 rounded-bl p-2 bg-opacity-80 dark:bg-opacity-70 lg:flex items-center gap-2">
-					<i class="flex-0 fa-solid fa-calendar-clock text-gray-800 dark:text-gray-200"></i>
+				<div class="hidden lg:block absolute top-0 right-0 bg-white dark:bg-gray-900 rounded-bl p-2 bg-opacity-80 dark:bg-opacity-70 gap-2">
+					<div class="items-center lg:flex gap-2">
+						<i class="flex-none fa-solid fa-calendar-clock fa-fw text-gray-800 dark:text-gray-200"></i>
+						<span class="flex-1 text-sm text-gray-800 dark:text-gray-200">
+							Event-Start: 23. August 2021 um 18:00 Uhr<br>
+							Event-Ende: 23. August 2021 um 20:00 Uhr
+						</span>
+					</div>
+					<div class="items-center lg:flex gap-2">
+						<i class="flex-none fa-solid fa-location-dot fa-fw text-gray-800 dark:text-gray-200"></i>
+						<span class="flex-1 text-sm text-gray-800 dark:text-gray-200">
+							Event-Ort: Gußhausstraße 23, 1040 Wien
+						</span>
+					</div>
+				</div>
+				<div class="hidden absolute top-0 right-0 bg-white dark:bg-gray-900 rounded-bl p-2 bg-opacity-80 dark:bg-opacity-70  items-center gap-2">
+					<i class="flex-none fa-solid fa-calendar-clock text-gray-800 dark:text-gray-200"></i>
 					<span class="flex-1 text-sm text-gray-800 dark:text-gray-200">
 						Event-Start: 23. August 2021 um 18:00 Uhr<br>
-						Event-Ende: 23. August 2021 um 20:00 Uhr
+						Event-Ende: 23. August 2021 um 20:00 Uhr<br>
+						Event-Ort: Gußhausstraße 23, 1040 Wien
 					</span>
 				</div>
 			</div>
 		</section>
 		<section class="mx-4 z-10">
-			<article class="p-4 mt-4 sm:-mt-16 w-full max-w-prose mx-auto bg-white dark:bg-gray-900 rounded sm:dark:border dark:border-gray-800">
+			<article class="p-4 mt-4 sm:-mt-16 w-full max-w-prose mx-auto bg-white dark:bg-gray-900 rounded dark:border-2 dark:border-gray-800">
 				<!-- <div class="w-full flex justify-end">
 					<div class="hidden lg:block max-w-max text-sm text-gray-600">
 						Event-Start: 23. August 2021 um 18:00 Uhr<br>
@@ -325,16 +341,17 @@ function hideInfoBox(){
 					[4]&nbsp;<a href="https://htu.at/AuRef">https://htu.at/AuRef</a><br>
 					[5]&nbsp;<a href="https://www.tuwien.at/studium">https://www.tuwien.at/studium</a></p>
 				</div>
-				<hr class="lg:hidden -mx-4 border-gray-200 dark:border-gray-800 border-1 my-4">
+				<hr class="lg:hidden -mx-4 border-gray-200 dark:border-gray-800 dark:border my-4">
 				<div class="lg:hidden">
 					<h2 class="text-gray-800 dark:text-gray-200 font-medium"><i class="fa-solid fa-calendar-days mr-2 text-gray-400 dark:text-gray-500"></i>Termindetails:</h2>
 					<ul class="text-base text-gray-700 dark:text-gray-300 my-1">
-						<li>Start:&Tab;23. August 2021 um 18:00 Uhr</li>
-						<li>Ende:&Tab;23. August 2021 um 20:00 Uhr</li>
+						<li>Start: 23. August 2021 um 18:00 Uhr</li>
+						<li>Ende: 23. August 2021 um 20:00 Uhr</li>
+						<li>Ort: Campus Gußhaus - EI7</li>
 					</ul>
 				</div>
-				<hr class="-mx-4 border-gray-200 dark:border-gray-800 border-1 my-4">
-				<div class="-m-4 flex divide-x divide-gray-200 dark:divide-gray-800 text-sm sm:text-base">
+				<hr class="-mx-4 border-gray-200 dark:border-gray-800 dark:border my-4">
+				<div class="-m-4 flex divide-x divide-gray-200 dark:divide-gray-800 dark:divide-x-2 text-sm sm:text-base">
 					<a href="#" class="w-1/2 p-4 flex items-center gap-2">
 						<i class="fa-solid fa-chevron-left text-gray-600 dark:text-gray-400"></i>
 						<span class="text-gray-700 dark:text-gray-300 font-medium">Vorheriger Artikel</span>
@@ -350,27 +367,27 @@ function hideInfoBox(){
 			</a>
 		</section>
 		<section class="mx-auto w-full px-4">
-			<h2 class="my-4 sm:my-8 text-proprietary text-xl text-center uppercase tracking-wider">Weiterlesen</h2>
+			<h2 class="my-4 sm:my-8 text-proprietary dark:text-proprietary-lighter text-xl text-center uppercase tracking-wider">Weiterlesen</h2>
 			<div class="flex justify-evenly flex-wrap gap-4">
-				<a href="#" class="sm:flex-1 block rounded bg-white shadow-md bg-no-repeat bg-center h-56 transition-all ease-in-out duration-500 bg-scale-100 hover:bg-scale-120" style="background-image: url(img/article-cover-1.jpg);">
+				<a href="#" class="sm:flex-1 block rounded bg-white dark:bg-gray-500 shadow-md bg-no-repeat bg-center h-56 transition-all ease-in-out duration-500 bg-scale-100 hover:bg-scale-120" style="background-image: url(img/article-cover-1.jpg);">
 					<div class="w-full h-full bg-gradient-to-t from-black rounded-md flex flex-col justify-end p-2">
 						<h2 class="text-gray-50 line-clamp-2"><span aria-label="Link zum Artikel: "></span>Studie zu TISS im Rahmen der Lehrveranstaltung "Interface & Interaction Design"</h2>
 						<span class="text-gray-300 text-sm"><i class="fas fa-clock mr-1"></i><span aria-label=" vom "></span>23.09.2021</span>
 					</div>
 				</a>
-				<a href="#" class="sm:flex-1 block rounded bg-white shadow-md bg-center bg-no-repeat h-56 transition-all ease-in-out duration-500 bg-scale-100 hover:bg-scale-120" style="background-image: url(img/article-cover-2.jpg);">
+				<a href="#" class="sm:flex-1 block rounded bg-white dark:bg-gray-500 shadow-md bg-center bg-no-repeat h-56 transition-all ease-in-out duration-500 bg-scale-100 hover:bg-scale-120" style="background-image: url(img/article-cover-2.jpg);">
 					<div class="w-full h-full bg-gradient-to-t from-black rounded-md flex flex-col justify-end p-2">
 						<h2 class="text-gray-50 line-clamp-2"><span aria-label="Link zum Artikel: "></span>Studie zu TISS im Rahmen der Lehrveranstaltung "Interface & Interaction Design"</h2>
 						<span class="text-gray-300 text-sm"><i class="fas fa-clock mr-1"></i><span aria-label=" vom "></span>23.09.2021</span>
 					</div>
 				</a>
-				<a href="#" class="flex-1 hidden lg:block rounded bg-white shadow-md bg-no-repeat bg-center h-56 transition-all ease-in-out duration-500 bg-scale-100 hover:bg-scale-120" style="background-image: url(img/article-cover-3.jpg);">
+				<a href="#" class="flex-1 hidden lg:block rounded bg-white dark:bg-gray-500 shadow-md bg-no-repeat bg-center h-56 transition-all ease-in-out duration-500 bg-scale-100 hover:bg-scale-120" style="background-image: url(img/article-cover-3.jpg);">
 					<div class="w-full h-full bg-gradient-to-t from-black rounded-md flex flex-col justify-end p-2">
 						<h2 class="text-gray-50 line-clamp-2"><span aria-label="Link zum Artikel: "></span>Studie zu TISS im Rahmen der Lehrveranstaltung "Interface & Interaction Design"</h2>
 						<span class="text-gray-300 text-sm"><i class="fas fa-clock mr-1"></i><span aria-label=" vom "></span>23.09.2021</span>
 					</div>
 				</a>
-				<a href="#" class="flex-1 hidden 2xl:block rounded bg-white shadow-md bg-no-repeat bg-center h-56 transition-all ease-in-out duration-500 bg-scale-100 hover:bg-scale-120" style="background-image: url(img/article-cover-2.jpg);">
+				<a href="#" class="flex-1 hidden 2xl:block rounded bg-white dark:bg-gray-500 shadow-md bg-no-repeat bg-center h-56 transition-all ease-in-out duration-500 bg-scale-100 hover:bg-scale-120" style="background-image: url(img/article-cover-2.jpg);">
 					<div class="w-full h-full bg-gradient-to-t from-black rounded-md flex flex-col justify-end p-2">
 						<h2 class="text-gray-50 line-clamp-2"><span aria-label="Link zum Artikel: "></span>Studie zu TISS im Rahmen der Lehrveranstaltung "Interface & Interaction Design"</h2>
 						<span class="text-gray-300 text-sm"><i class="fas fa-clock mr-1"></i><span aria-label=" vom "></span>23.09.2021</span>
@@ -380,31 +397,31 @@ function hideInfoBox(){
 		</section>
 	</main>
 
-	<footer class="bg-proprietary p-4 text-blue-100 flex-none">
-		<ul class="flex justify-center mb-4 text-2xl">
-			<li class="mx-4">
+	<footer>
+		<ul class="icon-list">
+			<li>
 				<a href="https://facebook.fet.at/"><i class="fab fa-facebook"></i></a>
 			</li>
-			<li class="mx-4">
+			<li>
 				<a href="https://instagram.fet.at/"><i class="fab fa-instagram"></i></a>
 			</li>
-			<li class="mx-4">
+			<li>
 				<a href="https://discord.fet.at/"><i class="fab fa-discord"></i></a>
 			</li>
-			<li class="mx-4">
+			<li>
 				<a href="https://telegram.fet.at/"><i class="fab fa-telegram"></i></a>
 			</li>
-			<li class="mx-4">
+			<li>
 				<a href="mailto:service@fet.at"><i class="fas fa-envelope"></i></a>
 			</li>
 		</ul>
-		<div class="flex justify-center my-4">
+		<div class="legal">
 			<a href="impressum.html" class="text-center text-sm sm:text-base">Impressum</a>
 		</div>
-		<hr class="border-blue-300 -mx-4">
-		<p class="mt-4 uppercase text-center text-sm sm:text-base">© 2021 FET - Alle Rechte vorbehalten.</p>
+		<hr class="legal-divider">
+		<p class="copyright">© 2021 FET - Alle Rechte vorbehalten.</p>
 	</footer>
-	<div class="text-center p-2 bg-gray-800 text-gray-400 font-light" x-data="{ counter: 0 }">
+	<div class="super-duper-awesome-signature" x-data="{ counter: 0 }">
 		<span :class="counter>=4 && 'text-purple-300'">Handcrafted </span><span :class="counter>=5 && 'text-green-400'">with </span><i class="fa-solid fa-heart" aria-label="love" @click="counter++" :class="counter>=2 ? 'text-proprietary hover:text-proprietary-dark' : 'text-red-600 hover:text-red-700'"></i><span :class="counter>=6 && 'text-pink-400'"> by</span><span class="font-normal" :class="counter>=3 && 'text-yellow-500'"> Matteo Duchscher</span>
 	</div>
 

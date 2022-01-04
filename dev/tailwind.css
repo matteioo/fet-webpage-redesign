@@ -9,21 +9,23 @@
 	}
 	
 	p a {
-		@apply text-proprietary dark:text-proprietary-lighter font-medium;
+		@apply text-proprietary dark:text-proprietary-lighter font-medium underline decoration-proprietary-dark dark:decoration-sky-700 hover:decoration-2;
 	}
 }
 
 @layer utilities {
+	.bg-scale-100 {
+		background-size: 100%;
+	}
+	.bg-scale-110 {
+		background-size: 110%;
+	}
+	.bg-scale-120 {
+		background-size: 120%;
+	}
+}
 
-.bg-scale-100 {
-	background-size: 100%;
-}
-.bg-scale-110 {
-	background-size: 110%;
-}
-.bg-scale-120 {
-	background-size: 120%;
-}
+@layer components {
 
 /***** NAVBAR *****/
 .navbar {
@@ -39,19 +41,19 @@
 	@apply sm:hidden absolute right-4 sm:right-0 top-5 text-proprietary dark:text-proprietary-lighter text-2xl;
 }
 .navbar-content {
-	@apply w-full sm:w-auto text-proprietary dark:text-proprietary-lighter md:text-lg self-start sm:self-center;
+	@apply w-full mb-2 sm:mb-0 sm:w-auto text-proprietary dark:text-proprietary-lighter md:text-lg self-start sm:self-center;
 }
 .navbar-content > li {
-	@apply sm:inline-block;
+	@apply sm:inline-block rounded;
 }
 .navbar-content hr {
 	@apply sm:hidden my-2;
 }
 .navbar-content li > a {
-	@apply block w-full h-full py-2 md:mx-1 sm:px-1 md:px-2;
+	@apply block w-full h-full py-2 mx-1 px-2;
 }
 .navbar-content li.active {
- @apply font-semibold text-proprietary-darker dark:text-proprietary-lightest;
+ @apply font-medium text-proprietary-dark dark:text-proprietary-lightest bg-gray-200 dark:bg-gray-700;
 }
 .navbar-content li.active a {
 	@apply cursor-default;
@@ -59,7 +61,7 @@
 
 /***** PAGE-TITLE *****/
 .page-title {
-	@apply mb-4 uppercase text-proprietary tracking-wide md:tracking-wider lg:tracking-widest text-center sm:text-lg lg:text-xl sm:font-medium md:mb-8;
+	@apply mb-4 uppercase text-proprietary dark:text-proprietary-lighter tracking-wider lg:tracking-widest text-center sm:text-lg lg:text-xl sm:font-medium md:mb-8;
 }
 
 /***** BUTTONS *****/
@@ -70,15 +72,16 @@
 	@apply px-2 py-1 rounded text-center;
 }
 .btn-primary {
-	@apply text-blue-50 bg-proprietary hover:bg-proprietary focus:outline-none focus:ring-2 focus:ring-proprietary-light;
+	@apply text-blue-50 hover:text-blue-100 bg-proprietary hover:bg-proprietary-dark focus:outline-none focus:ring-2 focus:ring-proprietary-light;
+	@apply dark:text-blue-200 dark:hover:text-blue-300 dark:bg-proprietary-darker dark:hover:bg-proprietary-darkest dark:focus:ring-proprietary;
 }
 .btn-secondary {
-	@apply border border-gray-700 text-gray-700;
+	@apply border border-gray-700 dark:border-gray-400 text-gray-700 dark:text-gray-400;
 }
 
 /***** SECTION *****/
 .section-title {
-	@apply text-base md:text-lg text-gray-800 font-medium text-center;
+	@apply text-base md:text-lg text-gray-800 dark:text-gray-100 font-medium text-center;
 }
 .section-title-margins {
 	@apply mt-4 mb-2 uppercase;
@@ -86,25 +89,25 @@
 
 /***** SIDEBAR-NAVIGATION *****/
 ul.sideBarNav {
-	@apply flex flex-col text-gray-700;
+	@apply flex flex-col text-gray-700 dark:text-gray-200;
 }
 ul.sideBarNav > li > a {
-	@apply block p-2 hover:bg-gray-300 rounded;
+	@apply block p-2 hover:bg-gray-300 dark:hover:bg-gray-600 rounded;
 }
 ul.sideBarNav > li.active > a {
-	@apply bg-gray-300 text-gray-800 font-medium;
+	@apply bg-gray-300 dark:bg-gray-600 text-gray-800 dark:text-gray-100 font-medium;
 }
 ul.sideBarNav > li.internalLI > a {
 	@apply block p-2 bg-proprietary hover:bg-proprietary-dark text-blue-50 rounded;
 }
 ul.sideBarNav > hr {
-	@apply border-gray-300;
+	@apply border-gray-300 dark:border-gray-600;
 }
 ul.sideBarNav > ul {
 	@apply hidden sm:block;
 }
 ul.sideBarNav > ul > li > a {
-	@apply block p-2 ml-2 hover:bg-gray-200 rounded text-sm;
+	@apply block p-2 ml-2 hover:bg-gray-200 dark:hover:bg-gray-800 rounded text-sm;
 }
 ul.sideBarNav > ul > li.active > a {
 	@apply font-semibold;
@@ -120,16 +123,16 @@ ul.sideBarNav > ul > li.active > a {
 	@apply flex items-center;
 }
 .calendar-dateBubble {
-	@apply flex flex-col justify-center w-11 h-11 pb-1 rounded-full text-center leading-none text-blue-50 bg-proprietary flex-none;
+	@apply flex flex-col justify-center w-11 h-11 pb-1 rounded-full text-center leading-none text-sky-50 dark:text-sky-100 bg-proprietary dark:bg-sky-900 flex-none;
 }
 .calendar-dateBubble .dateBubble-day {
 	@apply flex-none leading-none;
 }
 .calendar-dateBubble .dateBubble-month {
-	@apply flex-none text-sm leading-none text-blue-100;
+	@apply flex-none text-sm leading-none text-sky-100 dark:text-sky-200;
 }
 .calendar-entry > h3 {
-	@apply text-gray-700 pl-2;
+	@apply text-gray-700 dark:text-gray-200 pl-2;
 }
 
 /***** ARTICLE PREVIEW *****/
@@ -147,7 +150,7 @@ ul.sideBarNav > ul > li.active > a {
 	@apply flex justify-end gap-x-1 uppercase;
 }
 .article-cover-tags > li {
-	@apply rounded-full px-2 py-1 text-blue-100 bg-proprietary hover:bg-proprietary-dark;
+	@apply rounded-full px-2 py-1 text-sky-100 bg-proprietary dark:bg-sky-900 hover:bg-proprietary-dark dark:hover:bg-sky-800;
 }
 .article-cover-desc:hover, .article-cover-image:hover {
 	background-size: 120%;
@@ -155,7 +158,7 @@ ul.sideBarNav > ul > li.active > a {
 
 /***** ARTICLE CONTENT *****/
 [class^=db-page-content] {
-	@apply flex flex-col gap-2 overflow-x-hidden;
+	@apply flex flex-col gap-2 overflow-x-hidden mb-4;
 }
 [class^=db-page-content] > p {
 	@apply text-gray-700 dark:text-gray-300;
@@ -206,13 +209,14 @@ ul.sideBarNav > ul > li.active > a {
 
 /***** ALERT *****/
 .alert {
-	@apply relative p-2 rounded border border-gray-400 bg-gray-50 text-gray-600;
+	@apply relative p-2 rounded border dark:border-2 border-gray-400 bg-gray-50 text-gray-600;
+	@apply dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300;
 }
 .alert > .alert-icon {
-	@apply absolute right-2 top-1.5 text-lg sm:text-xl text-gray-300;
+	@apply absolute right-2 top-1.5 text-lg sm:text-xl text-gray-300 dark:text-gray-600;
 }
 .alert > .alert-title {
-	@apply sm:font-semibold text-gray-700;
+	@apply sm:font-semibold text-gray-700 dark:text-zinc-200;
 }
 .alert-body {
 	@apply text-sm sm:text-base;
@@ -221,65 +225,72 @@ ul.sideBarNav > ul > li.active > a {
 }
 .alert.alert-info {
 	@apply border-blue-400 bg-blue-50 text-blue-700;
+	@apply dark:border-blue-700 dark:bg-blue-900 dark:text-blue-300;
 }
 .alert.alert-info > .alert-icon {
-	@apply text-blue-300;
+	@apply text-blue-300 dark:text-blue-600;
 }
 .alert.alert-info > .alert-title {
-	@apply text-blue-800;
+	@apply text-blue-800 dark:text-blue-200;
 }
 .alert.alert-success {
 	@apply border-green-400 bg-green-50 text-green-700;
+	@apply dark:border-green-700 dark:bg-green-900 dark:text-green-300;
 }
 .alert.alert-success > .alert-icon {
-	@apply text-green-300;
+	@apply text-green-300 dark:text-green-600;
 }
 .alert.alert-success > .alert-title {
-	@apply text-green-800;
+	@apply text-green-800 dark:text-green-200;
 }
 .alert.alert-warning {
-	@apply border-yellow-400 bg-yellow-50 text-yellow-700;
+	@apply border-amber-400 bg-amber-50 text-amber-700;
+	@apply dark:border-amber-700 dark:bg-amber-900 dark:text-amber-400;
 }
 .alert.alert-warning > .alert-icon {
-	@apply text-yellow-300;
+	@apply text-amber-300 dark:text-amber-600;
 }
 .alert.alert-warning > .alert-title {
-	@apply text-yellow-800;
+	@apply text-yellow-800 dark:text-amber-300;
 }
 .alert.alert-danger {
 	@apply border-red-400 bg-red-50 text-red-700;
+	@apply dark:border-red-700 dark:bg-red-900 dark:text-red-300;
 }
 .alert.alert-danger > .alert-icon {
-	@apply text-red-300;
+	@apply text-red-300 dark:text-red-600;
 }
 .alert.alert-danger > .alert-title {
-	@apply text-red-800;
+	@apply text-red-800 dark:text-red-200;
 }
 
 /***** JOBSLIST *****/
+.jobsList hr {
+	@apply border-gray-300 dark:border-gray-600;
+}
 .jobsList > a.jobsList-item {
-	@apply flex items-center justify-between gap-2 sm:gap-8 sm:hover:bg-gray-50 py-2 sm:p-2 md:p-4;
+	@apply flex items-center justify-between gap-2 sm:gap-8 sm:hover:bg-gray-50 dark:sm:hover:bg-gray-800 py-2 sm:p-2 md:p-4 first:rounded-t last:rounded-b;
 }
 .jobsList-desc {
 	@apply flex-grow flex-shrink md:flex items-center gap-2;
 }
 .jobsList-desc h2 {
-	@apply md:font-medium text-gray-800;
+	@apply md:font-medium text-gray-800 dark:text-gray-200;
 }
 .jobsList-desc h3 {
-	@apply leading-none text-gray-600 text-sm md:text-base;
+	@apply leading-none text-gray-600 dark:text-gray-300 text-sm md:text-base;
 }
 .jobsList-price {
 	@apply flex-shrink-0 flex align-top justify-end mt-1;
 }
 .jobsList-value {
-	@apply inline-block text-gray-700 md:text-gray-800;
+	@apply inline-block text-gray-700 md:text-gray-800 dark:text-gray-400 dark:md:text-gray-300;
 }
 .jobsList-amount {
-	@apply inline-block text-sm md:text-base ml-1 mt-1.5 md:mt-0 text-gray-600;
+	@apply inline-block text-sm md:text-base ml-1 mt-1.5 md:mt-0 text-gray-600 dark:text-gray-300;
 }
 .jobsList-expand {
-	@apply flex-none text-gray-400 text-xl;
+	@apply flex-none text-gray-400 dark:text-gray-500 text-xl;
 }
 
 /***** MEMBERS SECTIONS *****/
@@ -287,16 +298,16 @@ ul.sideBarNav > ul > li.active > a {
 	@apply flex flex-row items-start mt-8 mb-4;
 }
 .members-article a.title [class*="fa-"] {
-	@apply flex-none mr-1 mt-2 sm:-ml-5 text-sm text-blue-500 sm:text-blue-400 sm:invisible;
+	@apply flex-none mr-1 mt-[0.375rem] sm:-ml-5 text-sm text-sky-600 dark:text-sky-500 sm:invisible;
 }
 .members-article a.title:hover [class*="fa-"] {
-	@apply text-blue-500 visible;
+	@apply text-sky-500 visible;
 }
 .members-article a.title h2 {
-	@apply flex-1 text-lg text-gray-900 tracking-wider;
+	@apply flex-1 text-lg text-gray-900 dark:text-gray-100 tracking-wider;
 }
 .members-article .members-listing {
-	@apply flex flex-wrap justify-start gap-2 sm:gap-4 text-proprietary text-center;
+	@apply flex flex-wrap justify-start gap-2 sm:gap-4 text-proprietary dark:text-proprietary-lighter text-center;
 }
 .members-article .members-listing figure {
 	@apply w-36;
@@ -305,8 +316,33 @@ ul.sideBarNav > ul > li.active > a {
 	@apply leading-tight pt-1;
 }
 
-.foo {
-	@apply bg-red-800 !important;
+/***** FOOTER *****/
+footer {
+	@apply bg-proprietary dark:bg-proprietary-darker p-4 text-blue-100 dark:text-blue-200 flex-none;
+}
+
+footer .icon-list {
+	@apply flex justify-center mb-4 text-2xl;
+}
+
+footer .icon-list > li {
+	@apply mx-4;
+}
+
+footer .legal {
+	@apply flex justify-center my-4;
+}
+
+footer .legal-divider {
+	@apply border-sky-800 -mx-4;
+}
+
+footer .copyright {
+	@apply mt-4 uppercase text-center text-sm sm:text-base;
+}
+
+.super-duper-awesome-signature {
+	@apply text-center p-2 bg-gray-800 text-gray-400 font-light;
 }
 
 }
