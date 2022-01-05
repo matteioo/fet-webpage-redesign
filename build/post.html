@@ -351,13 +351,14 @@ function hideInfoBox(){
 					</ul>
 				</div>
 				<hr class="-mx-4 border-gray-200 dark:border-gray-800 dark:border my-4">
-				<div class="w-full my-2 flex items-center" x-data="{ showOptions: false }">
+				<h2 class="text-gray-800 dark:text-gray-200 font-medium"><i class="fa-solid fa-inbox mr-2 text-gray-400 dark:text-gray-500"></i>Dokument(e):</h2>
+				<div class="w-full my-2 flex items-center gap-4 text-gray-700 dark:text-gray-300" x-data="{ showOptions: false }">
 					<span class="flex-1">Agenda Agenda Agenda Agenda</span>
 					<div class="relative">
-						<button class="sm:hidden px-2 py-1 border border-gray-300 rounded" @click="showOptions = true">
+						<button class="sm:hidden px-2 py-1 border border-gray-300 dark:border-gray-700 rounded" @click="showOptions = true">
 							<i class="fa-solid fa-ellipsis-vertical fa-fw"></i>
 						</button>
-						<ul class="z-10 absolute top-0 right-0 sm:flex flex-row sm:static flex-none border border-gray-300 rounded divide-y sm:divide-y-0 sm:divide-x divide-gray-300 bg-gray-100 shadow sm:bg-transparent sm:shadow-none"
+						<ul class="z-10 absolute top-0 right-0 sm:flex flex-row sm:static flex-none border dark:border-2 border-gray-300 dark:border-gray-700 rounded divide-y-2 sm:divide-y-0 sm:divide-x divide-gray-300 dark:divide-gray-700 bg-gray-100 dark:bg-gray-800 shadow sm:bg-transparent sm:shadow-none"
 							@click.outside="showOptions = false"
 							x-show="showOptions || $screen('sm')"
 							x-transition:enter="transition ease-out duration-300"
@@ -367,18 +368,18 @@ function hideInfoBox(){
 							x-transition:leave-start="transform origin-right opacity-100 scale-100"
 							x-transition:leave-end="transform origin-right opacity-0 scale-95"
 						>
-							<li class="block sm:inline-block group hover:bg-gray-100 hover:text-gray-800"><a href="#" class="inline-flex items-center px-2 py-1"><i class="fa-solid fa-file-signature fa-fw text-proprietary md:text-inherit group-hover:text-proprietary"></i><span class="ml-2 sm:ml-1">Bearbeiten</span></a></li>
-							<li class="block sm:inline-block group hover:bg-gray-200 hover:text-gray-800"><a href="#" class="inline-flex items-center px-2 py-1"><i class="fa-solid fa-file-pdf fa-fw text-red-800 md:text-inherit group-hover:text-red-800"></i><span class="ml-2 sm:ml-1">Download</span></a></li>
+							<li class="block sm:inline-block group hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-800 dark:hover:text-gray-200"><a href="#" class="inline-flex items-center px-2 py-1"><i class="fa-solid fa-file-signature fa-fw text-proprietary dark:text-proprietary-light md:text-inherit group-hover:text-proprietary dark:group-hover:text-proprietary-light"></i><span class="ml-2 sm:ml-1">Bearbeiten</span></a></li>
+							<li class="block sm:inline-block group hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-gray-800 dark:hover:text-gray-200"><a href="#" class="inline-flex items-center px-2 py-1"><i class="fa-solid fa-file-pdf fa-fw text-red-800 dark:text-red-500 md:text-inherit group-hover:text-red-800 dark:group-hover:text-red-500"></i><span class="ml-2 sm:ml-1">Download</span></a></li>
 						</ul>
 					</div>
 				</div>
-					<div class="w-full my-2 flex items-center" x-data="{ showOptions: false }">
+					<div class="w-full my-2 flex items-center gap-4 text-gray-700 dark:text-gray-300" x-data="{ showOptions: false }">
 						<span class="flex-1">Protokoll des underser halreho awdh</span>
 						<div class="relative">
-							<button class="sm:hidden px-2 py-1 border border-gray-300 rounded" @click="showOptions = true">
+							<button class="sm:hidden px-2 py-1 border border-gray-300 dark:border-gray-700 rounded" @click="showOptions = true">
 								<i class="fa-solid fa-ellipsis-vertical fa-fw"></i>
 							</button>
-							<ul class="z-10 absolute top-0 right-0 sm:flex flex-row sm:static flex-none border border-gray-300 rounded divide-y sm:divide-y-0 sm:divide-x divide-gray-300 bg-gray-100 shadow sm:bg-transparent sm:shadow-none"
+							<ul class="z-10 absolute top-0 right-0 sm:flex flex-row sm:static flex-none border dark:border-2 border-gray-300 dark:border-gray-700 rounded divide-y-2 sm:divide-y-0 sm:divide-x divide-gray-300 dark:divide-gray-700 bg-gray-100 dark:bg-gray-800 shadow sm:bg-transparent sm:shadow-none"
 								@click.outside="showOptions = false"
 								x-show="showOptions || $screen('sm')"
 								x-transition:enter="transition ease-out duration-300"
@@ -388,8 +389,8 @@ function hideInfoBox(){
 								x-transition:leave-start="transform origin-right opacity-100 scale-100"
 								x-transition:leave-end="transform origin-right opacity-0 scale-95"
 							>
-								<li class="block sm:inline-block group hover:bg-gray-100 hover:text-gray-800"><a href="#" class="inline-flex items-center px-2 py-1"><i class="fa-solid fa-file-signature fa-fw text-proprietary md:text-inherit group-hover:text-proprietary"></i><span class="ml-2 sm:ml-1">Bearbeiten</span></a></li>
-								<li class="block sm:inline-block group hover:bg-gray-200 hover:text-gray-800"><a href="#" class="inline-flex items-center px-2 py-1"><i class="fa-solid fa-file-pdf fa-fw text-red-800 md:text-inherit group-hover:text-red-800"></i><span class="ml-2 sm:ml-1">Download</span></a></li>
+								<li class="block sm:inline-block group hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-800 dark:hover:text-gray-200"><a href="#" class="inline-flex items-center px-2 py-1"><i class="fa-solid fa-file-signature fa-fw text-proprietary dark:text-proprietary-light md:text-inherit group-hover:text-proprietary dark:group-hover:text-proprietary-light"></i><span class="ml-2 sm:ml-1">Bearbeiten</span></a></li>
+								<li class="block sm:inline-block group hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-gray-800 dark:hover:text-gray-200"><a href="#" class="inline-flex items-center px-2 py-1"><i class="fa-solid fa-file-pdf fa-fw text-red-800 dark:text-red-500 md:text-inherit group-hover:text-red-800 dark:group-hover:text-red-500"></i><span class="ml-2 sm:ml-1">Download</span></a></li>
 							</ul>
 						</div>
 					</div>
