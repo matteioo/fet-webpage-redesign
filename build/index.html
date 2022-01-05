@@ -184,6 +184,29 @@
 
 			<section class="my-8 sm:my-0 sm:w-3/5 xl:w-2/5 flex flex-col gap-4">
 				<h2 class="section-title section-title-margins">Zuletzt veröffentlicht</h2>
+				<article class="article-cover-image" style="background-image: url('img/cover-image-white.jpeg');" onclick="openArticle('post.html')">
+					<div class="article-cover-desc">
+						<div class="article-cover-desc-items">
+							<div class="absolute rounded-full px-2 py-1 bg-gray-800 text-gray-200 bg-opacity-90 capitalize"
+								x-data="{ pin: true }"
+								@mouseover="pin = true"
+								@mouseover.away="pin = false"
+							>
+								<i class="fa-solid fa-thumbtack rotate-45 mx-0.5"></i>
+								<span class="ml-0.5" x-show="pin">Angepinnt</span>
+							</div>
+							<ul class="article-cover-tags">
+								<li><a href="#">#fet</a></li>
+								<li><a href="#">#ug</a></li>
+								<li><a href="#">#öh</a></li>
+							</ul>
+							<div>
+								<a href="#"><h3 class="text-gray-50">Crashkurs ET1 2. Klausur</h3></a>
+								<div class="text-gray-200"><i class="fas fa-clock"></i> 14.12.2021</div>
+							</div>
+						</div>
+					</div>
+				</article>
 				<article class="article-cover-image" style="background-image: url('img/article-cover-1.jpg');" onclick="openArticle('post.html')">
 					<div class="article-cover-desc">
 						<div class="article-cover-desc-items">

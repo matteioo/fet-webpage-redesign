@@ -126,7 +126,7 @@
 				</div>
 			</div>
 			<!-- <img src="img/article-cover-3.jpg" alt="" class="h-44 sm:h-56 lg:h-64 xl:h-80 w-full object-cover sm:rounded-md max-w-5xl mx-auto"> -->
-			<div class="relative w-full h-44 sm:h-56 lg:h-64 xl:h-80 bg-center bg-no-repeat bg-cover sm:rounded-md mx-auto" style="background-image: url(img/article-cover-3.jpg);">
+			<div class="relative w-full h-44 sm:h-56 md:h-60 lg:h-64 xl:h-96 bg-center bg-no-repeat bg-cover sm:rounded-md mx-auto" style="background-image: url(img/article-cover-3.jpg);">
 				<div class="hidden lg:block absolute top-0 right-0 bg-white dark:bg-gray-900 rounded-bl p-2 bg-opacity-80 dark:bg-opacity-70 gap-2">
 					<div class="items-center lg:flex gap-2">
 						<i class="flex-none fa-solid fa-calendar-clock fa-fw text-gray-800 dark:text-gray-200"></i>
@@ -153,7 +153,7 @@
 			</div>
 		</section>
 		<section class="mx-4 z-10">
-			<article class="p-4 mt-4 sm:-mt-16 w-full max-w-prose mx-auto bg-white dark:bg-gray-900 rounded dark:border-2 dark:border-gray-800">
+			<article class="p-4 mt-4 sm:-mt-16 xl:-mt-24 w-full max-w-prose mx-auto bg-white dark:bg-gray-900 rounded dark:border-2 dark:border-gray-800">
 				<!-- <div class="w-full flex justify-end">
 					<div class="hidden lg:block max-w-max text-sm text-gray-600">
 						Event-Start: 23. August 2021 um 18:00 Uhr<br>
@@ -351,6 +351,50 @@ function hideInfoBox(){
 					</ul>
 				</div>
 				<hr class="-mx-4 border-gray-200 dark:border-gray-800 dark:border my-4">
+				<div class="w-full my-2 flex items-center" x-data="{ showOptions: false }">
+					<span class="flex-1">Agenda Agenda Agenda Agenda</span>
+					<div class="relative">
+						<button class="sm:hidden px-2 py-1 border border-gray-300 rounded" @click="showOptions = true">
+							<i class="fa-solid fa-ellipsis-vertical fa-fw"></i>
+						</button>
+						<ul class="z-10 absolute top-0 right-0 sm:flex flex-row sm:static flex-none border border-gray-300 rounded divide-y sm:divide-y-0 sm:divide-x divide-gray-300 bg-gray-100 shadow sm:bg-transparent sm:shadow-none"
+							@click.outside="showOptions = false"
+							x-show="showOptions || $screen('sm')"
+							x-transition:enter="transition ease-out duration-300"
+							x-transition:enter-start="transform origin-right opacity-0 scale-95"
+							x-transition:enter-end="transform origin-right opacity-100 scale-100"
+							x-transition:leave="transition ease-in duration-150"
+							x-transition:leave-start="transform origin-right opacity-100 scale-100"
+							x-transition:leave-end="transform origin-right opacity-0 scale-95"
+						>
+							<li class="block sm:inline-block group hover:bg-gray-100 hover:text-gray-800"><a href="#" class="inline-flex items-center px-2 py-1"><i class="fa-solid fa-file-signature fa-fw text-proprietary md:text-inherit group-hover:text-proprietary"></i><span class="ml-2 sm:ml-1">Bearbeiten</span></a></li>
+							<li class="block sm:inline-block group hover:bg-gray-200 hover:text-gray-800"><a href="#" class="inline-flex items-center px-2 py-1"><i class="fa-solid fa-file-pdf fa-fw text-red-800 md:text-inherit group-hover:text-red-800"></i><span class="ml-2 sm:ml-1">Download</span></a></li>
+						</ul>
+					</div>
+				</div>
+					<div class="w-full my-2 flex items-center" x-data="{ showOptions: false }">
+						<span class="flex-1">Protokoll des underser halreho awdh</span>
+						<div class="relative">
+							<button class="sm:hidden px-2 py-1 border border-gray-300 rounded" @click="showOptions = true">
+								<i class="fa-solid fa-ellipsis-vertical fa-fw"></i>
+							</button>
+							<ul class="z-10 absolute top-0 right-0 sm:flex flex-row sm:static flex-none border border-gray-300 rounded divide-y sm:divide-y-0 sm:divide-x divide-gray-300 bg-gray-100 shadow sm:bg-transparent sm:shadow-none"
+								@click.outside="showOptions = false"
+								x-show="showOptions || $screen('sm')"
+								x-transition:enter="transition ease-out duration-300"
+								x-transition:enter-start="transform origin-right opacity-0 scale-95"
+								x-transition:enter-end="transform origin-right opacity-100 scale-100"
+								x-transition:leave="transition ease-in duration-150"
+								x-transition:leave-start="transform origin-right opacity-100 scale-100"
+								x-transition:leave-end="transform origin-right opacity-0 scale-95"
+							>
+								<li class="block sm:inline-block group hover:bg-gray-100 hover:text-gray-800"><a href="#" class="inline-flex items-center px-2 py-1"><i class="fa-solid fa-file-signature fa-fw text-proprietary md:text-inherit group-hover:text-proprietary"></i><span class="ml-2 sm:ml-1">Bearbeiten</span></a></li>
+								<li class="block sm:inline-block group hover:bg-gray-200 hover:text-gray-800"><a href="#" class="inline-flex items-center px-2 py-1"><i class="fa-solid fa-file-pdf fa-fw text-red-800 md:text-inherit group-hover:text-red-800"></i><span class="ml-2 sm:ml-1">Download</span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<hr class="-mx-4 border-gray-200 dark:border-gray-800 dark:border my-4">
 				<div class="-m-4 flex divide-x divide-gray-200 dark:divide-gray-800 dark:divide-x-2 text-sm sm:text-base">
 					<a href="#" class="w-1/2 p-4 flex items-center gap-2">
 						<i class="fa-solid fa-chevron-left text-gray-600 dark:text-gray-400"></i>
@@ -369,25 +413,25 @@ function hideInfoBox(){
 		<section class="mx-auto w-full px-4">
 			<h2 class="my-4 sm:my-8 text-proprietary dark:text-proprietary-lighter text-xl text-center uppercase tracking-wider">Weiterlesen</h2>
 			<div class="flex justify-evenly flex-wrap gap-4">
-				<a href="#" class="sm:flex-1 block rounded bg-white dark:bg-gray-500 shadow-md bg-no-repeat bg-center h-56 transition-all ease-in-out duration-500 bg-scale-100 hover:bg-scale-120" style="background-image: url(img/article-cover-1.jpg);">
+				<a href="#" class="sm:flex-1 block rounded-md bg-white dark:bg-gray-500 shadow-md bg-no-repeat bg-center aspect-video transition-all ease-in-out duration-500 bg-scale-100 hover:bg-scale-120" style="background-image: url(img/article-cover-1.jpg);">
 					<div class="w-full h-full bg-gradient-to-t from-black rounded-md flex flex-col justify-end p-2">
 						<h2 class="text-gray-50 line-clamp-2"><span aria-label="Link zum Artikel: "></span>Studie zu TISS im Rahmen der Lehrveranstaltung "Interface & Interaction Design"</h2>
 						<span class="text-gray-300 text-sm"><i class="fas fa-clock mr-1"></i><span aria-label=" vom "></span>23.09.2021</span>
 					</div>
 				</a>
-				<a href="#" class="sm:flex-1 block rounded bg-white dark:bg-gray-500 shadow-md bg-center bg-no-repeat h-56 transition-all ease-in-out duration-500 bg-scale-100 hover:bg-scale-120" style="background-image: url(img/article-cover-2.jpg);">
+				<a href="#" class="sm:flex-1 block rounded-md bg-white dark:bg-gray-500 shadow-md bg-center bg-no-repeat aspect-video transition-all ease-in-out duration-500 bg-scale-100 hover:bg-scale-120" style="background-image: url(img/article-cover-2.jpg);">
 					<div class="w-full h-full bg-gradient-to-t from-black rounded-md flex flex-col justify-end p-2">
 						<h2 class="text-gray-50 line-clamp-2"><span aria-label="Link zum Artikel: "></span>Studie zu TISS im Rahmen der Lehrveranstaltung "Interface & Interaction Design"</h2>
 						<span class="text-gray-300 text-sm"><i class="fas fa-clock mr-1"></i><span aria-label=" vom "></span>23.09.2021</span>
 					</div>
 				</a>
-				<a href="#" class="flex-1 hidden lg:block rounded bg-white dark:bg-gray-500 shadow-md bg-no-repeat bg-center h-56 transition-all ease-in-out duration-500 bg-scale-100 hover:bg-scale-120" style="background-image: url(img/article-cover-3.jpg);">
+				<a href="#" class="flex-1 hidden lg:block rounded-md bg-white dark:bg-gray-500 shadow-md bg-no-repeat bg-center aspect-video transition-all ease-in-out duration-500 bg-scale-100 hover:bg-scale-120" style="background-image: url(img/article-cover-3.jpg);">
 					<div class="w-full h-full bg-gradient-to-t from-black rounded-md flex flex-col justify-end p-2">
 						<h2 class="text-gray-50 line-clamp-2"><span aria-label="Link zum Artikel: "></span>Studie zu TISS im Rahmen der Lehrveranstaltung "Interface & Interaction Design"</h2>
 						<span class="text-gray-300 text-sm"><i class="fas fa-clock mr-1"></i><span aria-label=" vom "></span>23.09.2021</span>
 					</div>
 				</a>
-				<a href="#" class="flex-1 hidden 2xl:block rounded bg-white dark:bg-gray-500 shadow-md bg-no-repeat bg-center h-56 transition-all ease-in-out duration-500 bg-scale-100 hover:bg-scale-120" style="background-image: url(img/article-cover-2.jpg);">
+				<a href="#" class="flex-1 hidden 2xl:block rounded-md bg-white dark:bg-gray-500 shadow-md bg-no-repeat bg-center aspect-video transition-all ease-in-out duration-500 bg-scale-100 hover:bg-scale-120" style="background-image: url(img/article-cover-2.jpg);">
 					<div class="w-full h-full bg-gradient-to-t from-black rounded-md flex flex-col justify-end p-2">
 						<h2 class="text-gray-50 line-clamp-2"><span aria-label="Link zum Artikel: "></span>Studie zu TISS im Rahmen der Lehrveranstaltung "Interface & Interaction Design"</h2>
 						<span class="text-gray-300 text-sm"><i class="fas fa-clock mr-1"></i><span aria-label=" vom "></span>23.09.2021</span>
