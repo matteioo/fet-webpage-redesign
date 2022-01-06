@@ -138,7 +138,7 @@ ul.sideBarNav > ul > li.active > a {
 
 /***** ARTICLE PREVIEW *****/
 .article-cover-image {
-	@apply w-full aspect-video transition-all ease-in-out duration-700 rounded-md bg-center shadow-lg bg-no-repeat cursor-pointer;
+	@apply w-full aspect-video transition-all ease-in-out duration-700 rounded-md bg-center shadow-lg bg-no-repeat cursor-pointer bg-gray-300 dark:bg-gray-600;
   background-size: 100%;
 }
 .article-cover-desc {

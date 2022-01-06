@@ -1263,6 +1263,8 @@ ul.sideBarNav > ul > li.active > a {
   width: 100%;
   cursor: pointer;
   border-radius: 0.375rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
   background-position: center;
   background-repeat: no-repeat;
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -1271,6 +1273,16 @@ ul.sideBarNav > ul > li.active > a {
   transition-property: all;
   transition-duration: 700ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .article-cover-image {
+    --tw-bg-opacity: 1;
+    background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+  }
+}
+
+.article-cover-image {
   background-size: 100%;
 }
 
@@ -1340,15 +1352,12 @@ ul.sideBarNav > ul > li.active > a {
   flex-direction: column;
   gap: 0.5rem;
   overflow-x: hidden;
-}
-
-[class^=db-page-content] > p {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  [class^=db-page-content] > p {
+  [class^=db-page-content] {
     --tw-text-opacity: 1;
     color: rgb(209 213 219 / var(--tw-text-opacity));
   }
@@ -2375,6 +2384,10 @@ footer .copyright {
   height: 11rem;
 }
 
+.h-5 {
+  height: 1.25rem;
+}
+
 .w-full {
   width: 100%;
 }
@@ -2433,6 +2446,12 @@ footer .copyright {
 
 .max-w-5xl {
   max-width: 64rem;
+}
+
+.max-w-fit {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
 }
 
 .flex-1 {
@@ -2670,6 +2689,10 @@ footer .copyright {
   align-self: stretch;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .overflow-y-hidden {
   overflow-y: hidden;
 }
@@ -2801,6 +2824,11 @@ footer .copyright {
   background-color: rgb(191 219 254 / var(--tw-bg-opacity));
 }
 
+.bg-gray-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-90 {
   --tw-bg-opacity: 0.9;
 }
@@ -2819,6 +2847,22 @@ footer .copyright {
 
 .bg-cover-image {
   background-image: url('../img/cover-image.jpeg');
+}
+
+.bg-\[url\(\'\.\.\/img\/cover-image\.jpeg\'\)\] {
+  background-image: url('../img/cover-image.jpeg');
+}
+
+.bg-\[url\(\'https\:\/\/fet\.at\/files\/Screenshot_from_2021-12-02_17-46-23\.png\'\)\] {
+  background-image: url('https://fet.at/files/Screenshot_from_2021-12-02_17-46-23.png');
+}
+
+.bg-\[url\(\'\.\.\/img\/article-cover-1\.jpg\'\)\] {
+  background-image: url('../img/article-cover-1.jpg');
+}
+
+.bg-\[url\(\'\.\.\/img\/article-cover-2\.jpg\'\)\] {
+  background-image: url('../img/article-cover-2.jpg');
 }
 
 .bg-gradient-to-t {
