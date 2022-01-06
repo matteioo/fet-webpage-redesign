@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>FET: Fotos</title>
+
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="text-gray-200">
+
+	<div x-data="{ expanded: false }">
+    <button @click="expanded = ! expanded">Toggle Content</button>
+ 
+    <p class="overflow-hidden h-5 max-w-fit bg-gray-700" x-show="expanded" x-collapse.duration.2000ms>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex alias ullam ratione non laboriosam placeat et assumenda ea provident ad mollitia aspernatur, magni optio consequatur omnis eligendi at ducimus voluptas.
+    </p>
+</div>
+
+	<!-- Alpine Plugins -->
+	<script>
+		(() => {
+		// packages/collapse/src/index.js
+		function src_default(Alpine) {
+			Alpine.directive("collapse", (el, {expression, modifiers}, {effect, evaluateLater}) => {
+				let duration = modifierValue(modifiers, "duration", 250) / 1e3;
+				let floor = 0;
+				if (!el._x_isShown)
+					el.style.width = `${floor}px`;
+				if (!el._x_isShown)
+					el.hidden = true;
+				if (!el._x_isShown)
+					el.style.overflow = "hidden";
+				let setFunction = (el2, styles) => {
+					let revertFunction = Alpine.setStyles(el2, styles);
+					return styles.width ? () => {
+					} : revertFunction;
+				};
+				let transitionStyles = {
+					transitionProperty: "width",
+					transitionDuration: `${duration}s`,
+					transitionTimingFunction: "cubic-bezier(0.4, 0.0, 0.2, 1)"
+				};
+				el._x_transition = {
+					in(before = () => {
+					}, after = () => {
+					}) {
+						el.hidden = false;
+						el.style.display = null;
+						let current = el.getBoundingClientRect().width;
+						el.style.width = "auto";
+						let full = el.getBoundingClientRect().width;
+						if (current === full) {
+							current = floor;
+						}
+						Alpine.transition(el, Alpine.setStyles, {
+							during: transitionStyles,
+							start: {width: current + "px"},
+							end: {width: full + "px"}
+						}, () => el._x_isShown = true, () => {
+							if (el.style.width == `${full}px`) {
+								el.style.overflow = null;
+							}
+						});
+					},
+					out(before = () => {
+					}, after = () => {
+					}) {
+						let full = el.getBoundingClientRect().width;
+						Alpine.transition(el, setFunction, {
+							during: transitionStyles,
+							start: {width: full + "px"},
+							end: {width: floor + "px"}
+						}, () => el.style.overflow = "hidden", () => {
+							el._x_isShown = false;
+							if (el.style.width == `${floor}px`) {
+								el.style.display = "none";
+								el.hidden = true;
+							}
+						});
+					}
+				};
+			});
+		}
+		function modifierValue(modifiers, key, fallback) {
+			if (modifiers.indexOf(key) === -1)
+				return fallback;
+			const rawValue = modifiers[modifiers.indexOf(key) + 1];
+			if (!rawValue)
+				return fallback;
+			if (key === "duration") {
+				let match = rawValue.match(/([0-9]+)ms/);
+				if (match)
+					return match[1];
+			}
+			return rawValue;
+		}
+
+		// packages/collapse/builds/cdn.js
+		document.addEventListener("alpine:init", () => {
+			window.Alpine.plugin(src_default);
+		});
+	})();
+	</script>
+	
+	<!-- Alpine Core -->
+	<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+</html>
