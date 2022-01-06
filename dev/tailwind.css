@@ -93,25 +93,25 @@ ul.sideBarNav {
 	@apply flex flex-col text-gray-700 dark:text-gray-200;
 }
 ul.sideBarNav > li > a {
-	@apply block p-2 hover:bg-gray-300 dark:hover:bg-gray-600 rounded;
+	@apply block p-2 hover:bg-gray-300 dark:hover:bg-gray-700 rounded;
 }
 ul.sideBarNav > li.active > a {
-	@apply bg-gray-300 dark:bg-gray-600 text-gray-800 dark:text-gray-100 font-medium;
+	@apply bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-100 font-medium;
 }
 ul.sideBarNav > li.internalLI > a {
 	@apply block p-2 bg-proprietary hover:bg-proprietary-dark text-blue-50 rounded;
 }
 ul.sideBarNav > hr {
-	@apply border-gray-300 dark:border-gray-600;
+	@apply border-gray-300 dark:border-gray-700;
 }
 ul.sideBarNav > ul {
 	@apply hidden sm:block;
 }
 ul.sideBarNav > ul > li > a {
-	@apply block p-2 ml-2 hover:bg-gray-200 dark:hover:bg-gray-800 rounded text-sm;
+	@apply block p-2 ml-2 hover:bg-gray-200 dark:hover:bg-gray-800 text-sm;
 }
 ul.sideBarNav > ul > li.active > a {
-	@apply font-semibold;
+	@apply font-semibold bg-gray-200 dark:bg-gray-800 border-l-2 border-gray-300 dark:border-gray-700 first:rounded-none first:rounded-tr;
 }
 /***** CALENDAR *****/
 .calendar-preview > div {
@@ -161,6 +161,12 @@ ul.sideBarNav > ul > li.active > a {
 [class^=db-page-content] {
 	@apply flex flex-col gap-2 overflow-x-hidden mb-4 text-gray-700 dark:text-gray-300;
 }
+[class^=db-page-content] + * {
+	@apply mt-0;
+}
+[class^=db-page-content].big-first-letter > p:first-child {
+	@apply first-letter:text-5xl first-letter:float-left first-letter:mt-2 first-letter:mr-3 first-letter:font-serif;
+}
 .db-page-content p {
 	@apply text-justify;
 }
@@ -176,17 +182,24 @@ ul.sideBarNav > ul > li.active > a {
 [class^=db-page-content] ul {
 	@apply list-inside list-disc text-gray-700 dark:text-gray-300;
 }
-[class^=db-page-content] h2, [class^=db-page-content] h3, [class^=db-page-content] h4, [class^=db-page-content] h5, [class^=db-page-content] h6 {
-	@apply text-gray-800 dark:text-gray-200 -mb-2;
+[class^=db-page-content] h1 {
+	@apply text-red-800 dark:text-red-200 text-3xl;
+}
+[class^=db-page-content] h2,
+[class^=db-page-content] h3,
+[class^=db-page-content] h4,
+[class^=db-page-content] h5,
+[class^=db-page-content] h6 {
+	@apply mt-2 text-gray-800 dark:text-gray-200 leading-none;
 }
 [class^=db-page-content] h2 {
-	@apply font-medium mt-2 text-xl;
+	@apply font-medium mt-4 text-xl;
 }
 [class^=db-page-content] h3 {
-	@apply font-medium mt-1 text-lg;
+	@apply font-medium text-lg;
 }
 [class^=db-page-content] h4, [class^=db-page-content] h5, [class^=db-page-content] h6 {
-	@apply mt-1 text-lg;
+	@apply text-lg;
 }
 [class^=db-page-content] b,
 [class^=db-page-content] strong {
@@ -196,7 +209,7 @@ ul.sideBarNav > ul > li.active > a {
 	@apply px-0.5 py-px bg-yellow-300 dark:bg-yellow-400 rounded text-yellow-800 dark:text-yellow-900;
 }
 [class^=db-page-content] blockquote {
-	@apply border-l-4 border-gray-300 dark:border-gray-700 px-4 italic text-gray-600 dark:text-gray-400 my-2;
+	@apply border-l-4 border-gray-300 dark:border-gray-700 px-4 italic text-gray-600 dark:text-gray-400 my-2 font-serif;
 }
 [class^=db-page-content] blockquote > p::before {
 	content: "„";
@@ -293,7 +306,7 @@ ul.sideBarNav > ul > li.active > a {
 
 /***** MEMBERS SECTIONS *****/
 .members-article a.title {
-	@apply flex flex-row items-start mt-8 mb-4;
+	@apply flex flex-row items-start mt-8 mb-4 w-fit;
 }
 .members-article a.title [class*="fa-"] {
 	@apply flex-none mr-1 mt-[0.375rem] sm:-ml-5 text-sm text-sky-600 dark:text-sky-500 sm:invisible;
@@ -301,17 +314,23 @@ ul.sideBarNav > ul > li.active > a {
 .members-article a.title:hover [class*="fa-"] {
 	@apply text-sky-500 visible;
 }
-.members-article a.title h2 {
+.members-article a.title .members-section-title {
 	@apply flex-1 text-lg text-gray-900 dark:text-gray-100 tracking-wider;
 }
 .members-article .members-listing {
-	@apply flex flex-wrap justify-start gap-2 sm:gap-4 text-proprietary dark:text-proprietary-lighter text-center;
+	@apply flex flex-wrap justify-start gap-2 sm:gap-4 text-proprietary-dark dark:text-proprietary-lighter text-center;
 }
 .members-article .members-listing figure {
 	@apply w-36;
 }
-.members-article .members-listing figure figcaption h3 {
+.members-article .members-listing figure figcaption {
 	@apply leading-tight pt-1;
+}
+.members-article .members-listing figure figcaption > p {
+	@apply text-proprietary dark:text-proprietary-light;
+}
+.members-article .members-listing figure figcaption .member-name {
+	@apply mb-0.5;
 }
 
 /***** FOOTER *****/
