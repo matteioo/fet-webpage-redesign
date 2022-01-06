@@ -99,15 +99,20 @@
 							</div>
 						</div>
 						<ul class="sideBarNav">
-							<li><a href="jobs.html">Studienkommission</a></li>
-							<li><a href="jobs.html">Berufungskommission</a></li>
-							<li><a href="jobs.html">Studienvertretung</a></li>
-							<li><a href="jobs.html">Habilitationskommission</a></li>
-							<li><a href="jobs.html">Freizeit</a></li>
-							<li><a href="jobs.html">Laufbahnstellenbeirat</a></li>
+							<li class="active"><a href="#">Studienkommission</a></li>
+							<ul id="scrollspy-subNav">
+								<li class="active"><a href="#stuko-computational-science">Studienkommission Computational Science</a></li>
+								<li><a href="#stuko-et">Studienkommission ET</a></li>
+								<li><a href="#stuko-ulg">Studienkommission Universitätslehrgänge</a></li>
+							</ul>
+							<li><a href="#">Berufungskommission</a></li>
+							<li><a href="#">Studienvertretung</a></li>
+							<li><a href="#">Habilitationskommission</a></li>
+							<li><a href="#">Freizeit</a></li>
+							<li><a href="#">Laufbahnstellenbeirat</a></li>
 							<hr>
-							<li><a href="#">Pension</a></li>
-							<li class="active"><a href="#">Alle Mitglieder</a></li>
+							<li><a href="members.html">Pension</a></li>
+							<li><a href="members.html">Alle Mitglieder</a></li>
 							<li class="internalLI"><a href="#"><i class="fa-regular fa-pen-to-square mr-1"></i>Bearbeiten</a></li>
 						</ul>
 					</div>
@@ -128,22 +133,31 @@
 
 			<section class="flex-grow max-w-prose my-8 sm:my-0">
 				<div class="db-page-content">
+					<h2>Habilitationskommissionen</h2>
 					<p>
-						Die Fachschaft Elektrotechnik (kurz: FET), ist die offizielle Vertretung aller Studierenden auf der Fakultät für Elektrotechnik und Informationstechnik. Ehrenamtliche engagierte Studierende unterstützen dich in Anliegen und Fragen zum und rund ums Studium. Wir vertreten eure Interessen in den offiziellen Gremien der Universität und arbeiten an Studienplänen mit. Außerdem bieten wir ein Rahmenprogramm zum Studium in Form von Veranstaltungen und Festln. Wir freuen uns über Feedback und Anregungen, insbesondere von jenen, die gleich Nägel mit Köpfen machen und unser Team verstärken wollen oder ihre Themen und Meinungen in eine unserer Sitzungen einbringen möchten.
+						Die Habilitation ist eine der höchstrangigen Hochschulprüfungen. Durch diese können Doktoranden ihre Lehrbefugnis erhalten.<br>
+						Es werden verschiedene Themenbereiche geprüft. Es wird die fachliche Kompetenz durch Professoren geprüft, ob ausreichend publiziert wurde und diese auch fachlich relevant sind.<br>
+						Wir als Studierende sitzen in dieser Kommission, um ein didaktisches Gutachten zu erstellen. Das bedeutet, wir stellen fest, ob der Bewerber einen guten Vortrag hält, welcher leicht zu folgen ist, verständlich ist etc..&nbsp;Es gibt hierfür eine öffentliche Probevorlesung, an der&nbsp;jeder Studierende teilnehemen kann.&nbsp;&nbsp;
 					</p>
 					<p>
-						Solltest du dich für ein Elektrotechnik Studium interessieren findest du hier einige Informationen. Wir würden uns freuen, dich auf der TU Wien willkommen zu heißen.
+						Falls du Interesse hast, an so einer Probevorlesung teilzunehmen oder selbst in so einer Kommision sitzen willst, meld dich bei uns, schreib uns eine Mail an service@fet.at
 					</p>
 				</div>
 				<div>
 					<!-- Name im alt=""-text der Portraitfotos dynamisch erzeugen! -->
-					<article class="members-article">
+					<article id="stuko-computational-science" class="members-article">
+						<a href="#stuko-computational-science" class="title">
+							<i class="far fa-link"></i>
+							<h3 class="members-section-title">Studienkommission Computational Science</h3>
+						</a>
 						<div class="members-listing">
 							<figure>
 								<a href="member-details.html">
 									<img loading="lazy" src="https://fet.at/files/uploads/members/image/photo6043877786113913220.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Alexander Stiedl" class="w-36 h-36 bg-white">
 									<figcaption>
 										<h4 class="member-name">Alexander Stiedl</h4>
+										<p class="member-role">Mitglied</p>
+										<p class="member-date">22. Sep. 2021</p>
 									</figcaption>
 								</a>
 							</figure>
@@ -152,6 +166,8 @@
 									<img loading="lazy" src="https://fet.at/files/uploads/members/image/IMG_4526a.JPG.150x150_q85_crop.jpg" alt="Portraitfoto von Astrid Raschig" class="w-36 h-36 bg-white">
 									<figcaption>
 										<h4 class="member-name">Astrid Raschig</h4>
+										<p class="member-role">Ersatzmitglied</p>
+										<p class="member-date">1. Okt. 2018</p>
 									</figcaption>
 								</a>
 							</figure>
@@ -160,6 +176,8 @@
 									<img loading="lazy" src="https://fet.at/files/uploads/members/image/Christian.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Christian Eder" class="w-36 h-36 bg-white">
 									<figcaption>
 										<h4 class="member-name">Christian Eder</h4>
+										<p class="member-role">Vorsitz</p>
+										<p class="member-date">26. Mär. 2020</p>
 									</figcaption>
 								</a>
 							</figure>
@@ -168,14 +186,26 @@
 									<img loading="lazy" src="https://fet.at/files/uploads/members/image/2013.04.10_fet_stvn_portraits-3.png.150x150_q85_crop.png" alt="Portraitfoto von Christoph Peinsipp" class="w-36 h-36 bg-white">
 									<figcaption>
 										<h4 class="member-name">Christoph Peinsipp</h4>
+										<p class="member-role">Stv. Vorsitz</p>
+										<p class="member-date">1. Jul. 2019</p>
 									</figcaption>
 								</a>
 							</figure>
+						</div>
+					</article>
+					<article id="stuko-et" class="members-article">
+						<a href="#stuko-et" class="title">
+							<i class="far fa-link"></i>
+							<h3 class="members-section-title">Studienkommission ET</h3>
+						</a>
+						<div class="members-listing">
 							<figure>
 								<a href="#">
 									<img loading="lazy" src="https://fet.at/files/uploads/members/image/photo_2021-03-12_22-57-25.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Christoph Clementschitsch" class="w-36 h-36 bg-white">
 									<figcaption>
 										<h4 class="member-name">Christoph Clementschitsch</h4>
+										<p class="member-role">2. Stv. Vorsitz</p>
+										<p class="member-date">7. Jun. 2018</p>
 									</figcaption>
 								</a>
 							</figure>
@@ -184,6 +214,8 @@
 									<img loading="lazy" src="https://fet.at/files/uploads/members/image/Clara.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Clara Sophia Karin Hönlinger" class="w-36 h-36 bg-white">
 									<figcaption>
 										<h4 class="member-name">Clara Sophia Karin Hönlinger</h4>
+										<p class="member-role">Mitglied</p>
+										<p class="member-date">10. Jul. 2019</p>
 									</figcaption>
 								</a>
 							</figure>
@@ -192,6 +224,8 @@
 									<img loading="lazy" src="https://fet.at/files/uploads/members/image/872ebb8e-1956-4ec0-828b-7a2f0225b93f__2_.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Clemens Koss" class="w-36 h-36 bg-white">
 									<figcaption>
 										<h4 class="member-name">Clemens Koss</h4>
+										<p class="member-role">Mitglied</p>
+										<p class="member-date">1. Okt. 2018</p>
 									</figcaption>
 								</a>
 							</figure>
@@ -200,6 +234,8 @@
 									<img loading="lazy" src="https://fet.at/files/uploads/members/image/portrait_Daniel.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Daniel A. Maierhofer" class="w-36 h-36 bg-white">
 									<figcaption>
 										<h4 class="member-name">Daniel A. Maierhofer</h4>
+										<p class="member-role">Mitglied</p>
+										<p class="member-date">1. Okt. 2018</p>
 									</figcaption>
 								</a>
 							</figure>
@@ -208,6 +244,8 @@
 									<img loading="lazy" src="https://fet.at/files/uploads/members/image/dani.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Daniela Havlicek" class="w-36 h-36 bg-white">
 									<figcaption>
 										<h4 class="member-name">Daniela Havlicek</h4>
+										<p class="member-role">Mitglied</p>
+										<p class="member-date">1. Okt. 2018</p>
 									</figcaption>
 								</a>
 							</figure>
@@ -216,14 +254,26 @@
 									<img loading="lazy" src="https://fet.at/files/uploads/members/image/43787796_1871191209655680_664271551943671808_n.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Elena Bica" class="w-36 h-36 bg-white">
 									<figcaption>
 										<h4 class="member-name">Elena Bica</h4>
+										<p class="member-role">Mitglied</p>
+										<p class="member-date">1. Okt. 2018</p>
 									</figcaption>
 								</a>
 							</figure>
+						</div>
+					</article>
+					<article id="stuko-ulg" class="members-article">
+						<a href="#stuko-ulg" class="title">
+							<i class="far fa-link"></i>
+							<h3 class="members-section-title">Studienkommission Universitätslehrgänge</h3>
+						</a>
+						<div class="members-listing">
 							<figure>
 								<a href="#">
 									<img loading="lazy" src="https://fet.at/files/uploads/members/image/DSC_4096_Kopie.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Felix Stelzl" class="w-36 h-36 bg-white">
 									<figcaption>
 										<h4 class="member-name">Felix Stelzl</h4>
+										<p class="member-role">Mitglied</p>
+										<p class="member-date">1. Okt. 2018</p>
 									</figcaption>
 								</a>
 							</figure>
@@ -232,6 +282,8 @@
 									<img loading="lazy" src="https://fet.at/files/uploads/members/image/mp-86.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Franziska Mayer" class="w-36 h-36 bg-white">
 									<figcaption>
 										<h4 class="member-name">Franziska Mayer</h4>
+										<p class="member-role">Mitglied</p>
+										<p class="member-date">12. Okt. 2018</p>
 									</figcaption>
 								</a>
 							</figure>
