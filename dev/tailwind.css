@@ -4,6 +4,7 @@
 @tailwind variants;
 
 @layer base {
+	
 	body {
 		@apply h-full min-h-screen flex flex-col bg-gray-100 dark:bg-gray-900;
 	}
@@ -137,7 +138,7 @@ ul.sideBarNav > ul > li.active > a {
 
 /***** ARTICLE PREVIEW *****/
 .article-cover-image {
-	@apply w-full h-48 sm:h-52 md:h-64 lg:h-72 transition-all ease-in-out duration-700 rounded bg-center shadow-lg bg-no-repeat cursor-pointer;
+	@apply w-full aspect-video transition-all ease-in-out duration-700 rounded-md bg-center shadow-lg bg-no-repeat cursor-pointer;
   background-size: 100%;
 }
 .article-cover-desc {
