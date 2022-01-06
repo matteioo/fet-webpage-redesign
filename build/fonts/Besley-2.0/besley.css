@@ -1,0 +1,260 @@
+@font-face {
+    font-family: 'Besley';
+    src: local('Besley Medium'), local('Besley-Medium'),
+        url('Besley-Medium.woff2') format('woff2'),
+        url('Besley-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Besley';
+    src: local('Besley Bold Italic'), local('Besley-BoldItalic'),
+        url('Besley-BoldItalic.woff2') format('woff2'),
+        url('Besley-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Besley';
+    src: local('Besley Medium Italic'), local('Besley-MediumItalic'),
+        url('Besley-MediumItalic.woff2') format('woff2'),
+        url('Besley-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Besley';
+    src: local('Besley Black Italic'), local('Besley-BlackItalic'),
+        url('Besley-BlackItalic.woff2') format('woff2'),
+        url('Besley-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Besley';
+    src: local('Besley ExtraBold Italic'), local('Besley-ExtraBoldItalic'),
+        url('Besley-ExtraBoldItalic.woff2') format('woff2'),
+        url('Besley-ExtraBoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Besley';
+    src: local('Besley Black'), local('Besley-Black'),
+        url('Besley-Black.woff2') format('woff2'),
+        url('Besley-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Besley';
+    src: local('Besley Italic'), local('Besley-Italic'),
+        url('Besley-Italic.woff2') format('woff2'),
+        url('Besley-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Besley';
+    src: local('Besley ExtraBold'), local('Besley-ExtraBold'),
+        url('Besley-ExtraBold.woff2') format('woff2'),
+        url('Besley-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Besley';
+    src: local('Besley Bold'), local('Besley-Bold'),
+        url('Besley-Bold.woff2') format('woff2'),
+        url('Besley-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Besley';
+    src: local('Besley SemiBold'), local('Besley-SemiBold'),
+        url('Besley-SemiBold.woff2') format('woff2'),
+        url('Besley-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Besley';
+    src: local('Besley Regular'), local('Besley-Regular'),
+        url('Besley-Regular.woff2') format('woff2'),
+        url('Besley-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Besley';
+    src: local('Besley SemiBold Italic'), local('Besley-SemiBoldItalic'),
+        url('Besley-SemiBoldItalic.woff2') format('woff2'),
+        url('Besley-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Besley';
+    src: local('Besley Italic'), local('Besley-Italic'),
+        url('Besley-Italic.woff2') format('woff2'),
+        url('Besley-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Besley';
+    src: local('Besley Medium'), local('Besley-Medium'),
+        url('Besley-Medium.woff2') format('woff2'),
+        url('Besley-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Besley';
+    src: local('Besley ExtraBold Italic'), local('Besley-ExtraBoldItalic'),
+        url('Besley-ExtraBoldItalic.woff2') format('woff2'),
+        url('Besley-ExtraBoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Besley';
+    src: local('Besley Bold Italic'), local('Besley-BoldItalic'),
+        url('Besley-BoldItalic.woff2') format('woff2'),
+        url('Besley-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Besley';
+    src: local('Besley ExtraBold'), local('Besley-ExtraBold'),
+        url('Besley-ExtraBold.woff2') format('woff2'),
+        url('Besley-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Besley';
+    src: local('Besley SemiBold Italic'), local('Besley-SemiBoldItalic'),
+        url('Besley-SemiBoldItalic.woff2') format('woff2'),
+        url('Besley-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Besley';
+    src: local('Besley SemiBold'), local('Besley-SemiBold'),
+        url('Besley-SemiBold.woff2') format('woff2'),
+        url('Besley-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Besley';
+    src: local('Besley Medium Italic'), local('Besley-MediumItalic'),
+        url('Besley-MediumItalic.woff2') format('woff2'),
+        url('Besley-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Besley';
+    src: local('Besley Black Italic'), local('Besley-BlackItalic'),
+        url('Besley-BlackItalic.woff2') format('woff2'),
+        url('Besley-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Besley';
+    src: local('Besley Regular'), local('Besley-Regular'),
+        url('Besley-Regular.woff2') format('woff2'),
+        url('Besley-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Besley';
+    src: local('Besley Bold'), local('Besley-Bold'),
+        url('Besley-Bold.woff2') format('woff2'),
+        url('Besley-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Besley';
+    src: local('Besley Black'), local('Besley-Black'),
+        url('Besley-Black.woff2') format('woff2'),
+        url('Besley-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Besley';
+    src: local('Besley Italic'), local('Besley-Italic'),
+        url('Besley-Italic.woff2') format('woff2'),
+        url('Besley-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Besley';
+    src: local('Besley Regular'), local('Besley-Regular'),
+        url('Besley-Regular.woff2') format('woff2'),
+        url('Besley-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
