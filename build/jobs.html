@@ -100,8 +100,8 @@
 						</div>
 						<ul class="sideBarNav">
 							<li class="active"><a href="#">Studienkommission</a></li>
-							<ul id="scrollspy-subNav">
-								<li class="active"><a href="#stuko-computational-science">Studienkommission Computational Science</a></li>
+							<ul class="scrollSpyNav">
+								<li><a href="#stuko-computational-science">Studienkommission Computational Science</a></li>
 								<li><a href="#stuko-et">Studienkommission ET</a></li>
 								<li><a href="#stuko-ulg">Studienkommission Universitätslehrgänge</a></li>
 							</ul>
@@ -322,22 +322,7 @@
 		<span :class="counter>=4 && 'text-purple-300'">Handcrafted </span><span :class="counter>=5 && 'text-green-400'">with </span><i class="fa-solid fa-heart" aria-label="love" @click="counter++" :class="counter>=2 ? 'text-proprietary hover:text-proprietary-dark' : 'text-red-600 hover:text-red-700'"></i><span :class="counter>=6 && 'text-pink-400'"> by</span><span class="font-normal" :class="counter>=3 && 'text-yellow-500'"> Matteo Duchscher</span>
 	</div>
 
-	<script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@5.1/dist/gumshoe.polyfills.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@16.1/dist/smooth-scroll.polyfills.min.js"></script>
 	<script defer src="js/vendor.js"></script>
 	<script defer src="js/scripts.js"></script>
-	<script>
-		var spy = new Gumshoe('#scrollspy-subNav a', {
-			/***** Scrollspy *****/ // Active classes
-			navClass: 'active', // applied to the nav list item
-		});
-
-		/***** SmoothScroll *****/ // All animations will take exactly 500ms
-		var scroll = new SmoothScroll('a[href*="#"]', {
-			speed: 750,
-			speedAsDuration: true,
-			easing: 'easeInOutQuad'
-		});
-	</script>
 </body>
 </html>

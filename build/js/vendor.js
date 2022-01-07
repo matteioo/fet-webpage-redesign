@@ -1,20 +1,15 @@
 (() => {
-  // node_modules/alpinejs/dist/module.esm.js
   var __create = Object.create;
   var __defProp = Object.defineProperty;
+  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropNames = Object.getOwnPropertyNames;
   var __getProtoOf = Object.getPrototypeOf;
   var __hasOwnProp = Object.prototype.hasOwnProperty;
-  var __getOwnPropNames = Object.getOwnPropertyNames;
-  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
   var __markAsModule = (target) => __defProp(target, "__esModule", { value: true });
-  var __commonJS = (callback, module) => () => {
-    if (!module) {
-      module = { exports: {} };
-      callback(module.exports, module);
-    }
-    return module.exports;
+  var __commonJS = (cb, mod) => function __require() {
+    return mod || (0, cb[Object.keys(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
   };
-  var __exportStar = (target, module, desc) => {
+  var __reExport = (target, module, desc) => {
     if (module && typeof module === "object" || typeof module === "function") {
       for (let key of __getOwnPropNames(module))
         if (!__hasOwnProp.call(target, key) && key !== "default")
@@ -23,9 +18,179 @@
     return target;
   };
   var __toModule = (module) => {
-    return __exportStar(__markAsModule(__defProp(module != null ? __create(__getProtoOf(module)) : {}, "default", module && module.__esModule && "default" in module ? { get: () => module.default, enumerable: true } : { value: module, enumerable: true })), module);
+    return __reExport(__markAsModule(__defProp(module != null ? __create(__getProtoOf(module)) : {}, "default", module && module.__esModule && "default" in module ? { get: () => module.default, enumerable: true } : { value: module, enumerable: true })), module);
   };
-  var require_shared_cjs = __commonJS((exports) => {
+
+  // node_modules/@three11/scrollspy/dist/scrollspy.min.js
+  var require_scrollspy_min = __commonJS({
+    "node_modules/@three11/scrollspy/dist/scrollspy.min.js"(exports, module) {
+      !function(e, t) {
+        typeof exports == "object" && typeof module != "undefined" ? module.exports = t() : typeof define == "function" && define.amd ? define(t) : (e = typeof globalThis != "undefined" ? globalThis : e || self).ScrollSpy = t();
+      }(exports, function() {
+        "use strict";
+        function e(e2, t2) {
+          var n2 = Object.keys(e2);
+          if (Object.getOwnPropertySymbols) {
+            var r2 = Object.getOwnPropertySymbols(e2);
+            t2 && (r2 = r2.filter(function(t3) {
+              return Object.getOwnPropertyDescriptor(e2, t3).enumerable;
+            })), n2.push.apply(n2, r2);
+          }
+          return n2;
+        }
+        function t(t2) {
+          for (var n2 = 1; n2 < arguments.length; n2++) {
+            var r2 = arguments[n2] != null ? arguments[n2] : {};
+            n2 % 2 ? e(Object(r2), true).forEach(function(e2) {
+              i(t2, e2, r2[e2]);
+            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t2, Object.getOwnPropertyDescriptors(r2)) : e(Object(r2)).forEach(function(e2) {
+              Object.defineProperty(t2, e2, Object.getOwnPropertyDescriptor(r2, e2));
+            });
+          }
+          return t2;
+        }
+        function n(e2, t2) {
+          if (!(e2 instanceof t2))
+            throw new TypeError("Cannot call a class as a function");
+        }
+        function r(e2, t2) {
+          for (var n2 = 0; n2 < t2.length; n2++) {
+            var r2 = t2[n2];
+            r2.enumerable = r2.enumerable || false, r2.configurable = true, "value" in r2 && (r2.writable = true), Object.defineProperty(e2, r2.key, r2);
+          }
+        }
+        function i(e2, t2, n2) {
+          return t2 in e2 ? Object.defineProperty(e2, t2, { value: n2, enumerable: true, configurable: true, writable: true }) : e2[t2] = n2, e2;
+        }
+        function o(e2) {
+          return function(e3) {
+            if (Array.isArray(e3))
+              return s(e3);
+          }(e2) || function(e3) {
+            if (typeof Symbol != "undefined" && e3[Symbol.iterator] != null || e3["@@iterator"] != null)
+              return Array.from(e3);
+          }(e2) || function(e3, t2) {
+            if (!e3)
+              return;
+            if (typeof e3 == "string")
+              return s(e3, t2);
+            var n2 = Object.prototype.toString.call(e3).slice(8, -1);
+            n2 === "Object" && e3.constructor && (n2 = e3.constructor.name);
+            if (n2 === "Map" || n2 === "Set")
+              return Array.from(e3);
+            if (n2 === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2))
+              return s(e3, t2);
+          }(e2) || function() {
+            throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+          }();
+        }
+        function s(e2, t2) {
+          (t2 == null || t2 > e2.length) && (t2 = e2.length);
+          for (var n2 = 0, r2 = new Array(t2); n2 < t2; n2++)
+            r2[n2] = e2[n2];
+          return r2;
+        }
+        typeof globalThis != "undefined" ? globalThis : typeof window != "undefined" ? window : typeof global != "undefined" ? global : typeof self != "undefined" && self;
+        var a = function(e2, t2) {
+          return e2(t2 = { exports: {} }, t2.exports), t2.exports;
+        }(function(e2, t2) {
+          var n2, r2, i2;
+          e2.exports = (n2 = window, r2 = { easeOutSine: function(e3) {
+            return Math.sin(e3 * (Math.PI / 2));
+          }, easeInOutSine: function(e3) {
+            return -0.5 * (Math.cos(Math.PI * e3) - 1);
+          }, easeInOutQuint: function(e3) {
+            return (e3 /= 0.5) < 1 ? 0.5 * Math.pow(e3, 5) : 0.5 * (Math.pow(e3 - 2, 5) + 2);
+          } }, i2 = n2.requestAnimationFrame || n2.webkitRequestAnimationFrame || n2.mozRequestAnimationFrame || function(e3) {
+            n2.setTimeout(e3, 1e3 / 60);
+          }, function() {
+            var e3 = 0 < arguments.length && arguments[0] !== void 0 ? arguments[0] : 0, t3 = 1 < arguments.length && arguments[1] !== void 0 ? arguments[1] : n2, o2 = 2 < arguments.length && arguments[2] !== void 0 ? arguments[2] : 2e3, s2 = 3 < arguments.length && arguments[3] !== void 0 ? arguments[3] : "easeOutSine", a2 = 0, u = t3.scrollY || document.documentElement.scrollTop, c = Math.max(0.1, Math.min(Math.abs(u - e3) / o2, 0.8));
+            !function n3() {
+              var o3 = (a2 += 1 / 60) / c, l = r2[s2](o3), f = o3 < 1 ? u + (e3 - u) * l : e3;
+              o3 < 1 && i2(n3), t3.scrollTo(0, f);
+            }();
+          });
+        });
+        return function() {
+          function e2() {
+            var r2 = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
+            n(this, e2);
+            var i3 = t({ linkCurrentClass: "current", linksContainerSelector: ".js-scroll-spy-nav", sectionSelector: ".js-scroll-spy-section", headerOffset: true, headerClass: ".c-header" }, r2);
+            return this.init(i3), window.addEventListener("load", this.refreshPositions.bind(this)), window.addEventListener("resize", this.refreshPositions.bind(this)), this;
+          }
+          var i2, s2, u;
+          return i2 = e2, (s2 = [{ key: "init", value: function(e3) {
+            this.setProperties(e3), this.getSectionData(), this.getCurrentSectionIndex(), this.setCurrentState(), this.bindEvents();
+          } }, { key: "setProperties", value: function(e3) {
+            var t2 = document;
+            this.linksContainerSelector = e3.linksContainerSelector, this.sectionSelector = e3.sectionSelector, this.linksContainer = t2.querySelector(this.linksContainerSelector), this.links = o(this.linksContainer.querySelectorAll("a")), this.sections = o(t2.querySelectorAll(this.sectionSelector)), this.headerOffset = e3.headerOffset, this.headerClass = e3.headerClass, this.linkCurrentClass = e3.linkCurrentClass, this.currentIdx = 0, this.data = { offsets: [], ids: [] };
+          } }, { key: "getSectionData", value: function() {
+            var e3 = this;
+            this.sections.forEach(function(t2) {
+              e3.data.ids.push(t2.getAttribute("id")), e3.data.offsets.push(e3.getSectionOffset(t2));
+            });
+          } }, { key: "refreshPositions", value: function() {
+            var e3 = this;
+            this.data.offsets = this.data.offsets.map(function(t2, n2) {
+              return e3.getSectionOffset(e3.sections[n2]);
+            });
+          } }, { key: "getSectionOffset", value: function(e3) {
+            return this.headerOffset ? e3.offsetTop - document.querySelector(this.headerClass).offsetHeight : e3.offsetTop;
+          } }, { key: "getCurrentSectionIndex", value: function() {
+            var e3 = this, t2 = window.pageYOffset;
+            this.data.offsets.forEach(function(n2, r2) {
+              var i3 = e3.data.offsets[r2 + 1];
+              (t2 >= n2 && t2 < i3 || t2 >= n2 && i3 === void 0) && (e3.currentIdx = r2);
+            }), this.setCurrentState();
+          } }, { key: "setCurrentState", value: function() {
+            var e3 = this;
+            document.querySelector(this.linksContainerSelector).querySelectorAll(".".concat(this.linkCurrentClass)).forEach(function(t2) {
+              return t2.classList.remove(e3.linkCurrentClass);
+            }), this.links[this.currentIdx].parentNode.classList.add(this.linkCurrentClass);
+          } }, { key: "scrollToCurrentSection", value: function() {
+            a(this.data.offsets[this.currentIdx]);
+          } }, { key: "bindEvents", value: function() {
+            var e3 = this, t2 = window;
+            this.links.forEach(function(t3, n2) {
+              t3.addEventListener("click", function(t4) {
+                t4.preventDefault(), e3.currentIdx = n2, e3.scrollToCurrentSection();
+              });
+            }), t2.addEventListener("scroll", function(t3) {
+              e3.getCurrentSectionIndex();
+            });
+          } }]) && r(i2.prototype, s2), u && r(i2, u), e2;
+        }();
+      });
+    }
+  });
+
+  // node_modules/alpinejs/dist/module.esm.js
+  var __create2 = Object.create;
+  var __defProp2 = Object.defineProperty;
+  var __getProtoOf2 = Object.getPrototypeOf;
+  var __hasOwnProp2 = Object.prototype.hasOwnProperty;
+  var __getOwnPropNames2 = Object.getOwnPropertyNames;
+  var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
+  var __markAsModule2 = (target) => __defProp2(target, "__esModule", { value: true });
+  var __commonJS2 = (callback, module) => () => {
+    if (!module) {
+      module = { exports: {} };
+      callback(module.exports, module);
+    }
+    return module.exports;
+  };
+  var __exportStar = (target, module, desc) => {
+    if (module && typeof module === "object" || typeof module === "function") {
+      for (let key of __getOwnPropNames2(module))
+        if (!__hasOwnProp2.call(target, key) && key !== "default")
+          __defProp2(target, key, { get: () => module[key], enumerable: !(desc = __getOwnPropDesc2(module, key)) || desc.enumerable });
+    }
+    return target;
+  };
+  var __toModule2 = (module) => {
+    return __exportStar(__markAsModule2(__defProp2(module != null ? __create2(__getProtoOf2(module)) : {}, "default", module && module.__esModule && "default" in module ? { get: () => module.default, enumerable: true } : { value: module, enumerable: true })), module);
+  };
+  var require_shared_cjs = __commonJS2((exports) => {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     function makeMap(str, expectsLowerCase) {
@@ -426,7 +591,7 @@
     exports.toRawType = toRawType;
     exports.toTypeString = toTypeString;
   });
-  var require_shared = __commonJS((exports, module) => {
+  var require_shared = __commonJS2((exports, module) => {
     "use strict";
     if (false) {
       module.exports = null;
@@ -434,7 +599,7 @@
       module.exports = require_shared_cjs();
     }
   });
-  var require_reactivity_cjs = __commonJS((exports) => {
+  var require_reactivity_cjs = __commonJS2((exports) => {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var shared = require_shared();
@@ -1239,7 +1404,7 @@
     exports.triggerRef = triggerRef;
     exports.unref = unref;
   });
-  var require_reactivity = __commonJS((exports, module) => {
+  var require_reactivity = __commonJS2((exports, module) => {
     "use strict";
     if (false) {
       module.exports = null;
@@ -2460,7 +2625,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     data
   };
   var alpine_default = Alpine;
-  var import_reactivity9 = __toModule(require_reactivity());
+  var import_reactivity9 = __toModule2(require_reactivity());
   magic("nextTick", () => nextTick);
   magic("dispatch", (el) => dispatch.bind(dispatch, el));
   magic("watch", (el) => (key, callback) => {
@@ -3282,6 +3447,14 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   var module_default2 = src_default2;
 
   // dev/bundle.jsx
+  var import_scrollspy = __toModule(require_scrollspy_min());
   module_default.plugin(module_default2);
   module_default.start();
+  var scrollSpy = new import_scrollspy.default({
+    linkCurrentClass: "active",
+    linksContainerSelector: ".scrollSpyNav",
+    sectionSelector: ".members-article",
+    headerOffset: false,
+    headerClass: ".sideBarNav"
+  });
 })();
