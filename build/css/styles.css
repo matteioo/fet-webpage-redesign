@@ -2541,12 +2541,31 @@ footer .copyright {
   transform-origin: top;
 }
 
+.origin-bottom {
+  transform-origin: bottom;
+}
+
 .origin-left {
   transform-origin: left;
 }
 
 .origin-right {
   transform-origin: right;
+}
+
+.translate-y-0 {
+  --tw-translate-y: 0px;
+  transform: var(--tw-transform);
+}
+
+.translate-y-10 {
+  --tw-translate-y: 2.5rem;
+  transform: var(--tw-transform);
+}
+
+.translate-y-14 {
+  --tw-translate-y: 3.5rem;
+  transform: var(--tw-transform);
 }
 
 .rotate-45 {
@@ -2920,6 +2939,22 @@ footer .copyright {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
 }
 
+.bg-\[url\(\'\.\.\/img\/cover-image\.jpeg\'\)\] {
+  background-image: url('../img/cover-image.jpeg');
+}
+
+.bg-\[url\(\'https\:\/\/fet\.at\/files\/Screenshot_from_2021-12-02_17-46-23\.png\'\)\] {
+  background-image: url('https://fet.at/files/Screenshot_from_2021-12-02_17-46-23.png');
+}
+
+.bg-\[url\(\'\.\.\/img\/article-cover-1\.jpg\'\)\] {
+  background-image: url('../img/article-cover-1.jpg');
+}
+
+.bg-\[url\(\'\.\.\/img\/article-cover-2\.jpg\'\)\] {
+  background-image: url('../img/article-cover-2.jpg');
+}
+
 .from-black {
   --tw-gradient-from: #000;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(0 0 0 / 0));
@@ -3256,12 +3291,12 @@ footer .copyright {
   transition-duration: 150ms;
 }
 
-.duration-100 {
-  transition-duration: 100ms;
-}
-
 .duration-500 {
   transition-duration: 500ms;
+}
+
+.duration-100 {
+  transition-duration: 100ms;
 }
 
 .ease-out {

@@ -254,7 +254,13 @@
 			</section>
 		</div>
 
-		<div id="infoBox" class="sticky bottom-4 p-4 rounded-lg shadow-lg bg-gray-600 dark:bg-gray-800 text-gray-200 dark:text-gray-300 flex gap-x-4 items-center leading-none dark:border-2 dark:border-gray-700">
+		<div id="infoBox" class="sticky bottom-4 p-4 rounded-lg shadow-lg bg-gray-600 dark:bg-gray-800 text-gray-200 dark:text-gray-300 flex gap-x-4 items-center leading-none dark:border-2 dark:border-gray-700"
+			x-data="{ consent: true }"
+			x-show="consent"
+			x-transition:leave="transition ease-in-out duration-500"
+			x-transition:leave-start="transform origin-bottom opacity-100 scale-100 translate-y-0"
+			x-transition:leave-end="transform origin-bottom opacity-0 scale-100 translate-y-14"
+		>
 			<div class="flex-none relative">
 				<span class="absolute flex h-3 w-3 right-0 top-0">
 					<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-600 dark:bg-proprietary opacity-80"></span>
@@ -266,7 +272,9 @@
 				FET Discord-Server<br>
 				<span class="hidden lg:inline text-sm text-gray-300 dark:text-gray-400">Du hast Fragen zum Studium oder möchtest dich einfach mich anderen Studierenden austauschen? </span><span class="text-sm text-gray-300 dark:text-gray-400">Klicke hier zum Beitreten <span class="hidden sm:inline"><i class="far fa-angle-right"></i></span></span>
 			</a>
-			<button id="infoBox-closeButton" class="flex-none self-stretch px-2 -mr-2" onclick="hideInfoBox()"><i class="fas fa-times text-gray-300 dark:text-gray-500"></i></button>
+			<button id="infoBox-closeButton" class="flex-none self-stretch px-2 -mr-2" onclick="hideInfoBox('m', 1)"
+				@click="consent = false"
+			><i class="fas fa-times text-gray-300 dark:text-gray-500"></i></button>
 		</div>
 	</main>
 
