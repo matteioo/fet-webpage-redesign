@@ -2916,22 +2916,6 @@ footer .copyright {
   background-image: url('../img/cover-image.jpeg');
 }
 
-.bg-\[url\(\'\.\.\/img\/cover-image\.jpeg\'\)\] {
-  background-image: url('../img/cover-image.jpeg');
-}
-
-.bg-\[url\(\'https\:\/\/fet\.at\/files\/Screenshot_from_2021-12-02_17-46-23\.png\'\)\] {
-  background-image: url('https://fet.at/files/Screenshot_from_2021-12-02_17-46-23.png');
-}
-
-.bg-\[url\(\'\.\.\/img\/article-cover-1\.jpg\'\)\] {
-  background-image: url('../img/article-cover-1.jpg');
-}
-
-.bg-\[url\(\'\.\.\/img\/article-cover-2\.jpg\'\)\] {
-  background-image: url('../img/article-cover-2.jpg');
-}
-
 .bg-gradient-to-t {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
 }
@@ -3072,20 +3056,6 @@ footer .copyright {
 
 .italic {
   font-style: italic;
-}
-
-*, ::before, ::after {
-  --tw-ordinal: var(--tw-empty,/*!*/ /*!*/);
-  --tw-slashed-zero: var(--tw-empty,/*!*/ /*!*/);
-  --tw-numeric-figure: var(--tw-empty,/*!*/ /*!*/);
-  --tw-numeric-spacing: var(--tw-empty,/*!*/ /*!*/);
-  --tw-numeric-fraction: var(--tw-empty,/*!*/ /*!*/);
-  --tw-font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
-}
-
-.oldstyle-nums {
-  --tw-numeric-figure: oldstyle-nums;
-  font-variant-numeric: var(--tw-font-variant-numeric);
 }
 
 .leading-none {
