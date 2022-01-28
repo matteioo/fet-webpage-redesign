@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>FET: Fotos</title>
+
+	<meta name="author" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="description" content="Die Fachschaft Elektrotechnik besteht aus ET Studierenden, die sich um die Anliegen der Studenten und Studentinnen kümmern.">
+	<meta property="og:image" content="#"> <!--og:... = Facebook metadata-->
+	<meta property="og:description" content="Die Fachschaft Elektrotechnik besteht aus ET Studierenden, die sich um die Anliegen der Studenten und Studentinnen kümmern.">
+	<meta property="og:title" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="twitter:title" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="theme-color" content="#006599">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=1.1">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=1.1">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=1.1">
+	<link rel="manifest" href="site.webmanifest?v=1.1">
+	<link rel="mask-icon" href="safari-pinned-tab.svg?v=1.1" color="#006599">
+	<link rel="shortcut icon" href="favicon.ico?v=1.1">
+	<meta name="apple-mobile-web-app-title" content="FET - Fachschaft Elektrotechnik">
+	<meta name="application-name" content="FET - Fachschaft Elektrotechnik">
+	<meta name="msapplication-TileColor" content="#2b5797">
+
+	<link rel="stylesheet" href="css/styles.css">
+	<!--<link rel="stylesheet" href="../css/tailwind.css">-->
+	<script src="https://kit.fontawesome.com/fb26f70535.js" crossorigin="anonymous"></script>
+	
+	<!-- Fonts -->
+	<link rel="stylesheet" href="fonts/Inter-3.19/inter.css">
+	<!-- <link rel="stylesheet" href="fonts/Poppins-4.003/poppins.css"> -->
+</head>
+<body>
+	<!-- NAVBAR -->
+	<nav class="navbar" x-data="{ showNavBar: false }">
+		<div>
+			<a href="index.html">
+				<img src="img/FET-Logo-2014_64_light.svg" alt="FET-Logo" class="navbar-logo p-2 dark:hidden">
+				<img src="img/FET-Logo-2014_64_dark.svg" alt="FET-Logo" class="navbar-logo p-2 hidden dark:block">
+			</a>
+			<button class="navbar-toggle"
+				@click="showNavBar = ! showNavBar"
+			>
+				<i class="fas fa-bars"></i>
+			</button>
+			<ul id="navBarContent" class="navbar-content sm:block"
+				x-show="showNavBar || $screen('sm')"
+				x-transition:enter="transition ease-out duration-300"
+				x-transition:enter-start="transform opacity-0"
+				x-transition:enter-end="transform opacity-100"
+				x-transition:leave="transition ease-in duration-150"
+				x-transition:leave-start="transform opacity-100"
+				x-transition:leave-end="transform opacity-0"
+			>
+				<li><a href="posts.html">News</a></li>
+				<li><a href="members.html">Fachschaft</a></li>
+				<li class="active"><a href="fotos.html">Fotos</a></li>
+				<li><a href="blackboard.html">Blackboard</a></li>
+				<li><a href="login.html">Login</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- Main Content -->
+	<main class="container mx-auto w-full px-4 my-8 flex-1">
+		<h1 class="page-title">Fotos</h1>
+		<section class="text-gray-800 dark:text-gray-300 my-2 sm:my-4">
+			<h2 class="text-gray-900 dark:text-gray-200 text-lg font-medium tracking-wider">Halb(e)Zeit 2015</h2>
+			<span class="block"><i class="fa-solid fa-camera fa-fw mr-1 text-gray-500"></i>ein Fotograf</span>
+			<span class="block"><i class="fa-solid fa-calendar-day fa-fw mr-1 text-gray-500"></i>21. März 2015</span>
+			<div class="db-page-content-left mt-2">
+				<p>Das ist die Beschreibung und die ist ausführlicher...</p>
+			</div>
+		</section>
+		<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 justify-items-center gap-3">
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_01h07m26s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_01h53m57s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_01h07m17s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_03h18m08s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_02h03m47s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_00h30m39s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_05h04m03s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_02h40m38s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_01h07m26s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_01h53m57s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_01h07m17s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_03h18m08s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_02h03m47s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_00h30m39s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_05h04m03s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_02h40m38s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_01h07m26s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_01h53m57s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_01h07m17s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_03h18m08s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_02h03m47s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_00h30m39s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_05h04m03s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_02h40m38s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_01h07m26s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_01h53m57s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_01h07m17s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_03h18m08s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_02h03m47s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_00h30m39s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_05h04m03s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_02h40m38s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_01h07m26s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_01h53m57s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_01h07m17s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_03h18m08s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_02h03m47s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_00h30m39s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_05h04m03s.JPG" class="rounded-sm">
+			</a>
+			<a href="#" class="block max-w-xs sm:max-w-none">
+				<img src="https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_02h40m38s.JPG" class="rounded-sm">
+			</a>
+		</div>
+	</main>
+
+	<footer>
+		<ul class="icon-list">
+			<li>
+				<a href="https://facebook.fet.at/"><i class="fab fa-facebook"></i></a>
+			</li>
+			<li>
+				<a href="https://instagram.fet.at/"><i class="fab fa-instagram"></i></a>
+			</li>
+			<li>
+				<a href="https://discord.fet.at/"><i class="fab fa-discord"></i></a>
+			</li>
+			<li>
+				<a href="https://telegram.fet.at/"><i class="fab fa-telegram"></i></a>
+			</li>
+			<li>
+				<a href="mailto:service@fet.at"><i class="fas fa-envelope"></i></a>
+			</li>
+		</ul>
+		<div class="legal">
+			<a href="impressum.html" class="text-center text-sm sm:text-base">Impressum</a>
+		</div>
+		<hr class="legal-divider">
+		<p class="copyright">© 2021 FET - Alle Rechte vorbehalten.</p>
+	</footer>
+	<div class="super-duper-awesome-signature" x-data="{ counter: 0 }">
+		<span :class="counter>=4 && 'text-purple-300'">Handcrafted </span><span :class="counter>=5 && 'text-green-400'">with </span><i class="fa-solid fa-heart" aria-label="love" @click="counter++" :class="counter>=2 ? 'text-proprietary hover:text-proprietary-dark' : 'text-red-600 hover:text-red-700'"></i><span :class="counter>=6 && 'text-pink-400'"> by</span><span class="font-normal" :class="counter>=3 && 'text-yellow-500'"> Matteo Duchscher</span>
+	</div>
+
+	<script defer src="js/vendor.js"></script>
+	<script defer src="js/scripts.js"></script>
+</body>
+</html>
