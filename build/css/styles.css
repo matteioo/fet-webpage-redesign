@@ -3643,6 +3643,16 @@ footer .copyright {
     color: rgb(219 234 254 / var(--tw-text-opacity));
   }
 
+  .dark\:text-red-300 {
+    --tw-text-opacity: 1;
+    color: rgb(252 165 165 / var(--tw-text-opacity));
+  }
+
+  .dark\:text-red-200 {
+    --tw-text-opacity: 1;
+    color: rgb(254 202 202 / var(--tw-text-opacity));
+  }
+
   .dark\:hover\:bg-proprietary-darker:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(0 68 102 / var(--tw-bg-opacity));
