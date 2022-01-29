@@ -333,6 +333,11 @@ ul.sideBarNav > ul > li.active > a {
 	@apply mb-0.5;
 }
 
+/***** DOCUMENT LIST *****/
+.documentList a {
+	@apply sm:hover:bg-gray-50 dark:sm:hover:bg-gray-800 py-2 sm:p-2 md:p-4 first:rounded-t last:rounded-b;
+}
+
 /***** FOOTER *****/
 footer {
 	@apply bg-proprietary dark:bg-proprietary-darker p-4 text-blue-100 dark:text-blue-200 flex-none;
