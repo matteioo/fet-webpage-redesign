@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>FET: Startseite</title>
+
+	<meta name="author" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="description" content="Die Fachschaft Elektrotechnik besteht aus ET Studierenden, die sich um die Anliegen der Studenten und Studentinnen kümmern.">
+	<meta property="og:image" content="#"> <!--og:... = Facebook metadata-->
+	<meta property="og:description" content="Die Fachschaft Elektrotechnik besteht aus ET Studierenden, die sich um die Anliegen der Studenten und Studentinnen kümmern.">
+	<meta property="og:title" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="twitter:title" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="theme-color" content="#006599">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=1.1">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=1.1">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=1.1">
+	<link rel="manifest" href="site.webmanifest?v=1.1">
+	<link rel="mask-icon" href="safari-pinned-tab.svg?v=1.1" color="#006599">
+	<link rel="shortcut icon" href="favicon.ico?v=1.1">
+	<meta name="apple-mobile-web-app-title" content="FET - Fachschaft Elektrotechnik">
+	<meta name="application-name" content="FET - Fachschaft Elektrotechnik">
+	<meta name="msapplication-TileColor" content="#2b5797">
+
+	<link rel="stylesheet" href="css/styles.css">
+	<!--<link rel="stylesheet" href="../css/tailwind.css">-->
+	<script src="https://kit.fontawesome.com/fb26f70535.js" crossorigin="anonymous"></script>
+	
+	<!-- Fonts -->
+	<link rel="stylesheet" href="fonts/Inter-3.19/inter.css">
+	<!-- <link rel="stylesheet" href="fonts/Poppins-4.003/poppins.css"> -->
+	<link rel="stylesheet" href="fonts/Besley-2.0/besley.css">
+	<link rel="stylesheet" href="fonts/Fira_Code-6.2/fira_code.css">
+</head>
+<body>
+	<!-- NAVBAR -->
+	<nav class="navbar" x-data="{ showNavBar: false }">
+		<div>
+			<a href="index.html">
+				<img src="img/FET-Logo-2014_64_light.svg" alt="FET-Logo" class="navbar-logo p-2 dark:hidden">
+				<img src="img/FET-Logo-2014_64_dark.svg" alt="FET-Logo" class="navbar-logo p-2 hidden dark:block">
+			</a>
+			<button class="navbar-toggle"
+				@click="showNavBar = ! showNavBar"
+			>
+				<i class="fas fa-bars"></i>
+			</button>
+			<ul id="navBarContent" class="navbar-content sm:block"
+				x-show="showNavBar || $screen('sm')"
+				x-transition:enter="transition ease-out duration-300"
+				x-transition:enter-start="transform opacity-0 scale-90"
+				x-transition:enter-end="transform opacity-100 scale-100"
+				x-transition:leave="transition ease-in duration-150"
+				x-transition:leave-start="transform opacity-100 scale-100"
+				x-transition:leave-end="transform opacity-0 scale-90"
+			>
+				<li><a href="posts.html">News</a></li>
+				<li><a href="members.html">Fachschaft</a></li>
+				<li><a href="fotos.html">Fotos</a></li>
+				<li><a href="blackboard.html">Blackboard</a></li>
+				<hr class="border-proprietary">
+				<div href="#" class="inline-block w-full sm:w-auto rounded relative"
+					x-data="{ showPopupNav: false }"
+					@click.outside="showPopupNav = false"
+				>
+					<div class="sm:inline-flex items-center divide-x divide-blue-200 dark:divide-proprietary-light bg-proprietary-dark text-blue-50 rounded">
+						<a class="hidden sm:block flex-1 px-2 py-1 hover:bg-proprietary-dark dark:hover:bg-proprietary-darker active:bg-proprietary-dark dark:active:bg-proprietary-darker rounded-l" href="#"
+							@click="showPopupNav = !showPopupNav"
+						>Hallo moses</a>
+						<a class="hidden sm:block flex-0 px-2 py-1 hover:bg-proprietary-dark dark:hover:bg-proprietary-darker active:bg-proprietary-dark dark:active:bg-proprietary-darker rounded-r" href="#"><i class="fa-regular fa-power-off"></i></a>
+					</div>
+					<div class="sm:block sm:absolute z-20 top-9 right-0 bg-white dark:bg-transparent dark:sm:bg-gray-700 sm:shadow-md sm:rounded w-full dark:sm:text-proprietary-lightest"
+						x-show="showPopupNav || !$screen('sm')"
+						x-transition:enter="transition ease-out duration-300"
+						x-transition:enter-start="transform origin-top opacity-0 scale-95"
+						x-transition:enter-end="transform origin-top opacity-100 scale-100"
+						x-transition:leave="transition ease-in duration-150"
+						x-transition:leave-start="transform origin-top opacity-100 scale-100"
+						x-transition:leave-end="transform origin-top opacity-0 scale-95"
+					>
+						<li class="navInternal"><a href="#"><i class="fa-fw fa-solid fa-user-secret mr-2"></i>Admin</a></li>
+						<li class="navInternal"><a href="#"><i class="fa-fw fa-solid fa-list-check mr-2"></i>Tasks</a></li>
+						<li class="navInternal"><a href="#"><i class="fa-fw fa-solid fa-database mr-2"></i>Intern</a></li>
+						<li class="navInternal"
+							x-show="!$screen('sm')"
+						><a href="#"><i class="fa-fw fa-solid fa-power-off mr-2"></i>Logout</a></li>
+					</div>
+				</div>
+			</ul>
+		</div>
+	</nav>
+	<!-- Main Content -->
+	<main class="container mx-auto w-full px-4 my-8 flex-1">
+		<h1 class="page-title">Intern</h1>
+		<div class="flex flex-col gap-y-4 max-w-prose mx-auto text-gray-700 dark:text-gray-300">
+			<section x-data="{ expandList: false }">
+				<div class="flex gap-x-6">
+					<h2 class="text-lg font-medium text-gray-900 dark:text-gray-100 cursor-pointer" @click="expandList = ! expandList">
+						<i class="fa-fw fa-solid fa-angle-right transition transform origin-center"
+						:class="expandList ? 'rotate-90' : ''"
+						></i>
+						Studienvertretung
+					</h2>
+					<button class="inline-block transform transition-all border border-gray-700 dark:border-gray-300 rounded px-1.5 text-sm"
+						x-show="expandList"
+						x-transition:enter="transition ease-out duration-300"
+						x-transition:enter-start="transform origin-top opacity-0 -translate-x-6"
+						x-transition:enter-end="transform origin-top opacity-100 translate-x-0"
+						x-transition:leave="transition ease-in duration-150"
+						x-transition:leave-start="transform origin-top opacity-100 translate-x-0"
+						x-transition:leave-end="transform origin-top opacity-0 -translate-x-6"
+					><i class="fa-solid fa-plus mr-1"></i>Eintrag hinzufügen</button>
+				</div>
+				<ul class="ml-3" x-show="expandList" x-collapse>
+					<li class="px-4 py-1"><a href="#" class="w-full h-full">Fakrat</a></li>
+					<li class="px-4 py-1"><a href="#" class="w-full h-full">Studienkommission</a></li>
+					<li class="px-4 py-1"><a href="#" class="w-full h-full">Studienvertretung</a></li>
+					<li class="px-4 py-1"><a href="#" class="w-full h-full">Kaffee</a></li>
+					<li class="px-4 py-1"><a href="#" class="w-full h-full">Frühstücksbuffet</a></li>
+					<li class="px-4 py-1"><a href="#" class="w-full h-full">Infrastruktur</a></li>
+				</ul>
+			</section>
+			<section x-data="{ expandList: false }">
+				<div class="flex gap-x-6">
+					<h2 class="text-lg font-medium text-gray-900 dark:text-gray-100 cursor-pointer" @click="expandList = ! expandList">
+						<i class="fa-fw fa-solid fa-angle-right transition transform origin-center"
+						:class="expandList ? 'rotate-90' : ''"
+						></i>
+						Allgemeines
+					</h2>
+					<button class="inline-block transform transition-all border border-gray-700 dark:border-gray-300 rounded px-1.5 text-sm"
+						x-show="expandList"
+						x-transition:enter="transition ease-out duration-300"
+						x-transition:enter-start="transform origin-top opacity-0 -translate-x-6"
+						x-transition:enter-end="transform origin-top opacity-100 translate-x-0"
+						x-transition:leave="transition ease-in duration-150"
+						x-transition:leave-start="transform origin-top opacity-100 translate-x-0"
+						x-transition:leave-end="transform origin-top opacity-0 -translate-x-6"
+					><i class="fa-solid fa-plus mr-1"></i>Eintrag hinzufügen</button>
+				</div>
+				<ul class="ml-3" x-show="expandList" x-collapse>
+					<li class="px-4 py-1"><a href="#" class="w-full h-full">Sommer</a></li>
+					<li class="px-4 py-1"><a href="#" class="w-full h-full">Sonne</a></li>
+					<li class="px-4 py-1"><a href="#" class="w-full h-full">Kaktus</a></li>
+				</ul>
+			</section>
+			<section x-data="{ expandList: false }">
+				<div class="flex gap-x-6">
+					<h2 class="text-lg font-medium text-gray-900 dark:text-gray-100 cursor-pointer" @click="expandList = ! expandList">
+						<i class="fa-fw fa-solid fa-angle-right transition transform origin-center"
+						:class="expandList ? 'rotate-90' : ''"
+						></i>
+						Studienvertretung
+					</h2>
+					<button class="inline-block transform transition-all border border-gray-700 dark:border-gray-300 rounded px-1.5 text-sm"
+						x-show="expandList"
+						x-transition:enter="transition ease-out duration-300"
+						x-transition:enter-start="transform origin-top opacity-0 -translate-x-6"
+						x-transition:enter-end="transform origin-top opacity-100 translate-x-0"
+						x-transition:leave="transition ease-in duration-150"
+						x-transition:leave-start="transform origin-top opacity-100 translate-x-0"
+						x-transition:leave-end="transform origin-top opacity-0 -translate-x-6"
+					><i class="fa-solid fa-plus mr-1"></i>Eintrag hinzufügen</button>
+				</div>
+				<ul class="ml-3" x-show="expandList" x-collapse>
+					<li class="px-4 py-1"><a href="#" class="w-full h-full">Fakrat</a></li>
+					<li class="px-4 py-1"><a href="#" class="w-full h-full">Studienkommission</a></li>
+					<li class="px-4 py-1"><a href="#" class="w-full h-full">Studienvertretung</a></li>
+				</ul>
+			</section>
+			<section x-data="{ expandList: false }">
+				<div class="flex gap-x-6">
+					<h2 class="text-lg font-medium text-gray-900 dark:text-gray-100 cursor-pointer" @click="expandList = ! expandList">
+						<i class="fa-fw fa-solid fa-angle-right transition transform origin-center"
+						:class="expandList ? 'rotate-90' : ''"
+						></i>
+						Studienvertretung
+					</h2>
+					<button class="inline-block transform transition-all border border-gray-700 dark:border-gray-300 rounded px-1.5 text-sm"
+						x-show="expandList"
+						x-transition:enter="transition ease-out duration-300"
+						x-transition:enter-start="transform origin-top opacity-0 -translate-x-6"
+						x-transition:enter-end="transform origin-top opacity-100 translate-x-0"
+						x-transition:leave="transition ease-in duration-150"
+						x-transition:leave-start="transform origin-top opacity-100 translate-x-0"
+						x-transition:leave-end="transform origin-top opacity-0 -translate-x-6"
+					><i class="fa-solid fa-plus mr-1"></i>Eintrag hinzufügen</button>
+				</div>
+				<ul class="ml-3" x-show="expandList" x-collapse>
+					<li class="px-4 py-1"><a href="#" class="w-full h-full">Fakrat</a></li>
+					<li class="px-4 py-1"><a href="#" class="w-full h-full">Studienkommission</a></li>
+					<li class="px-4 py-1"><a href="#" class="w-full h-full">Studienvertretung</a></li>
+				</ul>
+			</section>
+		</div>
+
+		<div class="sm:flex sm:flex-row justify-center my-8">
+			
+		</div>
+	</main>
+
+	<footer>
+		<ul class="icon-list">
+			<li>
+				<a href="https://facebook.fet.at/"><i class="fab fa-facebook"></i></a>
+			</li>
+			<li>
+				<a href="https://instagram.fet.at/"><i class="fab fa-instagram"></i></a>
+			</li>
+			<li>
+				<a href="https://discord.fet.at/"><i class="fab fa-discord"></i></a>
+			</li>
+			<li>
+				<a href="https://telegram.fet.at/"><i class="fab fa-telegram"></i></a>
+			</li>
+			<li>
+				<a href="mailto:service@fet.at"><i class="fas fa-envelope"></i></a>
+			</li>
+		</ul>
+		<div class="legal">
+			<a href="impressum.html" class="text-center text-sm sm:text-base">Impressum</a>
+		</div>
+		<hr class="legal-divider">
+		<p class="copyright">© 2021 FET - Alle Rechte vorbehalten.</p>
+	</footer>
+	<div class="super-duper-awesome-signature" x-data="{ counter: 0 }">
+		<span :class="counter>=4 && 'text-purple-300'">Handcrafted </span><span :class="counter>=5 && 'text-green-400'">with </span><i class="fa-solid fa-heart" aria-label="love" @click="counter++" :class="counter>=2 ? 'text-proprietary hover:text-proprietary-dark' : 'text-red-600 hover:text-red-700'"></i><span :class="counter>=6 && 'text-pink-400'"> by</span><span class="font-normal" :class="counter>=3 && 'text-yellow-500'"> Matteo Duchscher</span>
+	</div>
+
+	<script defer src="js/vendor.js"></script>
+	<script defer src="js/scripts.js"></script>
+</body>
+</html>
