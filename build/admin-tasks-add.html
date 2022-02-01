@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>FET: Startseite</title>
+	<title>FET: Tasks</title>
 
 	<meta name="author" content="Fachschaft Elektrotechnik (FET)">
 	<meta name="description" content="Die Fachschaft Elektrotechnik besteht aus ET Studierenden, die sich um die Anliegen der Studenten und Studentinnen kümmern.">
@@ -31,10 +31,8 @@
 	<!-- Fonts -->
 	<link rel="stylesheet" href="fonts/Inter-3.19/inter.css">
 	<!-- <link rel="stylesheet" href="fonts/Poppins-4.003/poppins.css"> -->
-	<link rel="stylesheet" href="fonts/Besley-2.0/besley.css">
-	<link rel="stylesheet" href="fonts/Fira_Code-6.2/fira_code.css">
 </head>
-<body>
+<body x-data="{ showModal: false }" :class="{ 'overflow-y-hidden sm:overflow-y-auto': showModal }">
 	<!-- NAVBAR -->
 	<nav class="navbar" x-data="{ showNavBar: false }">
 		<div>
@@ -81,7 +79,7 @@
 						x-transition:leave-end="transform origin-top opacity-0 scale-95"
 					>
 						<li class="navInternal"><a href="admin.html"><i class="fa-fw fa-solid fa-user-secret mr-2"></i>Admin</a></li>
-						<li class="navInternal"><a href="admin-tasks.html"><i class="fa-fw fa-solid fa-list-check mr-2"></i>Tasks</a></li>
+						<li class="navInternal"><a href="#"><i class="fa-fw fa-solid fa-list-check mr-2"></i>Tasks</a></li>
 						<li class="navInternal"><a href="admin-intern.html"><i class="fa-fw fa-solid fa-database mr-2"></i>Intern</a></li>
 						<li class="navInternal"
 							x-show="!$screen('sm')"
@@ -91,86 +89,72 @@
 			</ul>
 		</div>
 	</nav>
+
 	<!-- Main Content -->
 	<main class="container mx-auto w-full px-4 my-8 flex-1">
-		<h1 class="page-title">Intern</h1>
-		<div class="flex flex-col gap-y-4 max-w-prose mx-auto text-gray-700 dark:text-gray-300">
-			<aside class="flex gap-2 flex-wrap align-bottom text-sm sm:text-base text-gray-600 dark:text-gray-300">
-				<a class="underline hover:text-gray-900 dark:hover:text-gray-100" href="admin-intern.html">Studienvertretung</a>
-				<span><i class="fa-solid fa-angle-right"></i></span>
-				<a class="underline hover:text-gray-900 dark:hover:text-gray-100" href="admin-intern-sub1.html">Studienkommission</a>
-				<span><i class="fa-solid fa-angle-right"></i></span>
-				<span class="cursor-default">Protokolle</span>
-			</aside>
-			<div class="db-page-content-left mt-2">
-				<p>
-					Das ist die Beschreibung und die ist ausführlicher... <br>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. <b>Itaque qui quod,</b> accusamus <mark>beatae</mark> quas <i>exercitationem</i> dignissimos voluptatibus error. Dolorem saepe voluptatibus dolorum, cupiditate illum non. Officia esse minima aliquid at?
-				</p>
-			</div>
-			<section>
-				<div class="sm:flex flex-row justify-between">
-					<h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">Etherpad Dokumente:</h2>
-					<!-- <a href="#" class="border border-gray-700 dark:border-gray-300 rounded px-1 py-0.5 hidden sm:block">
-						<i class="fa-solid fa-plus mr-1"></i>Neues Etherpad erstellen
-					</a> -->
-				</div>
-				<div class="documentList rounded divide-y divide-gray-300 dark:divide-gray-600">
-					<a href="#" class="flex justify-between">
-						<h3 class="text-gray-800 dark:text-gray-200"><i class="fa-solid fa-plus fa-fw mr-1"></i>Neues Etherpad erstellen</h2>
-					</a>
-					<a href="#" class="flex justify-between items-center gap-2">
-						<h3 class="text-gray-800 dark:text-gray-200">Dokumenawdawd awdawd aw dawd awdawd ttitel</h2>
-						<span class=" text-gray-700 dark:text-gray-300">12.01.2021<span class="ml-2 hidden sm:inline-block"><i class="fas fa-angle-right text-gray-400 dark:text-gray-600"></i></span>
-					</a>
-					<a href="#" class="flex justify-between items-center gap-2">
-						<h3 class="text-gray-800 dark:text-gray-200">Dokumenttitel</h2>
-						<span class=" text-gray-700 dark:text-gray-300">12.01.2021<span class="ml-2 hidden sm:inline-block"><i class="fas fa-angle-right text-gray-400 dark:text-gray-600"></i></span>
-					</a>
-					<a href="#" class="flex justify-between items-center gap-2">
-						<h3 class="text-gray-800 dark:text-gray-200">Dokumenttitel</h2>
-						<span class=" text-gray-700 dark:text-gray-300">12.01.2021<span class="ml-2 hidden sm:inline-block"><i class="fas fa-angle-right text-gray-400 dark:text-gray-600"></i></span>
-					</a>
-					<a href="#" class="flex justify-between items-center gap-2">
-						<h3 class="text-gray-800 dark:text-gray-200">Dokumenttitel</h2>
-						<span class=" text-gray-700 dark:text-gray-300">12.01.2021<span class="ml-2 hidden sm:inline-block"><i class="fas fa-angle-right text-gray-400 dark:text-gray-600"></i></span>
-					</a>
-					<a href="#" class="flex justify-between items-center gap-2">
-						<h3 class="text-gray-800 dark:text-gray-200">Dokumenttitel</h2>
-						<span class=" text-gray-700 dark:text-gray-300">12.01.2021<span class="ml-2 hidden sm:inline-block"><i class="fas fa-angle-right text-gray-400 dark:text-gray-600"></i></span>
-					</a>
-				</div>
-			</section>
-			<section>
-				<h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">Dokumente:</h2>
-				<div class="documentList rounded divide-y divide-gray-300 dark:divide-gray-600">
-					<a href="#" class="flex justify-between">
-						<h3 class="text-gray-800 dark:text-gray-200"><i class="fa-solid fa-plus fa-fw mr-1"></i>Neues Dokument hochladen</h2>
-					</a>
-					<a href="#" class="flex justify-between items-center gap-2">
-						<h3 class="text-gray-800 dark:text-gray-200"><i class="fa-solid fa-file-pdf fa-fw mr-1 hidden sm:inline-block"></i>Dokumenttitel</h2>
-						<span class=" text-gray-700 dark:text-gray-300">12.01.2021<span class="ml-2 hidden sm:inline-block"><i class="fas fa-angle-right text-gray-400 dark:text-gray-600"></i></span>
-					</a>
-					<a href="#" class="flex justify-between items-center gap-2">
-						<h3 class="text-gray-800 dark:text-gray-200"><i class="fa-solid fa-file-code fa-fw mr-1 hidden sm:inline-block"></i>Dokumenttitel</h2>
-						<span class=" text-gray-700 dark:text-gray-300">12.01.2021<span class="ml-2 hidden sm:inline-block"><i class="fas fa-angle-right text-gray-400 dark:text-gray-600"></i></span>
-					</a>
-					<a href="#" class="flex justify-between items-center gap-2">
-						<h3 class="text-gray-800 dark:text-gray-200"><i class="fa-solid fa-file-image fa-fw mr-1 hidden sm:inline-block"></i>Dokumenttitel</h2>
-						<span class=" text-gray-700 dark:text-gray-300">12.01.2021<span class="ml-2 hidden sm:inline-block"><i class="fas fa-angle-right text-gray-400 dark:text-gray-600"></i></span>
-					</a>
-					<a href="#" class="flex justify-between items-center gap-2">
-						<h3 class="text-gray-800 dark:text-gray-200"><i class="fa-solid fa-file-waveform fa-fw mr-1 hidden sm:inline-block"></i>Dokumenttitel</h2>
-						<span class=" text-gray-700 dark:text-gray-300">12.01.2021<span class="ml-2 hidden sm:inline-block"><i class="fas fa-angle-right text-gray-400 dark:text-gray-600"></i></span>
-					</a>
-					<a href="#" class="flex justify-between items-center gap-2">
-						<h3 class="text-gray-800 dark:text-gray-200"><i class="fa-solid fa-file-zipper fa-fw mr-1 hidden sm:inline-block"></i>Dokumenttitel</h2>
-						<span class=" text-gray-700 dark:text-gray-300">12.01.2021<span class="ml-2 hidden sm:inline-block"><i class="fas fa-angle-right text-gray-400 dark:text-gray-600"></i></span>
-					</a>
-				</div>
-			</section>
-			<a href="#" class="btn btn-primary block place-self-end"><i class="fas fa-pen-to-square mr-2"></i>Beschreibung bearbeiten</a>
+		<h1 class="page-title">Task hinzufügen</h1>
+		<div class="w-full h-full flex-1 flex justify-center items-center">
+			<form action="" method="POST" class="w-full max-w-prose sm:px-28 sm:py-4 grid grid-cols-1 gap-y-3 sm:gap-y-6 text-gray-900">
+				<label class="block">
+					<span class="text-gray-700 dark:text-gray-200">Titel</span>
+					<input type="text" class="mt-1 block w-full rounded-md border-gray-300 dark:border-none shadow-sm focus:border-none focus:ring focus:ring-blue-200 dark:focus:ring-sky-700 focus:ring-opacity-50" required placeholder="AlessandroVolta230">
+				</label>
+				<label>
+					<span class="text-gray-700 dark:text-gray-200">Task-Gruppe</span>
+					<select class="block w-full mt-1 rounded-md border-gray-300 dark:border-none shadow-sm focus:border-none focus:ring focus:ring-blue-200 dark:focus:ring-sky-700 focus:ring-opacity-50" required>
+						<option value="" disabled selected>---------</option>
+						<option value="1">other value</option>
+					</select>
+				</label>
+				<label>
+					<span class="text-gray-700 dark:text-gray-200">Fähigkeitsdatum</span>
+					<input type="date" class="block w-full mt-1 rounded-md border-gray-300 dark:border-none shadow-sm focus:border-none focus:ring focus:ring-blue-200 dark:focus:ring-sky-700 focus:ring-opacity-50" required>
+				</label>
+				<label>
+					<span class="text-gray-700 dark:text-gray-200">Zuweisen an</span>
+					<select class="block w-full mt-1 rounded-md border-gray-300 dark:border-none shadow-sm focus:border-none focus:ring focus:ring-blue-200 dark:focus:ring-sky-700 focus:ring-opacity-50" required>
+						<option value="0" selected>Alle</option>
+						<option value="1">other value</option>
+					</select>
+				</label>
+				<input type="submit" class="block btn btn-primary" value="Hinzufügen">
+			</form>
 		</div>
+		<!-- <div class="sm:flex sm:flex-row-reverse justify-center">
+			<section class="my-8 sm:my-0 sm:w-3/5 xl:w-2/5 flex flex-col gap-4 text-gray-700 dark:text-gray-200">
+				<label class="flex justify-between items-start">
+					<div class="inline-flex items-baseline mr-2">
+						<input type="checkbox" class="rounded border-gray-300 dark:border-none text-proprietary shadow-sm focus:border-blue-300 focus:ring focus:ring-offset-0 focus:ring-blue-200 dark:focus:ring-sky-700 focus:ring-opacity-50">
+						<span class="ml-2">Probleme mit Prof <a href="#" class="inline-block text-proprietary dark:text-proprietary-lighter">Link <i class="fa-solid fa-link"></i></a></span>
+					</div>
+					<div class="inline-flex gap-2 flex-shrink-0">
+						<span class="px-2 py-0.5 rounded-full text-sm font-medium text-proprietary dark:text-blue-100 bg-blue-200 dark:bg-proprietary-dark"><i class="fa-solid fa-hourglass mr-1"></i>12.04.2021</span>
+					</div>
+				</label>
+				<label class="flex justify-between items-start">
+					<div class="inline-flex items-baseline mr-2">
+						<input type="checkbox" class="rounded border-gray-300 dark:border-none text-proprietary shadow-sm focus:border-blue-300 focus:ring focus:ring-offset-0 focus:ring-blue-200 dark:focus:ring-sky-700 focus:ring-opacity-50">
+						<span class="ml-2">Probleme mit Prof <a href="#" class="inline-block text-proprietary dark:text-proprietary-lighter">Link <i class="fa-solid fa-link"></i></a></span>
+					</div>
+					<div class="inline-flex gap-2 flex-shrink-0">
+						<span class="px-2 py-0.5 rounded-full text-sm font-medium text-proprietary dark:text-blue-100 bg-blue-200 dark:bg-proprietary-dark"><i class="fa-solid fa-hourglass mr-1"></i>12.04.2021</span>
+					</div>
+				</label>
+				<label class="flex justify-between items-start">
+					<div class="inline-flex items-baseline mr-2">
+						<input type="checkbox" class="rounded border-gray-300 dark:border-none text-proprietary shadow-sm focus:border-blue-300 focus:ring focus:ring-offset-0 focus:ring-blue-200 dark:focus:ring-sky-700 focus:ring-opacity-50">
+						<span class="ml-2">Probleme mit Prof <a href="#" class="inline-block text-proprietary dark:text-proprietary-lighter">Link <i class="fa-solid fa-link"></i></a></span>
+					</div>
+					<div class="inline-flex gap-2 flex-shrink-0">
+						<span class="px-2 py-0.5 rounded-full text-sm font-medium text-proprietary dark:text-blue-100 bg-blue-200 dark:bg-proprietary-dark"><i class="fa-solid fa-hourglass mr-1"></i>12.04.2021</span>
+					</div>
+				</label>
+				<div class="flex flex-col md:flex-row gap-y-2 md:gap-y-0 md:gap-x-2 lg:justify-end">
+					<a href="#" class="btn btn-error block md:flex-grow lg:flex-grow-0"><i class="fa-solid fa-square-check mr-2"></i>Tasks löschen</a>
+					<a href="#" class="btn btn-primary block md:flex-grow lg:flex-grow-0"><i class="fas fa-plus-square mr-2"></i>Task hinzufügen</a>
+				</div>
+			</section>
+		</div> -->
 	</main>
 
 	<footer>
