@@ -31,6 +31,7 @@
   "dependencies": {
     "@alpine-collective/toolkit-screen": "^1.0.0",
     "@alpinejs/collapse": "^3.8.1",
+    "@alpinejs/persist": "^3.8.1",
     "@three11/scrollspy": "^1.0.0",
     "alpinejs": "^3.4.2",
     "esbuild": "^0.13.7",

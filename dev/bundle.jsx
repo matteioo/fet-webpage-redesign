@@ -4,9 +4,11 @@
 import Alpine from 'alpinejs'
 import Toolkit from '@alpine-collective/toolkit-screen'
 import collapse from '@alpinejs/collapse'
+import persist from '@alpinejs/persist'
 
 Alpine.plugin(Toolkit)
 Alpine.plugin(collapse)
+Alpine.plugin(persist)
 Alpine.start()
 
 /* *****Prism.js***** */

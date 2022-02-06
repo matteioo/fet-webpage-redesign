@@ -3523,10 +3523,50 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   }
   var module_default3 = src_default3;
 
+  // node_modules/@alpinejs/persist/dist/module.esm.js
+  function src_default4(Alpine2) {
+    let persist = () => {
+      let alias;
+      let storage = localStorage;
+      return Alpine2.interceptor((initialValue, getter, setter, path, key) => {
+        let lookup = alias || `_x_${path}`;
+        let initial = storageHas(lookup, storage) ? storageGet(lookup, storage) : initialValue;
+        setter(initial);
+        Alpine2.effect(() => {
+          let value = getter();
+          storageSet(lookup, value, storage);
+          setter(value);
+        });
+        return initial;
+      }, (func) => {
+        func.as = (key) => {
+          alias = key;
+          return func;
+        }, func.using = (target) => {
+          storage = target;
+          return func;
+        };
+      });
+    };
+    Object.defineProperty(Alpine2, "$persist", { get: () => persist() });
+    Alpine2.magic("persist", persist);
+  }
+  function storageHas(key, storage) {
+    return storage.getItem(key) !== null;
+  }
+  function storageGet(key, storage) {
+    return JSON.parse(storage.getItem(key, storage));
+  }
+  function storageSet(key, value, storage) {
+    storage.setItem(key, JSON.stringify(value));
+  }
+  var module_default4 = src_default4;
+
   // dev/bundle.jsx
   var import_scrollspy = __toModule(require_scrollspy_min());
   module_default.plugin(module_default2);
   module_default.plugin(module_default3);
+  module_default.plugin(module_default4);
   module_default.start();
   var scrollSpy = new import_scrollspy.default({
     linkCurrentClass: "active",

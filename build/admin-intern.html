@@ -95,7 +95,7 @@
 	<main class="container mx-auto w-full px-4 my-8 flex-1">
 		<h1 class="page-title">Intern</h1>
 		<div class="flex flex-col gap-y-4 max-w-prose mx-auto text-gray-700 dark:text-gray-300">
-			<section x-data="{ expandList: true }">
+			<section x-data="{ expandList: $persist(true).as('expandListState-studienvertretung') }">
 				<div class="flex gap-x-6">
 					<h2 class="text-lg font-medium text-gray-900 dark:text-gray-100 cursor-pointer" @click="expandList = ! expandList">
 						<i class="fa-fw fa-solid fa-angle-right transition transform origin-center"
@@ -127,7 +127,7 @@
 					</li>
 				</ul>
 			</section>
-			<section x-data="{ expandList: true }">
+			<section x-data="{ expandList: $persist(true).as('expandListState-allgemeines') }">
 				<div class="flex gap-x-6">
 					<h2 class="text-lg font-medium text-gray-900 dark:text-gray-100 cursor-pointer" @click="expandList = ! expandList">
 						<i class="fa-fw fa-solid fa-angle-right transition transform origin-center"
@@ -156,13 +156,13 @@
 					</li>
 				</ul>
 			</section>
-			<section x-data="{ expandList: true }">
+			<section x-data="{ expandList: $persist(true).as('expandListState-studiengesetz') }">
 				<div class="flex gap-x-6">
 					<h2 class="text-lg font-medium text-gray-900 dark:text-gray-100 cursor-pointer" @click="expandList = ! expandList">
 						<i class="fa-fw fa-solid fa-angle-right transition transform origin-center"
 						:class="expandList ? 'rotate-90' : ''"
 						></i>
-						Studienvertretung
+						Studiengesetz
 					</h2>
 					<button class="border border-gray-700 dark:border-gray-300 rounded px-1.5 text-sm hidden sm:block"
 						x-show="expandList"
@@ -185,13 +185,13 @@
 					</li>
 				</ul>
 			</section>
-			<section x-data="{ expandList: true }">
+			<section x-data="{ expandList: $persist(true).as('expandListState-fachschaftstreffen') }">
 				<div class="flex gap-x-6">
 					<h2 class="text-lg font-medium text-gray-900 dark:text-gray-100 cursor-pointer" @click="expandList = ! expandList">
 						<i class="fa-fw fa-solid fa-angle-right transition transform origin-center"
 						:class="expandList ? 'rotate-90' : ''"
 						></i>
-						Studienvertretung
+						Fachschaftstreffen
 					</h2>
 					<button class="border border-gray-700 dark:border-gray-300 rounded px-1.5 text-sm hidden sm:block"
 						x-show="expandList"
