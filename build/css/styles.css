@@ -2599,6 +2599,14 @@ footer .copyright {
   height: 11rem;
 }
 
+.h-96 {
+  height: 24rem;
+}
+
+.h-64 {
+  height: 16rem;
+}
+
 .w-full {
   width: 100%;
 }
@@ -3132,6 +3140,11 @@ footer .copyright {
 .bg-sky-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(224 242 254 / var(--tw-bg-opacity));
+}
+
+.bg-proprietary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 101 153 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-70 {
