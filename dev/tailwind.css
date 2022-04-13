@@ -63,6 +63,9 @@
 .page-title {
 	@apply mb-4 uppercase text-proprietary dark:text-proprietary-lighter tracking-wider lg:tracking-widest text-center sm:text-lg lg:text-xl sm:font-medium md:mb-8;
 }
+.page-subtitle {
+	@apply -mt-2 mb-2 md:-mt-4 md:mb-4;
+}
 
 /***** BUTTONS *****/
 .btn {
