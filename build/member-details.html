@@ -32,7 +32,7 @@
 	<link rel="stylesheet" href="fonts/Inter-3.19/inter.css">
 	<!-- <link rel="stylesheet" href="fonts/Poppins-4.003/poppins.css"> -->
 </head>
-<body x-data="{ showModal: false }" :class="{ 'overflow-y-hidden': showModal }">
+<body x-data="{ showModal: false }" :class="{ 'overflow-y-hidden sm:overflow-y-auto': showModal }">
 	<!-- NAVBAR -->
 	<nav class="navbar" x-data="{ showNavBar: false }">
 		<div>
@@ -126,17 +126,20 @@
 				</button>
 			</aside>
 
-			<section class="flex-grow max-w-prose my-8 sm:my-0 text-justify text-gray-800 dark:text-gray-300">
+			<section class="flex-grow w-full max-w-prose my-8 sm:my-0 text-gray-800 dark:text-gray-300">
 				<!-- Alternativtext auf jede Person anpassen: Name im alt="" dynamisch erzeugen -->
-				<img loading="lazy" src="https://fet.at/files/uploads/members/image/photo6043877786113913220.jpg.200x300_q85.jpg" alt="Portraitfoto von Alexander Stiedl" class="md:float-left w-36 mr-2 mb-2">
-				<div x-data="{ expandList: false }">
+				<div>
+					<img loading="lazy" src="https://fet.at/files/uploads/members/image/photo6043877786113913220.jpg.200x300_q85.jpg" alt="Portraitfoto von Alexander Stiedl" class="md:float-left w-36 mr-2 mb-2">
 					<h2 class="mb-2 text-lg text-gray-900 dark:text-gray-100 text-left">Alexander Stiedl Alexander Stiedl Alexander</h2>
 					<div class="mb-2">
 						Spitzname: alex <br>
 						Mailaccount: alex@fet.at <br>
 					</div>
 					<div class="mb-2">
-						Findet man in freier Laufbahn meist als "Michi" im Milex-Gespann. Floridsdorf ist sein Ghetto, Musikgeschmack definiert er als "Kraftklub, Kraftklub und noch mehr Kraftklub". Prüfungssituationen absolviert er frei nach der Herangehensweise "Ich hab mir das 2 Stunden angeschaut" - Ergebnis: positiv - "Ich sags euch, die müssen einen Fehler gemacht haben!". Man munkelt er finanziert öfters seinen Bierkonsum über Leihgaben - "Stimmt nicht!" - "Doch!" - "Ich geb euch allen 5 Euro, dann sind wir quitt!". Fazit: Glückspilz, provokant bis grantig, liebenswert und bei jedem Scheiß dabei.					</div>
+						Findet man in freier Laufbahn meist als "Michi" im Milex-Gespann. Floridsdorf ist sein Ghetto, Musikgeschmack definiert er als "Kraftklub, Kraftklub und noch mehr Kraftklub". Prüfungssituationen absolviert er frei nach der Herangehensweise "ich hab mir das 2 Stunden angeschaut" - Ergebnis: positiv - "Ich sags euch, die müssen einen Fehler gemacht haben!". Man munkelt er finanziert öfters seinen Bierkonsum über Leihgaben - "Stimmt nicht!" - "Doch!" - "Ich geb euch allen 5 Euro, dann sind wir quitt!". Fazit: Glückspilz, provokant bis grantig, liebenswert und bei jedem Scheiß dabei.
+					</div>
+				</div>
+				<div x-data="{ expandList: false }" class="clear-left">
 					<h3 class="group mt-4 mb-2 text-lg text-gray-900 dark:text-gray-100">Ehrenamtliche Tätigkeiten:
 						<button class="inline float-right text-sm px-2 py-1 text-gray-600 dark:text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-400 border rounded border-gray-500 dark:border-gray-500 md:border-gray-400 dark:md:border-gray-600 group-hover:border-gray-500 dark:group-hover:border-gray-500"
 							@click="expandList = ! expandList"
