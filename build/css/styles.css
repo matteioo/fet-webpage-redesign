@@ -2507,6 +2507,14 @@ footer .copyright {
   margin-top: -2rem;
 }
 
+.mr-0 {
+  margin-right: 0px;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
 .block {
   display: block;
 }
@@ -2619,6 +2627,12 @@ footer .copyright {
 
 .w-24 {
   width: 6rem;
+}
+
+.w-max {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 .max-w-prose {
