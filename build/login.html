@@ -45,15 +45,7 @@
 			>
 				<i class="fas fa-bars"></i>
 			</button>
-			<ul id="navBarContent" class="navbar-content sm:block"
-				x-show="showNavBar || $screen('sm')"
-				x-transition:enter="transition ease-out duration-300"
-				x-transition:enter-start="transform opacity-0"
-				x-transition:enter-end="transform opacity-100"
-				x-transition:leave="transition ease-in duration-150"
-				x-transition:leave-start="transform opacity-100"
-				x-transition:leave-end="transform opacity-0"
-			>
+			<ul id="navBarContent" class="navbar-content sm:block" x-show="showNavBar || $screen('sm')" x-collapse.min.0px>
 				<li><a href="posts.html">News</a></li>
 				<li><a href="members.html">Fachschaft</a></li>
 				<li><a href="fotos.html">Fotos</a></li>
@@ -110,7 +102,7 @@
 		<p class="copyright">© 2021 FET - Alle Rechte vorbehalten.</p>
 	</footer>
 	<div class="super-duper-awesome-signature" x-data="{ counter: 0 }">
-		<span :class="counter>=4 && 'text-purple-300'">Handcrafted </span><span :class="counter>=5 && 'text-green-400'">with </span><i class="fa-solid fa-heart" aria-label="love" @click="counter++" :class="counter>=2 ? 'text-proprietary hover:text-proprietary-dark' : 'text-red-600 hover:text-red-700'"></i><span :class="counter>=6 && 'text-pink-400'"> by</span><span class="font-normal" :class="counter>=3 && 'text-yellow-500'"> Matteo Duchscher</span>
+		<span :class="counter>=4 && 'text-purple-300'">Handcrafted </span><span :class="counter>=5 && 'text-green-400'">with </span><i class="fa-solid fa-heart" aria-label="love" @click="counter++" :class="counter>=2 ? 'text-proprietary hover:text-proprietary-dark' : 'text-red-600 hover:text-red-700'"></i><span :class="counter>=6 && 'text-pink-400'"> by</span><span class="font-normal" :class="counter>=3 && 'text-yellow-500'"> Max Mustermann</span>
 	</div>
 
 	<script defer src="js/vendor.js"></script>
