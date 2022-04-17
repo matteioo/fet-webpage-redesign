@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="de" class="dark">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>FET: Suchergebnisse</title>
+
+	<meta name="author" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="description" content="Die Fachschaft Elektrotechnik besteht aus ET Studierenden, die sich um die Anliegen der Studenten und Studentinnen kümmern.">
+	<meta property="og:image" content="#"> <!--og:... = Facebook metadata-->
+	<meta property="og:description" content="Die Fachschaft Elektrotechnik besteht aus ET Studierenden, die sich um die Anliegen der Studenten und Studentinnen kümmern.">
+	<meta property="og:title" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="twitter:title" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="theme-color" content="#006599">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=1.1">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=1.1">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=1.1">
+	<link rel="manifest" href="site.webmanifest?v=1.1">
+	<link rel="mask-icon" href="safari-pinned-tab.svg?v=1.1" color="#006599">
+	<link rel="shortcut icon" href="favicon.ico?v=1.1">
+	<meta name="apple-mobile-web-app-title" content="FET - Fachschaft Elektrotechnik">
+	<meta name="application-name" content="FET - Fachschaft Elektrotechnik">
+	<meta name="msapplication-TileColor" content="#2b5797">
+
+	<link rel="stylesheet" href="css/styles.css">
+	<!--<link rel="stylesheet" href="../css/tailwind.css">-->
+	<script src="https://kit.fontawesome.com/fb26f70535.js" crossorigin="anonymous"></script>
+	
+	<!-- Fonts -->
+	<link rel="stylesheet" href="fonts/Inter-3.19/inter.css">
+	<!-- <link rel="stylesheet" href="fonts/Poppins-4.003/poppins.css"> -->
+</head>
+<body x-data="{ showModal: false }" :class="{ 'overflow-y-hidden sm:overflow-y-auto': showModal }">
+	<!-- NAVBAR -->
+	<nav class="navbar" x-data="{ showNavBar: false }">
+		<div>
+			<a href="index.html">
+				<img src="img/FET-Logo-2014_64_light.svg" alt="FET-Logo" class="navbar-logo p-2 dark:hidden">
+				<img src="img/FET-Logo-2014_64_dark.svg" alt="FET-Logo" class="navbar-logo p-2 hidden dark:block">
+			</a>
+			<button class="navbar-toggle"
+				@click="showNavBar = ! showNavBar"
+			>
+				<i class="fas fa-bars"></i>
+			</button>
+			<ul id="navBarContent" class="navbar-content sm:block" x-show="showNavBar || $screen('sm')" x-collapse.min.0px>
+				<li class="active"><a href="posts.html">News</a></li>
+				<li><a href="members.html">Fachschaft</a></li>
+				<li><a href="fotos.html">Fotos</a></li>
+				<li><a href="blackboard.html">Blackboard</a></li>
+				<li><a href="login.html">Login</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- Main Content -->
+	<main class="container mx-auto w-full px-4 my-8 flex-1">
+		<h1 class="page-title">Suchergebnisse</h1>
+		<section>
+			<div class="w-full sticky py-4 md:py-8 -mt-4 md:-mt-8 top-0 z-20 bg-gray-100 dark:bg-gray-900">
+				<form class="flex gap-x-2 mx-auto max-w-prose">
+					<input type="text" class="block w-full rounded-md border-gray-300 dark:border-none shadow-sm focus:border-blue-200 focus:ring focus:ring-blue-200 dark:focus:ring-sky-700 focus:ring-opacity-50 placeholder:italic" autofocus placeholder="Frag mich etwas...">
+					<input type="submit" class="flex-grow-0 btn btn-primary" value="Suchen">
+				</form>
+			</div>
+			<div class="mx-auto max-w-prose flex flex-col gap-4">
+				<a class="flex gap-x-2 group" href="member-details.html">
+					<div class="flex-none rounded-full aspect-square bg-center bg-no-repeat bg-cover bg-gray-300 dark:bg-gray-700" style="background-image: url('https://fet.at/files/uploads/members/image/photo6043877786113913220.jpg.150x150_q85_crop.jpg');"></div>
+					<article class="flex-grow-0 sm:m-2">
+						<h2 class="line-clamp-1 hover:underline decoration-1 text-gray-800 dark:text-gray-200 font-medium">Alexander Stiedl </h2>
+						<ul class="text-gray-700 dark:text-gray-300 text-sm sm:text-base">
+							<li><i class="fa-fw fa-solid fa-user-tag text-gray-600 dark:text-gray-400 mr-1" title="Spitzname: "></i>Alex</li>
+							<li><i class="fa-fw fa-solid fa-envelope text-gray-600 dark:text-gray-400 mr-1" title="Mailaccount: "></i>alex@fet.at</li>
+						</ul>
+					</article>
+				</a>
+				<a class="flex gap-x-2 group" href="member-details.html">
+					<div class="flex-none rounded-full aspect-square bg-center bg-no-repeat bg-cover bg-gray-300 dark:bg-gray-700" style="background-image: url('https://fet.at/files/uploads/members/image/Clara.jpg.150x150_q85_crop.jpg');"></div>
+					<article class="flex-grow-0 sm:m-2">
+						<h2 class="line-clamp-1 hover:underline decoration-1 text-gray-800 dark:text-gray-200 font-medium">Clara Sophia Karin Hönlinger</h2>
+						<ul class="text-gray-700 dark:text-gray-300 text-sm sm:text-base">
+							<li><i class="fa-fw fa-solid fa-user-tag text-gray-600 dark:text-gray-400 mr-1" title="Spitzname: "></i>clara</li>
+							<li><i class="fa-fw fa-solid fa-envelope text-gray-600 dark:text-gray-400 mr-1" title="Mailaccount: "></i>clara@fet.at</li>
+						</ul>
+					</article>
+				</a>
+				<a class="flex gap-x-2 rounded group" href="fotos-details.html">
+					<div class="flex-none rounded sm:grid grid-cols-2 grid-rows-2 gap-2 hidden">
+						<div class="rounded aspect-square w-[3.5rem] bg-no-repeat bg-cover" style="background-image: url('https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_01h07m26s.JPG');"></div>
+						<div class="rounded aspect-square w-[3.5rem] bg-no-repeat bg-cover" style="background-image: url('https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_01h53m57s.JPG');"></div>
+						<div class="rounded aspect-square w-[3.5rem] bg-no-repeat bg-cover" style="background-image: url('https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_01h07m17s.JPG');"></div>
+						<div class="rounded aspect-square w-[3.5rem] relative">
+							<div class="rounded bg-no-repeat bg-cover brightness-[35%] w-full h-full" style="background-image: url('https://fet.at/fotos/thumb512/Halb%28e%29Zeit%202015/halbezeit_2015-03-14_03h18m08s.JPG');"></div>
+							<div class="text-gray-300 font-medium bg-transparent absolute w-full h-full top-0 right-0 text-center flex justify-center items-center">
+								+123
+							</div>
+						</div>
+					</div>
+					<article class="flex-grow-0 sm:m-2">
+						<h2 class="line-clamp-1 hover:underline decoration-1 text-gray-800 dark:text-gray-200 font-medium"><i class="fa-solid fa-images mr-2"></i>Halb(e)Zeit 2015</h2>
+						<p class="line-clamp-2 mt-0.5 text-gray-700 dark:text-gray-300 min-h-12">Findet man in freier Laufbahn meist als "Michi" im Milex-Gespann. Floridsdorf ist sein Ghetto, Musikgeschmack definiert er als "Kraftklub, Kraftklub und noch mehr Kraftklub". Prüfungssituationen absolviert er frei nach der Herangehensweise "ich hab mir das 2 Stunden angeschaut" - Ergebnis: positiv - "Ich sags euch, die müssen einen Fehler gemacht haben!". Man munkelt er finanziert öfters seinen Bierkonsum über Leihgaben - "Stimmt nicht!" - "Doch!" - "Ich geb euch allen 5 Euro, dann sind wir quitt!".</p>
+						<div class="mt-1">
+							<small class="text-sm sm:text-base text-gray-600 dark:text-gray-400 hidden sm:block">Ein Fotograf am 21. November 2022</small>
+							<small class="text-sm sm:text-base text-gray-600 dark:text-gray-400 sm:hidden">Ein Fotograf am 21. Nov. 2022</small>
+						</div>
+					</article>
+				</a>
+				<a class="flex gap-x-2 rounded group" href="post.html">
+					<div class="hidden sm:block flex-none rounded aspect-video w-48 bg-center bg-no-repeat bg-cover bg-scale-100 group-hover:bg-scale-110 transition-all ease-in-out duration-300 bg-gray-300 dark:bg-gray-700" style="background-image: url('img/article-cover-1.jpg');"></div>
+					<article class="flex-grow-0 sm:m-2">
+						<h2 class="line-clamp-1 hover:underline decoration-1 text-gray-800 dark:text-gray-200 font-medium"><i class="fa-solid fa-up-right-from-square mr-2"></i>Studie zu TISS im Rahmen der Lehrveranstaltung "Interface & Interaction Design"</h2>
+						<p class="line-clamp-2 mt-0.5 text-gray-700 dark:text-gray-300 min-h-12">Findet man in freier Laufbahn meist als "Michi" im Milex-Gespann. Floridsdorf ist sein Ghetto, Musikgeschmack definiert er als "Kraftklub, Kraftklub und noch mehr Kraftklub". Prüfungssituationen absolviert er frei nach der Herangehensweise "ich hab mir das 2 Stunden angeschaut" - Ergebnis: positiv - "Ich sags euch, die müssen einen Fehler gemacht haben!". Man munkelt er finanziert öfters seinen Bierkonsum über Leihgaben - "Stimmt nicht!" - "Doch!" - "Ich geb euch allen 5 Euro, dann sind wir quitt!".</p>
+						<div class="mt-1">
+							<small class="text-sm sm:text-base text-gray-600 dark:text-gray-400 hidden sm:block">Maximilian am 21. November 2022</small>
+							<small class="text-sm sm:text-base text-gray-600 dark:text-gray-400 sm:hidden">Maximilian am 21. Nov. 2022</small>
+						</div>
+					</article>
+				</a>
+				<a class="flex gap-x-2 rounded group" href="#">
+					<div class="hidden sm:block flex-none rounded aspect-video w-48 bg-center bg-no-repeat bg-cover bg-scale-100 group-hover:bg-scale-110 transition-all ease-in-out duration-300 bg-gray-300 dark:bg-gray-700" style="background-image: url('img/article-cover-2.jpg');"></div>
+					<article class="flex-grow-0 sm:m-2">
+						<h2 class="line-clamp-1 hover:underline decoration-1 text-gray-800 dark:text-gray-200 font-medium"><i class="fa-solid fa-up-right-from-square mr-2"></i>Neues Universitätsgesetz wird entschärft</h2>
+						<p class="line-clamp-2 mt-0.5 text-gray-700 dark:text-gray-300 min-h-12">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente dolorem aliquam tenetur culpa ipsam saepe vitae molestiae velit facere laborum, impedit deserunt voluptate minus architecto quasi cupiditate corporis! Minus, dignissimos!</p>
+						<div class="mt-1">
+							<small class="text-sm sm:text-base text-gray-600 dark:text-gray-400 hidden sm:block">Maximilian am 21. November 2022</small>
+							<small class="text-sm sm:text-base text-gray-600 dark:text-gray-400 sm:hidden">Maximilian am 21. Nov. 2022</small>
+						</div>
+					</article>
+				</a>
+				<a class="flex gap-x-2 rounded group" href="#">
+					<div class="hidden sm:block flex-none rounded aspect-video w-48 bg-center bg-no-repeat bg-cover bg-scale-100 group-hover:bg-scale-110 transition-all ease-in-out duration-300 bg-gray-300 dark:bg-gray-700" style="background-image: url('img/article-cover-3.jpg');"></div>
+					<article class="flex-grow-0 sm:m-2">
+						<h2 class="line-clamp-1 hover:underline decoration-1 text-gray-800 dark:text-gray-200 font-medium"><i class="fa-solid fa-up-right-from-square mr-2"></i>ÖH Wahl - Tag 1</h2>
+						<p class="line-clamp-2 mt-0.5 text-gray-700 dark:text-gray-300 min-h-12">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo numquam nihil vitae. Porro, vitae illo delectus sunt expedita iusto aliquam similique adipisci recusandae molestiae, quasi vel consectetur. Velit, accusamus numquam.</p>
+						<div class="mt-1">
+							<small class="text-sm sm:text-base text-gray-600 dark:text-gray-400 hidden sm:block">Maximilian am 21. November 2022</small>
+							<small class="text-sm sm:text-base text-gray-600 dark:text-gray-400 sm:hidden">Maximilian am 21. Nov. 2022</small>
+						</div>
+					</article>
+				</a>
+				<a class="flex gap-x-2 rounded group" href="#">
+					<div class="hidden sm:block flex-none rounded aspect-video w-48 bg-center bg-no-repeat bg-cover bg-scale-100 group-hover:bg-scale-110 transition-all ease-in-out duration-300 bg-gray-300 dark:bg-gray-700" style="background-image: url('img/article-cover-4.jpg');"></div>
+					<article class="flex-grow-0 my-2 sm:m-2">
+						<h2 class="line-clamp-1 hover:underline decoration-1 text-gray-800 dark:text-gray-200 font-medium"><i class="fa-solid fa-up-right-from-square mr-2"></i>ÖH Wahl - Tag 2</h2>
+						<p class="line-clamp-2 mt-0.5 text-gray-700 dark:text-gray-300 min-h-12">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo numquam nihil vitae. Porro, vitae illo delectus sunt expedita iusto aliquam similique adipisci recusandae molestiae, quasi vel consectetur. Velit, accusamus numquam.</p>
+						<div class="mt-1">
+							<small class="text-sm sm:text-base text-gray-600 dark:text-gray-400 hidden sm:block">Maximilian am 21. November 2022</small>
+							<small class="text-sm sm:text-base text-gray-600 dark:text-gray-400 sm:hidden">Maximilian am 21. Nov. 2022</small>
+						</div>
+					</article>
+				</a>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<ul class="icon-list">
+			<li>
+				<a href="https://facebook.fet.at/"><i class="fab fa-facebook"></i></a>
+			</li>
+			<li>
+				<a href="https://instagram.fet.at/"><i class="fab fa-instagram"></i></a>
+			</li>
+			<li>
+				<a href="https://discord.fet.at/"><i class="fab fa-discord"></i></a>
+			</li>
+			<li>
+				<a href="https://telegram.fet.at/"><i class="fab fa-telegram"></i></a>
+			</li>
+			<li>
+				<a href="mailto:service@fet.at"><i class="fas fa-envelope"></i></a>
+			</li>
+		</ul>
+		<div class="legal">
+			<a href="impressum.html" class="text-center text-sm sm:text-base">Impressum</a>
+		</div>
+		<hr class="legal-divider">
+		<p class="copyright">© 2021 FET - Alle Rechte vorbehalten.</p>
+	</footer>
+	<div class="super-duper-awesome-signature" x-data="{ counter: 0 }">
+		<span :class="counter>=4 && 'text-purple-300'">Handcrafted </span><span :class="counter>=5 && 'text-green-400'">with </span><i class="fa-solid fa-heart" aria-label="love" @click="counter++" :class="counter>=2 ? 'text-proprietary hover:text-proprietary-dark' : 'text-red-600 hover:text-red-700'"></i><span :class="counter>=6 && 'text-pink-400'"> by</span><span class="font-normal" :class="counter>=3 && 'text-yellow-500'"> Max Mustermann</span>
+	</div>
+
+	<script defer src="js/vendor.js"></script>
+	<script defer src="js/scripts.js"></script>
+</body>
+</html>
