@@ -24,6 +24,14 @@
 	<meta name="application-name" content="FET - Fachschaft Elektrotechnik">
 	<meta name="msapplication-TileColor" content="#2b5797">
 
+	<script>
+		if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+			document.documentElement.classList.add('dark')
+		} else {
+			document.documentElement.classList.remove('dark')
+		}
+	</script>
+
 	<link rel="stylesheet" href="css/styles.css">
 	<!--<link rel="stylesheet" href="css/tailwind.css">-->
 	<script src="https://kit.fontawesome.com/fb26f70535.js" crossorigin="anonymous"></script>
@@ -107,6 +115,12 @@
 			<h2 class="alert-title">Achtung:</h2>
 			<div class="alert-body">Diese Seite ist noch unvollständig! Dargestellte Informationen können nur beispielhaft implementiert worden sein bzw. noch Fehler enthalten!</div>
 		</div>
+
+		<button class="btn btn-primary" onclick="localStorage.theme = 'light'">Light</button>
+		<button class="btn btn-primary" onclick="localStorage.theme = 'dark'">Dark</button>
+		<button class="btn btn-primary" onclick="localStorage.removeItem('theme')">Default</button>
+
+		<div x-text="darkTheme" class="w-full h-8 bg-red-300"></div>
 
 		<section class="sm:hidden">
 			<h2 class="section-title section-title-margins">Events</h2>
