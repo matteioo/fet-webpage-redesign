@@ -58,7 +58,7 @@
 	<!-- Main Content -->
 	<main class="container mx-auto w-full px-4 mt-8 flex-1">
 		<h1 class="page-title">Über uns</h1>
-		<div class="sm:flex sm:flex-row justify-center my-8">
+		<div class="sm:flex sm:flex-row justify-center my-8 static">
 			<aside class="flex-none max-w-min sm:mr-8">
 				<div class="fixed sm:sticky top-0 sm:top-4 left-0 w-full h-full sm:h-auto bg-black sm:bg-transparent bg-opacity-70 flex sm:block items-center justify-center"
 					x-show="showModal || $screen('sm')"
@@ -104,32 +104,23 @@
 						</ul>
 					</div>
 				</div>
-				<button class="z-10 trigger fixed bottom-4 right-4 bg-proprietary-darker dark:bg-sky-500 text-blue-50 dark:text-sky-900 shadow-lg text-2xl rounded sm:hidden" 
-					@click="showModal = true"
-					x-show="!showModal"
-					x-transition:enter="transition duration-100 ease-in"
-					x-transition:enter-start="opacity-0"
-					x-transition:enter-end="opacity-100"
-					x-transition:leave="transition duration-100 ease-out"
-					x-transition:leave-start="opacity-100"
-					x-transition:leave-end="opacity-0"
-				>
-				<i class="fa-solid fa-bars px-2 py-1"></i>
-				</button>
 			</aside>
 
 			<section class="flex-grow max-w-prose my-8 sm:my-0">
 				<div class="db-page-content">
 					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis eos beatae repellendus ex numquam velit eius, iusto modi ipsa consequuntur non dicta quia sint quasi pariatur magni quaerat error illum?
+					</p>
+					<!-- <p>
 						Die Fachschaft Elektrotechnik (kurz: FET), ist die offizielle Vertretung aller Studierenden auf der Fakultät für Elektrotechnik und Informationstechnik. Ehrenamtliche engagierte Studierende unterstützen dich in Anliegen und Fragen zum und rund ums Studium. Wir vertreten eure Interessen in den offiziellen Gremien der Universität und arbeiten an Studienplänen mit. Außerdem bieten wir ein Rahmenprogramm zum Studium in Form von Veranstaltungen und Festln. Wir freuen uns über Feedback und Anregungen, insbesondere von jenen, die gleich Nägel mit Köpfen machen und unser Team verstärken wollen oder ihre Themen und Meinungen in eine unserer Sitzungen einbringen möchten.
 					</p>
 					<p>
 						Solltest du dich für ein Elektrotechnik Studium interessieren findest du hier einige Informationen. Wir würden uns freuen, dich auf der TU Wien willkommen zu heißen.
-					</p>
+					</p> -->
 				</div>
-				<div>
+				<!-- <div> -->
 					<!-- Name im alt=""-text der Portraitfotos dynamisch erzeugen! -->
-					<article class="members-article">
+					<!-- <article class="members-article">
 						<div class="members-listing">
 							<figure>
 								<a href="member-details.html">
@@ -229,9 +220,21 @@
 							</figure>
 						</div>
 					</article>
-				</div>
+				</div> -->
 			</section>
 		</div>
+		<button class="z-10 trigger fixed bottom-4 right-4 bg-proprietary-darker dark:bg-sky-500 text-blue-50 dark:text-sky-900 shadow-lg text-2xl rounded sm:hidden" 
+			@click="showModal = true"
+			x-show="!showModal"
+			x-transition:enter="transition duration-100 ease-in"
+			x-transition:enter-start="opacity-0"
+			x-transition:enter-end="opacity-100"
+			x-transition:leave="transition duration-100 ease-out"
+			x-transition:leave-start="opacity-100"
+			x-transition:leave-end="opacity-0"
+		>
+			<i class="fa-solid fa-bars px-2 py-1"></i>
+		</button>
 	</main>
 
 	<footer>
