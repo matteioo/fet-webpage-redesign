@@ -27,6 +27,7 @@ module.exports = {
 				'cover-image': "url('../img/cover-image.jpeg')",
 			}),
 			minHeight: {
+				'12': '3rem/* 48px */',
 				'80': '20rem/* 320px */',
 			}
 		},

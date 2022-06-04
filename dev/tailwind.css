@@ -28,26 +28,26 @@
 @layer components {
 
 /***** NAVBAR *****/
-.navbar {
+[class^=navBar] {
 	@apply w-full bg-white dark:bg-gray-800 shadow-sm;
 }
-.navbar > div {
-	@apply w-full flex flex-col sm:flex-row items-center sm:justify-between container px-4 mx-auto flex-none;
+[class^=navBar] > div {
+	@apply w-full flex flex-col items-center container px-4 mx-auto flex-none;
 }
 .navbar-logo {
 	@apply h-16 flex-none;
 }
 .navbar-toggle {
-	@apply sm:hidden absolute right-4 sm:right-0 top-5 text-proprietary dark:text-proprietary-lighter text-2xl;
+	@apply absolute top-5 right-4 text-proprietary dark:text-proprietary-lighter text-2xl;
 }
 .navbar-content {
-	@apply w-full mb-2 sm:mb-0 sm:w-auto text-proprietary dark:text-proprietary-lighter md:text-lg self-start sm:self-center;
+	@apply w-full mb-2 text-proprietary dark:text-proprietary-lighter self-start;
 }
 .navbar-content > li {
-	@apply sm:inline-block rounded;
+	@apply rounded;
 }
 .navbar-content hr {
-	@apply sm:hidden my-2;
+	@apply my-2;
 }
 .navbar-content li > a {
 	@apply block w-full h-full py-2 mx-1 px-2;
@@ -57,6 +57,102 @@
 }
 .navbar-content li.active a {
 	@apply cursor-default;
+}
+.navbar-subcontent {
+	@apply inline-block w-full rounded relative;
+}
+.navbar-subcontentButton {
+	@apply items-center divide-x divide-blue-200 dark:divide-proprietary-light bg-proprietary-dark text-blue-50 rounded;
+}
+.navbar-subcontentButton a {
+	@apply hidden;
+}
+.navbar-subcontentList {
+	@apply z-20 top-9 right-0 bg-white dark:bg-transparent w-full;
+}
+
+.navBar-sm > div {
+	@apply sm:flex-row sm:justify-between;
+}
+.navBar-sm .navbar-toggle {
+	@apply sm:hidden sm:right-0;
+}
+.navBar-sm .navbar-content {
+	@apply sm:mb-0 sm:w-auto sm:text-lg sm:self-center sm:block;
+}
+.navBar-sm .navbar-content > hr {
+	@apply sm:hidden;
+}
+.navBar-sm .navbar-content > li {
+	@apply sm:inline-block;
+}
+.navBar-sm .navbar-subcontent {
+	@apply w-auto;
+}
+.navBar-sm .navbar-subcontentButton {
+	@apply sm:inline-flex;
+}
+.navBar-sm .navbar-subcontentButton a {
+	@apply sm:block px-2 py-1 hover:bg-proprietary-dark dark:hover:bg-proprietary-darker active:bg-proprietary-dark dark:active:bg-proprietary-darker;
+}
+.navBar-sm .navbar-subcontentList {
+	@apply sm:block sm:absolute dark:sm:bg-gray-700 sm:shadow-md sm:rounded dark:sm:text-proprietary-lightest;
+}
+
+.navBar-md > div {
+	@apply md:flex-row md:justify-between;
+}
+.navBar-md .navbar-toggle {
+	@apply md:hidden md:right-0;
+}
+.navBar-md .navbar-content {
+	@apply md:mb-0 md:w-auto md:text-lg md:self-center md:block;
+}
+.navBar-md .navbar-content > hr {
+	@apply md:hidden;
+}
+.navBar-md .navbar-content > li {
+	@apply md:inline-block;
+}
+.navBar-md .navbar-subcontent {
+	@apply w-auto;
+}
+.navBar-md .navbar-subcontentButton {
+	@apply md:inline-flex;
+}
+.navBar-md .navbar-subcontentButton a {
+	@apply md:block px-2 py-1 hover:bg-proprietary-dark dark:hover:bg-proprietary-darker active:bg-proprietary-dark dark:active:bg-proprietary-darker;
+}
+.navBar-md .navbar-subcontentList {
+	@apply md:block md:absolute dark:md:bg-gray-700 md:shadow-md md:rounded dark:md:text-proprietary-lightest;
+}
+
+.navBar-lg > div {
+	@apply lg:flex-row lg:justify-between;
+}
+.navBar-lg .navbar-toggle {
+	@apply lg:hidden lg:right-0;
+}
+.navBar-lg .navbar-content {
+	@apply lg:mb-0 lg:w-auto lg:text-lg lg:self-center lg:block;
+}
+.navBar-lg .navbar-content > hr {
+	@apply lg:hidden;
+}
+.navBar-lg .navbar-content > li {
+	@apply lg:inline-block;
+}
+.navBar-lg .navbar-subcontent {
+	@apply w-auto;
+}
+.navBar-lg .navbar-subcontentButton {
+	@apply lg:inline-flex;
+}
+.navBar-lg .navbar-subcontentButton a {
+	@apply lg:block px-2 py-1 hover:bg-proprietary-dark dark:hover:bg-proprietary-darker active:bg-proprietary-dark dark:active:bg-proprietary-darker;
+}
+.navBar-lg .navbar-subcontentList {
+	@apply lg:block lg:absolute dark:lg:bg-gray-700 lg:shadow-md lg:rounded dark:lg:text-proprietary-lightest;
 }
 
 /***** PAGE-TITLE *****/

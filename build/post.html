@@ -39,7 +39,7 @@
 </head>
 <body>
 	<!-- NAVBAR -->
-	<nav class="navbar" x-data="{ showNavBar: false }">
+	<nav class="navBar-md" x-data="{ showNavBar: false }">
 		<div>
 			<a href="index.html">
 				<img src="img/FET-Logo-2014_64_light.svg" alt="FET-Logo" class="navbar-logo p-2 dark:hidden">
@@ -50,12 +50,12 @@
 			>
 				<i class="fas fa-bars"></i>
 			</button>
-			<ul id="navBarContent" class="navbar-content sm:block" x-show="showNavBar || $screen('sm')" x-collapse.min.0px>
+			<ul id="navBarContent" class="navbar-content" x-show="showNavBar || $screen('md')" x-collapse.min.0px>
 				<li><a href="posts.html">News</a></li>
 				<li><a href="members.html">Fachschaft</a></li>
 				<li><a href="fotos.html">Fotos</a></li>
 				<li><a href="blackboard.html">Blackboard</a></li>
-				<li><a href="login.html">Login</a></li>
+				<li><a href="kontakt.html">Kontakt</a></li>
 			</ul>
 		</div>
 	</nav>
