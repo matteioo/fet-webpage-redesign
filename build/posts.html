@@ -43,7 +43,7 @@
 			<button class="navbar-toggle"
 				@click="showNavBar = ! showNavBar"
 			>
-				<i class="fas fa-bars"></i>
+				<i class="fa-solid fa-bars"></i>
 			</button>
 			<ul id="navBarContent" class="navbar-content" x-show="showNavBar || $screen('md')" x-collapse.min.0px>
 				<li><a href="posts.html">News</a></li>
@@ -82,7 +82,7 @@
 						<div class="flex justify-between items-center mb-2">
 							<h2 class="text-gray-800 dark:text-gray-100 sm:section-title sm:section-title-margins sm:w-full">
 								<span class="mr-1 text-gray-400 sm:hidden">
-									<i class="fas fa-filter"></i>
+									<i class="fa-solid fa-filter"></i>
 								</span>
 								Auswahl einschränken
 							</h2>
@@ -92,7 +92,7 @@
 						</div>
 						<form action="" method="POST" class="grid grid-cols-1 gap-2 sm:gap-4" x-data="{ selectedYear: '' }">
 							<div class="alert alert-danger">
-								<i class="alert-icon fas fa-exclamation-circle"></i>
+								<i class="alert-icon fa-solid fa-exclamation-circle"></i>
 								<h2 class="alert-title">Fehler:</h2>
 								<div class="alert-body">Es kann nicht <i>nur</i> nach einem Monat gesucht werden.</div>
 							</div>
@@ -159,7 +159,7 @@
 					x-transition:leave-start="opacity-100"
 					x-transition:leave-end="opacity-0"
 				>
-					<i class="fas fa-filter p-2"></i>
+					<i class="fa-solid fa-filter p-2"></i>
 				</button>
 			</aside>
 
@@ -187,7 +187,7 @@
 							</ul>
 							<div>
 								<a href="post.html"><h3 class="text-gray-50">Neues Universitätsgesetz wird entschärft</h3></a>
-								<div class="text-gray-200"><i class="fas fa-clock"></i> 12.04.2021</div>
+								<div class="text-gray-200"><i class="fa-solid fa-clock"></i> 12.04.2021</div>
 							</div>
 						</div>
 					</div>
@@ -202,7 +202,7 @@
 							</ul>
 							<div>
 								<a href="post.html"><h3 class="text-gray-50">ÖH Wahl - Tag 2</h3></a>
-								<div class="text-gray-200"><i class="fas fa-clock"></i> 12.09.2021</div>
+								<div class="text-gray-200"><i class="fa-solid fa-clock"></i> 12.09.2021</div>
 							</div>
 						</div>
 					</div>
@@ -217,7 +217,7 @@
 							</ul>
 							<div>
 								<a href="post.html"><h3 class="text-gray-50">ÖH Wahl - Tag 3</h3></a>
-								<div class="text-gray-200"><i class="fas fa-clock"></i> 23.09.2021</div>
+								<div class="text-gray-200"><i class="fa-solid fa-clock"></i> 23.09.2021</div>
 							</div>
 						</div>
 					</div>
@@ -229,19 +229,19 @@
 	<footer>
 		<ul class="icon-list">
 			<li>
-				<a href="https://facebook.fet.at/"><i class="fab fa-facebook"></i></a>
+				<a href="https://facebook.fet.at/"><i class="fa-brands fa-facebook"></i></a>
 			</li>
 			<li>
-				<a href="https://instagram.fet.at/"><i class="fab fa-instagram"></i></a>
+				<a href="https://instagram.fet.at/"><i class="fa-brands fa-instagram"></i></a>
 			</li>
 			<li>
-				<a href="https://discord.fet.at/"><i class="fab fa-discord"></i></a>
+				<a href="https://discord.fet.at/"><i class="fa-brands fa-discord"></i></a>
 			</li>
 			<li>
-				<a href="https://telegram.fet.at/"><i class="fab fa-telegram"></i></a>
+				<a href="https://telegram.fet.at/"><i class="fa-brands fa-telegram"></i></a>
 			</li>
 			<li>
-				<a href="mailto:service@fet.at"><i class="fas fa-envelope"></i></a>
+				<a href="mailto:service@fet.at"><i class="fa-solid fa-envelope"></i></a>
 			</li>
 		</ul>
 		<div class="legal">
