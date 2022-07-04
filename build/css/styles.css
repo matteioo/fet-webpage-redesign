@@ -2695,14 +2695,6 @@ footer .copyright {
   margin: -1rem;
 }
 
-.-m-3 {
-  margin: -0.75rem;
-}
-
-.-m-1 {
-  margin: -0.25rem;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -2888,6 +2880,10 @@ footer .copyright {
   height: 0.75rem;
 }
 
+.h-8 {
+  height: 2rem;
+}
+
 .h-7 {
   height: 1.75rem;
 }
@@ -2896,24 +2892,12 @@ footer .copyright {
   height: 9rem;
 }
 
-.h-44 {
-  height: 11rem;
-}
-
-.h-6 {
-  height: 1.5rem;
-}
-
-.h-12 {
-  height: 3rem;
-}
-
 .h-16 {
   height: 4rem;
 }
 
-.h-8 {
-  height: 2rem;
+.h-44 {
+  height: 11rem;
 }
 
 .min-h-screen {
@@ -2946,6 +2930,10 @@ footer .copyright {
   width: 0.75rem;
 }
 
+.w-8 {
+  width: 2rem;
+}
+
 .w-7 {
   width: 1.75rem;
 }
@@ -2972,18 +2960,6 @@ footer .copyright {
 
 .w-48 {
   width: 12rem;
-}
-
-.w-6 {
-  width: 1.5rem;
-}
-
-.w-8 {
-  width: 2rem;
-}
-
-.w-10 {
-  width: 2.5rem;
 }
 
 .max-w-prose {
@@ -3669,11 +3645,6 @@ footer .copyright {
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
-}
-
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
 }
 
 .text-base {

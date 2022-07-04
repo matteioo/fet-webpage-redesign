@@ -7,6 +7,7 @@
     "dev": "vite",
     "build-old": "tailwind build -i dev/tailwind.css -o build/css/styles.css",
     "build": "npx tailwindcss -i dev/tailwind.css -o build/css/styles.css --watch",
+	"build-once": "npx tailwindcss -i dev/tailwind.css -o build/css/styles.css",
     "bundle": "esbuild dev/bundle.jsx --bundle --platform=browser --outfile=build/js/vendor.js"
   },
   "repository": {
