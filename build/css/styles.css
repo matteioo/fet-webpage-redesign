@@ -2700,6 +2700,10 @@ footer .copyright {
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
+.visible {
+  visibility: visible;
+}
+
 .static {
   position: static;
 }
