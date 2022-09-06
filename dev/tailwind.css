@@ -52,7 +52,8 @@
 .navbar-content hr {
 	@apply my-2;
 }
-.navbar-content li > a {
+.navbar-content li > a,
+.navbar-content li > button {
 	@apply block w-full h-full py-2 mx-1 px-2;
 }
 .navbar-content li.active {
