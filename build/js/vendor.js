@@ -574,6 +574,13 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       throw error2;
     }, 0);
   }
+  var shouldAutoEvaluateFunctions = true;
+  function dontAutoEvaluateFunctions(callback) {
+    let cache = shouldAutoEvaluateFunctions;
+    shouldAutoEvaluateFunctions = false;
+    callback();
+    shouldAutoEvaluateFunctions = cache;
+  }
   function evaluate(el, expression, extras = {}) {
     let result;
     evaluateLater(el, expression)((value) => result = value, extras);
@@ -644,7 +651,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     };
   }
   function runIfTypeOfFunction(receiver, value, scope2, params, el) {
-    if (typeof value === "function") {
+    if (shouldAutoEvaluateFunctions && typeof value === "function") {
       let result = value.apply(scope2, params);
       if (result instanceof Promise) {
         result.then((i) => runIfTypeOfFunction(receiver, i, scope2, params)).catch((error2) => handleError(error2, el, value));
@@ -667,8 +674,23 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     directiveHandlers[name] = callback;
   }
   function directives(el, attributes, originalAttributeOverride) {
+    attributes = Array.from(attributes);
+    if (el._x_virtualDirectives) {
+      let vAttributes = Object.entries(el._x_virtualDirectives).map(([name, value]) => ({ name, value }));
+      let staticAttributes = attributesOnly(vAttributes);
+      vAttributes = vAttributes.map((attribute) => {
+        if (staticAttributes.find((attr) => attr.name === attribute.name)) {
+          return {
+            name: `x-bind:${attribute.name}`,
+            value: `"${attribute.value}"`
+          };
+        }
+        return attribute;
+      });
+      attributes = attributes.concat(vAttributes);
+    }
     let transformedAttributeMap = {};
-    let directives2 = Array.from(attributes).map(toTransformedAttributes((newName, oldName) => transformedAttributeMap[newName] = oldName)).filter(outNonAlpineAttributes).map(toParsedDirectives(transformedAttributeMap, originalAttributeOverride)).sort(byPriority);
+    let directives2 = attributes.map(toTransformedAttributes((newName, oldName) => transformedAttributeMap[newName] = oldName)).filter(outNonAlpineAttributes).map(toParsedDirectives(transformedAttributeMap, originalAttributeOverride)).sort(byPriority);
     return directives2.map((directive2) => {
       return getDirectiveHandler(el, directive2);
     });
@@ -776,14 +798,14 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     "bind",
     "init",
     "for",
+    "mask",
     "model",
     "modelable",
     "transition",
     "show",
     "if",
     DEFAULT,
-    "teleport",
-    "element"
+    "teleport"
   ];
   function byPriority(a, b) {
     let typeA = directiveOrder.indexOf(a.type) === -1 ? DEFAULT : a.type;
@@ -800,11 +822,17 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   }
   var tickStack = [];
   var isHolding = false;
-  function nextTick(callback) {
-    tickStack.push(callback);
+  function nextTick(callback = () => {
+  }) {
     queueMicrotask(() => {
       isHolding || setTimeout(() => {
         releaseNextTicks();
+      });
+    });
+    return new Promise((res) => {
+      tickStack.push(() => {
+        callback();
+        res();
       });
     });
   }
@@ -1104,9 +1132,8 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       };
   }
   window.Element.prototype._x_toggleAndCascadeWithTransitions = function(el, value, show, hide) {
-    let clickAwayCompatibleShow = () => {
-      document.visibilityState === "visible" ? requestAnimationFrame(show) : setTimeout(show);
-    };
+    const nextTick2 = document.visibilityState === "visible" ? requestAnimationFrame : setTimeout;
+    let clickAwayCompatibleShow = () => nextTick2(show);
     if (value) {
       if (el._x_transition && (el._x_transition.enter || el._x_transition.leave)) {
         el._x_transition.enter && (Object.entries(el._x_transition.enter.during).length || Object.entries(el._x_transition.enter.start).length || Object.entries(el._x_transition.enter.end).length) ? el._x_transition.in(show) : clickAwayCompatibleShow();
@@ -1127,7 +1154,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
           closest._x_hideChildren = [];
         closest._x_hideChildren.push(el);
       } else {
-        queueMicrotask(() => {
+        nextTick2(() => {
           let hideAfterChildren = (el2) => {
             let carry = Promise.all([
               el2._x_hidePromise,
@@ -1477,8 +1504,13 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     return stores;
   }
   var binds = {};
-  function bind2(name, object) {
-    binds[name] = typeof object !== "function" ? () => object : object;
+  function bind2(name, bindings) {
+    let getBindings = typeof bindings !== "function" ? () => bindings : bindings;
+    if (name instanceof Element) {
+      applyBindingsObject(name, getBindings());
+    } else {
+      binds[name] = getBindings;
+    }
   }
   function injectBindingProviders(obj) {
     Object.entries(binds).forEach(([name, callback]) => {
@@ -1491,6 +1523,26 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       });
     });
     return obj;
+  }
+  function applyBindingsObject(el, obj, original) {
+    let cleanupRunners = [];
+    while (cleanupRunners.length)
+      cleanupRunners.pop()();
+    let attributes = Object.entries(obj).map(([name, value]) => ({ name, value }));
+    let staticAttributes = attributesOnly(attributes);
+    attributes = attributes.map((attribute) => {
+      if (staticAttributes.find((attr) => attr.name === attribute.name)) {
+        return {
+          name: `x-bind:${attribute.name}`,
+          value: `"${attribute.value}"`
+        };
+      }
+      return attribute;
+    });
+    directives(el, attributes, original).map((handle) => {
+      cleanupRunners.push(handle.runCleanups);
+      handle();
+    });
   }
   var datas = {};
   function data(name, callback) {
@@ -1522,8 +1574,9 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     get raw() {
       return raw;
     },
-    version: "3.9.6",
+    version: "3.10.3",
     flushAndStopDeferringMutations,
+    dontAutoEvaluateFunctions,
     disableEffectScheduling,
     setReactivityEngine,
     closestDataStack,
@@ -2302,7 +2355,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   warnMissingPluginMagic("Focus", "focus", "focus");
   warnMissingPluginMagic("Persist", "persist", "persist");
   function warnMissingPluginMagic(name, magicName, slug) {
-    magic(magicName, (el) => warn(`You can't use [$${directiveName}] without first installing the "${name}" plugin here: https://alpine.dev/plugins/${slug}`, el));
+    magic(magicName, (el) => warn(`You can't use [$${directiveName}] without first installing the "${name}" plugin here: https://alpinejs.dev/plugins/${slug}`, el));
   }
   directive("modelable", (el, { expression }, { effect: effect3, evaluateLater: evaluateLater2 }) => {
     let func = evaluateLater2(expression);
@@ -2622,7 +2675,13 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   mapAttributes(startingWith(":", into(prefix("bind:"))));
   directive("bind", (el, { value, modifiers, expression, original }, { effect: effect3 }) => {
     if (!value) {
-      return applyBindingsObject(el, expression, original, effect3);
+      let bindingProviders = {};
+      injectBindingProviders(bindingProviders);
+      let getBindings = evaluateLater(el, expression);
+      getBindings((bindings) => {
+        applyBindingsObject(el, bindings, original);
+      }, { scope: bindingProviders });
+      return;
     }
     if (value === "key")
       return storeKeyForXFor(el, expression);
@@ -2633,31 +2692,6 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       mutateDom(() => bind(el, value, result, modifiers));
     }));
   });
-  function applyBindingsObject(el, expression, original, effect3) {
-    let bindingProviders = {};
-    injectBindingProviders(bindingProviders);
-    let getBindings = evaluateLater(el, expression);
-    let cleanupRunners = [];
-    while (cleanupRunners.length)
-      cleanupRunners.pop()();
-    getBindings((bindings) => {
-      let attributes = Object.entries(bindings).map(([name, value]) => ({ name, value }));
-      let staticAttributes = attributesOnly(attributes);
-      attributes = attributes.map((attribute) => {
-        if (staticAttributes.find((attr) => attr.name === attribute.name)) {
-          return {
-            name: `x-bind:${attribute.name}`,
-            value: `"${attribute.value}"`
-          };
-        }
-        return attribute;
-      });
-      directives(el, attributes, original).map((handle) => {
-        cleanupRunners.push(handle.runCleanups);
-        handle();
-      });
-    }, { scope: bindingProviders });
-  }
   function storeKeyForXFor(el, expression) {
     el._x_keyExpression = expression;
   }
@@ -2685,7 +2719,9 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     let evaluate2 = evaluateLater(el, expression);
     if (!el._x_doHide)
       el._x_doHide = () => {
-        mutateDom(() => el.style.display = "none");
+        mutateDom(() => {
+          el.style.setProperty("display", "none", modifiers.includes("important") ? "important" : void 0);
+        });
       };
     if (!el._x_doShow)
       el._x_doShow = () => {
@@ -2953,8 +2989,9 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   warnMissingPluginDirective("Collapse", "collapse", "collapse");
   warnMissingPluginDirective("Intersect", "intersect", "intersect");
   warnMissingPluginDirective("Focus", "trap", "focus");
+  warnMissingPluginDirective("Mask", "mask", "mask");
   function warnMissingPluginDirective(name, directiveName2, slug) {
-    directive(directiveName2, (el) => warn(`You can't use [x-${directiveName2}] without first installing the "${name}" plugin here: https://alpine.dev/plugins/${slug}`, el));
+    directive(directiveName2, (el) => warn(`You can't use [x-${directiveName2}] without first installing the "${name}" plugin here: https://alpinejs.dev/plugins/${slug}`, el));
   }
   alpine_default.setEvaluator(normalEvaluator);
   alpine_default.setReactivityEngine({ reactive: reactive2, effect: effect2, release: stop, raw: toRaw });
