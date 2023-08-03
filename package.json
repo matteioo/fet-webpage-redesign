@@ -7,7 +7,7 @@
     "dev": "vite",
     "build-old": "tailwind build -i dev/tailwind.css -o build/css/styles.css",
     "build": "npx tailwindcss -i dev/tailwind.css -o build/css/styles.css --watch",
-	"build-once": "npx tailwindcss -i dev/tailwind.css -o build/css/styles.css",
+    "build-once": "npx tailwindcss -i dev/tailwind.css -o build/css/styles.css",
     "bundle": "esbuild dev/bundle.jsx --bundle --platform=browser --outfile=build/js/vendor.js"
   },
   "repository": {
@@ -32,10 +32,13 @@
   "dependencies": {
     "@alpine-collective/toolkit-screen": "^1.0.0",
     "@alpinejs/collapse": "^3.9.6",
+    "@alpinejs/csp": "file:alpine/packages/csp/alpinejs-csp-3.0.0-alpha.0.tgz",
     "@alpinejs/persist": "^3.8.1",
+    "@thibaudcolas/alpinejs-csp-build": "^0.0.0-experimental-d49a0b0-20220128",
     "@three11/scrollspy": "^1.0.0",
     "alpinejs": "^3.4.2",
     "esbuild": "^0.13.7",
+    "git": "github:alpinejs/alpine#main",
     "prismjs": "^1.27.0"
   }
 }
