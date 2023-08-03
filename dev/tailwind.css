@@ -272,27 +272,7 @@ ul.sideBarNav > ul > li.active > a {
   background-size: 100%;
 }
 .article-cover-desc {
-	@apply w-full h-full rounded;
-
-	background-image: linear-gradient(
-			to top,
-			hsl(217, 33%, 17%) 0%,
-			hsla(217, 33%, 17%, 0.987) 4.8%,
-			hsla(217, 33%, 17%, 0.951) 10.1%,
-			hsla(217, 33%, 17%, 0.896) 15.7%,
-			hsla(217, 33%, 17%, 0.825) 21.6%,
-			hsla(217, 33%, 17%, 0.741) 27.9%,
-			hsla(217, 33%, 17%, 0.648) 34.5%,
-			hsla(217, 33%, 17%, 0.55) 41.3%,
-			hsla(217, 33%, 17%, 0.45) 48.3%,
-			hsla(217, 33%, 17%, 0.352) 55.4%,
-			hsla(217, 33%, 17%, 0.259) 62.7%,
-			hsla(217, 33%, 17%, 0.275) 70.1%,
-			hsla(217, 33%, 17%, 0.104) 77.6%,
-			hsla(217, 33%, 17%, 0.049) 85.1%,
-			hsla(217, 33%, 17%, 0.013) 92.6%,
-			hsla(217, 33%, 17%, 0) 100%
-	);
+	@apply w-full h-full rounded bg-gradient-to-t from-gray-800;
 }
 .article-cover-desc-items {
 	@apply h-full p-2 flex flex-col justify-between;

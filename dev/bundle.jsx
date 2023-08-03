@@ -23,18 +23,9 @@ Alpine.data('search', () => ({
 	},
 	openSearch() {
 		this.showSearch = true
-
-		document.getElementById('searchInput').autofocus;
-
-		console.log('set autofocus')
 	},
 	toggleSearch() {
 		this.showSearch = ! this.showSearch
-
-		if (this.showSearch) {
-			document.getElementById('searchInput').autofocus;
-			console.log('set autofocus')
-		}
 	},
 	searchDocumentBody: {
 		['@keyup.escape']() {
