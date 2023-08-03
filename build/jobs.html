@@ -4,14 +4,14 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>FET: Fachschaft</title>
+	<title>FET: Jobs</title>
 
-	<meta name="author" content="Fachschaft Elektrotechnik (FET)">
+	<meta name="author" content="FET - Fachschaft Elektrotechnik">
 	<meta name="description" content="Die Fachschaft Elektrotechnik besteht aus ET Studierenden, die sich um die Anliegen der Studenten und Studentinnen kümmern.">
 	<meta property="og:image" content="#"> <!--og:... = Facebook metadata-->
 	<meta property="og:description" content="Die Fachschaft Elektrotechnik besteht aus ET Studierenden, die sich um die Anliegen der Studenten und Studentinnen kümmern.">
-	<meta property="og:title" content="Fachschaft Elektrotechnik (FET)">
-	<meta name="twitter:title" content="Fachschaft Elektrotechnik (FET)">
+	<meta property="og:title" content="FET - Fachschaft Elektrotechnik">
+	<meta name="twitter:title" content="FET - Fachschaft Elektrotechnik">
 	<meta name="theme-color" content="#006599">
 
 	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=1.1">
@@ -32,255 +32,170 @@
 	<link rel="stylesheet" href="fonts/Inter-3.19/inter.css">
 	<!-- <link rel="stylesheet" href="fonts/Poppins-4.003/poppins.css"> -->
 </head>
-<body x-data="{ showModal: false }" :class="{ 'overflow-y-hidden sm:overflow-y-auto': showModal }">
+<body>
 	<!-- NAVBAR -->
-	<nav class="navBar-md" x-data="{ showNavBar: false }">
+	<nav class="navBar-md" x-data="navBar">
 		<div>
+			<button class="searchbar-toggle"
+					@click="openSearch"
+			>
+				<i class="fa-solid fa-magnifying-glass"></i>
+			</button>
 			<a href="index.html">
 				<img src="img/FET-Logo-2014_64_light.svg" alt="FET-Logo" class="navbar-logo p-2 dark:hidden">
 				<img src="img/FET-Logo-2014_64_dark.svg" alt="FET-Logo" class="navbar-logo p-2 hidden dark:block">
 			</a>
 			<button class="navbar-toggle"
-				@click="showNavBar = ! showNavBar"
+					@click="toggleNav"
 			>
 				<i class="fa-solid fa-bars"></i>
 			</button>
-			<ul id="navBarContent" class="navbar-content" x-show="showNavBar || $screen('md')" x-collapse.min.0px>
+			<ul id="navBarContent" class="navbar-content" x-bind="navBarContent" x-collapse.min.0px>
 				<li><a href="posts.html">News</a></li>
 				<li><a href="members.html">Fachschaft</a></li>
 				<li><a href="fotos.html">Fotos</a></li>
-				<li><a href="blackboard.html">Blackboard</a></li>
+				<li class="active"><a href="jobs.html">Jobs</a></li>
 				<li><a href="kontakt.html">Kontakt</a></li>
+				<li class="visible-expandedOnly"><button @click="openSearch"><span class="hidden md:inline"><i class="fa-solid fa-magnifying-glass"></i></span></button></li>
 			</ul>
 		</div>
 	</nav>
 
 	<!-- Main Content -->
 	<main class="container mx-auto w-full px-4 mt-8 flex-1">
-		<h1 class="page-title">Über uns</h1>
-		<div class="sm:flex sm:flex-row justify-center my-8">
-			<aside class="flex-none max-w-min sm:mr-8">
-				<div class="fixed sm:sticky top-0 sm:top-4 left-0 w-full h-full sm:h-auto bg-black sm:bg-transparent bg-opacity-70 flex sm:block items-center justify-center"
-					x-show="showModal || $screen('sm')"
-					x-transition:enter="transition duration-300 ease-out"
-					x-transition:enter-start="opacity-0"
-					x-transition:enter-end="opacity-100"
-					x-transition:leave="transition duration-150 ease-in"
-					x-transition:leave-start="opacity-100"
-					x-transition:leave-end="opacity-0"
-				>
-					<div class="max-w-sm sm:w-full mx-4 sm:mx-0 p-4 sm:p-0 bg-white dark:bg-gray-700 sm:bg-transparent rounded sm:rounded-none"
-						@click.outside="showModal = ! showModal"
-						x-show="showModal || $screen('sm')"
-						x-transition:enter="transition transform ease-out duration-300"
-						x-transition:enter-start="scale-110 opacity-0"
-						x-transition:enter-end="scale-100 opacity-100"
-						x-transition:leave="transition transform ease-in duration-150"
-						x-transition:leave-start="scale-100 opacity-100"
-						x-transition:leave-end="scale-110 opacity-0"
-					>
-						<div class="flex justify-between items-center mb-2 sm:hidden">
-							<h2 class="text-gray-800 dark:text-gray-100 sm:section-title sm_section-title-margins sm:w-full">
-								<span class="mr-1 text-gray-400 sm:hidden">
-									<i class="fa-solid fa-bars"></i>
-								</span>
-								Kategorien
-							</h2>
-							<div class="ml-4 -mr-2 px-2 rounded text-xl text-gray-600 dark:text-gray-400 sm:hidden cursor-pointer" @click="showModal = false">
-								<i class="fa-solid fa-xmark"></i>
-							</div>
-						</div>
-						<ul class="sideBarNav">
-							<li class="active"><a href="#">Studienkommission</a></li>
-							<ul class="scrollSpyNav">
-								<li><a href="#stuko-computational-science">Studienkommission Computational Science</a></li>
-								<li><a href="#stuko-et">Studienkommission ET</a></li>
-								<li><a href="#stuko-ulg">Studienkommission Universitätslehrgänge</a></li>
-							</ul>
-							<li><a href="#">Berufungskommission</a></li>
-							<li><a href="#">Studienvertretung</a></li>
-							<li><a href="#">Habilitationskommission</a></li>
-							<li><a href="#">Freizeit</a></li>
-							<li><a href="#">Laufbahnstellenbeirat</a></li>
-							<hr>
-							<li><a href="members.html">Pension</a></li>
-							<li><a href="members.html">Alle Mitglieder</a></li>
-							<li class="internalLI"><a href="#"><i class="fa-regular fa-pen-to-square mr-1"></i>Bearbeiten</a></li>
-						</ul>
-					</div>
-				</div>
-				<button class="z-10 trigger fixed bottom-4 right-4 bg-proprietary-darker dark:bg-sky-500 text-blue-50 dark:text-sky-900 shadow-lg text-2xl rounded sm:hidden" 
-					@click="showModal = true"
-					x-show="!showModal"
-					x-transition:enter="transition duration-100 ease-in"
-					x-transition:enter-start="opacity-0"
-					x-transition:enter-end="opacity-100"
-					x-transition:leave="transition duration-100 ease-out"
-					x-transition:leave-start="opacity-100"
-					x-transition:leave-end="opacity-0"
-				>
-				<i class="fa-solid fa-bars px-2 py-1"></i>
-				</button>
-			</aside>
-
-			<section class="flex-grow max-w-prose my-8 sm:my-0">
+		<h1 class="page-title">Jobs</h1>
+		<div class="lg:w-2/3 xl:w-7/12 mx-auto">
+			<section class="my-8 flex flex-col gap-2">
 				<div class="db-page-content">
-					<h2>Habilitationskommissionen</h2>
+					<!-- Content from DB here: -->
 					<p>
-						Die Habilitation ist eine der höchstrangigen Hochschulprüfungen. Durch diese können Doktoranden ihre Lehrbefugnis erhalten.<br>
-						Es werden verschiedene Themenbereiche geprüft. Es wird die fachliche Kompetenz durch Professoren geprüft, ob ausreichend publiziert wurde und diese auch fachlich relevant sind.<br>
-						Wir als Studierende sitzen in dieser Kommission, um ein didaktisches Gutachten zu erstellen. Das bedeutet, wir stellen fest, ob der Bewerber einen guten Vortrag hält, welcher leicht zu folgen ist, verständlich ist etc..&nbsp;Es gibt hierfür eine öffentliche Probevorlesung, an der&nbsp;jeder Studierende teilnehemen kann.&nbsp;&nbsp;
+						Stellenangebote werden von uns ausgesucht und hier parallel zum physischen schwarzen Brett für 30 Tage aufgehängt.
+						Wir nehmen gerne Bachelor- & Diplomarbeiten, Praktika und Teil- sowie Vollzeitstellen entgegen.
 					</p>
 					<p>
-						Falls du Interesse hast, an so einer Probevorlesung teilzunehmen oder selbst in so einer Kommision sitzen willst, meld dich bei uns, schreib uns eine Mail an service@fet.at
+						Bitte bachtet, dass wir nur Ausschreibungen aushängen, welche die folgenden Kriterien erfüllen:
+					</p>
+					<ul>
+						<li>Mindestgehalt angegeben</li>
+						<li>geschlechtsneutrale Formulierung</li>
+						<li>kein Lohndumping</li>
+					</ul>
+						<!-- Modernized uList styling using FontAwesome Icons with Flexbox in order to separate list icons from content. Newline results spaced from the icon. Regular behavior: Text below list-icon without left spacing! -->
+						<!-- <ul class="list-inside">
+							<li class="flex items-center"><div><i class="fa-regular fa-circle-check text-green-600 mr-2"></i></div>Mindestgehalt angegeben</li>
+							<li class="flex items-center"><div><i class="fa-regular fa-circle-check text-green-600 mr-2"></i></div>geschlechtsneutrale Formulierung</li>
+							<li class="flex items-center"><div><i class="fa-regular fa-circle-check text-green-600 mr-2"></i></div>kein Lohndumping</li>
+						</ul> -->
+					<p>
+						Sehr gerne kannst du uns per E-Mail an <a href="mailto:service@fet.at">service@fet.at</a> als PDF dein Angebot zukommen lassen. Werbung und irrelevante Dinge hängen wir hier nicht aus, Werbeflächen an der TU gibts <a href="https://www.tuwien.at/tu-wien/organisation/zentrale-bereiche/pr-und-fundraising/fundraising-and-community-relations/tuw-campus-werbung">hier</a> zu mieten.
 					</p>
 				</div>
-				<div>
-					<!-- Name im alt=""-text der Portraitfotos dynamisch erzeugen! -->
-					<article id="stuko-computational-science" class="members-article">
-						<a href="#stuko-computational-science" class="title">
-							<i class="fa-regular fa-link"></i>
-							<h3 class="members-section-title">Studienkommission Computational Science</h3>
-						</a>
-						<div class="members-listing">
-							<figure>
-								<a href="member-details.html">
-									<img loading="lazy" src="https://fet.at/files/uploads/members/image/photo6043877786113913220.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Alexander Stiedl" class="w-36 h-36 bg-white">
-									<figcaption>
-										<h4 class="member-name">Alexander Stiedl</h4>
-										<p class="member-role">Mitglied</p>
-										<p class="member-date">22. Sep. 2021</p>
-									</figcaption>
-								</a>
-							</figure>
-							<figure>
-								<a href="#">
-									<img loading="lazy" src="https://fet.at/files/uploads/members/image/IMG_4526a.JPG.150x150_q85_crop.jpg" alt="Portraitfoto von Astrid Raschig" class="w-36 h-36 bg-white">
-									<figcaption>
-										<h4 class="member-name">Astrid Raschig</h4>
-										<p class="member-role">Ersatzmitglied</p>
-										<p class="member-date">1. Okt. 2018</p>
-									</figcaption>
-								</a>
-							</figure>
-							<figure>
-								<a href="#">
-									<img loading="lazy" src="https://fet.at/files/uploads/members/image/Christian.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Christian Eder" class="w-36 h-36 bg-white">
-									<figcaption>
-										<h4 class="member-name">Christian Eder</h4>
-										<p class="member-role">Vorsitz</p>
-										<p class="member-date">26. Mär. 2020</p>
-									</figcaption>
-								</a>
-							</figure>
-							<figure>
-								<a href="#">
-									<img loading="lazy" src="https://fet.at/files/uploads/members/image/2013.04.10_fet_stvn_portraits-3.png.150x150_q85_crop.png" alt="Portraitfoto von Christoph Peinsipp" class="w-36 h-36 bg-white">
-									<figcaption>
-										<h4 class="member-name">Christoph Peinsipp</h4>
-										<p class="member-role">Stv. Vorsitz</p>
-										<p class="member-date">1. Jul. 2019</p>
-									</figcaption>
-								</a>
-							</figure>
+				<a href="#" class="self-center sm:self-end btn-small btn-primary w-full sm:w-auto max-w-sm">
+					<i class="fa-regular fa-pen-to-square mr-1"></i>Info-Text bearbeiten
+				</a>
+			</section>
+			<section class="my-8 flex flex-col gap-2">
+				<div class="jobsList">
+					<a href="https://fet.at/files/uploads/jobs/pdf/Techniker_in.pdf" class="jobsList-item">
+						<div class="jobsList-desc">
+							<h2>TU Wien</h2>
+							<h3>Techniker_in</h3>
 						</div>
-					</article>
-					<article id="stuko-et" class="members-article">
-						<a href="#stuko-et" class="title">
-							<i class="fa-regular fa-link"></i>
-							<h3 class="members-section-title">Studienkommission ET</h3>
-						</a>
-						<div class="members-listing">
-							<figure>
-								<a href="#">
-									<img loading="lazy" src="https://fet.at/files/uploads/members/image/photo_2021-03-12_22-57-25.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Christoph Clementschitsch" class="w-36 h-36 bg-white">
-									<figcaption>
-										<h4 class="member-name">Christoph Clementschitsch</h4>
-										<p class="member-role">2. Stv. Vorsitz</p>
-										<p class="member-date">7. Jun. 2018</p>
-									</figcaption>
-								</a>
-							</figure>
-							<figure>
-								<a href="#">
-									<img loading="lazy" src="https://fet.at/files/uploads/members/image/Clara.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Clara Sophia Karin Hönlinger" class="w-36 h-36 bg-white">
-									<figcaption>
-										<h4 class="member-name">Clara Sophia Karin Hönlinger</h4>
-										<p class="member-role">Mitglied</p>
-										<p class="member-date">10. Jul. 2019</p>
-									</figcaption>
-								</a>
-							</figure>
-							<figure>
-								<a href="#">
-									<img loading="lazy" src="https://fet.at/files/uploads/members/image/872ebb8e-1956-4ec0-828b-7a2f0225b93f__2_.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Clemens Koss" class="w-36 h-36 bg-white">
-									<figcaption>
-										<h4 class="member-name">Clemens Koss</h4>
-										<p class="member-role">Mitglied</p>
-										<p class="member-date">1. Okt. 2018</p>
-									</figcaption>
-								</a>
-							</figure>
-							<figure>
-								<a href="#">
-									<img loading="lazy" src="https://fet.at/files/uploads/members/image/portrait_Daniel.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Daniel A. Maierhofer" class="w-36 h-36 bg-white">
-									<figcaption>
-										<h4 class="member-name">Daniel A. Maierhofer</h4>
-										<p class="member-role">Mitglied</p>
-										<p class="member-date">1. Okt. 2018</p>
-									</figcaption>
-								</a>
-							</figure>
-							<figure>
-								<a href="#">
-									<img loading="lazy" src="https://fet.at/files/uploads/members/image/dani.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Daniela Havlicek" class="w-36 h-36 bg-white">
-									<figcaption>
-										<h4 class="member-name">Daniela Havlicek</h4>
-										<p class="member-role">Mitglied</p>
-										<p class="member-date">1. Okt. 2018</p>
-									</figcaption>
-								</a>
-							</figure>
-							<figure>
-								<a href="#">
-									<img loading="lazy" src="https://fet.at/files/uploads/members/image/43787796_1871191209655680_664271551943671808_n.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Elena Bica" class="w-36 h-36 bg-white">
-									<figcaption>
-										<h4 class="member-name">Elena Bica</h4>
-										<p class="member-role">Mitglied</p>
-										<p class="member-date">1. Okt. 2018</p>
-									</figcaption>
-								</a>
-							</figure>
+						<div class="jobsList-price">
+							<p class="jobsList-value">1074€</p>
+							<p class="jobsList-amount ">/ 20,0 <span class="sm:hidden">h</span><span class="hidden sm:inline">Stunden</span></p>
 						</div>
-					</article>
-					<article id="stuko-ulg" class="members-article">
-						<a href="#stuko-ulg" class="title">
-							<i class="fa-regular fa-link"></i>
-							<h3 class="members-section-title">Studienkommission Universitätslehrgänge</h3>
-						</a>
-						<div class="members-listing">
-							<figure>
-								<a href="#">
-									<img loading="lazy" src="https://fet.at/files/uploads/members/image/DSC_4096_Kopie.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Felix Stelzl" class="w-36 h-36 bg-white">
-									<figcaption>
-										<h4 class="member-name">Felix Stelzl</h4>
-										<p class="member-role">Mitglied</p>
-										<p class="member-date">1. Okt. 2018</p>
-									</figcaption>
-								</a>
-							</figure>
-							<figure>
-								<a href="#">
-									<img loading="lazy" src="https://fet.at/files/uploads/members/image/mp-86.jpg.150x150_q85_crop.jpg" alt="Portraitfoto von Franziska Mayer" class="w-36 h-36 bg-white">
-									<figcaption>
-										<h4 class="member-name">Franziska Mayer</h4>
-										<p class="member-role">Mitglied</p>
-										<p class="member-date">12. Okt. 2018</p>
-									</figcaption>
-								</a>
-							</figure>
+						<div class="jobsList-expand">
+							<i class="fa-solid fa-angle-right"></i>
 						</div>
-					</article>
+					</a>
+					<hr>
+					<a href="https://fet.at/files/uploads/jobs/pdf/IT-Techniker_in.pdf" class="jobsList-item">
+						<div class="jobsList-desc">
+							<h2>Universität Wien</h2>
+							<h3 class="leading-none text-gray-600 text-sm">IT-Techniker*in</h3>
+						</div>
+						<div class="jobsList-price">
+							<p class="jobsList-value">1228€</p>
+							<p class="jobsList-amount">/ 20,0 <span class="sm:hidden">h</span><span class="hidden sm:inline">Stunden</span></p>
+						</div>
+						<div class="jobsList-expand">
+							<i class="fa-solid fa-angle-right"></i>
+						</div>
+					</a>
+					<hr>
+					<a href="https://fet.at/files/uploads/jobs/pdf/Universit%C3%A4tsassistent_in_Post-Doc.pdf" class="jobsList-item">
+						<div class="jobsList-desc">
+							<h2>TU Wien</h2>
+							<h3 class="leading-none text-gray-600 text-sm">Universitätsassistent_in (Post-Doc)</h3>
+						</div>
+						<div class="jobsList-price">
+							<p class="jobsList-value">3945€</p>
+							<p class="jobsList-amount">/ 40,0 <span class="sm:hidden">h</span><span class="hidden sm:inline">Stunden</span></p>
+						</div>
+						<div class="jobsList-expand">
+							<i class="fa-solid fa-angle-right"></i>
+						</div>
+					</a>
+					<hr>
+					<a href="https://fet.at/files/uploads/jobs/pdf/Ausschreibung_IT-Techniker_inSystemadministrator_in-1.pdf" class="jobsList-item">
+						<div class="jobsList-desc">
+							<h2>TU Wien</h2>
+							<h3 class="leading-none text-gray-600 text-sm">IT-Techniker_In</h3>
+						</div>
+						<div class="jobsList-price">
+							<p class="jobsList-value">1073€</p>
+							<p class="jobsList-amount">/ 20,0 <span class="sm:hidden">h</span><span class="hidden sm:inline">Stunden</span></p>
+						</div>
+						<div class="jobsList-expand">
+							<i class="fa-solid fa-angle-right"></i>
+						</div>
+					</a>
+					<hr>
+					<a href="https://fet.at/files/uploads/jobs/pdf/Systemadministrator_in_2147.pdf" class="jobsList-item">
+						<div class="jobsList-desc">
+							<h2>TU Wien</h2>
+							<h3 class="leading-none text-gray-600 text-sm">Systemadministrator_in</h3>
+						</div>
+						<div class="jobsList-price">
+							<p class="jobsList-value">2147€</p>
+							<p class="jobsList-amount">/ 40,0 <span class="sm:hidden">h</span><span class="hidden sm:inline">Stunden</span></p>
+						</div>
+						<div class="jobsList-expand">
+							<i class="fa-solid fa-angle-right"></i>
+						</div>
+					</a>
+					<hr>
+					<a href="https://fet.at/files/uploads/jobs/pdf/Studentische_r_Mitarbeiter_in_375.pdf" class="jobsList-item">
+						<div class="jobsList-desc">
+							<h2>TU Wien</h2>
+							<h3 class="leading-none text-gray-600 text-sm">Studentische_r Mitarbeiter_in</h3>
+						</div>
+						<div class="jobsList-price">
+							<p class="jobsList-value">375€</p>
+							<p class="jobsList-amount">/ 7,0 <span class="sm:hidden">h</span><span class="hidden sm:inline">Stunden</span></p>
+						</div>
+						<div class="jobsList-expand">
+							<i class="fa-solid fa-angle-right"></i>
+						</div>
+					</a>
+				</div>
+				<div class="inline-flex flex-col sm:flex-row sm:justify-end gap-2 w-full sm:w-auto">
+					<a href="#" class="self-center block btn-small btn-primary w-full sm:w-auto max-w-sm"><i class="fa-regular fa-square-plus mr-1"></i>Neuer Eintrag</a>
+					<a href="#" class="self-center block btn-small btn-primary w-full sm:w-auto max-w-sm"><i class="fa-solid fa-asterisk mr-1"></i>Fülltext bearbeiten</a>
+				</div>
+			</section>
+			<!-- Die folgende Section soll dargestellt werden, wenn keine Einträge vorhanden sind. -->
+			<section class="my-8 p-8 flex flex-col gap-2 items-center border-2 border-dashed rounded border-gray-300 dark:border-gray-600">
+				<div class="text-center text-gray-600 dark:text-gray-300">
+					<svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-8 w-8 text-gray-400 dark:text-gray-400 text-2xl mb-4" viewBox="0 0 20 20" fill="currentColor">
+						<path fill-rule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" clip-rule="evenodd" />
+					</svg>
+					<p>Es sind aktuell keine Stellenausschreibungen vorhanden. Bitte schaue später nochmal vorbei.</p>
+				</div>
+				<div class="inline-flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
+					<a href="#" class="self-center block btn-small btn-primary w-full sm:w-auto max-w-sm"><i class="fa-regular fa-square-plus mr-1"></i>Neuer Eintrag</a>
+					<a href="#" class="self-center block btn-small btn-primary w-full sm:w-auto max-w-sm"><i class="fa-solid fa-asterisk mr-1"></i>Fülltext bearbeiten</a>
 				</div>
 			</section>
 		</div>
@@ -310,8 +225,8 @@
 		<hr class="legal-divider">
 		<p class="copyright">© 2021 FET - Alle Rechte vorbehalten.</p>
 	</footer>
-	<div class="super-duper-awesome-signature" x-data="{ counter: 0 }">
-		<span :class="counter>=4 && 'text-purple-300'">Handcrafted </span><span :class="counter>=5 && 'text-green-400'">with </span><i class="fa-solid fa-heart" aria-label="love" @click="counter++" :class="counter>=2 ? 'text-proprietary hover:text-proprietary-dark' : 'text-red-600 hover:text-red-700'"></i><span :class="counter>=6 && 'text-pink-400'"> by</span><span class="font-normal" :class="counter>=3 && 'text-yellow-500'"> Max Mustermann</span>
+	<div class="super-duper-awesome-signature font-normal" x-data="footerCounter">
+		<span x-bind="footerFirst">Handcrafted </span><span x-bind="footerSecond">with </span><i class="fa-solid fa-heart" aria-label="love" @click="increase" x-bind="footerThird"></i><span x-bind="footerFourth"> by</span><span x-bind="footerFifth"> Max Mustermann</span>
 	</div>
 
 	<script defer src="js/vendor.js"></script>

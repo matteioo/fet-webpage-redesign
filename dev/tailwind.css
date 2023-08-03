@@ -11,6 +11,8 @@
 	p a {
 		@apply text-proprietary dark:text-proprietary-lighter font-medium underline decoration-proprietary-dark dark:decoration-sky-700 hover:decoration-2;
 	}
+
+	[x-cloak] { display: none !important; }
 }
 
 @layer utilities {
