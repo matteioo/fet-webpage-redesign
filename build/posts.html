@@ -25,7 +25,6 @@
 	<meta name="msapplication-TileColor" content="#2b5797">
 
 	<link rel="stylesheet" href="css/styles.css">
-	<!--<link rel="stylesheet" href="../css/tailwind.css">-->
 	<script src="https://kit.fontawesome.com/fb26f70535.js" crossorigin="anonymous"></script>
 	
 	<!-- Fonts -->
@@ -34,23 +33,29 @@
 </head>
 <body x-data="{ showModal: false }" :class="{ 'overflow-y-hidden sm:overflow-y-auto': showModal }">
 	<!-- NAVBAR -->
-	<nav class="navBar-md" x-data="{ showNavBar: false }">
+	<nav class="navBar-md" x-data="navBar">
 		<div>
+			<button class="searchbar-toggle"
+					@click="openSearch"
+			>
+				<i class="fa-solid fa-magnifying-glass"></i>
+			</button>
 			<a href="index.html">
 				<img src="img/FET-Logo-2014_64_light.svg" alt="FET-Logo" class="navbar-logo p-2 dark:hidden">
 				<img src="img/FET-Logo-2014_64_dark.svg" alt="FET-Logo" class="navbar-logo p-2 hidden dark:block">
 			</a>
 			<button class="navbar-toggle"
-				@click="showNavBar = ! showNavBar"
+					@click="toggleNav"
 			>
 				<i class="fa-solid fa-bars"></i>
 			</button>
-			<ul id="navBarContent" class="navbar-content" x-show="showNavBar || $screen('md')" x-collapse.min.0px>
-				<li><a href="posts.html">News</a></li>
+			<ul id="navBarContent" class="navbar-content" x-bind="navBarContent" x-collapse.min.0px>
+				<li class="active"><a href="posts.html">News</a></li>
 				<li><a href="members.html">Fachschaft</a></li>
 				<li><a href="fotos.html">Fotos</a></li>
 				<li><a href="jobs.html">Jobs</a></li>
 				<li><a href="kontakt.html">Kontakt</a></li>
+				<li class="visible-expandedOnly"><button @click="openSearch"><span class="hidden md:inline"><i class="fa-solid fa-magnifying-glass"></i></span></button></li>
 			</ul>
 		</div>
 	</nav>
@@ -250,8 +255,8 @@
 		<hr class="legal-divider">
 		<p class="copyright">© 2021 FET - Alle Rechte vorbehalten.</p>
 	</footer>
-	<div class="super-duper-awesome-signature" x-data="{ counter: 0 }">
-		<span :class="counter>=4 && 'text-purple-300'">Handcrafted </span><span :class="counter>=5 && 'text-green-400'">with </span><i class="fa-solid fa-heart" aria-label="love" @click="counter++" :class="counter>=2 ? 'text-proprietary hover:text-proprietary-dark' : 'text-red-600 hover:text-red-700'"></i><span :class="counter>=6 && 'text-pink-400'"> by</span><span class="font-normal" :class="counter>=3 && 'text-yellow-500'"> Max Mustermann</span>
+	<div class="super-duper-awesome-signature font-normal" x-data="footerCounter">
+		<span x-bind="footerFirst">Handcrafted </span><span x-bind="footerSecond">with </span><i class="fa-solid fa-heart" aria-label="love" @click="increase" x-bind="footerThird"></i><span x-bind="footerFourth"> by</span><span x-bind="footerFifth"> Max Mustermann</span>
 	</div>
 
 	<script defer src="js/vendor.js"></script>

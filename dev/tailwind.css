@@ -295,7 +295,7 @@ ul.sideBarNav > ul > li.active > a {
 	@apply mt-0;
 }
 [class^=db-page-content].big-first-letter > p:first-child {
-	@apply first-letter:text-5xl first-letter:float-left first-letter:mt-2 first-letter:mr-3 first-letter:font-serif;
+	@apply first-letter:text-5xl first-letter:float-left first-letter:mt-1 first-letter:mr-3 first-letter:font-serif;
 }
 .db-page-content p {
 	@apply text-justify;

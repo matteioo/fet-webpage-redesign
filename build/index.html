@@ -25,17 +25,18 @@
 	<meta name="msapplication-TileColor" content="#2b5797">
 
 	<link rel="stylesheet" href="css/styles.css">
-	<!--<link rel="stylesheet" href="css/tailwind.css">-->
 	<script src="https://kit.fontawesome.com/fb26f70535.js" crossorigin="anonymous"></script>
 	
 	<!-- Fonts -->
 	<link rel="stylesheet" href="fonts/Inter-3.19/inter.css">
 	<!-- <link rel="stylesheet" href="fonts/Poppins-4.003/poppins.css"> -->
 </head>
-<body x-data="{ showSearch: false }" :class="{ 'overflow-y-hidden': showSearch }" @keyup.escape="showSearch = false">
+<!-- TODO: Class binding not dealt with -->
+<body x-data="search" x-bind="searchDocumentBody">
 	<!-- SEARCH-BAR -->
 	<div class="fixed w-screen h-screen z-30 backdrop-blur-sm backdrop-saturate-50"
 		x-show="showSearch"
+        x-cloak
 		x-transition:enter="transition ease-out duration-300"
 		x-transition:enter-start="transform backdrop-blur-none backdrop-saturate-100"
 		x-transition:enter-end="transform backdrop-blur-sm backdrop-saturate-50"
@@ -43,8 +44,7 @@
 		x-transition:leave-start="transform backdrop-blur-sm backdrop-saturate-50"
 		x-transition:leave-end="transform backdrop-blur-none backdrop-saturate-100"
 	>
-		<form action="suche.html" class="flex items-center opacity-90 gap-x-4 mt-[33vh] sm:max-w-md lg:max-w-lg xl:max-w-xl mx-4 sm:mx-auto py-2 px-4 shadow-lg dark:shadow-none bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg dark:border-2 dark:border-gray-700"
-			@click.outside="showSearch = false"
+		<form action="suche.html" @click.outside="closeSearch" class="flex items-center opacity-90 gap-x-4 mt-[33vh] sm:max-w-md lg:max-w-lg xl:max-w-xl mx-4 sm:mx-auto py-2 px-4 shadow-lg dark:shadow-none bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg dark:border-2 dark:border-gray-700"
 			x-show="showSearch"
 			x-transition:enter="transition transform ease-out duration-300"
 			x-transition:enter-start="scale-0 opacity-0"
@@ -60,10 +60,10 @@
 		</form>
 	</div>
 	<!-- NAVBAR -->
-	<nav class="navBar-md" x-data="{ showNavBar: false }">
+	<nav class="navBar-md" x-data="navBar">
 		<div>
 			<button class="searchbar-toggle"
-				@click.prevent="showSearch = true"
+				@click="openSearch"
 			>
 				<i class="fa-solid fa-magnifying-glass"></i>
 			</button>
@@ -72,17 +72,17 @@
 				<img src="img/FET-Logo-2014_64_dark.svg" alt="FET-Logo" class="navbar-logo p-2 hidden dark:block">
 			</a>
 			<button class="navbar-toggle"
-				@click="showNavBar = ! showNavBar"
+				@click="toggleNav"
 			>
 				<i class="fa-solid fa-bars"></i>
 			</button>
-			<ul id="navBarContent" class="navbar-content" x-show="showNavBar || $screen('md')" x-collapse.min.0px>
+			<ul id="navBarContent" class="navbar-content" x-bind="navBarContent" x-collapse.min.0px>
 				<li><a href="posts.html">News</a></li>
 				<li><a href="members.html">Fachschaft</a></li>
 				<li><a href="fotos.html">Fotos</a></li>
 				<li><a href="jobs.html">Jobs</a></li>
 				<li><a href="kontakt.html">Kontakt</a></li>
-				<li class="visible-expandedOnly"><button @click.prevent="showSearch = true"><span class="hidden md:inline"><i class="fa-solid fa-magnifying-glass"></i></span></button></li>
+				<li class="visible-expandedOnly"><button @click="openSearch"><span class="hidden md:inline"><i class="fa-solid fa-magnifying-glass"></i></span></button></li>
 			</ul>
 		</div>
 	</nav>
@@ -211,9 +211,9 @@
 					<div class="article-cover-desc">
 						<div class="article-cover-desc-items">
 							<div class="absolute rounded-full px-2 py-1 bg-gray-800 text-gray-200 bg-opacity-90 capitalize"
-								x-data="{ pin: true }"
-								@mouseover="pin = true"
-								@mouseover.away="pin = false"
+								x-data="pinnedPost"
+								@mouseover="showPin"
+								@mouseover.away="hidePin"
 							>
 								<i class="fa-solid fa-thumbtack rotate-45 mx-0.5"></i>
 								<span class="ml-0.5" x-show="pin">Angepinnt</span>
@@ -291,8 +291,8 @@
 		</div>
 
 		<div id="infoBox" class="sticky bottom-4 mt-8 p-4 rounded-lg shadow-lg bg-gray-600 dark:bg-gray-800 text-gray-200 dark:text-gray-300 flex gap-x-4 items-center leading-none dark:border-2 dark:border-gray-700"
-			x-data="{ consent: true }"
-			x-show="consent"
+			x-data="discordInfoBox"
+			x-show="showInfoBox"
 			x-transition:leave="transition ease-in-out duration-500"
 			x-transition:leave-start="transform origin-bottom opacity-100 scale-100 translate-y-0"
 			x-transition:leave-end="transform origin-bottom opacity-0 scale-100 translate-y-14"
@@ -309,7 +309,7 @@
 				<span class="hidden lg:inline text-sm text-gray-300 dark:text-gray-400">Du hast Fragen zum Studium oder möchtest dich einfach mit anderen Studierenden austauschen? </span><span class="text-sm text-gray-300 dark:text-gray-400">Klicke hier zum Beitreten <span class="hidden sm:inline"><i class="fa-solid fa-angle-right"></i></span></span>
 			</a>
 			<button id="infoBox-closeButton" class="flex-none self-stretch px-2 -mr-2" onclick="hideInfoBox('m', 1)"
-				@click="consent = false"
+				@click="hideInfoBox"
 			><i class="fa-solid fa-times text-gray-300 dark:text-gray-500"></i></button>
 		</div>
 	</main>
@@ -338,8 +338,8 @@
 		<hr class="legal-divider">
 		<p class="copyright">© 2021 FET - Alle Rechte vorbehalten.</p>
 	</footer>
-	<div class="super-duper-awesome-signature" x-data="{ counter: 0 }">
-		<span :class="counter>=4 && 'text-purple-300'">Handcrafted </span><span :class="counter>=5 && 'text-green-400'">with </span><i class="fa-solid fa-heart" aria-label="love" @click="counter++" :class="counter>=2 ? 'text-proprietary hover:text-proprietary-dark' : 'text-red-600 hover:text-red-700'"></i><span :class="counter>=6 && 'text-pink-400'"> by</span><span class="font-normal" :class="counter>=3 && 'text-yellow-500'"> Max Mustermann</span>
+	<div class="super-duper-awesome-signature font-normal" x-data="footerCounter">
+		<span x-bind="footerFirst">Handcrafted </span><span x-bind="footerSecond">with </span><i class="fa-solid fa-heart" aria-label="love" @click="increase" x-bind="footerThird"></i><span x-bind="footerFourth"> by</span><span x-bind="footerFifth"> Max Mustermann</span>
 	</div>
 
 	<script defer src="js/vendor.js"></script>
