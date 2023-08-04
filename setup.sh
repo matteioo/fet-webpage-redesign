@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Update the Alpine submodule
+git submodule init
 git submodule update --remote
 
 # Reference: https://github.com/alpinejs/alpine/discussions/1944#discussioncomment-2065588
