@@ -1,0 +1,3 @@
+[submodule "alpine"]
+	path = alpine
+	url = https://github.com/alpinejs/alpine.git

@@ -4,6 +4,8 @@
   "description": "Redesign of the fet-webpage",
   "main": "index.js",
   "scripts": {
+    "postinstall": "./setup.sh",
+    "update": "./update.sh",
     "dev": "vite",
     "build-old": "tailwind build -i dev/tailwind.css -o build/css/styles.css",
     "build": "npx tailwindcss -i dev/tailwind.css -o build/css/styles.css --watch",
