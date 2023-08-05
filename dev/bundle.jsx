@@ -40,8 +40,16 @@ Alpine.data('bodyData', () => ({
 			this.showModal = false
 		},
 		':class'() {
-			if (this.showSearch || this.displayModal()) {
-				return 'overflow-y-hidden'
+			let classes = ''
+
+			if (this.showSearch || this.showModal) {
+				classes = 'overflow-y-hidden'
+
+				if (this.showModal) {
+					classes.concat('sm:overflow-y-auto')
+				}
+
+				return classes
 			} else {
 				return ''
 			}
