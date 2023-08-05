@@ -10,6 +10,50 @@ Alpine.plugin(Toolkit)
 Alpine.plugin(collapse)
 Alpine.plugin(persist)
 
+Alpine.data('bodyData', () => ({
+	showSearch: false,
+	showModal: false,
+	openSearch() {
+		this.showSearch = true
+	},
+	closeSearch() {
+		this.showSearch = false
+	},
+	openModal() {
+		this.showModal = true
+	},
+	toggleModal() {
+		this.showModal = !this.showModal
+	},
+	closeModal() {
+		this.showModal = false
+	},
+	displayModal() {
+		return this.showModal || this.$screen('sm')
+	},
+	displayNoModal() {
+		return !this.displayModal()
+	},
+	documentBody: {
+		['@keyup.escape']() {
+			this.showSearch = false
+			this.showModal = false
+		},
+		':class'() {
+			if (this.showSearch || this.displayModal()) {
+				return 'overflow-y-hidden'
+			} else {
+				return ''
+			}
+		}
+	},
+	modalContent: {
+		['x-show']() {
+			return this.showModal || this.$screen('sm')
+		}
+	}
+}))
+
 Alpine.data('counter', () => ({
 	count: 1,
 
