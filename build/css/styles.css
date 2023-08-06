@@ -1795,6 +1795,7 @@ ul.sideBarNav > ul > li.active > a:first-child {
 /***** ARTICLE PREVIEW *****/
 
 .article-cover-image {
+  display: block;
   aspect-ratio: 16 / 9;
   width: 100%;
   cursor: pointer;
