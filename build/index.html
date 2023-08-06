@@ -207,85 +207,71 @@
 
 			<section class="my-8 sm:my-0 sm:w-3/5 xl:w-2/5 flex flex-col gap-4">
 				<h2 class="section-title section-title-margins">Zuletzt veröffentlicht</h2>
-				<article class="relative article-cover-image" style="background-image: url('https://fet.at/files/Screenshot_from_2021-12-02_17-46-23.png');" onclick="openArticle('post.html')">
+				<a href="post.html" class="article-cover-image" style="background-image: url('https://fet.at/files/Screenshot_from_2021-12-02_17-46-23.png');">
 					<div class="article-cover-desc">
-						<div class="article-cover-desc-items">
-							<div class="absolute rounded-full px-2 py-1 bg-gray-800 text-gray-200 bg-opacity-90 capitalize"
-								x-data="pinnedPost"
-								@mouseover="showPin"
-								@mouseover.away="hidePin"
-							>
-								<i class="fa-solid fa-thumbtack rotate-45 mx-0.5"></i>
-								<span class="ml-0.5" x-show="pin">Angepinnt</span>
-							</div>
-							<ul class="article-cover-tags">
-								<li><a href="#">#fet</a></li>
-								<li><a href="#">#ug</a></li>
-								<li><a href="#">#öh</a></li>
-							</ul>
-							<div>
-								<a href="#"><h3 class="text-gray-50">Crashkurs ET1 2. Klausur</h3></a>
-								<div class="flex justify-between">
-									<div class="text-gray-200"><i class="fa-solid fa-clock"></i> 14.12.2021</div>
-									<div>
-										<!-- Only add '-mr-2' class if two divs - not when only one -->
-										<div class="h-7 w-7 aspect-square rounded-full bg-blue-200 text-blue-700 inline-flex justify-center items-center -mr-2" title="Draft">
-											<i class="fa-fw fa-solid fa-pen-to-square"></i>
-										</div>
-										<div class="h-7 w-7 aspect-square rounded-full bg-red-200 text-red-700 inline-flex justify-center items-center" title="Intern only">
-											<i class="fa-fw fa-solid fa-eye-slash"></i>
-										</div>
+						<div class="pinnedPost"
+							 x-data="pinnedPost"
+							 @mouseover="showPin"
+							 @mouseover.away="hidePin"
+						>
+							<i class="fa-solid fa-thumbtack rotate-45 mx-0.5"></i>
+							<span class="ml-0.5" x-show="pin">Angepinnt</span>
+						</div>
+						<div class="w-full">
+							<h3 class="text-gray-50">Crashkurs ET1 2. Klausur</h3>
+							<div class="flex justify-between items-center">
+								<div class="text-gray-200"><i class="fa-solid fa-clock"></i> 14.12.2021</div>
+								<div class="inline-flex">
+									<!-- For each div except the first one add class '-ml-1' -->
+									<div class="h-7 w-7 aspect-square rounded-full bg-blue-800 text-blue-200 inline-flex justify-center items-center" title="Draft">
+										<i class="fa-fw fa-solid fa-pen-to-square"></i>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</article>
-				<article class="article-cover-image" style="background-image: url('img/article-cover-1.jpg');" onclick="openArticle('post.html')">
+				</a>
+				<a href="post.html" class="article-cover-image" style="background-image: url('img/article-cover-1.jpg');">
 					<div class="article-cover-desc">
-						<div class="article-cover-desc-items">
-							<ul class="article-cover-tags">
-								<li><a href="#">#fet</a></li>
-								<li><a href="#">#ug</a></li>
-								<li><a href="#">#öh</a></li>
-							</ul>
-							<div>
-								<a href="#"><h3 class="text-gray-50">Neues Universitätsgesetz wird entschärft</h3></a>
+						<div class="w-full">
+							<h3 class="text-gray-50">Neues Universitätsgesetz wird entschärft</h3>
+							<div class="flex justify-between items-center">
 								<div class="text-gray-200"><i class="fa-solid fa-clock"></i> 12.04.2021</div>
+								<div class="inline-flex">
+									<!-- For eac hdiv except the first one add class '-ml-1' -->
+									<div class="h-7 w-7 aspect-square rounded-full bg-blue-800 text-blue-200 inline-flex justify-center items-center" title="Draft">
+										<i class="fa-fw fa-solid fa-pen-to-square"></i>
+									</div>
+									<div class="h-7 w-7 aspect-square rounded-full bg-red-800 text-red-200 inline-flex justify-center items-center -ml-1" title="Intern only">
+										<i class="fa-fw fa-solid fa-eye-slash"></i>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
-				</article>
-				<article class="article-cover-image" style="background-image: url('img/article-cover-2.jpg');" onclick="openArticle('post.html')">
+				</a>
+				<a href="post.html" class="article-cover-image" style="background-image: url('img/article-cover-2.jpg');">
 					<div class="article-cover-desc">
-						<div class="article-cover-desc-items">
-							<ul class="article-cover-tags">
-								<li><a href="#">#fet</a></li>
-								<li><a href="#">#ug</a></li>
-								<li><a href="#">#öh</a></li>
-							</ul>
-							<div>
-								<a href="#"><h3 class="text-gray-50">ÖH Wahl - Tag 2</h3></a>
+						<div class="w-full">
+							<h3 class="text-gray-50">ÖH Wahl - Tag 2</h3>
+							<div class="flex justify-between items-center">
 								<div class="text-gray-200"><i class="fa-solid fa-clock"></i> 12.09.2021</div>
+								<div class="inline-flex"></div>
 							</div>
 						</div>
 					</div>
-				</article>
-				<article class="article-cover-image" style="background-image: url('img/article-cover-3.jpg');" onclick="openArticle('post.html')">
+				</a>
+				<a href="post.html" class="article-cover-image" style="background-image: url('img/article-cover-3.jpg');">
 					<div class="article-cover-desc">
-						<div class="article-cover-desc-items">
-							<ul class="article-cover-tags">
-								<li><a href="#">#fet</a></li>
-								<li><a href="#">#ug</a></li>
-								<li><a href="#">#öh</a></li>
-							</ul>
-							<div>
-								<a href="#"><h3 class="text-gray-50">ÖH Wahl - Tag 3</h3></a>
+						<div class="w-full">
+							<h3 class="text-gray-50">ÖH Wahl - Tag 3</h3>
+							<div class="flex justify-between items-center">
 								<div class="text-gray-200"><i class="fa-solid fa-clock"></i> 23.09.2021</div>
+								<div class="inline-flex"></div>
 							</div>
 						</div>
 					</div>
-				</article>
+				</a>
 				<a href="#" class="btn btn-primary block w-full"><i class="fa-solid fa-plus-square mr-2"></i>Mehr anzeigen</a>
 			</section>
 		</div>

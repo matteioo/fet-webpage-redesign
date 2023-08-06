@@ -273,10 +273,10 @@ ul.sideBarNav > ul > li.active > a {
 /***** ARTICLE PREVIEW *****/
 .article-cover-image {
 	@apply w-full aspect-video transition-all ease-in-out duration-700 rounded-md bg-center shadow-lg bg-no-repeat cursor-pointer bg-gray-300 dark:bg-gray-600;
-  background-size: 100%;
+	background-size: 100%;
 }
 .article-cover-desc {
-	@apply w-full h-full rounded;
+	@apply w-full h-full rounded flex items-end p-2 relative;
 
 	background-image: linear-gradient(
 		to top,
@@ -298,14 +298,8 @@ ul.sideBarNav > ul > li.active > a {
 		hsla(217, 33%, 17%, 0) 100%
 	);
 }
-.article-cover-desc-items {
-	@apply h-full p-2 flex flex-col justify-between;
-}
-.article-cover-tags {
-	@apply flex justify-end gap-x-1 uppercase;
-}
-.article-cover-tags > li {
-	@apply rounded-full px-2 py-1 text-sky-100 bg-proprietary dark:bg-sky-900 hover:bg-proprietary-dark dark:hover:bg-sky-800;
+.article-cover-desc .pinnedPost {
+	@apply absolute top-0 left-0 m-2 rounded-full px-2 py-1 bg-gray-800 text-gray-200 bg-opacity-90 capitalize;
 }
 .article-cover-desc:hover, .article-cover-image:hover {
 	background-size: 120%;
