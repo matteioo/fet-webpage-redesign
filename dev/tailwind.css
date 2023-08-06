@@ -309,7 +309,7 @@ ul.sideBarNav > ul > li.active > a {
 [class^=db-page-content] {
 	@apply flex flex-col gap-2 overflow-x-hidden mb-4 text-gray-700 dark:text-gray-300;
 }
-[class^=db-page-content] + * {
+[class^=db-page-content] > *:first-child {
 	@apply mt-0;
 }
 [class^=db-page-content].big-first-letter > p:first-child {
@@ -333,12 +333,16 @@ ul.sideBarNav > ul > li.active > a {
 [class^=db-page-content] h1 {
 	@apply text-red-800 dark:text-red-200 text-3xl;
 }
+[class^=db-page-content] h1,
 [class^=db-page-content] h2,
 [class^=db-page-content] h3,
 [class^=db-page-content] h4,
 [class^=db-page-content] h5,
 [class^=db-page-content] h6 {
 	@apply mt-2 text-gray-800 dark:text-gray-200 leading-none;
+}
+[class^=db-page-content] h1 {
+	@apply font-semibold mt-4 text-2xl tracking-wide;
 }
 [class^=db-page-content] h2 {
 	@apply font-medium mt-4 text-xl;

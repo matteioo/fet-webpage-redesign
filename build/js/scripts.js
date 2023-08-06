@@ -1,8 +1,3 @@
-// Open article on click without an anchor-tag.
-function openArticle(link){
-	window.location.href=link;
-}
-
 if(cookieSet("InfoBoxHidden")){
 	let element = document.getElementById("infoBox");
 	element.classList.toggle("hidden");
