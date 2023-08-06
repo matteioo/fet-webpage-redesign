@@ -62,43 +62,34 @@ Alpine.data('bodyData', () => ({
 	}
 }))
 
-Alpine.data('counter', () => ({
-	count: 1,
-
-	increment() { this.count++ }
-}))
-
-Alpine.data('search', () => ({
-	showSearch: false,
-	closeSearch() {
-		this.showSearch = false
-	},
-	openSearch() {
-		this.showSearch = true
-	},
-	toggleSearch() {
-		this.showSearch = ! this.showSearch
-	},
-	searchDocumentBody: {
-		['@keyup.escape']() {
-			this.showSearch = false
-		},
-		':class'() {
-			if (this.showSearch) {
-				return 'overflow-y-hidden';
-			}
-		}
-	}
-}))
-
 Alpine.data('navBar', () => ({
 	showNavBar: false,
+	showPopupNav: false,
 	toggleNav() {
 		this.showNavBar = ! this.showNavBar
+	},
+	togglePopupNav() {
+		this.showPopupNav = !this.showPopupNav
+	},
+	closePopupNav() {
+		this.showPopupNav = false
+	},
+	showPopupNavLogout() {
+		return !this.$screen('lg')
 	},
 	navBarContent: {
 		['x-show']() {
 			return this.showNavBar || this.$screen('md')
+		}
+	},
+	navBarContentLg: {
+		['x-show']() {
+			return this.showNavBar || this.$screen('lg')
+		}
+	},
+	popupNavContentLg: {
+		['x-show']() {
+			return this.showPopupNav || !this.$screen('lg')
 		}
 	}
 }))
@@ -110,6 +101,64 @@ Alpine.data('pinnedPost', () => ({
 	},
 	hidePin() {
 		this.pin = false
+	}
+}))
+
+Alpine.data('toggleList', function () {
+	return {
+		expandList: this.$persist(true).as('expandListState-' + this.$root.dataset.title),
+		toggleItem() {
+			this.expandList = !this.expandList
+		},
+		iconContent: {
+			':class'() {
+				return this.expandList ? 'rotate-90' : '';
+			}
+		}
+	}
+})
+
+Alpine.data('collapseContent', () => ({
+	contentVisible: false,
+	toggleContent() {
+		this.contentVisible = !this.contentVisible
+	},
+	contentIsVisible() {
+		return this.contentVisible
+	},
+	contentIsHidden() {
+		return !this.contentVisible
+	},
+	iconContent: {
+		':class'() {
+			return this.contentVisible ? '-rotate-90' : '';
+		}
+	}
+}))
+
+Alpine.data('postNavigateArticle', () => ({
+	buttonState: false,
+	showButton() {
+		this.buttonState = true
+	},
+	hideButton() {
+		this.buttonState = false
+	},
+	buttonVisible() {
+		return this.buttonState
+	}
+}))
+
+Alpine.data('optionsToggle', () => ({
+	optionsState: false,
+	showOptions() {
+		this.optionsState = true
+	},
+	hideOptions() {
+		this.optionsState = false
+	},
+	optionsVisible() {
+		return this.optionsState || this.$screen('sm')
 	}
 }))
 

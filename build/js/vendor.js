@@ -4065,42 +4065,34 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       }
     }
   }));
-  import_csp.default.data("counter", () => ({
-    count: 1,
-    increment() {
-      this.count++;
-    }
-  }));
-  import_csp.default.data("search", () => ({
-    showSearch: false,
-    closeSearch() {
-      this.showSearch = false;
-    },
-    openSearch() {
-      this.showSearch = true;
-    },
-    toggleSearch() {
-      this.showSearch = !this.showSearch;
-    },
-    searchDocumentBody: {
-      ["@keyup.escape"]() {
-        this.showSearch = false;
-      },
-      ":class"() {
-        if (this.showSearch) {
-          return "overflow-y-hidden";
-        }
-      }
-    }
-  }));
   import_csp.default.data("navBar", () => ({
     showNavBar: false,
+    showPopupNav: false,
     toggleNav() {
       this.showNavBar = !this.showNavBar;
+    },
+    togglePopupNav() {
+      this.showPopupNav = !this.showPopupNav;
+    },
+    closePopupNav() {
+      this.showPopupNav = false;
+    },
+    showPopupNavLogout() {
+      return !this.$screen("lg");
     },
     navBarContent: {
       ["x-show"]() {
         return this.showNavBar || this.$screen("md");
+      }
+    },
+    navBarContentLg: {
+      ["x-show"]() {
+        return this.showNavBar || this.$screen("lg");
+      }
+    },
+    popupNavContentLg: {
+      ["x-show"]() {
+        return this.showPopupNav || !this.$screen("lg");
       }
     }
   }));
@@ -4111,6 +4103,60 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     },
     hidePin() {
       this.pin = false;
+    }
+  }));
+  import_csp.default.data("toggleList", function() {
+    return {
+      expandList: this.$persist(true).as("expandListState-" + this.$root.dataset.title),
+      toggleItem() {
+        this.expandList = !this.expandList;
+      },
+      iconContent: {
+        ":class"() {
+          return this.expandList ? "rotate-90" : "";
+        }
+      }
+    };
+  });
+  import_csp.default.data("collapseContent", () => ({
+    contentVisible: false,
+    toggleContent() {
+      this.contentVisible = !this.contentVisible;
+    },
+    contentIsVisible() {
+      return this.contentVisible;
+    },
+    contentIsHidden() {
+      return !this.contentVisible;
+    },
+    iconContent: {
+      ":class"() {
+        return this.contentVisible ? "-rotate-90" : "";
+      }
+    }
+  }));
+  import_csp.default.data("postNavigateArticle", () => ({
+    buttonState: false,
+    showButton() {
+      this.buttonState = true;
+    },
+    hideButton() {
+      this.buttonState = false;
+    },
+    buttonVisible() {
+      return this.buttonState;
+    }
+  }));
+  import_csp.default.data("optionsToggle", () => ({
+    optionsState: false,
+    showOptions() {
+      this.optionsState = true;
+    },
+    hideOptions() {
+      this.optionsState = false;
+    },
+    optionsVisible() {
+      return this.optionsState || this.$screen("sm");
     }
   }));
   import_csp.default.data("discordInfoBox", () => ({

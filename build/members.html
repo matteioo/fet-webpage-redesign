@@ -81,6 +81,7 @@
 				<li><a href="fotos.html">Fotos</a></li>
 				<li><a href="jobs.html">Jobs</a></li>
 				<li><a href="kontakt.html">Kontakt</a></li>
+				<li><a href="login.html"><span class="visible-collapsedOnly mr-2">Anmelden</span><i class="fa-solid fa-right-to-bracket"></i></a></li>
 				<li class="visible-expandedOnly"><button @click="openSearch"><span class="hidden md:inline"><i class="fa-solid fa-magnifying-glass"></i></span></button></li>
 			</ul>
 		</div>
@@ -91,8 +92,10 @@
 		<h1 class="page-title">Über uns</h1>
 		<div class="sm:flex sm:flex-row justify-center my-8">
 			<aside class="flex-none max-w-min sm:mr-8">
+				<!-- Modal Content -->
 				<div class="fixed sm:sticky top-0 sm:top-4 left-0 w-full h-full sm:h-auto bg-black sm:bg-transparent bg-opacity-70 flex sm:block items-center justify-center"
 					x-bind="modalContent"
+					x-cloak
 					x-transition:enter="transition duration-300 ease-out"
 					x-transition:enter-start="opacity-0"
 					x-transition:enter-end="opacity-100"

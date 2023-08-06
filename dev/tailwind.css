@@ -74,7 +74,7 @@
 	@apply hidden;
 }
 .navbar-subcontentList {
-	@apply z-20 top-9 right-0 bg-white dark:bg-transparent w-full;
+	@apply z-20 top-9 bg-white dark:bg-transparent w-full;
 }
 
 .navBar-sm > div {
@@ -141,6 +141,10 @@
 .navBar-md .visible-expandedOnly {
 	@apply hidden md:block;
 }
+.navBar-md .visible-collapsedOnly {
+	@apply md:hidden;
+}
+
 
 .navBar-lg > div {
 	@apply lg:flex-row lg:justify-between;

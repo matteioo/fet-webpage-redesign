@@ -37,7 +37,33 @@
 	<link rel="stylesheet" href="fonts/Besley-2.0/besley.css">
 	<link rel="stylesheet" href="fonts/Fira_Code-6.2/fira_code.css">
 </head>
-<body>
+<body x-data="bodyData" x-bind="documentBody">
+	<!-- SEARCH-BAR -->
+	<div class="fixed w-screen h-screen z-30 backdrop-blur-sm backdrop-saturate-50"
+		 x-show="showSearch"
+		 x-cloak
+		 x-transition:enter="transition ease-out duration-300"
+		 x-transition:enter-start="transform backdrop-blur-none backdrop-saturate-100"
+		 x-transition:enter-end="transform backdrop-blur-sm backdrop-saturate-50"
+		 x-transition:leave="transition ease-in duration-150"
+		 x-transition:leave-start="transform backdrop-blur-sm backdrop-saturate-50"
+		 x-transition:leave-end="transform backdrop-blur-none backdrop-saturate-100"
+	>
+		<form action="suche.html" @click.outside="closeSearch" class="flex items-center opacity-90 gap-x-4 mt-[33vh] sm:max-w-md lg:max-w-lg xl:max-w-xl mx-4 sm:mx-auto py-2 px-4 shadow-lg dark:shadow-none bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg dark:border-2 dark:border-gray-700"
+			  x-show="showSearch"
+			  x-transition:enter="transition transform ease-out duration-300"
+			  x-transition:enter-start="scale-0 opacity-0"
+			  x-transition:enter-end="scale-100 opacity-90"
+			  x-transition:leave="transition transform ease-in duration-150"
+			  x-transition:leave-start="scale-100 opacity-90"
+			  x-transition:leave-end="scale-0 opacity-0"
+		>
+			<input class="flex-grow bg-inherit text-inherit h-10 p-0 border-0 focus:outline-none focus:border-transparent focus:ring-0" type="search" name="search" placeholder="Nach Person, Artikel oder Fotoalbum suchen...">
+			<button type="submit" class="flex-none">
+				<i class="fa-solid fa-magnifying-glass text-gray-500 dark:text-gray-600"></i>
+			</button>
+		</form>
+	</div>
 	<!-- NAVBAR -->
 	<nav class="navBar-md" x-data="navBar">
 		<div>
@@ -61,6 +87,7 @@
 				<li><a href="fotos.html">Fotos</a></li>
 				<li><a href="jobs.html">Jobs</a></li>
 				<li><a href="kontakt.html">Kontakt</a></li>
+				<li><a href="login.html"><span class="visible-collapsedOnly mr-2">Anmelden</span><i class="fa-solid fa-right-to-bracket"></i></a></li>
 				<li class="visible-expandedOnly"><button @click="openSearch"><span class="hidden md:inline"><i class="fa-solid fa-magnifying-glass"></i></span></button></li>
 			</ul>
 		</div>
@@ -69,15 +96,15 @@
 	<!-- Main Content -->
 	<main class="container mx-auto w-full flex-1 my-8 sm:flex flex-col sm:px-4">
 		<a href="#" class="hidden z-20 fixed left-0 top-1/2 -mt-8 p-2 xl:flex items-center text-gray-400 dark:text-gray-300 rounded-md"
-			x-data="{ showPrevArticleButton : false }"
-			@mouseleave="showPrevArticleButton = false"
-			@mouseover="showPrevArticleButton = true"
+		   x-data="postNavigateArticle"
+		   @mouseleave="hideButton"
+		   @mouseover="showButton"
 		>
 			<svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-12 -m-2 p-2 bg-gray-100 dark:bg-gray-700 rounded-md" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 				<path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
 			</svg>
 			<span class="text-gray-600 dark:text-gray-300 font-medium bg-gray-100 dark:bg-gray-700 -m-2 p-2 rounded-r-md origin-left"
-				x-show="showPrevArticleButton"
+				  x-show="buttonVisible"
         x-transition:enter="transition ease-out duration-300"
         x-transition:enter-start="opacity-0 bg-opacity-0 transform scale-90"
         x-transition:enter-end="opacity-100 transform scale-100"
@@ -87,12 +114,12 @@
 			>Vorheriger<br>Artikel</span>
 		</a>
 		<a href="#" class="hidden z-20 fixed right-0 top-1/2 -mt-8 p-2 xl:flex items-center text-gray-400 dark:text-gray-300 rounded-md"
-			x-data="{ showNextArticleButton : false }"
-			@mouseleave="showNextArticleButton = false"
-			@mouseover="showNextArticleButton = true"
+			x-data="postNavigateArticle"
+			@mouseleave="hideButton"
+			@mouseover="showButton"
 		>
 			<span class="z-30 text-gray-600 dark:text-gray-300 font-medium bg-gray-100 dark:bg-gray-700 -m-2 p-2 rounded-l-md text-right origin-right"
-				x-show="showNextArticleButton"
+				x-show="buttonVisible"
 				x-transition:enter="transition ease-out duration-300"
 				x-transition:enter-start="opacity-0 bg-opacity-0 transform scale-90"
 				x-transition:enter-end="opacity-100 transform scale-100"
@@ -353,15 +380,15 @@ function hideInfoBox(){
 				</div>
 				<hr class="-mx-4 border-gray-200 dark:border-gray-800 dark:border my-4">
 				<h2 class="text-gray-800 dark:text-gray-200 font-medium"><i class="fa-solid fa-inbox mr-2 text-gray-400 dark:text-gray-500"></i>Dokument(e):</h2>
-				<div class="w-full my-2 flex items-center gap-4 text-gray-700 dark:text-gray-300" x-data="{ showOptions: false }">
+				<div class="w-full my-2 flex items-center gap-4 text-gray-700 dark:text-gray-300" x-data="optionsToggle">
 					<span class="flex-1">Agenda Agenda Agenda Agenda</span>
 					<div class="relative">
-						<button class="sm:hidden px-2 py-1 border border-gray-300 dark:border-gray-700 rounded" @click="showOptions = true">
+						<button class="sm:hidden px-2 py-1 border border-gray-300 dark:border-gray-700 rounded" @click="showOptions">
 							<i class="fa-solid fa-ellipsis-vertical fa-fw"></i>
 						</button>
 						<ul class="z-10 absolute top-0 right-0 sm:flex flex-row sm:static flex-none border dark:border-2 border-gray-300 dark:border-gray-700 rounded divide-y-2 sm:divide-y-0 sm:divide-x divide-gray-300 dark:divide-gray-700 bg-gray-100 dark:bg-gray-800 shadow sm:bg-transparent sm:shadow-none"
-							@click.outside="showOptions = false"
-							x-show="showOptions || $screen('sm')"
+							@click.outside="hideOptions"
+							x-show="optionsVisible"
 							x-transition:enter="transition ease-out duration-300"
 							x-transition:enter-start="transform origin-right opacity-0 scale-95"
 							x-transition:enter-end="transform origin-right opacity-100 scale-100"
@@ -374,15 +401,15 @@ function hideInfoBox(){
 						</ul>
 					</div>
 				</div>
-					<div class="w-full my-2 flex items-center gap-4 text-gray-700 dark:text-gray-300" x-data="{ showOptions: false }">
+					<div class="w-full my-2 flex items-center gap-4 text-gray-700 dark:text-gray-300" x-data="optionsToggle">
 						<span class="flex-1">Protokoll des underser halreho awdh</span>
 						<div class="relative">
-							<button class="sm:hidden px-2 py-1 border border-gray-300 dark:border-gray-700 rounded" @click="showOptions = true">
+							<button class="sm:hidden px-2 py-1 border border-gray-300 dark:border-gray-700 rounded" @click="showOptions">
 								<i class="fa-solid fa-ellipsis-vertical fa-fw"></i>
 							</button>
 							<ul class="z-10 absolute top-0 right-0 sm:flex flex-row sm:static flex-none border dark:border-2 border-gray-300 dark:border-gray-700 rounded divide-y-2 sm:divide-y-0 sm:divide-x divide-gray-300 dark:divide-gray-700 bg-gray-100 dark:bg-gray-800 shadow sm:bg-transparent sm:shadow-none"
-								@click.outside="showOptions = false"
-								x-show="showOptions || $screen('sm')"
+								@click.outside="hideOptions"
+								x-show="optionsVisible"
 								x-transition:enter="transition ease-out duration-300"
 								x-transition:enter-start="transform origin-right opacity-0 scale-95"
 								x-transition:enter-end="transform origin-right opacity-100 scale-100"

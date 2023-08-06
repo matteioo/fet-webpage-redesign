@@ -975,7 +975,6 @@ p a:hover {
 
 .navbar-subcontentList {
   top: 2.25rem;
-  right: 0px;
   z-index: 20;
   width: 100%;
   --tw-bg-opacity: 1;
@@ -989,11 +988,6 @@ p a:hover {
 }
 
 @media (min-width: 640px) {
-  .navBar-sm > div {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
   .navBar-sm .searchbar-toggle {
     left: 0px;
     display: none;
@@ -1193,6 +1187,10 @@ p a:hover {
 @media (min-width: 768px) {
   .navBar-md .visible-expandedOnly {
     display: block;
+  }
+
+  .navBar-md .visible-collapsedOnly {
+    display: none;
   }
 }
 
@@ -3243,11 +3241,6 @@ footer .copyright {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.rotate-90 {
-  --tw-rotate: 90deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .scale-0 {
   --tw-scale-x: 0;
   --tw-scale-y: 0;
@@ -3942,11 +3935,6 @@ footer .copyright {
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
-.text-green-400 {
-  --tw-text-opacity: 1;
-  color: rgb(74 222 128 / var(--tw-text-opacity));
-}
-
 .text-green-600 {
   --tw-text-opacity: 1;
   color: rgb(22 163 74 / var(--tw-text-opacity));
@@ -3954,11 +3942,6 @@ footer .copyright {
 
 .text-inherit {
   color: inherit;
-}
-
-.text-pink-400 {
-  --tw-text-opacity: 1;
-  color: rgb(244 114 182 / var(--tw-text-opacity));
 }
 
 .text-proprietary {
@@ -3974,11 +3957,6 @@ footer .copyright {
 .text-proprietary-darker {
   --tw-text-opacity: 1;
   color: rgb(0 68 102 / var(--tw-text-opacity));
-}
-
-.text-purple-300 {
-  --tw-text-opacity: 1;
-  color: rgb(216 180 254 / var(--tw-text-opacity));
 }
 
 .text-red-600 {
@@ -3999,11 +3977,6 @@ footer .copyright {
 .text-sky-700 {
   --tw-text-opacity: 1;
   color: rgb(3 105 161 / var(--tw-text-opacity));
-}
-
-.text-yellow-500 {
-  --tw-text-opacity: 1;
-  color: rgb(234 179 8 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -4222,16 +4195,6 @@ footer .copyright {
 .hover\:text-gray-900:hover {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
-}
-
-.hover\:text-proprietary-dark:hover {
-  --tw-text-opacity: 1;
-  color: rgb(0 85 128 / var(--tw-text-opacity));
-}
-
-.hover\:text-red-700:hover {
-  --tw-text-opacity: 1;
-  color: rgb(185 28 28 / var(--tw-text-opacity));
 }
 
 .hover\:underline:hover {
