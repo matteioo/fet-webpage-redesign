@@ -25,7 +25,7 @@ module.exports = {
 				'gray-transparent': '#6B7280A7'
 			},
 			backgroundImage: theme => ({
-				'cover-image': "url('../img/cover-image.jpeg')",
+				'cover-image': "url('../img/cover-image.webp')",
 			}),
 			minHeight: {
 				'12': '3rem/* 48px */',
