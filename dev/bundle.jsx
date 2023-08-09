@@ -10,6 +10,28 @@ Alpine.plugin(Toolkit)
 Alpine.plugin(collapse)
 Alpine.plugin(persist)
 
+Alpine.store('darkMode', {
+	theme: Alpine.$persist('system'),
+	setSystem() {
+		this.theme = 'system'
+	},
+	setLight() {
+		this.theme = 'light'
+	},
+	setDark() {
+		this.theme = 'dark'
+	},
+	isLight() {
+		return this.theme === 'light' || (this.theme === 'system' && !window.matchMedia('(prefers-color-scheme: dark)').matches)
+	},
+	isDark() {
+		return this.theme === 'dark' || (this.theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+	},
+	getCurrentTheme() {
+		return this.theme
+	}
+})
+
 Alpine.data('bodyData', () => ({
 	showSearch: false,
 	showModal: false,
@@ -34,6 +56,31 @@ Alpine.data('bodyData', () => ({
 	displayNoModal() {
 		return !this.displayModal()
 	},
+	setThemeSystem() {
+		Alpine.store('darkMode').setSystem()
+		console.log(this.$store.darkMode.theme)
+	},
+	setThemeLight() {
+		Alpine.store('darkMode').setLight()
+		console.log(this.$store.darkMode.theme)
+	},
+	setThemeDark() {
+		Alpine.store('darkMode').setDark()
+		console.log(this.$store.darkMode.theme)
+	},
+	isThemeDark() {
+		return Alpine.store('darkMode').isDark()
+	},
+	isThemeLight() {
+		return Alpine.store('darkMode').isLight()
+	},
+	documentRoot: {
+		':class'() {
+			if (this.$store.darkMode.isDark()) {
+				return 'dark'
+			}
+		}
+	},
 	documentBody: {
 		['@keyup.escape']() {
 			this.showSearch = false
@@ -43,16 +90,14 @@ Alpine.data('bodyData', () => ({
 			let classes = ''
 
 			if (this.showSearch || this.showModal) {
-				classes = 'overflow-y-hidden'
+				classes.concat(' overflow-y-hidden')
 
 				if (this.showModal) {
-					classes.concat('sm:overflow-y-auto')
+					classes.concat(' sm:overflow-y-auto')
 				}
-
-				return classes
-			} else {
-				return ''
 			}
+
+			return classes
 		}
 	},
 	modalContent: {
@@ -63,10 +108,20 @@ Alpine.data('bodyData', () => ({
 }))
 
 Alpine.data('navBar', () => ({
-	showNavBar: false,
+	showNavBar: true,
 	showPopupNav: false,
+	showThemePopup: false,
 	toggleNav() {
 		this.showNavBar = ! this.showNavBar
+	},
+	toggleThemePopup() {
+		this.showThemePopup = !this.showThemePopup
+	},
+	closeThemePopup() {
+		this.showThemePopup = false
+	},
+	themePopupVisible() {
+		return this.showThemePopup
 	},
 	togglePopupNav() {
 		this.showPopupNav = !this.showPopupNav
@@ -80,6 +135,26 @@ Alpine.data('navBar', () => ({
 	navBarContent: {
 		['x-show']() {
 			return this.showNavBar || this.$screen('md')
+		}
+	},
+	navBarThemeContent: {
+		['x-show']() {
+			return this.showThemePopup || this.$screen('md')
+		}
+	},
+	navBarThemeContentSystem: {
+		':class'() {
+			return Alpine.store('darkMode').getCurrentTheme() === 'system' ? 'activeTheme' : ''
+		}
+	},
+	navBarThemeContentLight: {
+		':class'() {
+			return Alpine.store('darkMode').getCurrentTheme() === 'light' ? 'activeTheme' : ''
+		}
+	},
+	navBarThemeContentDark: {
+		':class'() {
+			return Alpine.store('darkMode').getCurrentTheme() === 'dark' ? 'activeTheme' : ''
 		}
 	},
 	navBarContentLg: {

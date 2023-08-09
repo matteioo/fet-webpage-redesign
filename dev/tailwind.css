@@ -107,6 +107,12 @@
 .navBar-sm .navbar-subcontentList {
 	@apply sm:block sm:absolute dark:sm:bg-gray-700 sm:shadow-md sm:rounded dark:sm:text-proprietary-lightest;
 }
+.navBar-sm .visible-expandedOnly {
+	@apply hidden sm:block;
+}
+.navBar-sm .visible-collapsedOnly {
+	@apply sm:hidden !important;
+}
 
 .navBar-md > div {
 	@apply md:flex-row md:justify-between;
@@ -142,7 +148,7 @@
 	@apply hidden md:block;
 }
 .navBar-md .visible-collapsedOnly {
-	@apply md:hidden;
+	@apply md:hidden !important;
 }
 
 
@@ -178,6 +184,19 @@
 }
 .navBar-lg .visible-expandedOnly {
 	@apply hidden lg:block;
+}
+.navBar-lg .visible-expandedOnly {
+	@apply hidden md:block;
+}
+.navBar-lg .visible-collapsedOnly {
+	@apply lg:hidden !important;
+}
+
+ul#mobileThemeSwitcher {
+	@apply p-1 rounded flex gap-x-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300;
+}
+.activeTheme {
+	@apply bg-gray-50 dark:bg-gray-800 rounded shadow;
 }
 
 /***** PAGE-TITLE *****/

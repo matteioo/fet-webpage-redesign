@@ -4017,6 +4017,27 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   import_csp.default.plugin(module_default);
   import_csp.default.plugin(module_default2);
   import_csp.default.plugin(module_default3);
+  import_csp.default.store("darkMode", {
+    theme: import_csp.default.$persist("system"),
+    setSystem() {
+      this.theme = "system";
+    },
+    setLight() {
+      this.theme = "light";
+    },
+    setDark() {
+      this.theme = "dark";
+    },
+    isLight() {
+      return this.theme === "light" || this.theme === "system" && !window.matchMedia("(prefers-color-scheme: dark)").matches;
+    },
+    isDark() {
+      return this.theme === "dark" || this.theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    },
+    getCurrentTheme() {
+      return this.theme;
+    }
+  });
   import_csp.default.data("bodyData", () => ({
     showSearch: false,
     showModal: false,
@@ -4041,6 +4062,31 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     displayNoModal() {
       return !this.displayModal();
     },
+    setThemeSystem() {
+      import_csp.default.store("darkMode").setSystem();
+      console.log(this.$store.darkMode.theme);
+    },
+    setThemeLight() {
+      import_csp.default.store("darkMode").setLight();
+      console.log(this.$store.darkMode.theme);
+    },
+    setThemeDark() {
+      import_csp.default.store("darkMode").setDark();
+      console.log(this.$store.darkMode.theme);
+    },
+    isThemeDark() {
+      return import_csp.default.store("darkMode").isDark();
+    },
+    isThemeLight() {
+      return import_csp.default.store("darkMode").isLight();
+    },
+    documentRoot: {
+      ":class"() {
+        if (this.$store.darkMode.isDark()) {
+          return "dark";
+        }
+      }
+    },
     documentBody: {
       ["@keyup.escape"]() {
         this.showSearch = false;
@@ -4049,14 +4095,12 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       ":class"() {
         let classes = "";
         if (this.showSearch || this.showModal) {
-          classes = "overflow-y-hidden";
+          classes.concat(" overflow-y-hidden");
           if (this.showModal) {
-            classes.concat("sm:overflow-y-auto");
+            classes.concat(" sm:overflow-y-auto");
           }
-          return classes;
-        } else {
-          return "";
         }
+        return classes;
       }
     },
     modalContent: {
@@ -4066,10 +4110,20 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     }
   }));
   import_csp.default.data("navBar", () => ({
-    showNavBar: false,
+    showNavBar: true,
     showPopupNav: false,
+    showThemePopup: false,
     toggleNav() {
       this.showNavBar = !this.showNavBar;
+    },
+    toggleThemePopup() {
+      this.showThemePopup = !this.showThemePopup;
+    },
+    closeThemePopup() {
+      this.showThemePopup = false;
+    },
+    themePopupVisible() {
+      return this.showThemePopup;
     },
     togglePopupNav() {
       this.showPopupNav = !this.showPopupNav;
@@ -4083,6 +4137,26 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     navBarContent: {
       ["x-show"]() {
         return this.showNavBar || this.$screen("md");
+      }
+    },
+    navBarThemeContent: {
+      ["x-show"]() {
+        return this.showThemePopup || this.$screen("md");
+      }
+    },
+    navBarThemeContentSystem: {
+      ":class"() {
+        return import_csp.default.store("darkMode").getCurrentTheme() === "system" ? "activeTheme" : "";
+      }
+    },
+    navBarThemeContentLight: {
+      ":class"() {
+        return import_csp.default.store("darkMode").getCurrentTheme() === "light" ? "activeTheme" : "";
+      }
+    },
+    navBarThemeContentDark: {
+      ":class"() {
+        return import_csp.default.store("darkMode").getCurrentTheme() === "dark" ? "activeTheme" : "";
       }
     },
     navBarContentLg: {
