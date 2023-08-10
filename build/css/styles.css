@@ -2760,11 +2760,6 @@ footer .copyright {
   margin-right: 0.125rem;
 }
 
-.mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -3422,10 +3417,6 @@ footer .copyright {
 
 .self-stretch {
   align-self: stretch;
-}
-
-.overflow-hidden {
-  overflow: hidden;
 }
 
 .overflow-y-hidden {
@@ -4866,6 +4857,10 @@ footer .copyright {
   :is(.dark .sm\:dark\:border-gray-700) {
     --tw-border-opacity: 1;
     border-color: rgb(55 65 81 / var(--tw-border-opacity));
+  }
+
+  :is(.dark .sm\:dark\:bg-transparent) {
+    background-color: transparent;
   }
 }
 
