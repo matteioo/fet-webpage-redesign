@@ -149,9 +149,11 @@
 	<main class="container mx-auto w-full px-4 my-8 flex-1">
 		<h1 class="page-title">Tasks</h1>
 		<div class="sm:flex sm:flex-row-reverse justify-center">
+			<!-- Modal Content -->
 			<aside class="sm:w-2/5 sm:max-w-xs sm:pl-4 lg:pl-8 my-8 sm:my-0">
 				<div class="z-10 fixed sm:sticky top-0 sm:top-4 lg:top-8 left-0 w-full h-full sm:h-auto bg-black sm:bg-transparent bg-opacity-70 flex sm:block items-center justify-center"
-					x-show="showModal || $screen('sm')"
+					 x-bind="modalContent"
+					 x-cloak
 					x-transition:enter="transition duration-300 ease-out"
 					x-transition:enter-start="opacity-0"
 					x-transition:enter-end="opacity-100"
@@ -160,8 +162,7 @@
 					x-transition:leave-end="opacity-0"
 				>
 					<div class="max-w-sm sm:w-full mx-4 sm:mx-0 p-4 rounded bg-white dark:bg-gray-800 sm:shadow-lg sm:dark:border-2 sm:dark:border-gray-700"
-						@click.outside="showModal = ! showModal"
-						x-show="showModal || $screen('sm')"
+						 @click.outside="toggleModal"
 						x-transition:enter="transition transform ease-out duration-300"
 						x-transition:enter-start="scale-110 opacity-0"
 						x-transition:enter-end="scale-100 opacity-100"
@@ -176,7 +177,7 @@
 								</span>
 								Auswahl einschränken
 							</h2>
-							<div class="ml-4 -mr-2 px-2 rounded text-xl text-gray-600 dark:text-gray-400 sm:hidden cursor-pointer" @click="showModal = false">
+							<div class="ml-4 -mr-2 px-2 rounded text-xl text-gray-600 dark:text-gray-400 sm:hidden cursor-pointer" @click="closeModal">
 								<i class="fa-solid fa-xmark"></i>
 							</div>
 						</div>
@@ -207,17 +208,17 @@
 						</form>
 					</div>
 				</div>
-				<button id="modal-trigger-1" class="z-10 trigger fixed bottom-4 right-4 bg-proprietary-darker dark:bg-sky-500 text-blue-50 dark:text-sky-900 shadow-lg text-2xl rounded sm:hidden" 
-					@click="showModal = true"
-					x-show="!showModal"
-					x-transition:enter="transition duration-100 ease-in"
-					x-transition:enter-start="opacity-0"
-					x-transition:enter-end="opacity-100"
-					x-transition:leave="transition duration-100 ease-out"
-					x-transition:leave-start="opacity-100"
-					x-transition:leave-end="opacity-0"
+				<button class="z-10 trigger fixed bottom-4 right-4 bg-proprietary-darker dark:bg-sky-500 text-blue-50 dark:text-sky-900 shadow-lg text-2xl rounded sm:hidden"
+						@click="openModal"
+						x-show="displayNoModal"
+						x-transition:enter="transition duration-100 ease-in"
+						x-transition:enter-start="opacity-0"
+						x-transition:enter-end="opacity-100"
+						x-transition:leave="transition duration-100 ease-out"
+						x-transition:leave-start="opacity-100"
+						x-transition:leave-end="opacity-0"
 				>
-					<i class="fa-solid fa-filter p-2"></i>
+					<i class="fa-solid fa-filter px-2 py-1"></i>
 				</button>
 			</aside>
 
