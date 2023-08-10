@@ -181,13 +181,28 @@
 				</label>
 				<label>
 					<input type="checkbox">
-					<span>Kompakte Ansicht</span>
+					<span>Checkbox to check</span>
 				</label>
-				<label>
-					<input type="radio" class="">
-					<span>Kompakte Ansicht</span>
-				</label>
-				<input type="submit" disabled class="block btn btn-primary" value="Anmelden">
+				<div class="flex flex-col gap-y-2">
+					<label>
+						<input type="radio" name="foo">
+						<span>Radio option 1</span>
+					</label>
+					<label>
+						<input type="radio" name="foo">
+						<span>Radio option 2</span>
+					</label>
+					<label>
+						<input type="radio" name="foo">
+						<span>Radio option 3</span>
+					</label>
+				</div>
+				<input type="submit" class="block btn btn-primary" value="Primary">
+				<input type="submit" disabled class="block btn btn-primary" value="Primary disabled">
+				<input type="submit" class="block btn btn-secondary" value="Secondary">
+				<input type="submit" disabled class="block btn btn-secondary" value="Secondary disabled">
+				<input type="submit" class="block btn btn-secondary-proprietary" value="Secondary proprietary">
+				<input type="submit" disabled class="block btn btn-secondary-proprietary" value="Secondary proprietary disabled">
 			</form>
 		</div>
 	</main>
