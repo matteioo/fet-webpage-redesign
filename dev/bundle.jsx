@@ -108,7 +108,7 @@ Alpine.data('bodyData', () => ({
 }))
 
 Alpine.data('navBar', () => ({
-	showNavBar: true,
+	showNavBar: false,
 	showPopupNav: false,
 	showThemePopup: false,
 	toggleNav() {

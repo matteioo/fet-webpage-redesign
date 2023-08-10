@@ -1279,22 +1279,33 @@ p a:hover {
   .navBar-lg .visible-expandedOnly {
     display: block;
   }
-}
 
-.navBar-lg .visible-expandedOnly {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .navBar-lg .visible-expandedOnly {
-    display: block;
-  }
-}
-
-@media (min-width: 1024px) {
   .navBar-lg .visible-collapsedOnly {
     display: none !important;
   }
+}
+
+ul#expandedThemeSwitcher {
+  position: absolute;
+  left: 0px;
+  z-index: 20;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  overflow: hidden;
+  border-radius: 0.25rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+:is(.dark ul#expandedThemeSwitcher) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
 
 ul#mobileThemeSwitcher {

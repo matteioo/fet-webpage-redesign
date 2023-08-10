@@ -4110,7 +4110,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     }
   }));
   import_csp.default.data("navBar", () => ({
-    showNavBar: true,
+    showNavBar: false,
     showPopupNav: false,
     showThemePopup: false,
     toggleNav() {

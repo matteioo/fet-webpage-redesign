@@ -185,13 +185,13 @@
 .navBar-lg .visible-expandedOnly {
 	@apply hidden lg:block;
 }
-.navBar-lg .visible-expandedOnly {
-	@apply hidden md:block;
-}
 .navBar-lg .visible-collapsedOnly {
 	@apply lg:hidden !important;
 }
 
+ul#expandedThemeSwitcher {
+	@apply absolute z-20 left-0 mx-2 overflow-hidden rounded shadow text-left text-base bg-gray-100 dark:bg-gray-700;
+}
 ul#mobileThemeSwitcher {
 	@apply p-1 rounded flex gap-x-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300;
 }

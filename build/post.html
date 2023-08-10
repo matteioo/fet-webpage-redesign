@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" x-data="bodyData" x-bind="documentRoot">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,7 +37,7 @@
 	<link rel="stylesheet" href="fonts/Besley-2.0/besley.css">
 	<link rel="stylesheet" href="fonts/Fira_Code-6.2/fira_code.css">
 </head>
-<body x-data="bodyData" x-bind="documentBody">
+<body x-bind="documentBody">
 	<!-- SEARCH-BAR -->
 	<div class="fixed w-screen h-screen z-30 backdrop-blur-sm backdrop-saturate-50"
 		 x-show="showSearch"
@@ -87,8 +87,40 @@
 				<li><a href="fotos.html">Fotos</a></li>
 				<li><a href="jobs.html">Jobs</a></li>
 				<li><a href="kontakt.html">Kontakt</a></li>
+				<li class="relative visible-expandedOnly" x-bind="navBarThemeContent">
+					<button class="relative" @click="toggleThemePopup">
+						<i x-show="isThemeLight" class="fa-solid fa-sun"></i>
+						<i x-show="isThemeDark" class="fa-solid fa-moon"></i>
+					</button>
+					<ul id="expandedThemeSwitcher"
+						x-show="themePopupVisible"
+						@click="closeThemePopup"
+						@click.outside="closeThemePopup"
+						x-cloak
+					>
+						<li class="hover:bg-gray-200 dark:hover:bg-gray-600"><button class="!px-2 !py-1 !m-0 text-left" @click="setThemeLight">Light</button></li>
+						<li class="hover:bg-gray-200 dark:hover:bg-gray-600"><button class="!px-2 !py-1 !m-0 text-left" @click="setThemeDark">Dark</button></li>
+						<li class="hover:bg-gray-200 dark:hover:bg-gray-600"><button class="!px-2 !py-1 !m-0 text-left" @click="setThemeSystem">System</button></li>
+					</ul>
+				</li>
 				<li><a href="login.html"><span class="visible-collapsedOnly mr-2">Anmelden</span><i class="fa-solid fa-right-to-bracket"></i></a></li>
 				<li class="visible-expandedOnly"><button @click="openSearch"><span class="hidden md:inline"><i class="fa-solid fa-magnifying-glass"></i></span></button></li>
+				<li class="visible-collapsedOnly w-fit mx-auto py-1">
+					<div class="flex items-center">
+						<span class="mr-2">Theme:</span>
+						<ul id="mobileThemeSwitcher">
+							<li class="rounded" x-bind="navBarThemeContentLight">
+								<button class="!px-2 !py-0.5 !m-0 rounded-sm text-left bg-inherit" @click="setThemeLight">Light</button>
+							</li>
+							<li class="rounded" x-bind="navBarThemeContentDark">
+								<button class="!px-2 !py-0.5 !m-0 rounded-sm text-left bg-inherit" @click="setThemeDark">Dark</button>
+							</li>
+							<li class="rounded" x-bind="navBarThemeContentSystem">
+								<button class="!px-2 !py-0.5 !m-0 rounded-sm text-left bg-inherit" @click="setThemeSystem">System</button>
+							</li>
+						</ul>
+					</div>
+				</li>
 			</ul>
 		</div>
 	</nav>

@@ -86,7 +86,7 @@
 						<i x-show="isThemeLight" class="fa-solid fa-sun"></i>
 						<i x-show="isThemeDark" class="fa-solid fa-moon"></i>
 					</button>
-					<ul class="absolute z-10 left-0 mx-2 overflow-hidden rounded shadow text-left text-base bg-gray-100 dark:bg-gray-700"
+					<ul id="expandedThemeSwitcher"
 						x-show="themePopupVisible"
 						@click="closeThemePopup"
 						@click.outside="closeThemePopup"
