@@ -44,6 +44,29 @@
 	}
 
 	[x-cloak] { display: none !important; }
+
+	table {
+		@apply shadow rounded overflow-hidden;
+	}
+	thead {
+		@apply bg-gray-200 dark:bg-gray-800 border-b dark:border-gray-500;
+	}
+	tbody tr {
+		@apply bg-white dark:bg-gray-700 even:bg-gray-100 dark:even:bg-gray-800;
+	}
+	tbody tr.bottom-row {
+		@apply bg-gray-200 dark:bg-gray-800 border-t dark:border-gray-500;
+	}
+	th,
+	td {
+		@apply px-3 py-1.5;
+	}
+	th {
+		@apply tracking-wide font-medium text-gray-800 dark:text-gray-100;
+	}
+	td {
+		@apply text-gray-700 dark:text-gray-200;
+	}
 }
 
 @layer utilities {
@@ -262,6 +285,9 @@
 	.btn-secondary-proprietary {
 		@apply border border-proprietary dark:border-sky-500 text-proprietary dark:text-sky-500;
 	}
+	.btn-tertiary {
+		@apply bg-black bg-opacity-0 hover:bg-opacity-10;
+	}
 
 	/***** SECTION *****/
 	.section-title {
@@ -474,6 +500,34 @@
 	}
 	.alert.alert-danger > .alert-title {
 		@apply text-red-800 dark:text-red-200;
+	}
+
+	/***** BADGE *****/
+	.badge {
+		@apply px-2.5 py-0.5 font-medium text-sm uppercase text-gray-800 bg-gray-100 dark:text-gray-300 dark:bg-gray-900 rounded-xl;
+	}
+	.badge.badge-info {
+		@apply text-blue-800 bg-blue-100 border border-blue-300 dark:border-0 dark:text-blue-300 dark:bg-blue-900;
+	}
+	.badge.badge-success {
+		@apply text-green-800 bg-green-100 border border-green-300 dark:border-0 dark:text-green-300 dark:bg-green-900;
+	}
+	.badge.badge-warning {
+		@apply text-yellow-800 bg-yellow-100 border border-yellow-300 dark:border-0 dark:text-yellow-300 dark:bg-yellow-900;
+	}
+	.badge.badge-danger {
+		@apply text-red-800 bg-red-100 border border-red-300 dark:border-0 dark:text-red-300 dark:bg-red-900;
+	}
+
+	/***** PAGINATION *****/
+	.pagination-container {
+		@apply flex border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded divide-x divide-gray-300 dark:divide-gray-600 text-gray-700 dark:text-gray-300;
+	}
+	.pagination-container a {
+		@apply px-2 py-1 lg:px-3 lg:py-1.5 text-sm lg:text-base;
+	}
+	.pagination-container a.active {
+		@apply bg-gray-100 dark:bg-gray-800;
 	}
 
 	/***** JOBSLIST *****/
