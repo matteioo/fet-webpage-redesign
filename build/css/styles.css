@@ -3499,10 +3499,6 @@ footer .copyright {
   max-width: 65ch;
 }
 
-.max-w-screen-sm {
-  max-width: 640px;
-}
-
 .max-w-sm {
   max-width: 24rem;
 }

@@ -59,7 +59,8 @@
     </form>
 </div>
 <!-- NAVBAR -->
-<nav class="navBar-md" x-data="navBar">
+<!-- NAVBAR -->
+<nav class="navBar-lg" x-data="navBar">
     <div>
         <button class="searchbar-toggle"
                 @click="openSearch"
@@ -75,10 +76,10 @@
         >
             <i class="fa-solid fa-bars"></i>
         </button>
-        <ul id="navBarContent" class="navbar-content" x-bind="navBarContent" x-collapse.min.0px>
+        <ul id="navBarContent" class="navbar-content" x-bind="navBarContentLg" x-collapse.min.0px>
             <li><a href="posts.html">News</a></li>
             <li><a href="members.html">Fachschaft</a></li>
-            <li class="active"><a href="fotos.html">Fotos</a></li>
+            <li><a href="fotos.html">Fotos</a></li>
             <li><a href="jobs.html">Jobs</a></li>
             <li><a href="kontakt.html">Kontakt</a></li>
             <li class="relative visible-expandedOnly" x-bind="navBarThemeContent">
@@ -97,7 +98,33 @@
                     <li class="hover:bg-gray-200 dark:hover:bg-gray-600"><button class="!px-2 !py-1 !m-0 text-left" @click="setThemeSystem">System</button></li>
                 </ul>
             </li>
-            <li><a href="login.html"><span class="visible-collapsedOnly mr-2">Anmelden</span><i class="fa-solid fa-right-to-bracket"></i></a></li>
+            <hr class="border-proprietary">
+            <div href="#" class="navbar-subcontent"
+                 @click.outside="closePopupNav"
+            >
+                <div class="navbar-subcontentButton">
+                    <a class="rounded-l" href="#"
+                       @click="togglePopupNav"
+                    >Hallo moses</a>
+                    <a class="rounded-r" href="#"><i class="fa-solid fa-power-off"></i></a>
+                </div>
+                <div class="navbar-subcontentList"
+                     x-bind="popupNavContentLg"
+                     x-transition:enter="transition ease-out duration-300"
+                     x-transition:enter-start="transform origin-top opacity-0 scale-95"
+                     x-transition:enter-end="transform origin-top opacity-100 scale-100"
+                     x-transition:leave="transition ease-in duration-150"
+                     x-transition:leave-start="transform origin-top opacity-100 scale-100"
+                     x-transition:leave-end="transform origin-top opacity-0 scale-95"
+                >
+                    <li class="navInternal"><a href="admin.html"><i class="fa-fw fa-solid fa-user-secret mr-2"></i>Admin</a></li>
+                    <li class="navInternal"><a href="admin-tasks.html"><i class="fa-fw fa-solid fa-list-check mr-2"></i>Tasks</a></li>
+                    <li class="navInternal"><a href="admin-intern.html"><i class="fa-fw fa-solid fa-database mr-2"></i>Intern</a></li>
+                    <li class="navInternal"
+                        x-show="showPopupNavLogout"
+                    ><a href="#"><i class="fa-fw fa-solid fa-power-off mr-2"></i>Logout</a></li>
+                </div>
+            </div>
             <li class="visible-expandedOnly"><button @click="openSearch"><span class="hidden md:inline"><i class="fa-solid fa-magnifying-glass"></i></span></button></li>
             <li class="visible-collapsedOnly w-fit mx-auto py-1">
                 <div class="flex items-center">
