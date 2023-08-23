@@ -655,6 +655,7 @@ label > span {
 	[type='tel'],
 	[type='time'],
 	[type='week'],
+	[type='file'],
 	textarea,
 	select,
 	select[multiple] {
@@ -672,6 +673,26 @@ label > span {
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
+[type='text']::file-selector-button,
+	[type='email']::file-selector-button,
+	[type='url']::file-selector-button,
+	[type='password']::file-selector-button,
+	[type='number']::file-selector-button,
+	[type='date']::file-selector-button,
+	[type='datetime-local']::file-selector-button,
+	[type='month']::file-selector-button,
+	[type='search']::file-selector-button,
+	[type='tel']::file-selector-button,
+	[type='time']::file-selector-button,
+	[type='week']::file-selector-button,
+	[type='file']::file-selector-button,
+	textarea::file-selector-button,
+	select::file-selector-button,
+	select[multiple]::file-selector-button {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 [type='text']:focus,
 	[type='email']:focus,
 	[type='url']:focus,
@@ -684,6 +705,7 @@ label > span {
 	[type='tel']:focus,
 	[type='time']:focus,
 	[type='week']:focus,
+	[type='file']:focus,
 	textarea:focus,
 	select:focus,
 	select[multiple]:focus {
@@ -705,6 +727,7 @@ label > span {
 	[type='tel']:disabled,
 	[type='time']:disabled,
 	[type='week']:disabled,
+	[type='file']:disabled,
 	textarea:disabled,
 	select:disabled,
 	select[multiple]:disabled {
@@ -724,6 +747,7 @@ label > span {
 	[type='tel']),:is(.dark 
 	[type='time']),:is(.dark 
 	[type='week']),:is(.dark 
+	[type='file']),:is(.dark 
 	textarea),:is(.dark 
 	select),:is(.dark 
 	select[multiple]) {
@@ -747,6 +771,7 @@ label > span {
 	[type='tel'])::-moz-placeholder, :is(.dark 
 	[type='time'])::-moz-placeholder, :is(.dark 
 	[type='week'])::-moz-placeholder, :is(.dark 
+	[type='file'])::-moz-placeholder, :is(.dark 
 	textarea)::-moz-placeholder, :is(.dark 
 	select)::-moz-placeholder, :is(.dark 
 	select[multiple])::-moz-placeholder {
@@ -766,6 +791,7 @@ label > span {
 	[type='tel'])::placeholder,:is(.dark 
 	[type='time'])::placeholder,:is(.dark 
 	[type='week'])::placeholder,:is(.dark 
+	[type='file'])::placeholder,:is(.dark 
 	textarea)::placeholder,:is(.dark 
 	select)::placeholder,:is(.dark 
 	select[multiple])::placeholder {
@@ -785,6 +811,7 @@ label > span {
 	[type='tel']):focus,:is(.dark 
 	[type='time']):focus,:is(.dark 
 	[type='week']):focus,:is(.dark 
+	[type='file']):focus,:is(.dark 
 	textarea):focus,:is(.dark 
 	select):focus,:is(.dark 
 	select[multiple]):focus {
@@ -833,6 +860,50 @@ label > span {
 
 [type='radio'] {
   border-radius: 9999px;
+}
+
+[type='file']::file-selector-button {
+  margin: 0.25rem;
+  border-radius: 0.25rem;
+  border-width: 0px;
+  border-style: solid;
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 85 128 / var(--tw-bg-opacity));
+  padding: 0.5rem;
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  color: rgb(239 246 255 / var(--tw-text-opacity));
+}
+
+[type='file']:hover:enabled::file-selector-button {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 68 102 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(219 234 254 / var(--tw-text-opacity));
+}
+
+:is(.dark [type='file'])::file-selector-button {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 68 102 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(191 219 254 / var(--tw-text-opacity));
+}
+
+:is(.dark [type='file']:hover:enabled)::file-selector-button {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 51 77 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(147 197 253 / var(--tw-text-opacity));
+}
+
+[type='file'] {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
+:is(.dark [type='file']) {
+  --tw-text-opacity: 1;
+  color: rgb(229 231 235 / var(--tw-text-opacity));
 }
 
 [x-cloak] {
@@ -2994,6 +3065,69 @@ ul.sideBarNav > ul > li.active > a:first-child {
   }
 }
 
+/***** MULTI SECTION FORM *****/
+
+.multiSectionForm {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.multiSectionForm > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-y-reverse: 0;
+  border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+  border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+  --tw-divide-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-divide-opacity));
+}
+
+:is(.dark .multiSectionForm) > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgb(75 85 99 / var(--tw-divide-opacity));
+}
+
+.multiSectionForm section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.multiSectionForm section:first-child {
+  padding-top: 0px;
+}
+
+.multiSectionForm section:last-child {
+  padding-bottom: 0px;
+}
+
+.multiSectionForm section > h2 {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
+:is(.dark .multiSectionForm section > h2) {
+  --tw-text-opacity: 1;
+  color: rgb(229 231 235 / var(--tw-text-opacity));
+}
+
+.multiSectionForm section > small {
+  margin-bottom: 1rem;
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+
+:is(.dark .multiSectionForm section > small) {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
 /***** FOOTER *****/
 
 footer {
@@ -3062,6 +3196,18 @@ footer .copyright {
   font-weight: 300;
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 .visible {
@@ -3134,6 +3280,22 @@ footer .copyright {
 
 .z-30 {
   z-index: 30;
+}
+
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
+
+.col-span-3 {
+  grid-column: span 3 / span 3;
+}
+
+.col-span-4 {
+  grid-column: span 4 / span 4;
+}
+
+.col-span-full {
+  grid-column: 1 / -1;
 }
 
 .float-right {
@@ -3472,6 +3634,10 @@ footer .copyright {
   width: 100vw;
 }
 
+.max-w-2xl {
+  max-width: 42rem;
+}
+
 .max-w-4xl {
   max-width: 56rem;
 }
@@ -3777,6 +3943,10 @@ footer .copyright {
 
 .gap-y-4 {
   row-gap: 1rem;
+}
+
+.gap-y-6 {
+  row-gap: 1.5rem;
 }
 
 .gap-y-8 {
@@ -5102,6 +5272,10 @@ footer .copyright {
 
   .sm\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .sm\:grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
   .sm\:flex-row {

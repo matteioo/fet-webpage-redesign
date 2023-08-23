@@ -28,10 +28,11 @@
 	[type='tel'],
 	[type='time'],
 	[type='week'],
+	[type='file'],
 	textarea,
 	select,
 	select[multiple] {
-		@apply block w-full rounded-md text-sm disabled:opacity-50 disabled:cursor-not-allowed border border-gray-300 dark:border-gray-600 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-gray-50 dark:bg-gray-700 focus:ring-proprietary focus:border-proprietary focus:dark:ring-proprietary-light focus:dark:border-proprietary-light;
+		@apply block w-full rounded-md text-sm file:text-sm disabled:opacity-50 disabled:cursor-not-allowed border border-gray-300 dark:border-gray-600 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-gray-50 dark:bg-gray-700 focus:ring-proprietary focus:border-proprietary focus:dark:ring-proprietary-light focus:dark:border-proprietary-light;
 	}
 
 	[type='checkbox'],
@@ -41,6 +42,12 @@
 
 	[type='radio'] {
 		@apply rounded-full;
+	}
+
+	[type='file'] {
+		@apply file:m-1 file:p-2 file:rounded file:border-0 file:border-solid file:font-semibold file:text-blue-50 file:enabled:hover:text-blue-100 file:bg-proprietary-dark file:enabled:hover:bg-proprietary-darker;
+		@apply dark:file:text-blue-200 dark:file:enabled:hover:text-blue-300 dark:file:bg-proprietary-darker dark:file:enabled:hover:bg-proprietary-darkest;
+		@apply text-gray-800 dark:text-gray-200;
 	}
 
 	[x-cloak] { display: none !important; }
@@ -591,6 +598,20 @@
 	/***** DOCUMENT LIST *****/
 	.documentList a {
 		@apply sm:hover:bg-gray-50 dark:sm:hover:bg-gray-800 py-2 sm:p-2 md:p-4 first:rounded-t last:rounded-b;
+	}
+
+	/***** MULTI SECTION FORM *****/
+	.multiSectionForm {
+		@apply mx-auto flex flex-col divide-y divide-gray-300 dark:divide-gray-600;
+	}
+	.multiSectionForm section {
+		@apply py-8 first:pt-0 last:pb-0;
+	}
+	.multiSectionForm section > h2 {
+		@apply font-semibold text-lg tracking-wide text-gray-800 dark:text-gray-200;
+	}
+	.multiSectionForm section > small {
+		@apply block mb-4 text-sm text-gray-600 dark:text-gray-400;
 	}
 
 	/***** FOOTER *****/
