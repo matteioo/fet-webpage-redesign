@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="de" x-data="bodyData" x-bind="documentRoot">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FET: Fotos</title>
+
+    <meta name="author" content="Fachschaft Elektrotechnik (FET)">
+    <meta name="description" content="Die Fachschaft Elektrotechnik besteht aus ET Studierenden, die sich um die Anliegen der Studenten und Studentinnen kümmern.">
+    <meta property="og:image" content="#"> <!--og:... = Facebook metadata-->
+    <meta property="og:description" content="Die Fachschaft Elektrotechnik besteht aus ET Studierenden, die sich um die Anliegen der Studenten und Studentinnen kümmern.">
+    <meta property="og:title" content="Fachschaft Elektrotechnik (FET)">
+    <meta name="twitter:title" content="Fachschaft Elektrotechnik (FET)">
+    <meta name="theme-color" content="#006599">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=1.1">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=1.1">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=1.1">
+    <link rel="manifest" href="site.webmanifest?v=1.1">
+    <link rel="mask-icon" href="safari-pinned-tab.svg?v=1.1" color="#006599">
+    <link rel="shortcut icon" href="favicon.ico?v=1.1">
+    <meta name="apple-mobile-web-app-title" content="FET - Fachschaft Elektrotechnik">
+    <meta name="application-name" content="FET - Fachschaft Elektrotechnik">
+    <meta name="msapplication-TileColor" content="#2b5797">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/fb26f70535.js" crossorigin="anonymous"></script>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="fonts/Inter-3.19/inter.css">
+    <!-- <link rel="stylesheet" href="fonts/Poppins-4.003/poppins.css"> -->
+</head>
+<body x-bind="documentBody">
+<!-- SEARCH-BAR -->
+<div class="fixed w-screen h-screen z-30 backdrop-blur-sm backdrop-saturate-50"
+     x-show="showSearch"
+     x-cloak
+     x-transition:enter="transition ease-out duration-300"
+     x-transition:enter-start="transform backdrop-blur-none backdrop-saturate-100"
+     x-transition:enter-end="transform backdrop-blur-sm backdrop-saturate-50"
+     x-transition:leave="transition ease-in duration-150"
+     x-transition:leave-start="transform backdrop-blur-sm backdrop-saturate-50"
+     x-transition:leave-end="transform backdrop-blur-none backdrop-saturate-100"
+>
+    <form action="suche.html" @click.outside="closeSearch" class="flex items-center opacity-90 gap-x-4 mt-[33vh] sm:max-w-md lg:max-w-lg xl:max-w-xl mx-4 sm:mx-auto py-2 px-4 shadow-lg dark:shadow-none bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg dark:border-2 dark:border-gray-700"
+          x-show="showSearch"
+          x-transition:enter="transition transform ease-out duration-300"
+          x-transition:enter-start="scale-0 opacity-0"
+          x-transition:enter-end="scale-100 opacity-90"
+          x-transition:leave="transition transform ease-in duration-150"
+          x-transition:leave-start="scale-100 opacity-90"
+          x-transition:leave-end="scale-0 opacity-0"
+    >
+        <input class="flex-grow bg-inherit text-inherit h-10 p-0 border-0 focus:outline-none focus:border-transparent focus:ring-0" type="search" name="search" placeholder="Nach Person, Artikel oder Fotoalbum suchen...">
+        <button type="submit" class="flex-none">
+            <i class="fa-solid fa-magnifying-glass text-gray-500 dark:text-gray-600"></i>
+        </button>
+    </form>
+</div>
+<!-- NAVBAR -->
+<!-- NAVBAR -->
+<nav class="navBar-lg" x-data="navBar">
+    <div>
+        <button class="searchbar-toggle"
+                @click="openSearch"
+        >
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <a href="index.html">
+            <img src="img/FET-Logo-2014_64_light.svg" alt="FET-Logo" class="navbar-logo p-2 dark:hidden">
+            <img src="img/FET-Logo-2014_64_dark.svg" alt="FET-Logo" class="navbar-logo p-2 hidden dark:block">
+        </a>
+        <button class="navbar-toggle"
+                @click="toggleNav"
+        >
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul id="navBarContent" class="navbar-content" x-bind="navBarContentLg" x-collapse.min.0px>
+            <li><a href="posts.html">News</a></li>
+            <li><a href="members.html">Fachschaft</a></li>
+            <li><a href="fotos.html">Fotos</a></li>
+            <li><a href="jobs.html">Jobs</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li class="relative visible-expandedOnly" x-bind="navBarThemeContent">
+                <button class="relative" @click="toggleThemePopup">
+                    <i x-show="isThemeLight" class="fa-solid fa-sun"></i>
+                    <i x-show="isThemeDark" class="fa-solid fa-moon"></i>
+                </button>
+                <ul id="expandedThemeSwitcher"
+                    x-show="themePopupVisible"
+                    @click="closeThemePopup"
+                    @click.outside="closeThemePopup"
+                    x-cloak
+                >
+                    <li class="hover:bg-gray-200 dark:hover:bg-gray-600"><button class="!px-2 !py-1 !m-0 text-left" @click="setThemeLight">Light</button></li>
+                    <li class="hover:bg-gray-200 dark:hover:bg-gray-600"><button class="!px-2 !py-1 !m-0 text-left" @click="setThemeDark">Dark</button></li>
+                    <li class="hover:bg-gray-200 dark:hover:bg-gray-600"><button class="!px-2 !py-1 !m-0 text-left" @click="setThemeSystem">System</button></li>
+                </ul>
+            </li>
+            <hr class="border-proprietary">
+            <div href="#" class="navbar-subcontent"
+                 @click.outside="closePopupNav"
+            >
+                <div class="navbar-subcontentButton">
+                    <a class="rounded-l" href="#"
+                       @click="togglePopupNav"
+                    >Hallo moses</a>
+                    <a class="rounded-r" href="#"><i class="fa-solid fa-power-off"></i></a>
+                </div>
+                <div class="navbar-subcontentList"
+                     x-bind="popupNavContentLg"
+                     x-transition:enter="transition ease-out duration-300"
+                     x-transition:enter-start="transform origin-top opacity-0 scale-95"
+                     x-transition:enter-end="transform origin-top opacity-100 scale-100"
+                     x-transition:leave="transition ease-in duration-150"
+                     x-transition:leave-start="transform origin-top opacity-100 scale-100"
+                     x-transition:leave-end="transform origin-top opacity-0 scale-95"
+                >
+                    <li class="navInternal"><a href="admin.html"><i class="fa-fw fa-solid fa-user-secret mr-2"></i>Admin</a></li>
+                    <li class="navInternal"><a href="admin-tasks.html"><i class="fa-fw fa-solid fa-list-check mr-2"></i>Tasks</a></li>
+                    <li class="navInternal"><a href="admin-intern.html"><i class="fa-fw fa-solid fa-database mr-2"></i>Intern</a></li>
+                    <li class="navInternal"
+                        x-show="showPopupNavLogout"
+                    ><a href="#"><i class="fa-fw fa-solid fa-power-off mr-2"></i>Logout</a></li>
+                </div>
+            </div>
+            <li class="visible-expandedOnly"><button @click="openSearch"><span class="hidden md:inline"><i class="fa-solid fa-magnifying-glass"></i></span></button></li>
+            <li class="visible-collapsedOnly w-fit mx-auto py-1">
+                <div class="flex items-center">
+                    <span class="mr-2">Theme:</span>
+                    <ul id="mobileThemeSwitcher">
+                        <li class="rounded" x-bind="navBarThemeContentLight">
+                            <button class="!px-2 !py-0.5 !m-0 rounded-sm text-left bg-inherit" @click="setThemeLight">Light</button>
+                        </li>
+                        <li class="rounded" x-bind="navBarThemeContentDark">
+                            <button class="!px-2 !py-0.5 !m-0 rounded-sm text-left bg-inherit" @click="setThemeDark">Dark</button>
+                        </li>
+                        <li class="rounded" x-bind="navBarThemeContentSystem">
+                            <button class="!px-2 !py-0.5 !m-0 rounded-sm text-left bg-inherit" @click="setThemeSystem">System</button>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<main class="container mx-auto w-full px-4 my-8 flex-1">
+    <h1 class="page-title">Rechnung einreichen</h1>
+
+    <form class="multiSectionForm max-w-2xl">
+        <section>
+            <h2>Verantwortliche:r</h2>
+            <small>Angaben zur verantwortlichen Person, die die Rechnung einreicht.</small>
+
+            <div class="grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-6">
+                <div class="sm:col-span-3">
+                    <label>
+                        <span>Vorname</span>
+                        <input type="text" placeholder="Max" required>
+                    </label>
+                </div>
+                <div class="sm:col-span-3">
+                    <label>
+                        <span>Nachname</span>
+                        <input type="text" placeholder="Mustermann" required>
+                    </label>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Bankdaten</h2>
+            <small>Angaben zu den Bankdaten für die Rückerstattung des Rechnungsbetrags.</small>
+
+            <div class="grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-6">
+                <div class="sm:col-span-4">
+                    <label>
+                        <span>Kontoinhaber:in</span>
+                        <input type="text" placeholder="Max Mustermann" required>
+                    </label>
+                </div>
+                <div class="sm:col-span-3">
+                    <label>
+                        <span>IBAN</span>
+                        <input type="text" placeholder="AT12 3456 7890 1234 5678" required>
+                    </label>
+                </div>
+                <div class="sm:col-span-3">
+                    <label>
+                        <span>BIC</span>
+                        <input type="text" placeholder="NABAATWW" required>
+                    </label>
+                </div>
+                <div class="col-span-full">
+                    <label>
+                        <input type="checkbox">
+                        <span>Ich habe nur eine digitale Rechnung.</span>
+                    </label>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Rechnungsdetails</h2>
+            <small>Details zur ursprünglichen bereits bezahlten Rechnung angeben.</small>
+
+            <div class="grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-6">
+                <div class="sm:col-span-4">
+                    <label>
+                        <span>Rechnungsaussteller</span>
+                        <textarea cols="30" rows="4" required class="w-full" placeholder="Firmenname
+Straße
+PLZ und Ort"></textarea>
+                    </label>
+                </div>
+                <div class="sm:col-span-4">
+                    <label>
+                        <span>Ursprüngliche Bezahlmethode</span>
+                        <select required>
+                            <option value="" selected disabled>Bezahlmethode auswählen</option>
+                            <option value="bar">Bar</option>
+                            <option value="credit-card">Kreditkarte</option>
+                            <option value="sepa-transfer">SEPA-Überweisung</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="col-span-full">
+                    <label>
+                        <span>Verwendungszweck</span>
+                        <input type="text" placeholder="Perpetuum mobile" required>
+                    </label>
+                </div>
+                <div class="sm:col-span-3">
+                    <label>
+                        <span>Rechnungsdatum</span>
+                        <input type="date" class="w-full" required placeholder="AlessandroVolta230">
+                    </label>
+                </div>
+                <div class="sm:col-span-2">
+                    <label>
+                        <span>Betrag (EUR)</span>
+                        <input type="number" placeholder="123,99" required>
+                    </label>
+                </div>
+                <div class="col-span-full">
+                    <label>
+                        <span>Rechnung hochladen (PDF)</span>
+                        <input type="file">
+                    </label>
+                </div>
+                <div class="col-span-full">
+                    <label>
+                        <input type="checkbox">
+                        <span>Ich habe nur eine digitale Rechnung.</span>
+                    </label>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Beschlusslage</h2>
+            <small>Informationen zur Beschlusslage dieser Rechnung.</small>
+
+            <div class="grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-6">
+                <div class="sm:col-span-3">
+                    <label>
+                        <span>Abrechnungsbüdget</span>
+                        <select required>
+                            <option value="" selected disabled>Abrechnungsbüdget auswählen</option>
+                            <option value="option1">Option 1</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="sm:col-span-3">
+                    <label>
+                        <span>Beschlussnummer</span>
+                        <input type="text" placeholder="B1234" required>
+                    </label>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Kommentar</h2>
+            <small>Erfordert etwas zusätzlichen Erklärungsbedarf oder sollen nachträglich Informationen bearbeitet werden? Das ist so lange möglich, wie die Rechnung bearbeitet wird.</small>
+
+            <div class="grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-6">
+                <div class="col-span-full">
+                    <label>
+                        <span>Kommentar hinterlassen</span>
+                        <textarea cols="30" rows="4" required class="w-full"></textarea>
+                    </label>
+                </div>
+            </div>
+        </section>
+        <section class="flex justify-end">
+            <button type="submit" class="btn btn-primary w-full sm:w-auto">Rechnung einreichen</button>
+        </section>
+    </form>
+</main>
+
+<footer>
+    <ul class="icon-list">
+        <li>
+            <a href="https://facebook.fet.at/"><i class="fa-brands fa-facebook"></i></a>
+        </li>
+        <li>
+            <a href="https://instagram.fet.at/"><i class="fa-brands fa-instagram"></i></a>
+        </li>
+        <li>
+            <a href="https://discord.fet.at/"><i class="fa-brands fa-discord"></i></a>
+        </li>
+        <li>
+            <a href="https://telegram.fet.at/"><i class="fa-brands fa-telegram"></i></a>
+        </li>
+        <li>
+            <a href="mailto:service@fet.at"><i class="fa-solid fa-envelope"></i></a>
+        </li>
+    </ul>
+    <div class="legal">
+        <a href="impressum.html" class="text-center text-sm sm:text-base">Impressum</a>
+    </div>
+    <hr class="legal-divider">
+    <p class="copyright">© 2021 FET - Alle Rechte vorbehalten.</p>
+</footer>
+<div class="super-duper-awesome-signature font-normal" x-data="footerCounter">
+    <span x-bind="footerFirst">Handcrafted </span><span x-bind="footerSecond">with </span><i class="fa-solid fa-heart" aria-label="love" @click="increase" x-bind="footerThird"></i><span x-bind="footerFourth"> by</span><span x-bind="footerFifth"> Max Mustermann</span>
+</div>
+
+<script defer src="js/vendor.js"></script>
+<script defer src="js/scripts.js"></script>
+</body>
+</html>
