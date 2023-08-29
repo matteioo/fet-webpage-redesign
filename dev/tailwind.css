@@ -293,7 +293,8 @@
 		@apply border border-proprietary dark:border-sky-500 text-proprietary dark:text-sky-500;
 	}
 	.btn-tertiary {
-		@apply bg-black bg-opacity-0 hover:bg-opacity-10;
+		@apply text-gray-800 bg-black bg-opacity-0 hover:bg-opacity-10;
+		@apply dark:text-gray-200 dark:bg-white dark:bg-opacity-0 dark:hover:bg-opacity-10;
 	}
 
 	/***** SECTION *****/
