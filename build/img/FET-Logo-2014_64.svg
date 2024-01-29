@@ -2,6 +2,10 @@
   <style>
     #wave { fill:#006599 }
     #letters { fill:#000 }
+    @media (prefers-color-scheme: dark) {
+      #wave { fill:#008bd1 }
+      #letters { fill:#fff }
+    }
   </style>
   <g transform="translate(127.81606,-138.63951)">
     <g transform="matrix(0.06231174,0,0,0.06231174,-128.52968,137.02226)">

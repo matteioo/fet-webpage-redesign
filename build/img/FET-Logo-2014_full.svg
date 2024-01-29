@@ -2,6 +2,10 @@
   <style>
     #wave { fill:#006599 }
     #letters { fill:#000 }
+    @media (prefers-color-scheme: dark) {
+      #wave { fill:#008bd1 }
+      #letters { fill:#fff }
+    }
   </style>
   <g transform="translate(127.81604,-138.63952)">
     <g transform="translate(-139.26846,112.68527)">
