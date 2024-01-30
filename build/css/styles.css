@@ -651,7 +651,6 @@ label > span {
 	[type='date'],
 	[type='datetime-local'],
 	[type='month'],
-	[type='search'],
 	[type='tel'],
 	[type='time'],
 	[type='week'],
@@ -681,7 +680,6 @@ label > span {
 	[type='date']::file-selector-button,
 	[type='datetime-local']::file-selector-button,
 	[type='month']::file-selector-button,
-	[type='search']::file-selector-button,
 	[type='tel']::file-selector-button,
 	[type='time']::file-selector-button,
 	[type='week']::file-selector-button,
@@ -701,7 +699,6 @@ label > span {
 	[type='date']:focus,
 	[type='datetime-local']:focus,
 	[type='month']:focus,
-	[type='search']:focus,
 	[type='tel']:focus,
 	[type='time']:focus,
 	[type='week']:focus,
@@ -723,7 +720,6 @@ label > span {
 	[type='date']:disabled,
 	[type='datetime-local']:disabled,
 	[type='month']:disabled,
-	[type='search']:disabled,
 	[type='tel']:disabled,
 	[type='time']:disabled,
 	[type='week']:disabled,
@@ -743,7 +739,6 @@ label > span {
 	[type='date']),:is(.dark 
 	[type='datetime-local']),:is(.dark 
 	[type='month']),:is(.dark 
-	[type='search']),:is(.dark 
 	[type='tel']),:is(.dark 
 	[type='time']),:is(.dark 
 	[type='week']),:is(.dark 
@@ -767,7 +762,6 @@ label > span {
 	[type='date'])::-moz-placeholder, :is(.dark 
 	[type='datetime-local'])::-moz-placeholder, :is(.dark 
 	[type='month'])::-moz-placeholder, :is(.dark 
-	[type='search'])::-moz-placeholder, :is(.dark 
 	[type='tel'])::-moz-placeholder, :is(.dark 
 	[type='time'])::-moz-placeholder, :is(.dark 
 	[type='week'])::-moz-placeholder, :is(.dark 
@@ -787,7 +781,6 @@ label > span {
 	[type='date'])::placeholder,:is(.dark 
 	[type='datetime-local'])::placeholder,:is(.dark 
 	[type='month'])::placeholder,:is(.dark 
-	[type='search'])::placeholder,:is(.dark 
 	[type='tel'])::placeholder,:is(.dark 
 	[type='time'])::placeholder,:is(.dark 
 	[type='week'])::placeholder,:is(.dark 
@@ -807,7 +800,6 @@ label > span {
 	[type='date']):focus,:is(.dark 
 	[type='datetime-local']):focus,:is(.dark 
 	[type='month']):focus,:is(.dark 
-	[type='search']):focus,:is(.dark 
 	[type='tel']):focus,:is(.dark 
 	[type='time']):focus,:is(.dark 
 	[type='week']):focus,:is(.dark 

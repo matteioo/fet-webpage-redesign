@@ -3510,6 +3510,9 @@ Read more about the Alpine's CSP-friendly build restrictions here: https://alpin
     showModal: false,
     openSearch() {
       this.showSearch = true;
+      this.$nextTick(() => {
+        document.querySelector('input[type="search"]').focus();
+      });
     },
     closeSearch() {
       this.showSearch = false;

@@ -37,6 +37,9 @@ Alpine.data('bodyData', () => ({
 	showModal: false,
 	openSearch() {
 		this.showSearch = true
+		this.$nextTick(() => {
+			document.querySelector('input[type="search"]').focus();
+		})
 	},
 	closeSearch() {
 		this.showSearch = false
